@@ -1,0 +1,122 @@
+[....] Starting OpenBSD Secure Shell server: sshd[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[    6.357915] kt: running test for light, case 1, T2537
+[    6.357915] 
+[    6.362144] kt: starting light_test_wait_destroy test
+[    6.566209] kt: end of test.
+[    6.568496] 
+[    6.569798] dump_desc: [50ms_wait]
+[    6.573031] dump_desc evts: 0
+[    6.575387] dump_desc   ts: 201
+[    6.578891] dump_desc  ret: -22
+[    6.581153] 
+[    6.581973] dump_desc: [create_200ms_destroy]
+[    6.586341] dump_desc evts: 0
+[    6.589032] dump_desc   ts: 0 201
+[    6.591516] dump_desc  ret: 0
+[    6.594302] LIGHT_SUCCESS
+[    6.597474] kt: running test for light, case 1, T2541
+[    6.597474] 
+[    6.601920] kt: starting light_test_wait_destroy test
+[    6.806194] kt: end of test.
+[    6.807909] 
+[    6.808979] dump_desc: [50ms_wait]
+[    6.810709] dump_desc evts: 1
+[    6.813556] dump_desc   ts: 201
+[    6.816316] dump_desc  ret: -22
+[    6.819083] 
+[    6.820627] dump_desc: [create_200ms_destroy]
+[    6.824372] dump_desc evts: 1
+[    6.826984] dump_desc   ts: 0 201
+[    6.829785] dump_desc  ret: 0
+[    6.831756] LIGHT_SUCCESS
+[    6.834189] kt: running test for light, case 1, T2544
+[    6.834189] 
+[    6.837917] kt: starting light_test_wait_destroy test
+[    7.042189] kt: end of test.
+[    7.043488] 
+[    7.044329] dump_desc: [50ms_wait]
+[    7.047368] dump_desc evts: 2
+[    7.049622] dump_desc   ts: 201
+[    7.051944] dump_desc  ret: -22
+[    7.054405] 
+[    7.055894] dump_desc: [create_200ms_destroy]
+[    7.058477] dump_desc evts: 2
+[    7.060945] dump_desc   ts: 0 201
+[    7.063495] dump_desc  ret: 0
+[    7.065871] LIGHT_SUCCESS
+[    7.068781] kt: running test for light, case 1, T2547
+[    7.068781] 
+[    7.073196] kt: starting light_test_wait_destroy test
+[    7.277200] kt: end of test.
+[    7.278685] 
+[    7.279463] dump_desc: [50ms_wait]
+[    7.281698] dump_desc evts: 3
+[    7.284267] dump_desc   ts: 201
+[    7.286546] dump_desc  ret: -22
+[    7.288805] 
+[    7.289985] dump_desc: [create_200ms_destroy]
+[    7.293363] dump_desc evts: 3
+[    7.295717] dump_desc   ts: 0 201
+[    7.299036] dump_desc  ret: 0
+[    7.301107] LIGHT_SUCCESS
+[    7.303969] kt: running test for light, case 1, T2550
+[    7.303969] 
+[    7.309635] kt: starting light_test_wait_destroy test
+[    7.514184] kt: end of test.
+[    7.516050] 
+[    7.516894] dump_desc: [50ms_wait]
+[    7.518652] dump_desc evts: 4
+[    7.521024] dump_desc   ts: 201
+[    7.522771] dump_desc  ret: -22
+[    7.525123] 
+[    7.526277] dump_desc: [create_200ms_destroy]
+[    7.529967] dump_desc evts: 4
+[    7.532160] dump_desc   ts: 0 201
+[    7.534740] dump_desc  ret: 0
+[    7.536950] LIGHT_SUCCESS
+[    7.540425] kt: running test for light, case 1, T2553
+[    7.540425] 
+[    7.543846] kt: starting light_test_wait_destroy test
+[    7.749115] kt: end of test.
+[    7.751106] 
+[    7.752475] dump_desc: [50ms_wait]
+[    7.755781] dump_desc evts: 5
+[    7.758190] dump_desc   ts: 201
+[    7.760980] dump_desc  ret: -22
+[    7.763819] 
+[    7.765507] dump_desc: [create_200ms_destroy]
+[    7.769166] dump_desc evts: 5
+[    7.771854] dump_desc   ts: 0 201
+[    7.774616] dump_desc  ret: 0
+[    7.776552] LIGHT_SUCCESS
+[    7.779448] kt: running test for light, case 1, T2556
+[    7.779448] 
+[    7.783189] kt: starting light_test_wait_destroy test
+[    7.987134] kt: end of test.
+[    7.988884] 
+[    7.989968] dump_desc: [50ms_wait]
+[    7.992735] dump_desc evts: 6
+[    7.995296] dump_desc   ts: 201
+[    7.997333] dump_desc  ret: -22
+[    7.999605] 
+[    8.000509] dump_desc: [create_200ms_destroy]
+[    8.003260] dump_desc evts: 6
+[    8.005179] dump_desc   ts: 0 201
+[    8.005823] dump_desc  ret: 0
+[    8.006548] LIGHT_SUCCESS
+[    8.008944] kt: running test for light, case 1, T2559
+[    8.008944] 
+[    8.013294] kt: starting light_test_wait_destroy test
+[    8.217116] kt: end of test.
+[    8.218857] 
+[    8.219701] dump_desc: [50ms_wait]
+[    8.221821] dump_desc evts: 7
+[    8.223794] dump_desc   ts: 201
+[    8.226224] dump_desc  ret: -22
+[    8.228870] 
+[    8.230355] dump_desc: [create_200ms_destroy]
+[    8.234086] dump_desc evts: 7
+[    8.236752] dump_desc   ts: 0 201
+[    8.239510] dump_desc  ret: 0
+[    8.241956] LIGHT_SUCCESS
+[   10.581549] kmemleak: 1 new suspected memory leaks (see /sys/kernel/debug/kmemleak)

@@ -1,0 +1,243 @@
+[....] Starting OpenBSD Secure Shell server: sshd[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[    6.398748] kt: running test for light, case 8, T2533
+[    6.398748] 
+[    6.403194] kt: starting test light_test_lots_of_wait_on_many_signal_selfdestroy
+[    6.510288] kt: end of test
+[    6.511971] 
+[    6.512565] dump_desc: [signal]
+[    6.515021] dump_desc evts:
+[    6.517096] dump_desc   ts: 101 101
+[    6.519166] dump_desc  ret: 0 0
+[    6.521381] 
+[    6.522469] dump_desc: [sum_create]
+[    6.524870] dump_desc evts: 1 0 4 2 3 5 13 12 11 10 9 8 7 6 14
+[    6.528499] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.532878] dump_desc  ret:
+[    6.534898] 
+[    6.535968] dump_desc: [sum_wait]
+[    6.538694] dump_desc evts:
+[    6.540770] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[    6.546172] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.550612] 
+[    6.551984] dump_desc: [sum_destroy]
+[    6.553872] dump_desc evts:
+[    6.556295] dump_desc   ts:
+[    6.557885] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.562201] 
+[    6.562955] dump_desc: [sum_wait2]
+[    6.565840] dump_desc evts:
+[    6.567826] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[    6.571957] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    6.575548] LIGHT_SUCCESS
+[    6.578118] kt: running test for light, case 8, T2551
+[    6.578118] 
+[    6.581946] kt: starting test light_test_lots_of_wait_on_many_signal_selfdestroy
+[    6.690298] kt: end of test
+[    6.692331] 
+[    6.693415] dump_desc: [signal]
+[    6.695954] dump_desc evts:
+[    6.698096] dump_desc   ts: 101 101
+[    6.699716] dump_desc  ret: 0 0
+[    6.702056] 
+[    6.702872] dump_desc: [sum_create]
+[    6.704618] dump_desc evts: 27 26 25 24 23 22 21 20 19 18 17 16 15 28 29
+[    6.709093] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.713531] dump_desc  ret:
+[    6.715753] 
+[    6.716657] dump_desc: [sum_wait]
+[    6.718378] dump_desc evts:
+[    6.720909] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[    6.724938] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.728296] 
+[    6.729885] dump_desc: [sum_destroy]
+[    6.732052] dump_desc evts:
+[    6.735273] dump_desc   ts:
+[    6.737436] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.742326] 
+[    6.743960] dump_desc: [sum_wait2]
+[    6.746466] dump_desc evts:
+[    6.749638] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[    6.753733] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    6.758128] LIGHT_SUCCESS
+[    6.761237] kt: running test for light, case 8, T2568
+[    6.761237] 
+[    6.764832] kt: starting test light_test_lots_of_wait_on_many_signal_selfdestroy
+[    6.872250] kt: end of test
+[    6.874196] 
+[    6.875103] dump_desc: [signal]
+[    6.876565] dump_desc evts:
+[    6.878882] dump_desc   ts: 101 101
+[    6.880786] dump_desc  ret: 0 0
+[    6.883277] 
+[    6.884176] dump_desc: [sum_create]
+[    6.885786] dump_desc evts: 31 30 32 33 34 35 36 37 38 39 40 41 42 43 44
+[    6.890168] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.893885] dump_desc  ret:
+[    6.896223] 
+[    6.897197] dump_desc: [sum_wait]
+[    6.899508] dump_desc evts:
+[    6.901477] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[    6.907046] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.909610] 
+[    6.911681] dump_desc: [sum_destroy]
+[    6.913467] dump_desc evts:
+[    6.915158] dump_desc   ts:
+[    6.916478] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.919868] 
+[    6.921075] dump_desc: [sum_wait2]
+[    6.922921] dump_desc evts:
+[    6.924952] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[    6.928742] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    6.932072] LIGHT_SUCCESS
+[    6.934204] kt: running test for light, case 8, T2585
+[    6.934204] 
+[    6.937847] kt: starting test light_test_lots_of_wait_on_many_signal_selfdestroy
+[    7.046283] kt: end of test
+[    7.048129] 
+[    7.049192] dump_desc: [signal]
+[    7.051841] dump_desc evts:
+[    7.054817] dump_desc   ts: 101 101
+[    7.057641] dump_desc  ret: 0 0
+[    7.060464] 
+[    7.061793] dump_desc: [sum_create]
+[    7.063355] dump_desc evts: 46 45 47 48 49 50 51 52 53 54 55 56 57 58 59
+[    7.068891] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.072903] dump_desc  ret:
+[    7.075454] 
+[    7.076646] dump_desc: [sum_wait]
+[    7.079691] dump_desc evts:
+[    7.081543] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[    7.086908] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.090589] 
+[    7.091667] dump_desc: [sum_destroy]
+[    7.094201] dump_desc evts:
+[    7.096421] dump_desc   ts:
+[    7.098275] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.102164] 
+[    7.103209] dump_desc: [sum_wait2]
+[    7.105288] dump_desc evts:
+[    7.107852] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[    7.112062] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    7.115770] LIGHT_SUCCESS
+[    7.118188] kt: running test for light, case 8, T2602
+[    7.118188] 
+[    7.121239] kt: starting test light_test_lots_of_wait_on_many_signal_selfdestroy
+[    7.227228] kt: end of test
+[    7.229753] 
+[    7.230906] dump_desc: [signal]
+[    7.233968] dump_desc evts:
+[    7.236549] dump_desc   ts: 101 101
+[    7.239051] dump_desc  ret: 0 0
+[    7.241795] 
+[    7.243523] dump_desc: [sum_create]
+[    7.246545] dump_desc evts: 60 61 62 63 65 64 66 67 68 71 70 69 72 73 74
+[    7.250913] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.254126] dump_desc  ret:
+[    7.256538] 
+[    7.258205] dump_desc: [sum_wait]
+[    7.260650] dump_desc evts:
+[    7.262630] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[    7.267874] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.271984] 
+[    7.272782] dump_desc: [sum_destroy]
+[    7.275261] dump_desc evts:
+[    7.277336] dump_desc   ts:
+[    7.279312] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.282176] 
+[    7.282904] dump_desc: [sum_wait2]
+[    7.285914] dump_desc evts:
+[    7.288559] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[    7.292950] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    7.296640] LIGHT_SUCCESS
+[    7.298882] kt: running test for light, case 8, T2619
+[    7.298882] 
+[    7.301982] kt: starting test light_test_lots_of_wait_on_many_signal_selfdestroy
+[    7.408235] kt: end of test
+[    7.411389] 
+[    7.412429] dump_desc: [signal]
+[    7.414693] dump_desc evts:
+[    7.416533] dump_desc   ts: 101 101
+[    7.419159] dump_desc  ret: 0 0
+[    7.421144] 
+[    7.421944] dump_desc: [sum_create]
+[    7.425061] dump_desc evts: 81 80 79 78 77 76 75 88 87 86 85 84 83 82 89
+[    7.428678] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.433099] dump_desc  ret:
+[    7.435571] 
+[    7.436762] dump_desc: [sum_wait]
+[    7.439528] dump_desc evts:
+[    7.441492] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[    7.447245] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.451665] 
+[    7.453035] dump_desc: [sum_destroy]
+[    7.455287] dump_desc evts:
+[    7.457923] dump_desc   ts:
+[    7.459616] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.464092] 
+[    7.465085] dump_desc: [sum_wait2]
+[    7.466988] dump_desc evts:
+[    7.469162] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[    7.472369] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    7.475887] LIGHT_SUCCESS
+[    7.479277] kt: running test for light, case 8, T2636
+[    7.479277] 
+[    7.482683] kt: starting test light_test_lots_of_wait_on_many_signal_selfdestroy
+[    7.590221] kt: end of test
+[    7.591609] 
+[    7.592450] dump_desc: [signal]
+[    7.594994] dump_desc evts:
+[    7.596861] dump_desc   ts: 101 101
+[    7.599550] dump_desc  ret: 0 0
+[    7.601863] 
+[    7.602805] dump_desc: [sum_create]
+[    7.605489] dump_desc evts: 97 96 98 99 100 101 102 103 104 94 93 92 91 90 95
+[    7.611372] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.614069] dump_desc  ret:
+[    7.616632] 
+[    7.617641] dump_desc: [sum_wait]
+[    7.619328] dump_desc evts:
+[    7.622109] dump_desc   ts: 101 101 101 101 101 100 100 100 100 101 101 101 101 101 101
+[    7.625740] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.628874] 
+[    7.630667] dump_desc: [sum_destroy]
+[    7.632904] dump_desc evts:
+[    7.635818] dump_desc   ts:
+[    7.637435] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.641492] 
+[    7.642667] dump_desc: [sum_wait2]
+[    7.645491] dump_desc evts:
+[    7.646837] dump_desc   ts: 101 101 101 101 101 100 100 100 100 101 101 101 101 101 101
+[    7.651246] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    7.655511] LIGHT_SUCCESS
+[    7.658712] kt: running test for light, case 8, T2653
+[    7.658712] 
+[    7.662371] kt: starting test light_test_lots_of_wait_on_many_signal_selfdestroy
+[    7.769276] kt: end of test
+[    7.771189] 
+[    7.772661] dump_desc: [signal]
+[    7.775264] dump_desc evts:
+[    7.777470] dump_desc   ts: 101 101
+[    7.780234] dump_desc  ret: 0 0
+[    7.782818] 
+[    7.784236] dump_desc: [sum_create]
+[    7.786681] dump_desc evts: 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119
+[    7.791576] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.795247] dump_desc  ret:
+[    7.797178] 
+[    7.798205] dump_desc: [sum_wait]
+[    7.800697] dump_desc evts:
+[    7.802812] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[    7.808252] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.812446] 
+[    7.813973] dump_desc: [sum_destroy]
+[    7.816202] dump_desc evts:
+[    7.818936] dump_desc   ts:
+[    7.820505] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.823833] 
+[    7.825043] dump_desc: [sum_wait2]
+[    7.826697] dump_desc evts:
+[    7.829248] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[    7.832769] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    7.836359] LIGHT_SUCCESS
+[   10.179093] kmemleak: 1 new suspected memory leaks (see /sys/kernel/debug/kmemleak)
+INIT: Switching to runlevel: 0

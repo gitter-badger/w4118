@@ -1,0 +1,1812 @@
+early console in setup code
+early console in decompress_kernel
+
+Decompressing Linux... Parsing ELF... done.
+Booting the kernel.
+[    0.000000] Initializing cgroup subsys cpuset
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 4.2.0-team50-tsan (progman@m91p) (gcc version 6.0.0 20150825 (experimental) (GCC) ) #228 SMP Mon Oct 31 18:18:19 EDT 2016
+[    0.000000] Command line: console=ttyS0 root=/dev/sda debug earlyprintk=serial slub_debug=QUZ
+[    0.000000] x86/fpu: Legacy x87 FPU detected.
+[    0.000000] x86/fpu: Using 'lazy' FPU context switches.
+[    0.000000] e820: BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x00000000bffdefff] usable
+[    0.000000] BIOS-e820: [mem 0x00000000bffdf000-0x00000000bfffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000feffc000-0x00000000feffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000100000000-0x000000053fffffff] usable
+[    0.000000] bootconsole [earlyser0] enabled
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] SMBIOS 2.8 present.
+[    0.000000] DMI: QEMU Standard PC (i440FX + PIIX, 1996), BIOS Ubuntu-1.8.2-1ubuntu2 04/01/2014
+[    0.000000] Hypervisor detected: KVM
+[    0.000000] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+[    0.000000] e820: remove [mem 0x000a0000-0x000fffff] usable
+[    0.000000] e820: last_pfn = 0x540000 max_arch_pfn = 0x400000000
+[    0.000000] MTRR default type: write-back
+[    0.000000] MTRR fixed ranges enabled:
+[    0.000000]   00000-9FFFF write-back
+[    0.000000]   A0000-BFFFF uncachable
+[    0.000000]   C0000-FFFFF write-protect
+[    0.000000] MTRR variable ranges enabled:
+[    0.000000]   0 base 00C0000000 mask FFC0000000 uncachable
+[    0.000000]   1 disabled
+[    0.000000]   2 disabled
+[    0.000000]   3 disabled
+[    0.000000]   4 disabled
+[    0.000000]   5 disabled
+[    0.000000]   6 disabled
+[    0.000000]   7 disabled
+[    0.000000] x86/PAT: PAT not supported by CPU.
+[    0.000000] e820: last_pfn = 0xbffdf max_arch_pfn = 0x400000000
+[    0.000000] found SMP MP-table at [mem 0x000f64c0-0x000f64cf] mapped at [ffff8800000f64c0]
+[    0.000000] Scanning 1 areas for low memory corruption
+[    0.000000] Base memory trampoline at [ffff880000099000] 99000 size 24576
+[    0.000000] init_memory_mapping: [mem 0x00000000-0x000fffff]
+[    0.000000]  [mem 0x00000000-0x000fffff] page 4k
+[    0.000000] BRK [0x028d5000, 0x028d5fff] PGTABLE
+[    0.000000] BRK [0x028d6000, 0x028d6fff] PGTABLE
+[    0.000000] BRK [0x028d7000, 0x028d7fff] PGTABLE
+[    0.000000] init_memory_mapping: [mem 0x53fe00000-0x53fffffff]
+[    0.000000]  [mem 0x53fe00000-0x53fffffff] page 2M
+[    0.000000] BRK [0x028d8000, 0x028d8fff] PGTABLE
+[    0.000000] init_memory_mapping: [mem 0x520000000-0x53fdfffff]
+[    0.000000]  [mem 0x520000000-0x53fdfffff] page 2M
+[    0.000000] init_memory_mapping: [mem 0x00100000-0xbffdefff]
+[    0.000000]  [mem 0x00100000-0x001fffff] page 4k
+[    0.000000]  [mem 0x00200000-0xbfdfffff] page 2M
+[    0.000000]  [mem 0xbfe00000-0xbffdefff] page 4k
+[    0.000000] init_memory_mapping: [mem 0x100000000-0x51fffffff]
+[    0.000000]  [mem 0x100000000-0x51fffffff] page 2M
+[    0.000000] BRK [0x028d9000, 0x028d9fff] PGTABLE
+[    0.000000] BRK [0x028da000, 0x028dafff] PGTABLE
+[    0.000000] ACPI: Early table checksum verification disabled
+[    0.000000] ACPI: RSDP 0x00000000000F6470 000014 (v00 BOCHS )
+[    0.000000] ACPI: RSDT 0x00000000BFFE155A 000030 (v01 BOCHS  BXPCRSDT 00000001 BXPC 00000001)
+[    0.000000] ACPI: FACP 0x00000000BFFE141E 000074 (v01 BOCHS  BXPCFACP 00000001 BXPC 00000001)
+[    0.000000] ACPI: DSDT 0x00000000BFFDFD80 00169E (v01 BOCHS  BXPCDSDT 00000001 BXPC 00000001)
+[    0.000000] ACPI: FACS 0x00000000BFFDFD40 000040
+[    0.000000] ACPI: APIC 0x00000000BFFE1492 000090 (v01 BOCHS  BXPCAPIC 00000001 BXPC 00000001)
+[    0.000000] ACPI: HPET 0x00000000BFFE1522 000038 (v01 BOCHS  BXPCHPET 00000001 BXPC 00000001)
+[    0.000000] ACPI: Local APIC address 0xfee00000
+[    0.000000] No NUMA configuration found
+[    0.000000] Faking a node at [mem 0x0000000000000000-0x000000053fffffff]
+[    0.000000] NODE_DATA(0) allocated [mem 0x53ffeb000-0x53ffeefff]
+[    0.000000] kvm-clock: Using msrs 4b564d01 and 4b564d00
+[    0.000000] kvm-clock: cpu 0, msr 5:3ffea001, primary cpu clock
+[    0.000000] clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.000000]  [ffffea0000000000-ffffea0014ffffff] PMD -> [ffff88052b600000-ffff88053f5fffff] on node 0
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.000000]   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[    0.000000]   Normal   [mem 0x0000000100000000-0x000000053fffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+[    0.000000]   node   0: [mem 0x0000000000100000-0x00000000bffdefff]
+[    0.000000]   node   0: [mem 0x0000000100000000-0x000000053fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000001000-0x000000053fffffff]
+[    0.000000] On node 0 totalpages: 5242749
+[    0.000000]   DMA zone: 64 pages used for memmap
+[    0.000000]   DMA zone: 21 pages reserved
+[    0.000000]   DMA zone: 3998 pages, LIFO batch:0
+[    0.000000]   DMA32 zone: 12224 pages used for memmap
+[    0.000000]   DMA32 zone: 782303 pages, LIFO batch:31
+[    0.000000]   Normal zone: 69632 pages used for memmap
+[    0.000000]   Normal zone: 4456448 pages, LIFO batch:31
+[    0.000000] ACPI: PM-Timer IO Port: 0x608
+[    0.000000] ACPI: Local APIC address 0xfee00000
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+[    0.000000] IOAPIC[0]: apic_id 0, version 17, address 0xfec00000, GSI 0-23
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+[    0.000000] ACPI: IRQ0 used by override.
+[    0.000000] ACPI: IRQ5 used by override.
+[    0.000000] ACPI: IRQ9 used by override.
+[    0.000000] ACPI: IRQ10 used by override.
+[    0.000000] ACPI: IRQ11 used by override.
+[    0.000000] Using ACPI (MADT) for SMP configuration information
+[    0.000000] ACPI: HPET id: 0x8086a201 base: 0xfed00000
+[    0.000000] smpboot: Allowing 4 CPUs, 0 hotplug CPUs
+[    0.000000] PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.000000] PM: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
+[    0.000000] PM: Registered nosave memory: [mem 0x000a0000-0x000effff]
+[    0.000000] PM: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+[    0.000000] PM: Registered nosave memory: [mem 0xbffdf000-0xbfffffff]
+[    0.000000] PM: Registered nosave memory: [mem 0xc0000000-0xfeffbfff]
+[    0.000000] PM: Registered nosave memory: [mem 0xfeffc000-0xfeffffff]
+[    0.000000] PM: Registered nosave memory: [mem 0xff000000-0xfffbffff]
+[    0.000000] PM: Registered nosave memory: [mem 0xfffc0000-0xffffffff]
+[    0.000000] e820: [mem 0xc0000000-0xfeffbfff] available for PCI devices
+[    0.000000] Booting paravirtualized kernel on KVM
+[    0.000000] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+[    0.000000] setup_percpu: NR_CPUS:64 nr_cpumask_bits:64 nr_cpu_ids:4 nr_node_ids:1
+[    0.000000] PERCPU: Embedded 32 pages/cpu @ffff88053fc00000 s90328 r8192 d32552 u524288
+[    0.000000] pcpu-alloc: s90328 r8192 d32552 u524288 alloc=1*2097152
+[    0.000000] pcpu-alloc: [0] 0 1 2 3 
+[    0.000000] KVM setup async PF for cpu 0
+[    0.000000] kvm-stealtime: cpu 0, msr 53fc0d440
+[    0.000000] Built 1 zonelists in Node order, mobility grouping on.  Total pages: 5160808
+[    0.000000] Policy zone: Normal
+[    0.000000] Kernel command line: console=ttyS0 root=/dev/sda debug earlyprintk=serial slub_debug=QUZ
+[    0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.000000] Calgary: detecting Calgary via BIOS EBDA area
+[    0.000000] Calgary: Unable to locate Rio Grande table in EBDA - bailing!
+[    0.000000] Memory: 5718644K/20970996K available (15275K kernel code, 1106K rwdata, 2804K rodata, 1348K init, 2476K bss, 15252352K reserved, 0K cma-reserved)
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000] 	Additional per-CPU info printed with stalls.
+[    0.000000] 	Build-time adjustment of leaf fanout to 64.
+[    0.000000] 	RCU restricting CPUs from NR_CPUS=64 to nr_cpu_ids=4.
+[    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=64, nr_cpu_ids=4
+[    0.000000] NR_IRQS:4352 nr_irqs:456 16
+[    0.000000] Console: colour VGA+ 80x25
+[    0.000000] console [ttyS0] enabled
+[    0.000000] console [ttyS0] enabled
+[    0.000000] bootconsole [earlyser0] disabled
+[    0.000000] bootconsole [earlyser0] disabled
+[    0.000000] clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+[    0.000000] hpet clockevent registered
+[    0.000000] tsc: Detected 2659.998 MHz processor
+[    0.003000] Calibrating delay loop (skipped) preset value.. 5319.99 BogoMIPS (lpj=2659998)
+[    0.003445] pid_max: default: 32768 minimum: 301
+[    0.004059] ACPI: Core revision 20150619
+[    0.027868] ACPI: All ACPI Tables successfully acquired
+[    0.029053] Security Framework initialized
+[    0.029710] SELinux:  Initializing.
+[    0.030072] SELinux:  Starting in permissive mode
+[    0.131640] Dentry cache hash table entries: 4194304 (order: 13, 33554432 bytes)
+[    0.374456] Inode-cache hash table entries: 2097152 (order: 12, 16777216 bytes)
+[    0.474055] Mount-cache hash table entries: 65536 (order: 7, 524288 bytes)
+[    0.476704] Mountpoint-cache hash table entries: 65536 (order: 7, 524288 bytes)
+[    0.485925] Initializing cgroup subsys freezer
+[    0.486215] mce: CPU supports 10 MCE banks
+[    0.487071] Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0
+[    0.488018] Last level dTLB entries: 4KB 0, 2MB 0, 4MB 0, 1GB 0
+[    0.490313] Freeing SMP alternatives memory: 4K (ffffffff82667000 - ffffffff82668000)
+[    0.580504] KTSAN: enabled
+[    0.580949] ktsan memory usage: 14 GB + shadow.
+[    0.581011]              syncs: 13413 MB 
+[    0.582011]           memblock: 13 MB 
+[    0.582609]       percpu syncs: 0 MB
+[    0.583011]              tasks: 0 MB
+[    0.584011]       thrs (trace): 544 MB
+[    0.584591]        stack depot: 512 MB
+[    0.591000] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    0.591000] smpboot: CPU0: Intel QEMU Virtual CPU version 2.5+ (fam: 06, model: 06, stepping: 03)
+[    0.592495] Performance Events: Broken PMU hardware detected, using software events only.
+[    0.594124] Failed to access perfctr msr (MSR c2 is 0)
+[    0.620368] x86: Booting SMP configuration:
+[    0.621123] .... node  #0, CPUs:      #1
+[    0.003000] kvm-clock: cpu 1, msr 5:3ffea041, secondary cpu clock
+[    0.627057] KVM setup async PF for cpu 1
+[    0.627792] kvm-stealtime: cpu 1, msr 53fc8d440
+[    0.636337]  #2
+[    0.003000] kvm-clock: cpu 2, msr 5:3ffea081, secondary cpu clock
+[    0.641272] KVM setup async PF for cpu 2
+[    0.641848] kvm-stealtime: cpu 2, msr 53fd0d440
+[    0.651496]  #3
+[    0.003000] kvm-clock: cpu 3, msr 5:3ffea0c1, secondary cpu clock
+[    0.657145] KVM setup async PF for cpu 3
+[    0.657405] x86: Booted up 1 node, 4 CPUs
+[    0.657471] smpboot: Total of 4 processors activated (21279.98 BogoMIPS)
+[    0.658310] kvm-stealtime: cpu 3, msr 53fd8d440
+[    0.662132] ==================================================================
+[    0.663000] ThreadSanitizer: data-race in multi_cpu_stop
+[    0.663000] 
+[    0.663000] Write at 0xffff8801925dbdd0 of size 4 by thread 18 on CPU 3:
+[    0.663000]  [<ffffffff8115ff09>] multi_cpu_stop+0x159/0x1a0
+[    0.663000]  [<ffffffff811602b1>] cpu_stopper_thread+0x131/0x1f0
+[    0.663000]  [<ffffffff810c1356>] smpboot_thread_fn+0x206/0x270
+[    0.663000]  [<ffffffff810bb9e0>] kthread+0x150/0x170
+[    0.663000]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[    0.663000] 
+[    0.663000] Previous read at 0xffff8801925dbdd0 of size 4 by thread 10 on CPU 1:
+[    0.663000]  [<ffffffff8115fe3f>] multi_cpu_stop+0x8f/0x1a0
+[    0.663000]  [<ffffffff811602b1>] cpu_stopper_thread+0x131/0x1f0
+[    0.663000]  [<ffffffff810c1356>] smpboot_thread_fn+0x206/0x270
+[    0.663000]  [<ffffffff810bb9e0>] kthread+0x150/0x170
+[    0.663000]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[    0.663000] 
+[    0.663000] ==================================================================
+[    0.686713] ==================================================================
+[    0.687000] ThreadSanitizer: data-race in cpu_stop_signal_done
+[    0.687000] 
+[    0.687000] Write at 0xffff8801925dbd1c of size 1 by thread 18 on CPU 3:
+[    0.687000]  [<ffffffff8115fbea>] cpu_stop_signal_done+0x4a/0x70
+[    0.687000]  [<ffffffff811601d6>] cpu_stopper_thread+0x56/0x1f0
+[    0.687000]  [<ffffffff810c1356>] smpboot_thread_fn+0x206/0x270
+[    0.687000]  [<ffffffff810bb9e0>] kthread+0x150/0x170
+[    0.687000]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[    0.687000] 
+[    0.687000] Previous write at 0xffff8801925dbd1c of size 1 by thread 10 on CPU 1:
+[    0.687000]  [<ffffffff8115fbea>] cpu_stop_signal_done+0x4a/0x70
+[    0.687000]  [<ffffffff811601d6>] cpu_stopper_thread+0x56/0x1f0
+[    0.687000]  [<ffffffff810c1356>] smpboot_thread_fn+0x206/0x270
+[    0.687000]  [<ffffffff810bb9e0>] kthread+0x150/0x170
+[    0.687000]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[    0.687000] 
+[    0.687000] ==================================================================
+[    0.687000] ==================================================================
+[    0.687000] ThreadSanitizer: data-race in cpu_stop_signal_done
+[    0.687000] 
+[    0.687000] Write at 0xffff8801925dbd1c of size 1 by thread 14 on CPU 2:
+[    0.687000]  [<ffffffff8115fbea>] cpu_stop_signal_done+0x4a/0x70
+[    0.687000]  [<ffffffff811601d6>] cpu_stopper_thread+0x56/0x1f0
+[    0.687000]  [<ffffffff810c1356>] smpboot_thread_fn+0x206/0x270
+[    0.687000]  [<ffffffff810bb9e0>] kthread+0x150/0x170
+[    0.687000]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[    0.687000] 
+[    0.687000] Previous write at 0xffff8801925dbd1c of size 1 by thread 10 on CPU 1:
+[    0.687000]  [<ffffffff8115fbea>] cpu_stop_signal_done+0x4a/0x70
+[    0.687000]  [<ffffffff811601d6>] cpu_stopper_thread+0x56/0x1f0
+[    0.687000]  [<ffffffff810c1356>] smpboot_thread_fn+0x206/0x270
+[    0.687000]  [<ffffffff810bb9e0>] kthread+0x150/0x170
+[    0.687000]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[    0.687000] 
+[    0.687000] ==================================================================
+[    0.732226] devtmpfs: initialized
+[    0.762525] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+[    0.763478] kworker/u8:0 (26) used greatest stack depth: 12888 bytes left
+[    0.772566] RTC time:  9:34:45, date: 11/01/16
+[    0.782396] NET: Registered protocol family 16
+[    0.808323] cpuidle: using governor ladder
+[    0.817265] cpuidle: using governor menu
+[    0.822584] ACPI: bus type PCI registered
+[    0.827652] PCI: Using configuration type 1 for base access
+[    0.838221] kworker/u8:0 (44) used greatest stack depth: 16 bytes left
+[    1.182655] kworker/u8:1 (226) used greatest stack depth: 8 bytes left
+[    1.462291] ACPI: Added _OSI(Module Device)
+[    1.463196] ACPI: Added _OSI(Processor Device)
+[    1.464176] ACPI: Added _OSI(3.0 _SCP Extensions)
+[    1.465198] ACPI: Added _OSI(Processor Aggregator Device)
+[    1.658567] ACPI: Interpreter enabled
+[    1.660153] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S1_] (20150619/hwxface-580)
+[    1.663201] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S2_] (20150619/hwxface-580)
+[    1.667633] ACPI: (supports S0 S3 S4 S5)
+[    1.669136] ACPI: Using IOAPIC for interrupt routing
+[    1.672233] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    2.168313] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    2.169249] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI]
+[    2.170382] acpi PNP0A03:00: _OSC failed (AE_NOT_FOUND); disabling ASPM
+[    2.172332] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration space under this bridge.
+[    2.177589] PCI host bridge to bus 0000:00
+[    2.179209] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    2.181199] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    2.182195] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    2.183198] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[    2.184197] pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]
+[    2.185560] pci 0000:00:00.0: [8086:1237] type 00 class 0x060000
+[    2.202491] pci 0000:00:01.0: [8086:7000] type 00 class 0x060100
+[    2.219640] pci 0000:00:01.1: [8086:7010] type 00 class 0x010180
+[    2.225535] pci 0000:00:01.1: reg 0x20: [io  0xc040-0xc04f]
+[    2.228577] pci 0000:00:01.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+[    2.230183] pci 0000:00:01.1: legacy IDE quirk: reg 0x14: [io  0x03f6]
+[    2.232190] pci 0000:00:01.1: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
+[    2.233169] pci 0000:00:01.1: legacy IDE quirk: reg 0x1c: [io  0x0376]
+[    2.246882] pci 0000:00:01.3: [8086:7113] type 00 class 0x068000
+[    2.251392] pci 0000:00:01.3: quirk: [io  0x0600-0x063f] claimed by PIIX4 ACPI
+[    2.252234] pci 0000:00:01.3: quirk: [io  0x0700-0x070f] claimed by PIIX4 SMB
+[    2.267363] pci 0000:00:02.0: [1234:1111] type 00 class 0x030000
+[    2.270186] pci 0000:00:02.0: reg 0x10: [mem 0xfd000000-0xfdffffff pref]
+[    2.275177] pci 0000:00:02.0: reg 0x18: [mem 0xfebf0000-0xfebf0fff]
+[    2.284217] pci 0000:00:02.0: reg 0x30: [mem 0xfebe0000-0xfebeffff pref]
+[    2.299820] pci 0000:00:03.0: [8086:100e] type 00 class 0x020000
+[    2.303761] pci 0000:00:03.0: reg 0x10: [mem 0xfebc0000-0xfebdffff]
+[    2.306159] pci 0000:00:03.0: reg 0x14: [io  0xc000-0xc03f]
+[    2.316170] pci 0000:00:03.0: reg 0x30: [mem 0xfeb80000-0xfebbffff pref]
+[    2.375904] ACPI: PCI Interrupt Link [LNKA] (IRQs 5 *10 11)
+[    2.384598] ACPI: PCI Interrupt Link [LNKB] (IRQs 5 *10 11)
+[    2.393393] ACPI: PCI Interrupt Link [LNKC] (IRQs 5 10 *11)
+[    2.402305] ACPI: PCI Interrupt Link [LNKD] (IRQs 5 10 *11)
+[    2.407623] ACPI: PCI Interrupt Link [LNKS] (IRQs *9)
+[    2.451543] ACPI: Enabled 16 GPEs in block 00 to 0F
+[    2.461733] vgaarb: setting as boot device: PCI:0000:00:02.0
+[    2.462000] vgaarb: device added: PCI:0000:00:02.0,decodes=io+mem,owns=io+mem,locks=none
+[    2.462306] vgaarb: loaded
+[    2.463224] vgaarb: bridge control possible 0000:00:02.0
+[    2.472878] SCSI subsystem initialized
+[    2.478491] libata version 3.00 loaded.
+[    2.486304] ACPI: bus type USB registered
+[    2.491824] usbcore: registered new interface driver usbfs
+[    2.495507] usbcore: registered new interface driver hub
+[    2.497848] usbcore: registered new device driver usb
+[    2.504329] pps_core: LinuxPPS API ver. 1 registered
+[    2.506208] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    2.508442] PTP clock support registered
+[    2.519401] Advanced Linux Sound Architecture Driver Initialized.
+[    2.523294] PCI: Using ACPI for IRQ routing
+[    2.524188] PCI: pci_cache_line_size set to 64 bytes
+[    2.525565] e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
+[    2.526181] e820: reserve RAM buffer [mem 0xbffdf000-0xbfffffff]
+[    2.550814] NetLabel: Initializing
+[    2.552209] NetLabel:  domain hash size = 128
+[    2.553179] NetLabel:  protocols = UNLABELED CIPSOv4
+[    2.555241] NetLabel:  unlabeled traffic allowed by default
+[    2.563381] HPET: 3 timers in total, 0 timers will be used for per-cpu timer
+[    2.564211] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+[    2.566565] hpet0: 3 comparators, 64-bit 100.000000 MHz counter
+[    2.576482] clocksource: Switched to clocksource kvm-clock
+[    3.952789] pnp: PnP ACPI init
+[    3.960697] pnp 00:00: Plug and Play ACPI device, IDs PNP0b00 (active)
+[    3.967591] pnp 00:01: Plug and Play ACPI device, IDs PNP0303 (active)
+[    3.973604] pnp 00:02: Plug and Play ACPI device, IDs PNP0f13 (active)
+[    3.976504] pnp 00:03: [dma 2]
+[    3.980407] pnp 00:03: Plug and Play ACPI device, IDs PNP0700 (active)
+[    3.987750] pnp 00:04: Plug and Play ACPI device, IDs PNP0400 (active)
+[    3.995498] pnp 00:05: Plug and Play ACPI device, IDs PNP0501 (active)
+[    4.019961] pnp: PnP ACPI: found 6 devices
+[    4.333331] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    4.335487] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[    4.336841] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[    4.338348] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[    4.339837] pci_bus 0000:00: resource 7 [mem 0xc0000000-0xfebfffff window]
+[    4.343997] NET: Registered protocol family 2
+[    4.423996] TCP established hash table entries: 262144 (order: 9, 2097152 bytes)
+[    4.493884] TCP bind hash table entries: 65536 (order: 8, 1048576 bytes)
+[    4.509028] TCP: Hash tables configured (established 262144 bind 65536)
+[    4.528498] UDP hash table entries: 16384 (order: 7, 524288 bytes)
+[    4.556532] UDP-Lite hash table entries: 16384 (order: 7, 524288 bytes)
+[    4.572016] NET: Registered protocol family 1
+[    4.579573] RPC: Registered named UNIX socket transport module.
+[    4.580859] RPC: Registered udp transport module.
+[    4.581965] RPC: Registered tcp transport module.
+[    4.583297] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    4.584792] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[    4.586372] pci 0000:00:01.0: PIIX3: Enabling Passive Release
+[    4.587813] pci 0000:00:01.0: Activating ISA DMA hang workarounds
+[    4.589752] pci 0000:00:02.0: Video device with shadowed ROM
+[    4.591300] PCI: CLS 0 bytes, default 64
+[    4.598010] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[    4.599619] software IO TLB [mem 0xbbfdf000-0xbffdf000] (64MB) mapped at [ffff8800bbfdf000-ffff8800bffdefff]
+[    4.606573] microcode: CPU0 sig=0x663, pf=0x1, revision=0x1
+[    4.608103] microcode: CPU1 sig=0x663, pf=0x1, revision=0x1
+[    4.609744] microcode: CPU2 sig=0x663, pf=0x1, revision=0x1
+[    4.611636] microcode: CPU3 sig=0x663, pf=0x1, revision=0x1
+[    4.616748] microcode: Microcode Update Driver: v2.00 <tigran@aivazian.fsnet.co.uk>, Peter Oruba
+[    4.661988] Scanning for low memory corruption every 60 seconds
+[    4.698333] futex hash table entries: 1024 (order: 4, 65536 bytes)
+[    4.701379] audit: initializing netlink subsys (disabled)
+[    4.703410] audit: type=2000 audit(1477992889.784:1): initialized
+[    4.721796] HugeTLB registered 2 MB page size, pre-allocated 0 pages
+[    4.735845] VFS: Disk quotas dquot_6.6.0
+[    4.737954] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    4.758605] NFS: Registering the id_resolver key type
+[    4.759914] Key type id_resolver registered
+[    4.760884] Key type id_legacy registered
+[    4.765590] 9p: Installing v9fs 9p2000 file system support
+[    4.770789] SELinux:  Registering netfilter hooks
+[    4.857944] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 251)
+[    4.859518] io scheduler noop registered
+[    4.860577] io scheduler deadline registered
+[    4.862816] io scheduler cfq registered (default)
+[    4.870854] pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+[    4.885700] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    4.887486] ACPI: Power Button [PWRF]
+[    4.922697] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    4.950720] 00:05: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[    5.004613] Non-volatile memory driver v1.3
+[    5.009477] Linux agpgart interface v0.103
+[    5.022525] [drm] Initialized drm 1.1.0 20060810
+[    5.211625] loop: module loaded
+[    5.226380] ata_piix 0000:00:01.1: version 2.13
+[    5.275767] scsi host0: ata_piix
+[    5.289907] scsi host1: ata_piix
+[    5.298581] ata1: PATA max MWDMA2 cmd 0x1f0 ctl 0x3f6 bmdma 0xc040 irq 14
+[    5.300044] ata2: PATA max MWDMA2 cmd 0x170 ctl 0x376 bmdma 0xc048 irq 15
+[    5.302414] ==================================================================
+[    5.303019] ThreadSanitizer: data-race in scsi_error_handler
+[    5.303019] 
+[    5.304913] Read at 0xffff8800bb8a51a9 of size 1 by thread 740 on CPU 1:
+[    5.304913]  [<ffffffff8189d67d>] scsi_error_handler+0x12d/0x9b0
+[    5.304913]  [<ffffffff810bb9e0>] kthread+0x150/0x170
+[    5.304913]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[    5.311380] e100: Intel(R) PRO/100 Network Driver, 3.5.24-k2-NAPI
+[    5.311422] e100: Copyright(c) 1999-2006 Intel Corporation
+[    5.312890] e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+[    5.312931] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[    5.304913] 
+[    5.304913] Previous write at 0xffff8800bb8a51a9 of size 2 by thread 1 on CPU 1:
+[    5.304913]  [<ffffffff818dfbf2>] ata_scsi_add_hosts+0x1d2/0x320
+[    5.304913]  [<ffffffff818d716c>] ata_host_register+0x1fc/0x440
+[    5.304913]  [<ffffffff818eec43>] ata_pci_sff_activate_host+0xa3/0x2b0
+[    5.304913]  [<ffffffff819009ee>] piix_init_one+0x5ee/0xe50
+[    5.304913]  [<ffffffff815a16be>] local_pci_probe+0x7e/0xe0
+[    5.304913]  [<ffffffff815a3b91>] pci_device_probe+0x151/0x190
+[    5.304913]  [<ffffffff8185918a>] driver_probe_device+0x1ea/0x470
+[    5.304913]  [<ffffffff818594d4>] __driver_attach+0xc4/0xd0
+[    5.304913]  [<ffffffff81855dd3>] bus_for_each_dev+0x93/0xe0
+[    5.304913]  [<ffffffff818586f3>] driver_attach+0x33/0x50
+[    5.304913]  [<ffffffff81858039>] bus_add_driver+0x1f9/0x320
+[    5.304913]  [<ffffffff8185a2bb>] driver_register+0xdb/0x190
+[    5.304913]  [<ffffffff815a0cf8>] __pci_register_driver+0xb8/0xd0
+[    5.304913]  [<ffffffff82595ea5>] piix_init+0x24/0x4b
+[    5.304913]  [<ffffffff81000337>] do_one_initcall+0xb7/0x210
+[    5.304913]  [<ffffffff8252e9f8>] kernel_init_freeable+0x2b5/0x380
+[    5.304913]  [<ffffffff81ed2166>] kernel_init+0x16/0x140
+[    5.304913]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[    5.304913] 
+[    5.304913] Mutexes locked by thread 1:
+[    5.304913] Mutex 93974 is locked here:
+[    5.304913]  [<ffffffff81ee2037>] mutex_lock+0x57/0x70
+[    5.304913]  [<ffffffff81859484>] __driver_attach+0x74/0xd0
+[    5.304913]  [<ffffffff81855dd3>] bus_for_each_dev+0x93/0xe0
+[    5.304913]  [<ffffffff818586f3>] driver_attach+0x33/0x50
+[    5.304913]  [<ffffffff81858039>] bus_add_driver+0x1f9/0x320
+[    5.304913]  [<ffffffff8185a2bb>] driver_register+0xdb/0x190
+[    5.304913]  [<ffffffff815a0cf8>] __pci_register_driver+0xb8/0xd0
+[    5.304913]  [<ffffffff82595ea5>] piix_init+0x24/0x4b
+[    5.304913]  [<ffffffff81000337>] do_one_initcall+0xb7/0x210
+[    5.304913]  [<ffffffff8252e9f8>] kernel_init_freeable+0x2b5/0x380
+[    5.304913]  [<ffffffff81ed2166>] kernel_init+0x16/0x140
+[    5.304913]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[    5.304913] 
+[    5.304913] Mutex 43540 is locked here:
+[    5.304913]  [<ffffffff81ee2037>] mutex_lock+0x57/0x70
+[    5.304913]  [<ffffffff81859490>] __driver_attach+0x80/0xd0
+[    5.304913]  [<ffffffff81855dd3>] bus_for_each_dev+0x93/0xe0
+[    5.304913]  [<ffffffff818586f3>] driver_attach+0x33/0x50
+[    5.304913]  [<ffffffff81858039>] bus_add_driver+0x1f9/0x320
+[    5.304913]  [<ffffffff8185a2bb>] driver_register+0xdb/0x190
+[    5.304913]  [<ffffffff815a0cf8>] __pci_register_driver+0xb8/0xd0
+[    5.304913]  [<ffffffff82595ea5>] piix_init+0x24/0x4b
+[    5.304913]  [<ffffffff81000337>] do_one_initcall+0xb7/0x210
+[    5.304913]  [<ffffffff8252e9f8>] kernel_init_freeable+0x2b5/0x380
+[    5.304913]  [<ffffffff81ed2166>] kernel_init+0x16/0x140
+[    5.304913]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[    5.304913] 
+[    5.304913] ==================================================================
+[    5.305584] ==================================================================
+[    5.305584] ThreadSanitizer: data-race in scsi_error_handler
+[    5.305584] 
+[    5.305584] Read at 0xffff8800bb8678c8 of size 8 by thread 744 on CPU 0:
+[    5.305584]  [<ffffffff8189d697>] scsi_error_handler+0x147/0x9b0
+[    5.305584]  [<ffffffff810bb9e0>] kthread+0x150/0x170
+[    5.305584]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[    5.305584] 
+[    5.305584] Previous write at 0xffff8800bb8678c8 of size 8 by thread 1 on CPU 2:
+[    5.305584]  [<ffffffff818dfb59>] ata_scsi_add_hosts+0x139/0x320
+[    5.305584]  [<ffffffff818d716c>] ata_host_register+0x1fc/0x440
+[    5.305584]  [<ffffffff818eec43>] ata_pci_sff_activate_host+0xa3/0x2b0
+[    5.305584]  [<ffffffff819009ee>] piix_init_one+0x5ee/0xe50
+[    5.305584]  [<ffffffff815a16be>] local_pci_probe+0x7e/0xe0
+[    5.305584]  [<ffffffff815a3b91>] pci_device_probe+0x151/0x190
+[    5.305584]  [<ffffffff8185918a>] driver_probe_device+0x1ea/0x470
+[    5.305584]  [<ffffffff818594d4>] __driver_attach+0xc4/0xd0
+[    5.305584]  [<ffffffff81855dd3>] bus_for_each_dev+0x93/0xe0
+[    5.305584]  [<ffffffff818586f3>] driver_attach+0x33/0x50
+[    5.305584]  [<ffffffff81858039>] bus_add_driver+0x1f9/0x320
+[    5.305584]  [<ffffffff8185a2bb>] driver_register+0xdb/0x190
+[    5.305584]  [<ffffffff815a0cf8>] __pci_register_driver+0xb8/0xd0
+[    5.305584]  [<ffffffff82595ea5>] piix_init+0x24/0x4b
+[    5.305584]  [<ffffffff81000337>] do_one_initcall+0xb7/0x210
+[    5.305584]  [<ffffffff8252e9f8>] kernel_init_freeable+0x2b5/0x380
+[    5.305584]  [<ffffffff81ed2166>] kernel_init+0x16/0x140
+[    5.305584]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[    5.305584] 
+[    5.305584] Mutexes locked by thread 1:
+[    5.305584] Mutex 93974 is locked here:
+[    5.305584]  [<ffffffff81ee2037>] mutex_lock+0x57/0x70
+[    5.305584]  [<ffffffff81859484>] __driver_attach+0x74/0xd0
+[    5.305584]  [<ffffffff81855dd3>] bus_for_each_dev+0x93/0xe0
+[    5.305584]  [<ffffffff818586f3>] driver_attach+0x33/0x50
+[    5.305584]  [<ffffffff81858039>] bus_add_driver+0x1f9/0x320
+[    5.305584]  [<ffffffff8185a2bb>] driver_register+0xdb/0x190
+[    5.305584]  [<ffffffff815a0cf8>] __pci_register_driver+0xb8/0xd0
+[    5.305584]  [<ffffffff82595ea5>] piix_init+0x24/0x4b
+[    5.305584]  [<ffffffff81000337>] do_one_initcall+0xb7/0x210
+[    5.305584]  [<ffffffff8252e9f8>] kernel_init_freeable+0x2b5/0x380
+[    5.305584]  [<ffffffff81ed2166>] kernel_init+0x16/0x140
+[    5.305584]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[    5.305584] 
+[    5.305584] Mutex 43540 is locked here:
+[    5.305584]  [<ffffffff81ee2037>] mutex_lock+0x57/0x70
+[    5.305584]  [<ffffffff81859490>] __driver_attach+0x80/0xd0
+[    5.305584]  [<ffffffff81855dd3>] bus_for_each_dev+0x93/0xe0
+[    5.305584]  [<ffffffff818586f3>] driver_attach+0x33/0x50
+[    5.305584]  [<ffffffff81858039>] bus_add_driver+0x1f9/0x320
+[    5.305584]  [<ffffffff8185a2bb>] driver_register+0xdb/0x190
+[    5.305584]  [<ffffffff815a0cf8>] __pci_register_driver+0xb8/0xd0
+[    5.305584]  [<ffffffff82595ea5>] piix_init+0x24/0x4b
+[    5.305584]  [<ffffffff81000337>] do_one_initcall+0xb7/0x210
+[    5.305584]  [<ffffffff8252e9f8>] kernel_init_freeable+0x2b5/0x380
+[    5.305584]  [<ffffffff81ed2166>] kernel_init+0x16/0x140
+[    5.305584]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[    5.305584] 
+[    5.305584] ==================================================================
+[    5.536703] ata1.01: NODEV after polling detection
+[    5.539377] ata1.00: ATA-7: QEMU HARDDISK, 2.5+, max UDMA/100
+[    5.541403] ata1.00: 2099200 sectors, multi 16: LBA48 
+[    5.545478] ata1.00: configured for MWDMA2
+[    5.551561] scsi 0:0:0:0: Direct-Access     ATA      QEMU HARDDISK    2.5+ PQ: 0 ANSI: 5
+[    5.574786] sd 0:0:0:0: [sda] 2099200 512-byte logical blocks: (1.07 GB/1.00 GiB)
+[    5.582638] sd 0:0:0:0: [sda] Write Protect is off
+[    5.584551] sd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00
+[    5.585346] ata2.01: NODEV after polling detection
+[    5.586859] ata2.00: ATAPI: QEMU DVD-ROM, 2.5+, max UDMA/100
+[    5.590894] ata2.00: configured for MWDMA2
+[    5.601846] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    5.602867] sd 0:0:0:0: Attached scsi generic sg0 type 0
+[    5.604854] tsc: Refined TSC clocksource calibration: 2659.995 MHz
+[    5.604969] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x26579f55e17, max_idle_ns: 440795337953 ns
+[    5.618661] scsi 1:0:0:0: CD-ROM            QEMU     QEMU DVD-ROM     2.5+ PQ: 0 ANSI: 5
+[    5.659600] sr 1:0:0:0: [sr0] scsi3-mmc drive: 4x/4x cd/rw xa/form2 tray
+[    5.661496] cdrom: Uniform CD-ROM driver Revision: 3.20
+[    5.667999] sd 0:0:0:0: [sda] Attached SCSI disk
+[    5.687535] sr 1:0:0:0: Attached scsi CD-ROM sr0
+[    5.710043] sr 1:0:0:0: Attached scsi generic sg1 type 5
+[   12.590868] ACPI: PCI Interrupt Link [LNKC] enabled at IRQ 11
+[   13.025847] e1000 0000:00:03.0 eth0: (PCI:33MHz:32-bit) 52:54:00:12:34:56
+[   13.027510] e1000 0000:00:03.0 eth0: Intel(R) PRO/1000 Network Connection
+[   13.032101] sky2: driver version 1.30
+[   13.050698] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[   13.052388] ehci-pci: EHCI PCI platform driver
+[   13.054819] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[   13.056758] ohci-pci: OHCI PCI platform driver
+[   13.059374] uhci_hcd: USB Universal Host Controller Interface driver
+[   13.064844] usbcore: registered new interface driver usblp
+[   13.068028] usbcore: registered new interface driver usb-storage
+[   13.073018] i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+[   13.081631] serio: i8042 KBD port at 0x60,0x64 irq 1
+[   13.082902] serio: i8042 AUX port at 0x60,0x64 irq 12
+[   13.096470] mousedev: PS/2 mouse device common for all mice
+[   13.110730] rtc_cmos 00:00: RTC can wake from S4
+[   13.113789] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input1
+[   13.121944] rtc_cmos 00:00: rtc core: registered rtc_cmos as rtc0
+[   13.124018] rtc_cmos 00:00: alarms up to one day, y3k, 114 bytes nvram, hpet irqs
+[   13.138881] device-mapper: ioctl: 4.32.0-ioctl (2015-6-26) initialised: dm-devel@redhat.com
+[   13.143980] hidraw: raw HID events driver (C) Jiri Kosina
+[   13.181735] usbcore: registered new interface driver usbhid
+[   13.183389] usbhid: USB HID core driver
+[   13.220808] Netfilter messages via NETLINK v0.30.
+[   13.223797] nf_conntrack version 0.5.0 (65536 buckets, 262144 max)
+[   13.233913] ctnetlink v0.93: registering with nfnetlink.
+[   13.241996] ip_tables: (C) 2000-2006 Netfilter Core Team
+[   13.245983] Initializing XFRM netlink socket
+[   13.249885] NET: Registered protocol family 10
+[   13.267732] ip6_tables: (C) 2000-2006 Netfilter Core Team
+[   13.272410] sit: IPv6 over IPv4 tunneling driver
+[   13.291560] NET: Registered protocol family 17
+[   13.293881] 9pnet: Installing 9P2000 support
+[   13.296687] Key type dns_resolver registered
+[   13.343793] registered taskstats version 1
+[   13.354801]   Magic number: 8:88:575
+[   13.356575]  workqueue: hash matches
+[   13.357708] console [netcon0] enabled
+[   13.358638] netconsole: network logging started
+[   13.377759] PM: Hibernation image not present or could not be loaded.
+[   13.379358] ALSA device list:
+[   13.379909]   No soundcards found.
+[   13.794336] input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input3
+[   13.804565] md: Waiting for all devices to be available before autodetect
+[   13.806350] md: If you don't use raid, use raid=noautodetect
+[   13.825925] md: Autodetecting RAID arrays.
+[   13.826932] md: Scanned 0 and added 0 devices.
+[   13.827976] md: autorun ...
+[   13.828752] md: ... autorun DONE.
+[   13.837816] EXT4-fs (sda): couldn't mount as ext3 due to feature incompatibilities
+[   13.843779] EXT4-fs (sda): couldn't mount as ext2 due to feature incompatibilities
+[   13.910019] ==================================================================
+[   13.910767] ThreadSanitizer: data-race in jbd2_journal_load
+[   13.910767] 
+[   13.910767] Write at 0xffff8800bb0ca800 of size 8 by thread 1 on CPU 3:
+[   13.910767]  [<ffffffff813cf6ad>] jbd2_journal_load+0x30d/0x500
+[   13.910767]  [<ffffffff8137dbd8>] ext4_fill_super+0x38f8/0x53e0
+[   13.910767]  [<ffffffff8126c272>] mount_bdev+0x1d2/0x230
+[   13.910767]  [<ffffffff813605d8>] ext4_mount+0x38/0x50
+[   13.910767]  [<ffffffff8126d18d>] mount_fs+0x5d/0x1c0
+[   13.910767]  [<ffffffff8129bb1f>] vfs_kern_mount+0x6f/0x240
+[   13.910767]  [<ffffffff8129ff35>] do_mount+0x275/0x1450
+[   13.910767]  [<ffffffff812a1683>] SyS_mount+0xa3/0x100
+[   13.910767]  [<ffffffff8252f010>] mount_block_root+0x1ab/0x2f6
+[   13.910767]  [<ffffffff8252f2c9>] mount_root+0x16e/0x182
+[   13.910767]  [<ffffffff8252f4a8>] prepare_namespace+0x1cb/0x20a
+[   13.910767]  [<ffffffff8252eaa5>] kernel_init_freeable+0x362/0x380
+[   13.910767]  [<ffffffff81ed2166>] kernel_init+0x16/0x140
+[   13.910767]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[   13.910767] 
+[   13.910767] Previous read at 0xffff8800bb0ca800 of size 8 by thread 874 on CPU 2:
+[   13.910767]  [<ffffffff813ccb63>] kjournald2+0x363/0x420
+[   13.910767]  [<ffffffff810bb9e0>] kthread+0x150/0x170
+[   13.910767]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[   13.910767] 
+[   13.910767] Mutexes locked by thread 1:
+[   13.910767] Mutex 111725 is locked here:
+[   13.910767]  [<ffffffff81ee2975>] down_write+0x65/0x80
+[   13.910767]  [<ffffffff8126bbd0>] sget+0x290/0x5b0
+[   13.910767]  [<ffffffff8126c174>] mount_bdev+0xd4/0x230
+[   13.910767]  [<ffffffff813605d8>] ext4_mount+0x38/0x50
+[   13.910767]  [<ffffffff8126d18d>] mount_fs+0x5d/0x1c0
+[   13.910767]  [<ffffffff8129bb1f>] vfs_kern_mount+0x6f/0x240
+[   13.910767]  [<ffffffff8129ff35>] do_mount+0x275/0x1450
+[   13.910767]  [<ffffffff812a1683>] SyS_mount+0xa3/0x100
+[   13.910767]  [<ffffffff8252f010>] mount_block_root+0x1ab/0x2f6
+[   13.910767]  [<ffffffff8252f2c9>] mount_root+0x16e/0x182
+[   13.910767]  [<ffffffff8252f4a8>] prepare_namespace+0x1cb/0x20a
+[   13.910767]  [<ffffffff8252eaa5>] kernel_init_freeable+0x362/0x380
+[   13.910767]  [<ffffffff81ed2166>] kernel_init+0x16/0x140
+[   13.910767]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[   13.910767] 
+[   13.910767] Mutexes locked by thread 874:
+[   13.910767] Mutex 111897 is locked here:
+[   13.910767]  [<ffffffff81ee5568>] _raw_write_lock+0x58/0x70
+[   13.910767]  [<ffffffff813cc8b9>] kjournald2+0xb9/0x420
+[   13.910767]  [<ffffffff810bb9e0>] kthread+0x150/0x170
+[   13.910767]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[   13.910767] 
+[   13.910767] ==================================================================
+[   13.955680] EXT4-fs (sda): mounted filesystem with ordered data mode. Opts: (null)
+[   13.957562] VFS: Mounted root (ext4 filesystem) readonly on device 8:0.
+[   13.964590] devtmpfs: mounted
+[   13.984281] Freeing unused kernel memory: 1348K (ffffffff82516000 - ffffffff82667000)
+[   13.985774] Write protecting the kernel read-only data: 20480k
+[   14.014563] Freeing unused kernel memory: 1096K (ffff880001eee000 - ffff880002000000)
+[   14.035602] Freeing unused kernel memory: 1292K (ffff8800022bd000 - ffff880002400000)
+SELinux:  Could not open policy file <= /etc/selinux/targeted/policy/policy.29:  No such file or directory
+INIT: version 2.88 booting
+[   14.813578] random: nonblocking pool is initialized
+[[36minfo[39;49m] Using makefile-style concurrent boot in runlevel S.
+[   15.840126] ==================================================================
+[   15.841003] ThreadSanitizer: data-race in flush_tlb_func
+[   15.841003] 
+[   15.841003] Read at 0xffff88018df13bd0 of size 8 by thread -4 on CPU 3:
+[   15.841003]  [<ffffffff81081d96>] flush_tlb_func+0x76/0x270
+[   15.841003]  [<ffffffff8113ab40>] flush_smp_call_function_queue+0x70/0x1c0
+[   15.841003]  [<ffffffff8113b977>] generic_smp_call_function_single_interrupt+0x17/0x80
+[   15.841003]  [<ffffffff8105a398>] smp_call_function_single_interrupt+0x48/0x70
+[   15.841003]  [<ffffffff8105a3dd>] smp_call_function_interrupt+0x1d/0x30
+[   15.841003]  [<ffffffff81ee71ca>] call_function_interrupt+0x8a/0xa0
+[   15.841003] 
+[   15.841003] Previous write at 0xffff88018df13bd0 of size 8 by thread 65535 on CPU 0:
+[   15.841003]  [<ffffffff81081dbc>] flush_tlb_func+0x9c/0x270
+[   15.841003]  [<ffffffff8113ab40>] flush_smp_call_function_queue+0x70/0x1c0
+[   15.841003]  [<ffffffff8113b977>] generic_smp_call_function_single_interrupt+0x17/0x80
+[   15.841003]  [<ffffffff8105a398>] smp_call_function_single_interrupt+0x48/0x70
+[   15.841003]  [<ffffffff8105a3dd>] smp_call_function_interrupt+0x1d/0x30
+[   15.841003]  [<ffffffff81ee71ca>] call_function_interrupt+0x8a/0xa0
+[   15.841003] 
+[   15.841003] ==================================================================
+[....] Starting the hotplug events dispatcher: udevd[   17.828496] udevd[990]: starting version 175
+[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[....] Synthesizing the initial hotplug events...[   19.848006] ==================================================================
+[   19.848143] ThreadSanitizer: data-race in poll_schedule_timeout
+[   19.848143] 
+[   19.848143] Atomic read at 0xffff88018d607c88 of size 4 by thread 1024 on CPU 2:
+[   19.848143]  [<ffffffff8128742c>] poll_schedule_timeout+0x9c/0xc0
+[   19.848143]  [<ffffffff812893e8>] do_sys_poll+0x6e8/0x7b0
+[   19.848143]  [<ffffffff812895e9>] SyS_poll+0x69/0x1b0
+[   19.848143]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   19.848143] 
+[   19.848143] Previous write at 0xffff88018d607c88 of size 4 by thread 1034 on CPU 3:
+[   19.848143]  [<ffffffff81287747>] pollwake+0xc7/0x100
+[   19.848143]  [<ffffffff810e3858>] __wake_up_common+0x48/0x80
+[   19.848143]  [<ffffffff8109ed0f>] send_signal+0x3f/0x90
+[   19.848143]  [<ffffffff810a159e>] do_notify_parent+0x47e/0x4c0
+[   19.848143]  [<ffffffff8108e411>] do_exit+0x12a1/0x13b0
+[   19.848143]  [<ffffffff810902f5>] do_group_exit+0x85/0x130
+[   19.848143]  [<ffffffff810903c0>] __wake_up_parent+0x0/0x50
+[   19.848143]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   19.848143] 
+[   19.848143] Mutexes locked by thread 1034:
+[   19.848143] Mutex 190 is locked here:
+[   19.848143]  [<ffffffff81ee5504>] _raw_write_lock_irq+0x64/0x70
+[   19.848143]  [<ffffffff8108d658>] do_exit+0x4e8/0x13b0
+[   19.848143]  [<ffffffff810902f5>] do_group_exit+0x85/0x130
+[   19.848143]  [<ffffffff810903c0>] __wake_up_parent+0x0/0x50
+[   19.848143]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   19.848143] 
+[   19.848143] Mutex 146626 is locked here:
+[   19.848143]  [<ffffffff81ee57b4>] _raw_spin_lock_irqsave+0x64/0x80
+[   19.848143]  [<ffffffff810a145f>] do_notify_parent+0x33f/0x4c0
+[   19.848143]  [<ffffffff8108e411>] do_exit+0x12a1/0x13b0
+[   19.848143]  [<ffffffff810902f5>] do_group_exit+0x85/0x130
+[   19.848143]  [<ffffffff810903c0>] __wake_up_parent+0x0/0x50
+[   19.848143]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   19.879611] 
+[   19.879611] Mutex 146625 is locked here:
+[   19.879611]  [<ffffffff81ee57b4>] _raw_spin_lock_irqsave+0x64/0x80
+[   19.879611]  [<ffffffff810e38b2>] __wake_up+0x22/0x60
+[   19.879611]  [<ffffffff8109ed0f>] send_signal+0x3f/0x90
+[   19.879611]  [<ffffffff810a159e>] do_notify_parent+0x47e/0x4c0
+[   19.879611]  [<ffffffff8108e411>] do_exit+0x12a1/0x13b0
+[   19.879611]  [<ffffffff810902f5>] do_group_exit+0x85/0x130
+[   19.879611]  [<ffffffff810903c0>] __wake_up_parent+0x0/0x50
+[   19.879611]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   19.879611] 
+[   19.879611] ==================================================================
+[?25l[?1c7[1G[[32m ok [39;49m[   21.622732] ==================================================================
+[   21.623140] ThreadSanitizer: data-race in sr_check_events
+[   21.623140] 
+[   21.623140] Write at 0xffff88018e00b108 of size 8 by thread 1105 on CPU 1:
+[   21.625303]  [<ffffffff818be91c>] sr_check_events+0x29c/0x4e0
+[   21.625303]  [<ffffffff8198cf3d>] cdrom_check_events+0x4d/0xa0
+[   21.625303]  [<ffffffff818bef3d>] sr_block_check_events+0x5d/0x80
+[   21.625303]  [<ffffffff8153484a>] disk_check_events+0x8a/0x230
+[   21.625303]  [<ffffffff81536077>] disk_clear_events+0xf7/0x210
+[   21.625303]  [<ffffffff812c539f>] check_disk_change+0x4f/0xb0
+[   21.625303]  [<ffffffff819917c2>] cdrom_open+0x32/0x950
+[   21.625303]  [<ffffffff818bf2b9>] sr_block_open+0xb9/0x160
+[   21.625303]  [<ffffffff812c665a>] __blkdev_get+0x17a/0x650
+[   21.625303]  [<ffffffff812c71a6>] blkdev_get+0x3b6/0x5f0
+[   21.625303]  [<ffffffff812c7533>] blkdev_open+0xf3/0x140
+[   21.625303]  [<ffffffff81263a53>] do_dentry_open+0x3c3/0x570
+[   21.625303]  [<ffffffff81265518>] vfs_open+0xb8/0xe0
+[   21.625303]  [<ffffffff8127e66c>] path_openat+0x84c/0x2060
+[   21.625303]  [<ffffffff8128188f>] do_filp_open+0xff/0x170
+[   21.625303]  [<ffffffff81265a11>] do_sys_open+0x191/0x2b0
+[   21.625303]  [<ffffffff81265b65>] SyS_open+0x35/0x50
+[   21.625303]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   21.625303] 
+[   21.625303] Previous read at 0xffff88018e00b108 of size 2 by thread 744 on CPU 0:
+[   21.625303]  [<ffffffff8189d6fa>] scsi_error_handler+0x1aa/0x9b0
+[   21.625303]  [<ffffffff810bb9e0>] kthread+0x150/0x170
+[   21.625303]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[   21.625303] 
+[   21.625303] Mutexes locked by thread 1105:
+[   21.625303] Mutex 164359 is locked here:
+[   21.625303]  [<ffffffff81ee2037>] mutex_lock+0x57/0x70
+[   21.625303]  [<ffffffff812c6567>] __blkdev_get+0x87/0x650
+[   21.625303]  [<ffffffff812c71a6>] blkdev_get+0x3b6/0x5f0
+[   21.625303]  [<ffffffff812c7533>] blkdev_open+0xf3/0x140
+[   21.625303]  [<ffffffff81263a53>] do_dentry_open+0x3c3/0x570
+[   21.625303]  [<ffffffff81265518>] vfs_open+0xb8/0xe0
+[   21.625303]  [<ffffffff8127e66c>] path_openat+0x84c/0x2060
+[   21.625303]  [<ffffffff8128188f>] do_filp_open+0xff/0x170
+[   21.625303]  [<ffffffff81265a11>] do_sys_open+0x191/0x2b0
+[   21.625303]  [<ffffffff81265b65>] SyS_open+0x35/0x50
+[   21.625303]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   21.625303] 
+[   21.625303] Mutex 164360 is locked here:
+8[   21.625303]  [<ffffffff81ee2037>] mutex_lock+0x57/0x70
+[   21.625303]  [<ffffffff818bf226>] sr_block_open+0x26/0x160
+[   21.625303]  [<ffffffff812c665a>] __blkdev_get+0x17a/0x650
+[   21.625303]  [<ffffffff812c71a6>] blkdev_get+0x3b6/0x5f0
+[   21.625303]  [<ffffffff812c7533>] blkdev_open+0xf3/0x140
+[   21.625303]  [<ffffffff81263a53>] do_dentry_open+0x3c3/0x570
+[   21.625303]  [<ffffffff81265518>] vfs_open+0xb8/0xe0
+[   21.625303]  [<ffffffff8127e66c>] path_openat+0x84c/0x2060
+[   21.625303]  [<ffffffff8128188f>] do_filp_open+0xff/0x170
+[   21.625303]  [<ffffffff81265a11>] do_sys_open+0x191/0x2b0
+[   21.625303]  [<ffffffff81265b65>] SyS_open+0x35/0x50
+[   21.625303]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   21.625303] 
+[   21.625303] ==================================================================
+[   21.895049] ==================================================================
+[   21.895137] ThreadSanitizer: data-race in scsi_set_medium_removal.part.2
+[   21.895137] 
+[   21.895137] Write at 0xffff88018e00b108 of size 8 by thread 1105 on CPU 1:
+[   21.900256]  [<ffffffff81897df2>] scsi_set_medium_removal.part.2+0xa2/0xe0
+[   21.900256]  [<ffffffff81897e89>] scsi_set_medium_removal+0x59/0x60
+[   21.900256]  [<ffffffff818c0b1e>] sr_lock_door+0x3e/0x50
+[   21.900256]  [<ffffffff8198dac1>] cdrom_release+0x161/0x330
+[   21.900256]  [<ffffffff818bf1e1>] sr_block_release+0x41/0x60
+[   21.907713]  [<ffffffff812c648c>] __blkdev_put+0x3ac/0x400
+[   21.907713]  [<ffffffff812c6b97>] blkdev_put+0x67/0x260
+[   21.907713]  [<ffffffff812c6ddd>] blkdev_close+0x4d/0x60
+[   21.907713]  [<ffffffff8126993f>] __fput+0x15f/0x310
+[   21.912621]  [<ffffffff81269b5d>] ____fput+0x1d/0x30
+[   21.912621]  [<ffffffff810b9175>] task_work_run+0x115/0x130
+[   21.912621]  [<ffffffff81006d33>] do_notify_resume+0x73/0x80
+[   21.912621]  [<ffffffff81ee5c21>] int_signal+0x12/0x17
+[   21.912621] 
+[   21.912621] Previous read at 0xffff88018e00b108 of size 1 by thread 769 on CPU 3:
+[   21.912621]  [<ffffffff8189f2aa>] scsi_dispatch_cmd+0x8a/0x2f0
+[   21.912621]  [<ffffffff818a39f3>] scsi_request_fn+0x903/0xb20
+[   21.912621]  [<ffffffff8151193f>] __blk_run_queue+0x6f/0xa0
+[   21.912621]  [<ffffffff815119af>] blk_run_queue+0x3f/0x70
+[   21.912621]  [<ffffffff8189ec6a>] scsi_run_queue+0x51a/0x5f0
+[   21.912621]  [<ffffffff818a026b>] scsi_end_request+0x1db/0x300
+[   21.912621]  [<ffffffff818a3e27>] scsi_io_completion+0x137/0x8e0
+[   21.912621]  [<ffffffff8189638e>] scsi_finish_command+0x15e/0x1f0
+[   21.912621]  [<ffffffff818a30a2>] scsi_softirq_done+0x182/0x1d0
+[   21.912621]  [<ffffffff81525556>] blk_done_softirq+0x136/0x160
+[   21.912621]  [<ffffffff81091c1e>] __do_softirq+0xbe/0x2f0
+[   21.912621]  [<ffffffff81ee658a>] common_interrupt+0x8a/0x8f
+[   21.912621] 
+[   21.912621] Mutexes locked by thread 1105:
+[   21.912621] Mutex 164359 is locked here:
+[   21.912621]  [<ffffffff81ee2037>] mutex_lock+0x57/0x70
+[   21.912621]  [<ffffffff812c6133>] __blkdev_put+0x53/0x400
+[   21.912621]  [<ffffffff812c6b97>] blkdev_put+0x67/0x260
+[   21.912621]  [<ffffffff812c6ddd>] blkdev_close+0x4d/0x60
+[   21.912621]  [<ffffffff8126993f>] __fput+0x15f/0x310
+[   21.912621]  [<ffffffff81269b5d>] ____fput+0x1d/0x30
+[   21.912621]  [<ffffffff810b9175>] task_work_run+0x115/0x130
+[   21.912621]  [<ffffffff81006d33>] do_notify_resume+0x73/0x80
+[   21.912621]  [<ffffffff81ee5c21>] int_signal+0x12/0x17
+[   21.912621] 
+[   21.912621] Mutex 164360 is locked here:
+[   21.912621]  [<ffffffff81ee2037>] mutex_lock+0x57/0x70
+[   21.912621]  [<ffffffff818bf1d5>] sr_block_release+0x35/0x60
+[   21.912621]  [<ffffffff812c648c>] __blkdev_put+0x3ac/0x400
+[   21.912621]  [<ffffffff812c6b97>] blkdev_put+0x67/0x260
+[   21.912621]  [<ffffffff812c6ddd>] blkdev_close+0x4d/0x60
+[   21.912621]  [<ffffffff8126993f>] __fput+0x15f/0x310
+[   21.912621]  [<ffffffff81269b5d>] ____fput+0x1d/0x30
+[?25h[?0c[   21.912621]  [<ffffffff810b9175>] task_work_run+0x115/0x130
+[   21.912621]  [<ffffffff81006d33>] do_notify_resume+0x73/0x80
+[   21.912621]  [<ffffffff81ee5c21>] int_signal+0x12/0x17
+[   21.912621] 
+[   21.912621] ==================================================================
+[   21.912621] ==================================================================
+[   21.912621] ThreadSanitizer: data-race in scsi_set_medium_removal.part.2
+[   21.912621] 
+[   21.912621] Write at 0xffff88018e00b108 of size 8 by thread 1105 on CPU 1:
+[   21.912621]  [<ffffffff81897df2>] scsi_set_medium_removal.part.2+0xa2/0xe0
+[   21.912621]  [<ffffffff81897e89>] scsi_set_medium_removal+0x59/0x60
+[   21.912621]  [<ffffffff818c0b1e>] sr_lock_door+0x3e/0x50
+[   21.912621]  [<ffffffff8198dac1>] cdrom_release+0x161/0x330
+[   21.912621]  [<ffffffff818bf1e1>] sr_block_release+0x41/0x60
+[   21.912621]  [<ffffffff812c648c>] __blkdev_put+0x3ac/0x400
+[   21.912621]  [<ffffffff812c6b97>] blkdev_put+0x67/0x260
+[   21.912621]  [<ffffffff812c6ddd>] blkdev_close+0x4d/0x60
+[   21.912621]  [<ffffffff8126993f>] __fput+0x15f/0x310
+[   21.912621]  [<ffffffff81269b5d>] ____fput+0x1d/0x30
+[   21.912621]  [<ffffffff810b9175>] task_work_run+0x115/0x130
+[   21.912621]  [<ffffffff81006d33>] do_notify_resume+0x73/0x80
+[   21.912621]  [<ffffffff81ee5c21>] int_signal+0x12/0x17
+[   21.912621] 
+[   21.912621] Previous read at 0xffff88018e00b108 of size 2 by thread 744 on CPU 0:
+[   21.912621]  [<ffffffff8189d6fa>] scsi_error_handler+0x1aa/0x9b0
+[   21.912621]  [<ffffffff810bb9e0>] kthread+0x150/0x170
+[   21.912621]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[   21.912621] 
+[   21.912621] Mutexes locked by thread 1105:
+[   21.912621] Mutex 164359 is locked here:
+[   21.912621]  [<ffffffff81ee2037>] mutex_lock+0x57/0x70
+[   21.912621]  [<ffffffff812c6133>] __blkdev_put+0x53/0x400
+[   21.912621]  [<ffffffff812c6b97>] blkdev_put+0x67/0x260
+[   21.912621]  [<ffffffff812c6ddd>] blkdev_close+0x4d/0x60
+[   21.912621]  [<ffffffff8126993f>] __fput+0x15f/0x310
+[   21.912621]  [<ffffffff81269b5d>] ____fput+0x1d/0x30
+done.
+[   21.912621]  [<ffffffff810b9175>] task_work_run+0x115/0x130
+[   21.912621]  [<ffffffff81006d33>] do_notify_resume+0x73/0x80
+[   21.912621]  [<ffffffff81ee5c21>] int_signal+0x12/0x17
+[   21.912621] 
+[   21.912621] Mutex 164360 is locked here:
+[   21.912621]  [<ffffffff81ee2037>] mutex_lock+0x57/0x70
+[   21.912621]  [<ffffffff818bf1d5>] sr_block_release+0x35/0x60
+[   21.912621]  [<ffffffff812c648c>] __blkdev_put+0x3ac/0x400
+[   21.912621]  [<ffffffff812c6b97>] blkdev_put+0x67/0x260
+[   21.912621]  [<ffffffff812c6ddd>] blkdev_close+0x4d/0x60
+[   21.912621]  [<ffffffff8126993f>] __fput+0x15f/0x310
+[   21.912621]  [<ffffffff81269b5d>] ____fput+0x1d/0x30
+[   21.912621]  [<ffffffff810b9175>] task_work_run+0x115/0x130
+[   21.912621]  [<ffffffff81006d33>] do_notify_resume+0x73/0x80
+[   21.912621]  [<ffffffff81ee5c21>] int_signal+0x12/0x17
+[   21.912621] 
+[   21.912621] ==================================================================
+[   22.612886] ==================================================================
+[   22.613191] ThreadSanitizer: data-race in scsi_set_medium_removal.part.2
+[   22.613191] 
+[   22.613191] Write at 0xffff88018e00b108 of size 8 by thread 1133 on CPU 1:
+[   22.613191]  [<ffffffff81897df2>] scsi_set_medium_removal.part.2+0xa2/0xe0
+[   22.613191]  [<ffffffff81897e89>] scsi_set_medium_removal+0x59/0x60
+[   22.613191]  [<ffffffff818c0b1e>] sr_lock_door+0x3e/0x50
+[   22.613191]  [<ffffffff8198dac1>] cdrom_release+0x161/0x330
+[   22.613191]  [<ffffffff818bf1e1>] sr_block_release+0x41/0x60
+[   22.613191]  [<ffffffff812c648c>] __blkdev_put+0x3ac/0x400
+[   22.613191]  [<ffffffff812c6b97>] blkdev_put+0x67/0x260
+[   22.613191]  [<ffffffff812c6ddd>] blkdev_close+0x4d/0x60
+[   22.613191]  [<ffffffff8126993f>] __fput+0x15f/0x310
+[   22.625868]  [<ffffffff81269b5d>] ____fput+0x1d/0x30
+[   22.625868]  [<ffffffff810b9175>] task_work_run+0x115/0x130
+[   22.625868]  [<ffffffff81006d33>] do_notify_resume+0x73/0x80
+[   22.625868]  [<ffffffff81ee5c21>] int_signal+0x12/0x17
+[   22.625868] 
+[   22.625868] Previous read at 0xffff88018e00b108 of size 1 by thread 769 on CPU 3:
+[   22.625868]  [<ffffffff818a3995>] scsi_request_fn+0x8a5/0xb20
+[   22.625868]  [<ffffffff8151193f>] __blk_run_queue+0x6f/0xa0
+[   22.625868]  [<ffffffff815119af>] blk_run_queue+0x3f/0x70
+[   22.625868]  [<ffffffff8189ec6a>] scsi_run_queue+0x51a/0x5f0
+[   22.625868]  [<ffffffff818a026b>] scsi_end_request+0x1db/0x300
+[   22.625868]  [<ffffffff818a3e27>] scsi_io_completion+0x137/0x8e0
+[   22.625868]  [<ffffffff8189638e>] scsi_finish_command+0x15e/0x1f0
+[   22.625868]  [<ffffffff818a30a2>] scsi_softirq_done+0x182/0x1d0
+[   22.625868]  [<ffffffff81525556>] blk_done_softirq+0x136/0x160
+[   22.625868]  [<ffffffff81091c1e>] __do_softirq+0xbe/0x2f0
+[   22.625868]  [<ffffffff81ee658a>] common_interrupt+0x8a/0x8f
+[   22.625868] 
+[   22.625868] Mutexes locked by thread 1133:
+[   22.625868] Mutex 164359 is locked here:
+[   22.625868]  [<ffffffff81ee2037>] mutex_lock+0x57/0x70
+[   22.625868]  [<ffffffff812c6133>] __blkdev_put+0x53/0x400
+[   22.625868]  [<ffffffff812c6b97>] blkdev_put+0x67/0x260
+[   22.625868]  [<ffffffff812c6ddd>] blkdev_close+0x4d/0x60
+[   22.625868]  [<ffffffff8126993f>] __fput+0x15f/0x310
+[   22.625868]  [<ffffffff81269b5d>] ____fput+0x1d/0x30
+[   22.625868]  [<ffffffff810b9175>] task_work_run+0x115/0x130
+[   22.625868]  [<ffffffff81006d33>] do_notify_resume+0x73/0x80
+[   22.625868]  [<ffffffff81ee5c21>] int_signal+0x12/0x17
+[   22.625868] 
+[   22.625868] Mutex 164360 is locked here:
+[   22.625868]  [<ffffffff81ee2037>] mutex_lock+0x57/0x70
+[   22.625868]  [<ffffffff818bf1d5>] sr_block_release+0x35/0x60
+[   22.625868]  [<ffffffff812c648c>] __blkdev_put+0x3ac/0x400
+[   22.625868]  [<ffffffff812c6b97>] blkdev_put+0x67/0x260
+[   22.625868]  [<ffffffff812c6ddd>] blkdev_close+0x4d/0x60
+[   22.625868]  [<ffffffff8126993f>] __fput+0x15f/0x310
+[   22.625868]  [<ffffffff81269b5d>] ____fput+0x1d/0x30
+[   22.625868]  [<ffffffff810b9175>] task_work_run+0x115/0x130
+[   22.625868]  [<ffffffff81006d33>] do_notify_resume+0x73/0x80
+[   22.625868]  [<ffffffff81ee5c21>] int_signal+0x12/0x17
+[   22.625868] 
+[   22.625868] ==================================================================
+[....] Waiting for /dev to be fully populated...[   23.090060] ==================================================================
+[   23.090148] ThreadSanitizer: data-race in unix_dgram_poll
+[   23.090148] 
+[   23.090148] Read at 0xffff88018df981c8 of size 1 by thread 1146 on CPU 0:
+[   23.090148]  [<ffffffff81ce206d>] unix_dgram_poll+0xdd/0x300
+[   23.090148]  [<ffffffff81b608f4>] sock_poll+0xf4/0x240
+[   23.096964]  [<ffffffff8128918b>] do_sys_poll+0x48b/0x7b0
+[   23.096964]  [<ffffffff812895e9>] SyS_poll+0x69/0x1b0
+[   23.096964]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   23.096964] 
+[   23.096964] Previous write at 0xffff88018df981c8 of size 4 by thread 990 on CPU 1:
+[   23.096964]  [<ffffffff81ce2bc1>] unix_release_sock+0x341/0x450
+[   23.096964]  [<ffffffff81ce2cff>] unix_release+0x2f/0x50
+[   23.096964]  [<ffffffff81b5e83d>] sock_release+0x4d/0x100
+[   23.096964]  [<ffffffff81b5e90e>] sock_close+0x1e/0x30
+[   23.096964]  [<ffffffff8126993f>] __fput+0x15f/0x310
+[   23.096964]  [<ffffffff81269b5d>] ____fput+0x1d/0x30
+[   23.096964]  [<ffffffff810b9175>] task_work_run+0x115/0x130
+[   23.096964]  [<ffffffff81006d33>] do_notify_resume+0x73/0x80
+[   23.114693]  [<ffffffff81ee5c21>] int_signal+0x12/0x17
+[   23.114693] 
+[   23.114693] Mutexes locked by thread 990:
+[   23.114693] Mutex 176447 is locked here:
+[   23.114693]  [<ffffffff81ee5400>] _raw_spin_lock+0x50/0x70
+[   23.114693]  [<ffffffff81ce2bb5>] unix_release_sock+0x335/0x450
+[   23.114693]  [<ffffffff81ce2cff>] unix_release+0x2f/0x50
+[   23.114693]  [<ffffffff81b5e83d>] sock_release+0x4d/0x100
+[   23.114693]  [<ffffffff81b5e90e>] sock_close+0x1e/0x30
+[   23.114693]  [<ffffffff8126993f>] __fput+0x15f/0x310
+[   23.114693]  [<ffffffff81269b5d>] ____fput+0x1d/0x30
+[   23.114693]  [<ffffffff810b9175>] task_work_run+0x115/0x130
+[   23.114693]  [<ffffffff81006d33>] do_notify_resume+0x73/0x80
+[   23.114693]  [<ffffffff81ee5c21>] int_signal+0x12/0x17
+[   23.114693] 
+[   23.114693] ==================================================================
+[   23.687006] ==================================================================
+[   23.687151] ThreadSanitizer: data-race in task_mem
+[   23.687151] 
+[   23.687151] Read at 0xffff8800bad1bc30 of size 8 by thread 1141 on CPU 0:
+[   23.687151]  [<ffffffff81312d53>] task_mem+0x33/0x290
+[   23.687151]  [<ffffffff8131d16d>] proc_pid_status+0x73d/0xd30
+[   23.687151]  [<ffffffff81316b7b>] proc_single_show+0x8b/0xd0
+[   23.687151]  [<ffffffff812a2e4a>] seq_read+0x16a/0x780
+[   23.687151]  [<ffffffff812662bf>] __vfs_read+0x5f/0x1e0
+[   23.687151]  [<ffffffff81267207>] vfs_read+0xb7/0x1e0
+[   23.687151]  [<ffffffff81268740>] SyS_read+0x70/0xd0
+[   23.687151]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   23.687151] 
+[   23.687151] Previous write at 0xffff8800bad1bc30 of size 8 by thread 1025 on CPU 1:
+[   23.687151]  [<ffffffff8122360a>] mmap_region+0x21a/0xb00
+[   23.687151]  [<ffffffff81224379>] do_mmap_pgoff+0x489/0x590
+[   23.687151]  [<ffffffff811fe75a>] vm_mmap_pgoff+0xaa/0xe0
+[   23.687151]  [<ffffffff812212bb>] SyS_mmap_pgoff+0x13b/0x2c0
+[   23.710458]  [<ffffffff8100e85b>] SyS_mmap+0x5b/0x80
+[   23.710458]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   23.710458] 
+[   23.710458] Mutexes locked by thread 1141:
+[   23.710458] Mutex 181568 is locked here:
+[   23.710458]  [<ffffffff81ee2037>] mutex_lock+0x57/0x70
+[   23.710458]  [<ffffffff812a2d3c>] seq_read+0x5c/0x780
+[   23.710458]  [<ffffffff812662bf>] __vfs_read+0x5f/0x1e0
+[   23.710458]  [<ffffffff81267207>] vfs_read+0xb7/0x1e0
+[   23.710458]  [<ffffffff81268740>] SyS_read+0x70/0xd0
+[   23.710458]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   23.710458] 
+[   23.710458] Mutexes locked by thread 1025:
+[   23.710458] Mutex 136922 is locked here:
+[   23.710458]  [<ffffffff81ee2975>] down_write+0x65/0x80
+[   23.710458]  [<ffffffff811fe73c>] vm_mmap_pgoff+0x8c/0xe0
+[   23.710458]  [<ffffffff812212bb>] SyS_mmap_pgoff+0x13b/0x2c0
+[   23.710458]  [<ffffffff8100e85b>] SyS_mmap+0x5b/0x80
+[   23.710458]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   23.710458] 
+[   23.710458] ==================================================================
+[   23.713361] ==================================================================
+[   23.713361] ThreadSanitizer: data-race in do_munmap
+[   23.713361] 
+[   23.713361] Write at 0xffff8800bad1bc30 of size 8 by thread 1025 on CPU 1:
+[   23.713361]  [<ffffffff812229ac>] do_munmap+0x52c/0x7b0
+[   23.713361]  [<ffffffff81222c81>] vm_munmap+0x51/0x70
+[   23.713361]  [<ffffffff812244a9>] SyS_munmap+0x29/0x40
+[   23.713361]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   23.713361] 
+[   23.713361] Previous read at 0xffff8800bad1bc30 of size 8 by thread 1141 on CPU 0:
+[   23.713361]  [<ffffffff81312d53>] task_mem+0x33/0x290
+[   23.713361]  [<ffffffff8131d16d>] proc_pid_status+0x73d/0xd30
+[   23.713361]  [<ffffffff81316b7b>] proc_single_show+0x8b/0xd0
+[   23.713361]  [<ffffffff812a2e4a>] seq_read+0x16a/0x780
+[   23.713361]  [<ffffffff812662bf>] __vfs_read+0x5f/0x1e0
+[   23.713361]  [<ffffffff81267207>] vfs_read+0xb7/0x1e0
+[   23.713361]  [<ffffffff81268740>] SyS_read+0x70/0xd0
+[   23.713361]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   23.713361] 
+[   23.713361] Mutexes locked by thread 1025:
+[   23.713361] Mutex 136922 is locked here:
+[   23.713361]  [<ffffffff81ee2975>] down_write+0x65/0x80
+[   23.713361]  [<ffffffff81222c73>] vm_munmap+0x43/0x70
+[   23.713361]  [<ffffffff812244a9>] SyS_munmap+0x29/0x40
+[   23.713361]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   23.713361] 
+[   23.713361] Mutexes locked by thread 1141:
+[   23.713361] Mutex 181568 is locked here:
+[   23.713361]  [<ffffffff81ee2037>] mutex_lock+0x57/0x70
+[   23.713361]  [<ffffffff812a2d3c>] seq_read+0x5c/0x780
+[   23.713361]  [<ffffffff812662bf>] __vfs_read+0x5f/0x1e0
+[   23.713361]  [<ffffffff81267207>] vfs_read+0xb7/0x1e0
+[   23.764461]  [<ffffffff81268740>] SyS_read+0x70/0xd0
+[   23.764461]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   23.764461] 
+[   23.764461] ==================================================================
+[   23.764461] ==================================================================
+[   23.764461] ThreadSanitizer: data-race in do_munmap
+[   23.764461] 
+[   23.764461] Write at 0xffff8800bad1bc30 of size 8 by thread 1025 on CPU 1:
+[   23.764461]  [<ffffffff812229ac>] do_munmap+0x52c/0x7b0
+[   23.764461]  [<ffffffff81222c81>] vm_munmap+0x51/0x70
+[   23.764461]  [<ffffffff812244a9>] SyS_munmap+0x29/0x40
+[   23.764461]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   23.764461] 
+[   23.764461] Previous read at 0xffff8800bad1bc30 of size 8 by thread 1141 on CPU 0:
+[   23.777980]  [<ffffffff81312dd9>] task_mem+0xb9/0x290
+[   23.778369]  [<ffffffff8131d16d>] proc_pid_status+0x73d/0xd30
+[   23.778369]  [<ffffffff81316b7b>] proc_single_show+0x8b/0xd0
+[   23.778369]  [<ffffffff812a2e4a>] seq_read+0x16a/0x780
+[   23.778369]  [<ffffffff812662bf>] __vfs_read+0x5f/0x1e0
+[   23.778369]  [<ffffffff81267207>] vfs_read+0xb7/0x1e0
+[   23.778369]  [<ffffffff81268740>] SyS_read+0x70/0xd0
+[   23.778369]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   23.778369] 
+[   23.778369] Mutexes locked by thread 1025:
+[   23.778369] Mutex 136922 is locked here:
+[   23.778369]  [<ffffffff81ee2975>] down_write+0x65/0x80
+[   23.778369]  [<ffffffff81222c73>] vm_munmap+0x43/0x70
+[   23.778369]  [<ffffffff812244a9>] SyS_munmap+0x29/0x40
+[   23.778369]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   23.778369] 
+[   23.778369] Mutexes locked by thread 1141:
+[   23.778369] Mutex 181568 is locked here:
+[   23.778369]  [<ffffffff81ee2037>] mutex_lock+0x57/0x70
+[   23.778369]  [<ffffffff812a2d3c>] seq_read+0x5c/0x780
+[   23.778369]  [<ffffffff812662bf>] __vfs_read+0x5f/0x1e0
+[   23.778369]  [<ffffffff81267207>] vfs_read+0xb7/0x1e0
+[   23.778369]  [<ffffffff81268740>] SyS_read+0x70/0xd0
+[   23.778369]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   23.778369] 
+[   23.778369] ==================================================================
+[   23.805852] ==================================================================
+[   23.806150] ThreadSanitizer: data-race in get_task_mm
+[   23.806150] 
+[   23.806150] Read at 0xffff8801917ce114 of size 4 by thread 1141 on CPU 0:
+[   23.810316]  [<ffffffff81086349>] get_task_mm+0x49/0xa0
+[   23.810316]  [<ffffffff81317b40>] proc_pid_cmdline_read+0x70/0x570
+[   23.810316]  [<ffffffff812662bf>] __vfs_read+0x5f/0x1e0
+[   23.810316]  [<ffffffff81267207>] vfs_read+0xb7/0x1e0
+[   23.815388]  [<ffffffff81268740>] SyS_read+0x70/0xd0
+[   23.815388]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   23.815388] 
+[   23.815388] Previous write at 0xffff8801917ce114 of size 4 by thread 1025 on CPU 1:
+[   23.815388]  [<ffffffff81097d48>] ns_capable+0x68/0xa0
+[   23.815388]  [<ffffffff81bdfcee>] netlink_sendmsg+0x57e/0x5f0
+[   23.815388]  [<ffffffff81b60bb3>] sock_sendmsg+0x83/0x90
+[   23.815388]  [<ffffffff81b61a5f>] ___sys_sendmsg+0x3cf/0x3e0
+[   23.815388]  [<ffffffff81b62b6c>] __sys_sendmsg+0x4c/0xb0
+[   23.815388]  [<ffffffff81b62c00>] SyS_sendmsg+0x30/0x50
+[   23.815388]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   23.815388] 
+[   23.815388] Mutexes locked by thread 1141:
+[   23.815388] Mutex 147547 is locked here:
+[   23.815388]  [<ffffffff81ee5400>] _raw_spin_lock+0x50/0x70
+[   23.815388]  [<ffffffff81086328>] get_task_mm+0x28/0xa0
+[   23.815388]  [<ffffffff81317b40>] proc_pid_cmdline_read+0x70/0x570
+[   23.815388]  [<ffffffff812662bf>] __vfs_read+0x5f/0x1e0
+[   23.815388]  [<ffffffff81267207>] vfs_read+0xb7/0x1e0
+[   23.839801]  [<ffffffff81268740>] SyS_read+0x70/0xd0
+[   23.839801]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   23.839801] 
+[   23.839801] ==================================================================
+[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Activating swap...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[   28.154895] EXT4-fs (sda): re-mounted. Opts: (null)
+[....] Creating compatibility symlink from /etc/mtab to /proc/mounts. ...[?25l[?1c7[1G[[33mwarn[39;49m8[?25h[?0c [33m(warning).[39;49m
+[....] Cleaning up temporary files... /tmp[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[   30.589627] ==================================================================
+[   30.590160] ThreadSanitizer: data-race in pollwake
+[   30.590160] 
+[   30.590160] Write at 0xffff8800bb373a98 of size 4 by thread 387 on CPU 1:
+[   30.590160]  [<ffffffff81287747>] pollwake+0xc7/0x100
+[   30.590160]  [<ffffffff810e3858>] __wake_up_common+0x48/0x80
+[   30.590160]  [<ffffffff810b1d1e>] process_one_work+0x47e/0x930
+[   30.590160]  [<ffffffff810b2280>] worker_thread+0xb0/0x900
+[   30.590160]  [<ffffffff810bb9e0>] kthread+0x150/0x170
+[   30.590160]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[   30.590160] 
+[   30.590160] Previous read at 0xffff8800bb373a98 of size 4 by thread 890 on CPU 2:
+[   30.590160]  [<ffffffff812873f4>] poll_schedule_timeout+0x64/0xc0
+[   30.590160]  [<ffffffff81288448>] do_select+0xa68/0xb70
+[   30.590160]  [<ffffffff812887ff>] core_sys_select+0x2af/0x3f0
+[   30.590160]  [<ffffffff81288bb9>] SyS_pselect6+0x169/0x2b0
+[   30.590160]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   30.590160] 
+[   30.590160] Mutexes locked by thread 387:
+[   30.590160] Mutex 223759 is locked here:
+[   30.590160]  [<ffffffff81ee2037>] mutex_lock+0x57/0x70
+[   30.590160]  [<ffffffff81669726>] flush_to_ldisc+0x66/0x300
+[   30.590160]  [<ffffffff810b1d1e>] process_one_work+0x47e/0x930
+[   30.590160]  [<ffffffff810b2280>] worker_thread+0xb0/0x900
+[   30.590160]  [<ffffffff810bb9e0>] kthread+0x150/0x170
+[   30.590160]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[   30.590160] 
+[   30.590160] Mutex 223051 is locked here:
+[   30.590160]  [<ffffffff81ee57b4>] _raw_spin_lock_irqsave+0x64/0x80
+[   30.590160]  [<ffffffff810e38b2>] __wake_up+0x22/0x60
+[   30.590160]  [<ffffffff810b1d1e>] process_one_work+0x47e/0x930
+[   30.590160]  [<ffffffff810b2280>] worker_thread+0xb0/0x900
+[   30.590160]  [<ffffffff810bb9e0>] kthread+0x150/0x170
+[   30.590160]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[   30.590160] 
+[   30.590160] ==================================================================
+[....] Activating lvm and md swap...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Checking file systems...fsck from util-linux 2.20.1
+[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Mounting local filesystems...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Activating swapfile swap...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[   48.245357] ==================================================================
+[   48.246046] ThreadSanitizer: data-race in poll_schedule_timeout
+[   48.246046] 
+[   48.246046] Read at 0xffff8800bb373a98 of size 4 by thread 890 on CPU 2:
+[   48.246046]  [<ffffffff812873f4>] poll_schedule_timeout+0x64/0xc0
+[   48.246046]  [<ffffffff81288448>] do_select+0xa68/0xb70
+[   48.246046]  [<ffffffff812887ff>] core_sys_select+0x2af/0x3f0
+[   48.246046]  [<ffffffff81288bb9>] SyS_pselect6+0x169/0x2b0
+[   48.246046]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   48.246046] 
+[   48.246046] Previous write at 0xffff8800bb373a98 of size 4 by thread 2022 on CPU 3:
+[   48.246046]  [<ffffffff81287747>] pollwake+0xc7/0x100
+[   48.246046]  [<ffffffff810e3858>] __wake_up_common+0x48/0x80
+[   48.246046]  [<ffffffff8165d0e1>] tty_release+0x1c1/0x7c0
+[   48.246046]  [<ffffffff8126993f>] __fput+0x15f/0x310
+[   48.246046]  [<ffffffff81269b5d>] ____fput+0x1d/0x30
+[   48.246046]  [<ffffffff810b9175>] task_work_run+0x115/0x130
+[   48.246046]  [<ffffffff8108d604>] do_exit+0x494/0x13b0
+[   48.246046]  [<ffffffff810902f5>] do_group_exit+0x85/0x130
+[   48.246046]  [<ffffffff810903c0>] __wake_up_parent+0x0/0x50
+[   48.246046]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   48.246046] 
+[   48.246046] Mutexes locked by thread 2022:
+[   48.246046] Mutex 312212 is locked here:
+[   48.246046]  [<ffffffff81ee2037>] mutex_lock+0x57/0x70
+[   48.246046]  [<ffffffff81ee5821>] tty_lock+0x51/0xc0
+[   48.246046]  [<ffffffff8165cfa2>] tty_release+0x82/0x7c0
+[   48.246046]  [<ffffffff8126993f>] __fput+0x15f/0x310
+[   48.246046]  [<ffffffff81269b5d>] ____fput+0x1d/0x30
+[   48.246046]  [<ffffffff810b9175>] task_work_run+0x115/0x130
+[   48.246046]  [<ffffffff8108d604>] do_exit+0x494/0x13b0
+[   48.279882]  [<ffffffff810902f5>] do_group_exit+0x85/0x130
+[   48.279882]  [<ffffffff810903c0>] __wake_up_parent+0x0/0x50
+[   48.279882]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   48.279882] 
+[   48.279882] Mutex 312479 is locked here:
+[   48.279882]  [<ffffffff81ee57b4>] _raw_spin_lock_irqsave+0x64/0x80
+[   48.279882]  [<ffffffff810e38b2>] __wake_up+0x22/0x60
+[   48.279882]  [<ffffffff8165d0e1>] tty_release+0x1c1/0x7c0
+[   48.279882]  [<ffffffff8126993f>] __fput+0x15f/0x310
+[   48.279882]  [<ffffffff81269b5d>] ____fput+0x1d/0x30
+[   48.279882]  [<ffffffff810b9175>] task_work_run+0x115/0x130
+[   48.279882]  [<ffffffff8108d604>] do_exit+0x494/0x13b0
+[   48.279882]  [<ffffffff810902f5>] do_group_exit+0x85/0x130
+[   48.279882]  [<ffffffff810903c0>] __wake_up_parent+0x0/0x50
+[   48.279882]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   48.279882] 
+[   48.279882] ==================================================================
+[....] Cleaning up temporary files...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[....] Setting kernel variables ...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Configuring network interfaces...Internet Systems Consortium DHCP Client 4.2.2
+Copyright 2004-2011 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+
+[   52.082010] e1000: eth0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[   52.084575] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[   52.086452] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+Listening on LPF/eth0/52:54:00:12:34:56
+Sending on   LPF/eth0/52:54:00:12:34:56
+Sending on   Socket/fallback
+DHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 7
+DHCPREQUEST on eth0 to 255.255.255.255 port 67
+DHCPOFFER from 10.0.2.2
+DHCPACK from 10.0.2.2
+bound to 10.0.2.15 -- renewal in 40789 seconds.
+[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Cleaning up temporary files...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+INIT: Entering runlevel: 2
+[[36minfo[39;49m] Using makefile-style concurrent boot in runlevel 2.
+[   56.828226] ==================================================================
+[   56.828226] ThreadSanitizer: data-race in __acct_update_integrals
+[   56.828226] 
+[   56.828226] Read at 0xffff8800bb3b4230 of size 8 by thread 2487 on CPU 1:
+[   56.828226]  [<ffffffff8117fc28>] __acct_update_integrals+0x188/0x1b0
+[   56.828226]  [<ffffffff81180424>] acct_account_cputime+0x44/0x50
+[   56.828226]  [<ffffffff810d590e>] account_system_time+0xbe/0x190
+[   56.828226]  [<ffffffff81132a0e>] tick_sched_handle.isra.14+0x7e/0xa0
+[   56.828226]  [<ffffffff811335ee>] tick_sched_timer+0x5e/0xb0
+[   56.828226]  [<ffffffff81119e8e>] __hrtimer_run_queues+0x22e/0x440
+[   56.828226]  [<ffffffff8111ab74>] hrtimer_interrupt+0x114/0x2d0
+[   56.828226]  [<ffffffff8105d6a7>] local_apic_timer_interrupt+0x77/0xc0
+[   56.828226]  [<ffffffff8105ebb6>] smp_apic_timer_interrupt+0x76/0xb0
+[   56.828226]  [<ffffffff81ee690a>] apic_timer_interrupt+0x8a/0xa0
+[   56.828226] 
+[   56.828226] Previous write at 0xffff8800bb3b4230 of size 8 by thread 2485 on CPU 2:
+[   56.846763]  [<ffffffff8122360a>] mmap_region+0x21a/0xb00
+[   56.846763]  [<ffffffff81224379>] do_mmap_pgoff+0x489/0x590
+[   56.846763]  [<ffffffff811fe75a>] vm_mmap_pgoff+0xaa/0xe0
+[   56.846763]  [<ffffffff812212bb>] SyS_mmap_pgoff+0x13b/0x2c0
+[   56.846763]  [<ffffffff8100e85b>] SyS_mmap+0x5b/0x80
+[   56.846763]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   56.846763] 
+[   56.846763] Mutexes locked by thread 2485:
+[   56.846763] Mutex 389605 is locked here:
+[   56.846763]  [<ffffffff81ee2975>] down_write+0x65/0x80
+[   56.846763]  [<ffffffff811fe73c>] vm_mmap_pgoff+0x8c/0xe0
+[   56.846763]  [<ffffffff812212bb>] SyS_mmap_pgoff+0x13b/0x2c0
+[   56.846763]  [<ffffffff8100e85b>] SyS_mmap+0x5b/0x80
+[   56.846763]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   56.846763] 
+[   56.846763] ==================================================================
+[   56.874431] ==================================================================
+[   56.875122] ThreadSanitizer: data-race in do_brk
+[   56.875122] 
+[   56.875122] Write at 0xffff8800bb3b4230 of size 8 by thread 2489 on CPU 2:
+[   56.875122]  [<ffffffff81222f5b>] do_brk+0x2bb/0x480
+[   56.875122]  [<ffffffff8122335e>] SyS_brk+0x18e/0x220
+[   56.875122]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   56.875122] 
+[   56.875122] Previous read at 0xffff8800bb3b4230 of size 8 by thread 2487 on CPU 0:
+[   56.875122]  [<ffffffff8117fc28>] __acct_update_integrals+0x188/0x1b0
+[   56.875122]  [<ffffffff81180424>] acct_account_cputime+0x44/0x50
+[   56.875122]  [<ffffffff810d590e>] account_system_time+0xbe/0x190
+[   56.875122]  [<ffffffff81132a0e>] tick_sched_handle.isra.14+0x7e/0xa0
+[   56.875122]  [<ffffffff811335ee>] tick_sched_timer+0x5e/0xb0
+[   56.875122]  [<ffffffff81119e8e>] __hrtimer_run_queues+0x22e/0x440
+[   56.875122]  [<ffffffff8111ab74>] hrtimer_interrupt+0x114/0x2d0
+[   56.875122]  [<ffffffff8105d6a7>] local_apic_timer_interrupt+0x77/0xc0
+[   56.875122]  [<ffffffff8105ebb6>] smp_apic_timer_interrupt+0x76/0xb0
+[   56.875122]  [<ffffffff81ee690a>] apic_timer_interrupt+0x8a/0xa0
+[   56.875122] 
+[   56.875122] Mutexes locked by thread 2489:
+[   56.875122] Mutex 389605 is locked here:
+[   56.875122]  [<ffffffff81ee2975>] down_write+0x65/0x80
+[   56.875122]  [<ffffffff81223215>] SyS_brk+0x45/0x220
+[   56.875122]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   56.875122] 
+[   56.875122] ==================================================================
+[....] Starting enhanced syslogd: rsyslogd[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[....] Starting periodic command scheduler: cron[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[....] Starting OpenBSD Secure Shell server: sshd[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[   62.369742] kt: running test for light, case 2, T2587
+[   62.369742] 
+[   62.372789] kt: starting light_test_create_destroy_simple test
+[   62.381894] kt: end of test.
+[   62.383400] 
+[   62.383973] dump_desc: [simply_create_destroy]
+[   62.386428] dump_desc evts: 0
+[   62.387781] dump_desc   ts: 0 0
+[   62.389381] dump_desc  ret: 0
+[   62.390755] LIGHT_SUCCESS
+[   62.393957] kt: running test for light, case 2, T2587
+[   62.393957] 
+[   62.396361] kt: starting light_test_create_destroy_simple test
+[   62.400604] ==================================================================
+[   62.401137] ThreadSanitizer: data-race in tcp_v4_rcv
+[   62.401137] 
+[   62.402554] kt: end of test.
+[   62.402619] 
+[   62.402705] dump_desc: [simply_create_destroy]
+[   62.402798] dump_desc evts: 1
+[   62.402918] dump_desc   ts: 0 0
+[   62.403010] dump_desc  ret: 0
+[   62.403345] LIGHT_SUCCESS
+[   62.404996] kt: running test for light, case 2, T2587
+[   62.404996] 
+[   62.405375] kt: starting light_test_create_destroy_simple test
+[   62.401137] Write at 0xffff88018d7868c0 of size 8 by thread 19 on CPU 3:
+[   62.409381] kt: end of test.
+[   62.409431] 
+[   62.409532] dump_desc: [simply_create_destroy]
+[   62.409634] dump_desc evts: 2
+[   62.409730] dump_desc   ts: 0 0
+[   62.409819] dump_desc  ret: 0
+[   62.409876] LIGHT_SUCCESS
+[   62.411833] kt: running test for light, case 2, T2587
+[   62.411833] 
+[   62.411911] kt: starting light_test_create_destroy_simple test
+[   62.415004] kt: end of test.
+[   62.415341] 
+[   62.415389] dump_desc: [simply_create_destroy]
+[   62.415469] dump_desc evts: 3
+[   62.415572] dump_desc   ts: 0 0
+[   62.415684] dump_desc  ret: 0
+[   62.415742] LIGHT_SUCCESS
+[   62.417722] kt: running test for light, case 2, T2587
+[   62.417722] 
+[   62.417822] kt: starting light_test_create_destroy_simple test
+[   62.421963] kt: end of test.
+[   62.422017] 
+[   62.422341] dump_desc: [simply_create_destroy]
+[   62.422400] dump_desc evts: 4
+[   62.422507] dump_desc   ts: 0 0
+[   62.422585] dump_desc  ret: 0
+[   62.422637] LIGHT_SUCCESS
+[   62.424618] kt: running test for light, case 2, T2587
+[   62.424618] 
+[   62.424698] kt: starting light_test_create_destroy_simple test
+[   62.428731] kt: end of test.
+[   62.428794] 
+[   62.428882] dump_desc: [simply_create_destroy]
+[   62.428983] dump_desc evts: 5
+[   62.429374] dump_desc   ts: 0 0
+[   62.429415] dump_desc  ret: 0
+[   62.429482] LIGHT_SUCCESS
+[   62.431349] kt: running test for light, case 2, T2587
+[   62.431349] 
+[   62.431393] kt: starting light_test_create_destroy_simple test
+[   62.434650] kt: end of test.
+[   62.434710] 
+[   62.434792] dump_desc: [simply_create_destroy]
+[   62.434883] dump_desc evts: 6
+[   62.434998] dump_desc   ts: 0 0
+[   62.435336] dump_desc  ret: 0
+[   62.435368] LIGHT_SUCCESS
+[   62.437355] kt: running test for light, case 2, T2587
+[   62.437355] 
+[   62.437409] kt: starting light_test_create_destroy_simple test
+[   62.440660] kt: end of test.
+[   62.440724] 
+[   62.440811] dump_desc: [simply_create_destroy]
+[   62.440907] dump_desc evts: 7
+[   62.441018] dump_desc   ts: 0 0
+[   62.441349] dump_desc  ret: 0
+[   62.441382] LIGHT_SUCCESS
+[   62.401137]  [<ffffffff81c5eece>] tcp_v4_rcv+0x139e/0x14c0
+[   62.401137]  [<ffffffff81c156a9>] ip_local_deliver_finish+0x169/0x3f0
+[   62.401137]  [<ffffffff81c15c8a>] ip_local_deliver+0x15a/0x160
+[   62.401137]  [<ffffffff81c14f73>] ip_rcv_finish+0xe3/0x6b0
+[   62.401137]  [<ffffffff81c162d6>] ip_rcv+0x646/0x880
+[   62.401137]  [<ffffffff81b8f4af>] __netif_receive_skb_core+0x54f/0x1530
+[   62.401137]  [<ffffffff81b904c9>] __netif_receive_skb+0x39/0xf0
+[   62.401137]  [<ffffffff81b905c5>] netif_receive_skb_internal+0x45/0x110
+[   62.401137]  [<ffffffff81b91e65>] napi_gro_receive+0x115/0x150
+[   62.401137]  [<ffffffff81952fe5>] e1000_clean_rx_irq+0x355/0x950
+[   62.401137]  [<ffffffff8194f964>] e1000_clean+0x554/0x11e0
+[   62.401137]  [<ffffffff81b90f89>] net_rx_action+0x489/0x690
+[   62.401137]  [<ffffffff81091c1e>] __do_softirq+0xbe/0x2f0
+[   62.401137]  [<ffffffff810bb9e0>] kthread+0x150/0x170
+[   62.401137]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[   62.401137] 
+[   62.401137] Previous read at 0xffff88018d7868c0 of size 8 by thread 2585 on CPU 2:
+[   62.401137]  [<ffffffff81c30032>] tcp_recvmsg+0x412/0x12c0
+[   62.401137]  [<ffffffff81c85ed8>] inet_recvmsg+0x148/0x180
+[   62.401137]  [<ffffffff81b6022a>] sock_recvmsg+0x6a/0x90
+[   62.401137]  [<ffffffff81b60366>] sock_read_iter+0x116/0x180
+[   62.401137]  [<ffffffff81266400>] __vfs_read+0x1a0/0x1e0
+[   62.401137]  [<ffffffff81267207>] vfs_read+0xb7/0x1e0
+[   62.401137]  [<ffffffff81268740>] SyS_read+0x70/0xd0
+[   62.401137]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   62.401137] 
+[   62.401137] Mutexes locked by thread 19:
+[   62.401137] Mutex 411544 is locked here:
+[   62.401137]  [<ffffffff81ee5400>] _raw_spin_lock+0x50/0x70
+[   62.401137]  [<ffffffff81c5eb7d>] tcp_v4_rcv+0x104d/0x14c0
+[   62.401137]  [<ffffffff81c156a9>] ip_local_deliver_finish+0x169/0x3f0
+[   62.401137]  [<ffffffff81c15c8a>] ip_local_deliver+0x15a/0x160
+[   62.401137]  [<ffffffff81c14f73>] ip_rcv_finish+0xe3/0x6b0
+[   62.401137]  [<ffffffff81c162d6>] ip_rcv+0x646/0x880
+[   62.401137]  [<ffffffff81b8f4af>] __netif_receive_skb_core+0x54f/0x1530
+[   62.401137]  [<ffffffff81b904c9>] __netif_receive_skb+0x39/0xf0
+[   62.401137]  [<ffffffff81b905c5>] netif_receive_skb_internal+0x45/0x110
+[   62.401137]  [<ffffffff81b91e65>] napi_gro_receive+0x115/0x150
+[   62.401137]  [<ffffffff81952fe5>] e1000_clean_rx_irq+0x355/0x950
+[   62.401137]  [<ffffffff8194f964>] e1000_clean+0x554/0x11e0
+[   62.401137]  [<ffffffff81b90f89>] net_rx_action+0x489/0x690
+[   62.401137]  [<ffffffff81091c1e>] __do_softirq+0xbe/0x2f0
+[   62.401137]  [<ffffffff810bb9e0>] kthread+0x150/0x170
+[   62.401137]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[   62.401137] 
+[   62.401137] ==================================================================
+[   62.502010] ==================================================================
+[   62.502181] ThreadSanitizer: data-race in tcp_recvmsg
+[   62.502181] 
+[   62.502181] Read at 0xffff88018d7868c0 of size 8 by thread 2585 on CPU 2:
+[   62.502181]  [<ffffffff81c30032>] tcp_recvmsg+0x412/0x12c0
+[   62.502181]  [<ffffffff81c85ed8>] inet_recvmsg+0x148/0x180
+[   62.502181]  [<ffffffff81b6022a>] sock_recvmsg+0x6a/0x90
+[   62.502181]  [<ffffffff81b60366>] sock_read_iter+0x116/0x180
+[   62.502181]  [<ffffffff81266400>] __vfs_read+0x1a0/0x1e0
+[   62.502181]  [<ffffffff81267207>] vfs_read+0xb7/0x1e0
+[   62.502181]  [<ffffffff81268740>] SyS_read+0x70/0xd0
+[   62.502181]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   62.502181] 
+[   62.502181] Previous write at 0xffff88018d7868c0 of size 8 by thread 19 on CPU 3:
+[   62.502181]  [<ffffffff81c5eece>] tcp_v4_rcv+0x139e/0x14c0
+[   62.502181]  [<ffffffff81c156a9>] ip_local_deliver_finish+0x169/0x3f0
+[   62.502181]  [<ffffffff81c15c8a>] ip_local_deliver+0x15a/0x160
+[   62.502181]  [<ffffffff81c14f73>] ip_rcv_finish+0xe3/0x6b0
+[   62.502181]  [<ffffffff81c162d6>] ip_rcv+0x646/0x880
+[   62.502181]  [<ffffffff81b8f4af>] __netif_receive_skb_core+0x54f/0x1530
+[   62.502181]  [<ffffffff81b904c9>] __netif_receive_skb+0x39/0xf0
+[   62.502181]  [<ffffffff81b905c5>] netif_receive_skb_internal+0x45/0x110
+[   62.502181]  [<ffffffff81b91e65>] napi_gro_receive+0x115/0x150
+[   62.502181]  [<ffffffff81952fe5>] e1000_clean_rx_irq+0x355/0x950
+[   62.502181]  [<ffffffff8194f964>] e1000_clean+0x554/0x11e0
+[   62.502181]  [<ffffffff81b90f89>] net_rx_action+0x489/0x690
+[   62.502181]  [<ffffffff81091c1e>] __do_softirq+0xbe/0x2f0
+[   62.502181]  [<ffffffff810bb9e0>] kthread+0x150/0x170
+[   62.502181]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[   62.502181] 
+[   62.502181] Mutexes locked by thread 19:
+[   62.502181] Mutex 411544 is locked here:
+[   62.502181]  [<ffffffff81ee5400>] _raw_spin_lock+0x50/0x70
+[   62.502181]  [<ffffffff81c5eb7d>] tcp_v4_rcv+0x104d/0x14c0
+[   62.502181]  [<ffffffff81c156a9>] ip_local_deliver_finish+0x169/0x3f0
+[   62.502181]  [<ffffffff81c15c8a>] ip_local_deliver+0x15a/0x160
+[   62.502181]  [<ffffffff81c14f73>] ip_rcv_finish+0xe3/0x6b0
+[   62.502181]  [<ffffffff81c162d6>] ip_rcv+0x646/0x880
+[   62.502181]  [<ffffffff81b8f4af>] __netif_receive_skb_core+0x54f/0x1530
+[   62.502181]  [<ffffffff81b904c9>] __netif_receive_skb+0x39/0xf0
+[   62.502181]  [<ffffffff81b905c5>] netif_receive_skb_internal+0x45/0x110
+[   62.502181]  [<ffffffff81b91e65>] napi_gro_receive+0x115/0x150
+[   62.502181]  [<ffffffff81952fe5>] e1000_clean_rx_irq+0x355/0x950
+[   62.502181]  [<ffffffff8194f964>] e1000_clean+0x554/0x11e0
+[   62.502181]  [<ffffffff81b90f89>] net_rx_action+0x489/0x690
+[   62.502181]  [<ffffffff81091c1e>] __do_softirq+0xbe/0x2f0
+[   62.502181]  [<ffffffff810bb9e0>] kthread+0x150/0x170
+[   62.502181]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[   62.502181] 
+[   62.502181] ==================================================================
+[   62.569265] ==================================================================
+[   62.570083] ThreadSanitizer: data-race in e1000_clean
+[   62.570083] 
+[   62.570083] Read at 0xffff8800ba58a3bc of size 4 by thread -4 on CPU 3:
+[   62.570083]  [<ffffffff8194f523>] e1000_clean+0x113/0x11e0
+[   62.570083]  [<ffffffff81b90f89>] net_rx_action+0x489/0x690
+[   62.570083]  [<ffffffff81091c1e>] __do_softirq+0xbe/0x2f0
+[   62.570083]  [<ffffffff81ee658a>] common_interrupt+0x8a/0x8f
+[   62.570083] 
+[   62.570083] Previous write at 0xffff8800ba58a3bc of size 4 by thread 2585 on CPU 2:
+[   62.570083]  [<ffffffff81951bc9>] e1000_xmit_frame+0x15d9/0x1e90
+[   62.570083]  [<ffffffff81b93c69>] dev_hard_start_xmit+0x499/0x700
+[   62.570083]  [<ffffffff81bcabab>] sch_direct_xmit+0x21b/0x3d0
+[   62.570083]  [<ffffffff81b94589>] __dev_queue_xmit+0x489/0xa50
+[   62.570083]  [<ffffffff81b94b6f>] dev_queue_xmit_sk+0x1f/0x30
+[   62.570083]  [<ffffffff81c1e21a>] ip_finish_output2+0x4ea/0x720
+[   62.570083]  [<ffffffff81c1fc02>] ip_finish_output+0x262/0x350
+[   62.570083]  [<ffffffff81c1fd11>] NF_HOOK_COND.part.32.constprop.47+0x21/0x30
+[   62.570083]  [<ffffffff81c21061>] ip_output+0x1a1/0x1c0
+[   62.570083]  [<ffffffff81c1c181>] ip_local_out_sk+0x61/0x80
+[   62.570083]  [<ffffffff81c2044d>] ip_queue_xmit+0x2cd/0x840
+[   62.570083]  [<ffffffff81c4db99>] tcp_transmit_skb+0xb39/0x1750
+[   62.570083]  [<ffffffff81c51ee8>] tcp_send_ack+0x228/0x2d0
+[   62.570083]  [<ffffffff81c2e291>] tcp_cleanup_rbuf+0xd1/0x210
+[   62.570083]  [<ffffffff81c30270>] tcp_recvmsg+0x650/0x12c0
+[   62.570083]  [<ffffffff81c85ed8>] inet_recvmsg+0x148/0x180
+[   62.570083]  [<ffffffff81b6022a>] sock_recvmsg+0x6a/0x90
+[   62.570083]  [<ffffffff81b60366>] sock_read_iter+0x116/0x180
+[   62.570083]  [<ffffffff81266400>] __vfs_read+0x1a0/0x1e0
+[   62.570083]  [<ffffffff81267207>] vfs_read+0xb7/0x1e0
+[   62.570083]  [<ffffffff81268740>] SyS_read+0x70/0xd0
+[   62.570083]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   62.570083] 
+[   62.570083] Mutexes locked by thread 2585:
+[   62.570083] Mutex 364495 is locked here:
+[   62.570083]  [<ffffffff81ee5400>] _raw_spin_lock+0x50/0x70
+[   62.570083]  [<ffffffff81bcab69>] sch_direct_xmit+0x1d9/0x3d0
+[   62.570083]  [<ffffffff81b94589>] __dev_queue_xmit+0x489/0xa50
+[   62.570083]  [<ffffffff81b94b6f>] dev_queue_xmit_sk+0x1f/0x30
+[   62.570083]  [<ffffffff81c1e21a>] ip_finish_output2+0x4ea/0x720
+[   62.570083]  [<ffffffff81c1fc02>] ip_finish_output+0x262/0x350
+[   62.570083]  [<ffffffff81c1fd11>] NF_HOOK_COND.part.32.constprop.47+0x21/0x30
+[   62.570083]  [<ffffffff81c21061>] ip_output+0x1a1/0x1c0
+[   62.570083]  [<ffffffff81c1c181>] ip_local_out_sk+0x61/0x80
+[   62.570083]  [<ffffffff81c2044d>] ip_queue_xmit+0x2cd/0x840
+[   62.570083]  [<ffffffff81c4db99>] tcp_transmit_skb+0xb39/0x1750
+[   62.570083]  [<ffffffff81c51ee8>] tcp_send_ack+0x228/0x2d0
+[   62.570083]  [<ffffffff81c2e291>] tcp_cleanup_rbuf+0xd1/0x210
+[   62.570083]  [<ffffffff81c30270>] tcp_recvmsg+0x650/0x12c0
+[   62.570083]  [<ffffffff81c85ed8>] inet_recvmsg+0x148/0x180
+[   62.570083]  [<ffffffff81b6022a>] sock_recvmsg+0x6a/0x90
+[   62.570083]  [<ffffffff81b60366>] sock_read_iter+0x116/0x180
+[   62.570083]  [<ffffffff81266400>] __vfs_read+0x1a0/0x1e0
+[   62.570083]  [<ffffffff81267207>] vfs_read+0xb7/0x1e0
+[   62.570083]  [<ffffffff81268740>] SyS_read+0x70/0xd0
+[   62.570083]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   62.570083] 
+[   62.570083] ==================================================================
+[   63.276381] ==================================================================
+[   63.277095] ThreadSanitizer: data-race in pollwake
+[   63.277095] 
+[   63.277095] Write at 0xffff8801925dbab8 of size 4 by thread 2606 on CPU 3:
+[   63.277095]  [<ffffffff81287747>] pollwake+0xc7/0x100
+[   63.277095]  [<ffffffff810e3858>] __wake_up_common+0x48/0x80
+[   63.277095]  [<ffffffff8126993f>] __fput+0x15f/0x310
+[   63.277095]  [<ffffffff81269b5d>] ____fput+0x1d/0x30
+[   63.277095]  [<ffffffff810b9175>] task_work_run+0x115/0x130
+[   63.277095]  [<ffffffff81006d33>] do_notify_resume+0x73/0x80
+[   63.277095]  [<ffffffff81ee5c21>] int_signal+0x12/0x17
+[   63.277095] 
+[   63.277095] Previous atomic read at 0xffff8801925dbab8 of size 4 by thread 1 on CPU 0:
+[   63.277095]  [<ffffffff8128742c>] poll_schedule_timeout+0x9c/0xc0
+[   63.277095]  [<ffffffff81288448>] do_select+0xa68/0xb70
+[   63.277095]  [<ffffffff812887ff>] core_sys_select+0x2af/0x3f0
+[   63.277095]  [<ffffffff81288a09>] SyS_select+0xc9/0x110
+[   63.277095]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   63.277095] 
+[   63.277095] Mutexes locked by thread 2606:
+[   63.277095] Mutex 177609 is locked here:
+[   63.277095]  [<ffffffff81ee2037>] mutex_lock+0x57/0x70
+[   63.277095]  [<ffffffff812753c2>] pipe_release+0x42/0x150
+[   63.277095]  [<ffffffff8126993f>] __fput+0x15f/0x310
+[   63.277095]  [<ffffffff81269b5d>] ____fput+0x1d/0x30
+[   63.277095]  [<ffffffff810b9175>] task_work_run+0x115/0x130
+[   63.277095]  [<ffffffff81006d33>] do_notify_resume+0x73/0x80
+[   63.277095]  [<ffffffff81ee5c21>] int_signal+0x12/0x17
+[   63.277095] 
+[   63.277095] Mutex 177610 is locked here:
+[   63.277095]  [<ffffffff81ee57b4>] _raw_spin_lock_irqsave+0x64/0x80
+[   63.277095]  [<ffffffff810e3b77>] __wake_up_sync_key+0x27/0x60
+[   63.277095]  [<ffffffff8126993f>] __fput+0x15f/0x310
+[   63.277095]  [<ffffffff81269b5d>] ____fput+0x1d/0x30
+[   63.277095]  [<ffffffff810b9175>] task_work_run+0x115/0x130
+[   63.277095]  [<ffffffff81006d33>] do_notify_resume+0x73/0x80
+[   63.277095]  [<ffffffff81ee5c21>] int_signal+0x12/0x17
+[   63.277095] 
+[   63.277095] ==================================================================
+[   63.366850] ==================================================================
+[   63.367228] ThreadSanitizer: data-race in e1000_clean
+[   63.367228] 
+[   63.367228] Read at 0xffff8800ba58af5c of size 4 by thread 19 on CPU 3:
+[   63.367228]  [<ffffffff8194f6cc>] e1000_clean+0x2bc/0x11e0
+[   63.367228]  [<ffffffff81b90f89>] net_rx_action+0x489/0x690
+[   63.367228]  [<ffffffff81091c1e>] __do_softirq+0xbe/0x2f0
+[   63.367228]  [<ffffffff810bb9e0>] kthread+0x150/0x170
+[   63.367228]  [<ffffffff81ee5e3f>] ret_from_fork+0x3f/0x70
+[   63.367228] 
+[   63.367228] Previous write at 0xffff8800ba58af5c of size 4 by thread 2604 on CPU 1:
+[   63.367228]  [<ffffffff81951bc9>] e1000_xmit_frame+0x15d9/0x1e90
+[   63.367228]  [<ffffffff81b93c69>] dev_hard_start_xmit+0x499/0x700
+[   63.367228]  [<ffffffff81bcabab>] sch_direct_xmit+0x21b/0x3d0
+[   63.367228]  [<ffffffff81b94589>] __dev_queue_xmit+0x489/0xa50
+[   63.367228]  [<ffffffff81b94b6f>] dev_queue_xmit_sk+0x1f/0x30
+[   63.367228]  [<ffffffff81c1e21a>] ip_finish_output2+0x4ea/0x720
+[   63.367228]  [<ffffffff81c1fc02>] ip_finish_output+0x262/0x350
+[   63.367228]  [<ffffffff81c1fd11>] NF_HOOK_COND.part.32.constprop.47+0x21/0x30
+[   63.367228]  [<ffffffff81c21061>] ip_output+0x1a1/0x1c0
+[   63.367228]  [<ffffffff81c1c181>] ip_local_out_sk+0x61/0x80
+[   63.367228]  [<ffffffff81c2044d>] ip_queue_xmit+0x2cd/0x840
+[   63.367228]  [<ffffffff81c4db99>] tcp_transmit_skb+0xb39/0x1750
+[   63.367228]  [<ffffffff81c51ee8>] tcp_send_ack+0x228/0x2d0
+[   63.367228]  [<ffffffff81c37a81>] __tcp_ack_snd_check+0xb1/0x100
+[   63.367228]  [<ffffffff81c470f8>] tcp_rcv_established+0x818/0xe30
+[   63.367228]  [<ffffffff81c5c842>] tcp_v4_do_rcv+0x2f2/0x800
+[   63.367228]  [<ffffffff81b682b6>] release_sock+0xd6/0x270
+[   63.367228]  [<ffffffff81c30278>] tcp_recvmsg+0x658/0x12c0
+[   63.367228]  [<ffffffff81c85ed8>] inet_recvmsg+0x148/0x180
+[   63.367228]  [<ffffffff81b6022a>] sock_recvmsg+0x6a/0x90
+[   63.367228]  [<ffffffff81b60366>] sock_read_iter+0x116/0x180
+[   63.367228]  [<ffffffff81266400>] __vfs_read+0x1a0/0x1e0
+[   63.367228]  [<ffffffff81267207>] vfs_read+0xb7/0x1e0
+[   63.367228]  [<ffffffff81268740>] SyS_read+0x70/0xd0
+[   63.367228]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   63.367228] 
+[   63.367228] Mutexes locked by thread 2604:
+[   63.367228] Mutex 364495 is locked here:
+[   63.367228]  [<ffffffff81ee5400>] _raw_spin_lock+0x50/0x70
+[   63.367228]  [<ffffffff81bcab69>] sch_direct_xmit+0x1d9/0x3d0
+[   63.367228]  [<ffffffff81b94589>] __dev_queue_xmit+0x489/0xa50
+[   63.367228]  [<ffffffff81b94b6f>] dev_queue_xmit_sk+0x1f/0x30
+[   63.367228]  [<ffffffff81c1e21a>] ip_finish_output2+0x4ea/0x720
+[   63.367228]  [<ffffffff81c1fc02>] ip_finish_output+0x262/0x350
+[   63.367228]  [<ffffffff81c1fd11>] NF_HOOK_COND.part.32.constprop.47+0x21/0x30
+[   63.367228]  [<ffffffff81c21061>] ip_output+0x1a1/0x1c0
+[   63.367228]  [<ffffffff81c1c181>] ip_local_out_sk+0x61/0x80
+[   63.367228]  [<ffffffff81c2044d>] ip_queue_xmit+0x2cd/0x840
+[   63.367228]  [<ffffffff81c4db99>] tcp_transmit_skb+0xb39/0x1750
+[   63.367228]  [<ffffffff81c51ee8>] tcp_send_ack+0x228/0x2d0
+[   63.367228]  [<ffffffff81c37a81>] __tcp_ack_snd_check+0xb1/0x100
+[   63.367228]  [<ffffffff81c470f8>] tcp_rcv_established+0x818/0xe30
+[   63.367228]  [<ffffffff81c5c842>] tcp_v4_do_rcv+0x2f2/0x800
+[   63.367228]  [<ffffffff81b682b6>] release_sock+0xd6/0x270
+[   63.367228]  [<ffffffff81c30278>] tcp_recvmsg+0x658/0x12c0
+[   63.367228]  [<ffffffff81c85ed8>] inet_recvmsg+0x148/0x180
+[   63.367228]  [<ffffffff81b6022a>] sock_recvmsg+0x6a/0x90
+[   63.367228]  [<ffffffff81b60366>] sock_read_iter+0x116/0x180
+[   63.367228]  [<ffffffff81266400>] __vfs_read+0x1a0/0x1e0
+[   63.367228]  [<ffffffff81267207>] vfs_read+0xb7/0x1e0
+[   63.367228]  [<ffffffff81268740>] SyS_read+0x70/0xd0
+[   63.367228]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   63.367228] 
+[   63.367228] ==================================================================
+INIT: Switching to runlevel: 0
+INIT: Sending processes the TERM signal
+[[36minfo[39;49m] Using makefile-style concurrent boot in runlevel 0.
+[....] Asking all remaining processes to terminate...[   65.425507] ==================================================================
+[   65.426274] ThreadSanitizer: data-race in futex_wait_queue_me
+[   65.426274] 
+[   65.426274] Write at 0xffff880191aa2254 of size 4 by thread 2487 on CPU 0:
+[   65.426274]  [<ffffffff81135a1a>] futex_wait_queue_me+0x19a/0x220
+[   65.426274]  [<ffffffff81136589>] futex_wait+0x189/0x3a0
+[   65.426274]  [<ffffffff811393b9>] do_futex+0x179/0x10a0
+[   65.426274]  [<ffffffff8113a366>] SyS_futex+0x86/0x180
+[   65.426274]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   65.426274] 
+[   65.426274] Previous read at 0xffff880191aa2254 of size 4 by thread 2485 on CPU 2:
+[   65.426274]  [<ffffffff8109d529>] task_set_jobctl_pending+0x59/0xf0
+[   65.426274]  [<ffffffff8109f8d2>] do_signal_stop+0x2f2/0x3c0
+[   65.426274]  [<ffffffff810a195c>] get_signal+0x27c/0xa30
+[   65.426274]  [<ffffffff8100628c>] do_signal+0x2c/0xa60
+[   65.426274]  [<ffffffff81006d3d>] do_notify_resume+0x7d/0x80
+[   65.426274]  [<ffffffff81ee5c21>] int_signal+0x12/0x17
+[   65.426274] 
+[   65.426274] Mutexes locked by thread 2485:
+[   65.426274] Mutex 390378 is locked here:
+[   65.426274]  [<ffffffff81ee538c>] _raw_spin_lock_irq+0x5c/0x80
+[   65.426274]  [<ffffffff810a17be>] get_signal+0xde/0xa30
+[   65.426274]  [<ffffffff8100628c>] do_signal+0x2c/0xa60
+[   65.426274]  [<ffffffff81006d3d>] do_notify_resume+0x7d/0x80
+[   65.426274]  [<ffffffff81ee5c21>] int_signal+0x12/0x17
+[   65.426274] 
+[   65.426274] ==================================================================
+[   65.630774] ==================================================================
+[   65.631493] ThreadSanitizer: data-race in do_signal_stop
+[   65.631493] 
+[   65.631493] Write at 0xffff880191d75294 of size 4 by thread 2584 on CPU 3:
+[   65.631493]  [<ffffffff8109f774>] do_signal_stop+0x194/0x3c0
+[   65.631493]  [<ffffffff810a195c>] get_signal+0x27c/0xa30
+[   65.631493]  [<ffffffff8100628c>] do_signal+0x2c/0xa60
+[   65.631493]  [<ffffffff81006d3d>] do_notify_resume+0x7d/0x80
+[   65.631493]  [<ffffffff81ee5c21>] int_signal+0x12/0x17
+[   65.631493] 
+[   65.631493] Previous read at 0xffff880191d75294 of size 4 by thread 2631 on CPU 1:
+[   65.631493]  [<ffffffff81086349>] get_task_mm+0x49/0xa0
+[   65.631493]  [<ffffffff81317b40>] proc_pid_cmdline_read+0x70/0x570
+[   65.631493]  [<ffffffff812662bf>] __vfs_read+0x5f/0x1e0
+[   65.631493]  [<ffffffff81267207>] vfs_read+0xb7/0x1e0
+[   65.631493]  [<ffffffff81268740>] SyS_read+0x70/0xd0
+[   65.631493]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   65.631493] 
+[   65.631493] Mutexes locked by thread 2631:
+[   65.631493] Mutex 422306 is locked here:
+[   65.631493]  [<ffffffff81ee5400>] _raw_spin_lock+0x50/0x70
+[   65.631493]  [<ffffffff81086328>] get_task_mm+0x28/0xa0
+[   65.631493]  [<ffffffff81317b40>] proc_pid_cmdline_read+0x70/0x570
+[   65.631493]  [<ffffffff812662bf>] __vfs_read+0x5f/0x1e0
+[   65.631493]  [<ffffffff81267207>] vfs_read+0xb7/0x1e0
+[   65.631493]  [<ffffffff81268740>] SyS_read+0x70/0xd0
+[   65.631493]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   65.631493] 
+[   65.631493] ==================================================================
+[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[   66.351525] ==================================================================
+[   66.352139] ThreadSanitizer: data-race in get_signal
+[   66.352139] 
+[   66.352139] Write at 0xffff88019103732c of size 4 by thread 2618 on CPU 1:
+[   66.352139]  [<ffffffff810a1da5>] get_signal+0x6c5/0xa30
+[   66.352139]  [<ffffffff8100628c>] do_signal+0x2c/0xa60
+[   66.352139]  [<ffffffff81006d3d>] do_notify_resume+0x7d/0x80
+[   66.352139]  [<ffffffff81ee5c21>] int_signal+0x12/0x17
+[   66.352139] 
+[   66.352139] Previous read at 0xffff88019103732c of size 4 by thread 2617 on CPU 0:
+[   66.352139]  [<ffffffff8108c347>] task_stopped_code+0x67/0x90
+[   66.352139]  [<ffffffff8108e6c1>] wait_consider_task+0x171/0x18a0
+[   66.352139]  [<ffffffff8108ff9f>] do_wait+0x1af/0x3b0
+[   66.352139]  [<ffffffff810906d5>] SyS_wait4+0xe5/0x160
+[   66.352139]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   66.352139] 
+[   66.352139] Mutexes locked by thread 2618:
+[   66.352139] Mutex 419446 is locked here:
+[   66.352139]  [<ffffffff81ee538c>] _raw_spin_lock_irq+0x5c/0x80
+[   66.352139]  [<ffffffff810a17be>] get_signal+0xde/0xa30
+[   66.352139]  [<ffffffff8100628c>] do_signal+0x2c/0xa60
+[   66.352139]  [<ffffffff81006d3d>] do_notify_resume+0x7d/0x80
+[   66.352139]  [<ffffffff81ee5c21>] int_signal+0x12/0x17
+[   66.352139] 
+[   66.352139] Mutexes locked by thread 2617:
+[   66.352139] Mutex 190 is read locked here:
+[   66.352139]  [<ffffffff81ee55c8>] _raw_read_lock+0x48/0x60
+[   66.352139]  [<ffffffff8108ff4f>] do_wait+0x15f/0x3b0
+[   66.352139]  [<ffffffff810906d5>] SyS_wait4+0xe5/0x160
+[   66.352139]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   66.352139] 
+[   66.352139] ==================================================================
+[....] All processes ended within 1 seconds...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Stopping enhanced syslogd: rsyslogd[   67.223947] ==================================================================
+[   67.224098] ThreadSanitizer: data-race in get_task_mm
+[   67.224098] 
+[   67.224098] Read at 0xffff880191080194 of size 4 by thread 2667 on CPU 1:
+[   67.224098]  [<ffffffff81086349>] get_task_mm+0x49/0xa0
+[   67.224098]  [<ffffffff81316ea1>] proc_exe_link+0x51/0xf0
+[   67.224098]  [<ffffffff81316885>] proc_pid_readlink+0x55/0xf0
+[   67.224098]  [<ffffffff8126f8d1>] SyS_readlink+0x161/0x180
+[   67.224098]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   67.224098] 
+[   67.224098] Previous write at 0xffff880191080194 of size 4 by thread 2485 on CPU 2:
+[   67.224098]  [<ffffffff811359f6>] futex_wait_queue_me+0x176/0x220
+[   67.224098]  [<ffffffff81136589>] futex_wait+0x189/0x3a0
+[   67.224098]  [<ffffffff811393b9>] do_futex+0x179/0x10a0
+[   67.224098]  [<ffffffff8113a366>] SyS_futex+0x86/0x180
+[   67.224098]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   67.224098] 
+[   67.224098] Mutexes locked by thread 2667:
+[   67.224098] Mutex 390376 is locked here:
+[   67.224098]  [<ffffffff81ee5400>] _raw_spin_lock+0x50/0x70
+[   67.224098]  [<ffffffff81086328>] get_task_mm+0x28/0xa0
+[   67.224098]  [<ffffffff81316ea1>] proc_exe_link+0x51/0xf0
+[   67.224098]  [<ffffffff81316885>] proc_pid_readlink+0x55/0xf0
+[   67.224098]  [<ffffffff8126f8d1>] SyS_readlink+0x161/0x180
+[   67.224098]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   67.224098] 
+[   67.224098] ==================================================================
+[   67.230108] ==================================================================
+[   67.244236] ThreadSanitizer: data-race in mmap_region
+[   67.244236] 
+[   67.244236] Write at 0xffff8800bb3b4230 of size 8 by thread 2488 on CPU 2:
+[   67.244236]  [<ffffffff8122360a>] mmap_region+0x21a/0xb00
+[   67.244236]  [<ffffffff81224379>] do_mmap_pgoff+0x489/0x590
+[   67.244236]  [<ffffffff811fe75a>] vm_mmap_pgoff+0xaa/0xe0
+[   67.244236]  [<ffffffff812213e4>] SyS_mmap_pgoff+0x264/0x2c0
+[   67.244236]  [<ffffffff8100e85b>] SyS_mmap+0x5b/0x80
+[   67.244236]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   67.244236] 
+[   67.244236] Previous read at 0xffff8800bb3b4230 of size 8 by thread 2485 on CPU 2:
+[   67.244236]  [<ffffffff8117fc28>] __acct_update_integrals+0x188/0x1b0
+[   67.244236]  [<ffffffff81180424>] acct_account_cputime+0x44/0x50
+[   67.244236]  [<ffffffff810d590e>] account_system_time+0xbe/0x190
+[   67.244236]  [<ffffffff81132a0e>] tick_sched_handle.isra.14+0x7e/0xa0
+[   67.244236]  [<ffffffff811335ee>] tick_sched_timer+0x5e/0xb0
+[   67.244236]  [<ffffffff81119e8e>] __hrtimer_run_queues+0x22e/0x440
+[   67.244236]  [<ffffffff8111ab74>] hrtimer_interrupt+0x114/0x2d0
+[   67.244236]  [<ffffffff8105d6a7>] local_apic_timer_interrupt+0x77/0xc0
+[   67.244236]  [<ffffffff8105ebb6>] smp_apic_timer_interrupt+0x76/0xb0
+[   67.244236]  [<ffffffff81ee690a>] apic_timer_interrupt+0x8a/0xa0
+[   67.244236] 
+[   67.244236] Mutexes locked by thread 2488:
+[   67.244236] Mutex 389605 is locked here:
+[   67.244236]  [<ffffffff81ee2975>] down_write+0x65/0x80
+[   67.244236]  [<ffffffff811fe73c>] vm_mmap_pgoff+0x8c/0xe0
+[   67.244236]  [<ffffffff812213e4>] SyS_mmap_pgoff+0x264/0x2c0
+[   67.244236]  [<ffffffff8100e85b>] SyS_mmap+0x5b/0x80
+[   67.244236]  [<ffffffff81ee5a51>] entry_SYSCALL_64_fastpath+0x31/0x95
+[   67.244236] 
+[   67.244236] ==================================================================
+[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[[36minfo[39;49m] Saving the system clock.
+[[36minfo[39;49m] Hardware Clock updated to Tue Nov  1 09:35:54 UTC 2016.
+[....] Deconfiguring network interfaces...Internet Systems Consortium DHCP Client 4.2.2
+Copyright 2004-2011 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+
+Listening on LPF/eth0/52:54:00:12:34:56
+Sending on   LPF/eth0/52:54:00:12:34:56
+Sending on   Socket/fallback
+DHCPRELEASE on eth0 to 10.0.2.2 port 67
+[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Deactivating swap...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Unmounting local filesystems...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[   71.974822] EXT4-fs (sda): re-mounted. Opts: (null)
+[[36minfo[39;49m] Will now halt.
+[   75.506318] sd 0:0:0:0: [sda] Synchronizing SCSI cache
+[   75.508485] sd 0:0:0:0: [sda] Stopping disk
+[   81.124762] ACPI: Preparing to enter system sleep state S5
+[   81.126886] reboot: Power down
+[   81.130111] acpi_power_off called

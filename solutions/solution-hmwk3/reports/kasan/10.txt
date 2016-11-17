@@ -1,0 +1,162 @@
+[....] Starting OpenBSD Secure Shell server: sshd[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[   10.759216] kt: running test for light, case 10, T2614
+[   10.759216] 
+[   10.762613] kt: starting test light_test_4thread_on_3scenario
+[   12.192222] kt: end of test
+[   12.194725] 
+[   12.195604] dump_desc: [messey_signal]
+[   12.197600] dump_desc evts:
+[   12.198886] dump_desc   ts: 303 403 505
+[   12.200518] dump_desc  ret: 0 0 0
+[   12.201914] 
+[   12.202651] dump_desc: [messey_destroy]
+[   12.205275] dump_desc evts: 0 1 2
+[   12.207475] dump_desc   ts: 301 301 604
+[   12.209060] dump_desc  ret: 0 0 0
+[   12.209895] 
+[   12.210389] dump_desc: [sum_wait]
+[   12.211224] dump_desc evts:
+[   12.211841] dump_desc   ts: 1222 1222 1222 1222 1302 1302 1302 1302 1424 1424 1424 1424
+[   12.213895] dump_desc  ret: 0 0 0 0 -22 -22 -22 -22 0 0 0 0
+[   12.215143] LIGHT_SUCCESS
+[   12.218312] kt: running test for light, case 10, T2629
+[   12.218312] 
+[   12.225492] kt: starting test light_test_4thread_on_3scenario
+[   13.654273] kt: end of test
+[   13.656165] 
+[   13.657142] dump_desc: [messey_signal]
+[   13.659911] dump_desc evts:
+[   13.662394] dump_desc   ts: 301 403 503
+[   13.665595] dump_desc  ret: 0 0 0
+[   13.668104] 
+[   13.668971] dump_desc: [messey_destroy]
+[   13.671761] dump_desc evts: 4 3 5
+[   13.674034] dump_desc   ts: 301 301 604
+[   13.676704] dump_desc  ret: 0 0 0
+[   13.679044] 
+[   13.680099] dump_desc: [sum_wait]
+[   13.681878] dump_desc evts:
+[   13.682982] dump_desc   ts: 1222 1222 1222 1222 1302 1302 1302 1302 1424 1424 1424 1424
+[   13.686249] dump_desc  ret: 0 0 0 0 -22 -22 -22 -22 0 0 0 0
+[   13.689115] LIGHT_SUCCESS
+[   13.692696] kt: running test for light, case 10, T2645
+[   13.692696] 
+[   13.695417] kt: starting test light_test_4thread_on_3scenario
+[   15.125225] kt: end of test
+[   15.127587] 
+[   15.128345] dump_desc: [messey_signal]
+[   15.130442] dump_desc evts:
+[   15.132274] dump_desc   ts: 303 403 505
+[   15.135516] dump_desc  ret: 0 0 0
+[   15.136908] 
+[   15.137872] dump_desc: [messey_destroy]
+[   15.140128] dump_desc evts: 6 8 7
+[   15.141307] dump_desc   ts: 301 301 604
+[   15.142913] dump_desc  ret: 0 0 0
+[   15.144106] 
+[   15.144639] dump_desc: [sum_wait]
+[   15.145743] dump_desc evts:
+[   15.146854] dump_desc   ts: 1222 1222 1222 1222 1302 1302 1302 1302 1424 1424 1424 1424
+[   15.151485] dump_desc  ret: 0 0 0 0 -22 -22 -22 -22 0 0 0 0
+[   15.154918] LIGHT_SUCCESS
+[   15.158918] kt: running test for light, case 10, T2660
+[   15.158918] 
+[   15.162131] kt: starting test light_test_4thread_on_3scenario
+[   16.592274] kt: end of test
+[   16.593368] 
+[   16.594141] dump_desc: [messey_signal]
+[   16.596052] dump_desc evts:
+[   16.597770] dump_desc   ts: 301 403 503
+[   16.600065] dump_desc  ret: 0 0 0
+[   16.601660] 
+[   16.602309] dump_desc: [messey_destroy]
+[   16.603820] dump_desc evts: 10 9 11
+[   16.604838] dump_desc   ts: 301 301 604
+[   16.605748] dump_desc  ret: 0 0 0
+[   16.606528] 
+[   16.606945] dump_desc: [sum_wait]
+[   16.607722] dump_desc evts:
+[   16.608438] dump_desc   ts: 1222 1222 1222 1222 1302 1302 1302 1302 1424 1424 1424 1424
+[   16.611328] dump_desc  ret: 0 0 0 0 -22 -22 -22 -22 0 0 0 0
+[   16.613972] LIGHT_SUCCESS
+[   16.617435] kt: running test for light, case 10, T2676
+[   16.617435] 
+[   16.620710] kt: starting test light_test_4thread_on_3scenario
+[   18.050230] kt: end of test
+[   18.055689] 
+[   18.056276] dump_desc: [messey_signal]
+[   18.058404] dump_desc evts:
+[   18.059807] dump_desc   ts: 303 403 505
+[   18.061801] dump_desc  ret: 0 0 0
+[   18.063478] 
+[   18.064188] dump_desc: [messey_destroy]
+[   18.065253] dump_desc evts: 12 13 14
+[   18.066316] dump_desc   ts: 301 301 604
+[   18.067211] dump_desc  ret: 0 0 0
+[   18.067967] 
+[   18.068336] dump_desc: [sum_wait]
+[   18.069110] dump_desc evts:
+[   18.069813] dump_desc   ts: 1222 1222 1222 1222 1302 1302 1302 1302 1424 1424 1424 1424
+[   18.071620] dump_desc  ret: 0 0 0 0 -22 -22 -22 -22 0 0 0 0
+[   18.072906] LIGHT_SUCCESS
+[   18.075996] kt: running test for light, case 10, T2692
+[   18.075996] 
+[   18.084756] kt: starting test light_test_4thread_on_3scenario
+[   19.521295] kt: end of test
+[   19.523304] 
+[   19.524372] dump_desc: [messey_signal]
+[   19.527555] dump_desc evts:
+[   19.529683] dump_desc   ts: 301 403 503
+[   19.532169] dump_desc  ret: 0 0 0
+[   19.534367] 
+[   19.535369] dump_desc: [messey_destroy]
+[   19.537618] dump_desc evts: 15 17 16
+[   19.539067] dump_desc   ts: 301 301 604
+[   19.540586] dump_desc  ret: 0 0 0
+[   19.542361] 
+[   19.545608] dump_desc: [sum_wait]
+[   19.547850] dump_desc evts:
+[   19.549728] dump_desc   ts: 1222 1222 1222 1222 1302 1302 1302 1302 1424 1424 1424 1424
+[   19.554158] dump_desc  ret: 0 0 0 0 -22 -22 -22 -22 0 0 0 0
+[   19.557369] LIGHT_SUCCESS
+[   19.560684] kt: running test for light, case 10, T2708
+[   19.560684] 
+[   19.563809] kt: starting test light_test_4thread_on_3scenario
+[   20.994226] kt: end of test
+[   20.995774] 
+[   20.996781] dump_desc: [messey_signal]
+[   20.999338] dump_desc evts:
+[   21.001061] dump_desc   ts: 301 403 503
+[   21.003626] dump_desc  ret: 0 0 0
+[   21.005876] 
+[   21.007002] dump_desc: [messey_destroy]
+[   21.009541] dump_desc evts: 20 18 19
+[   21.012191] dump_desc   ts: 301 301 604
+[   21.015110] dump_desc  ret: 0 0 0
+[   21.016336] 
+[   21.016848] dump_desc: [sum_wait]
+[   21.018102] dump_desc evts:
+[   21.019165] dump_desc   ts: 1222 1222 1222 1222 1302 1302 1302 1302 1424 1424 1424 1424
+[   21.021545] dump_desc  ret: 0 0 0 0 -22 -22 -22 -22 0 0 0 0
+[   21.023734] LIGHT_SUCCESS
+[   21.029003] kt: running test for light, case 10, T2723
+[   21.029003] 
+[   21.035162] kt: starting test light_test_4thread_on_3scenario
+[   22.464254] kt: end of test
+[   22.465865] 
+[   22.467086] dump_desc: [messey_signal]
+[   22.468804] dump_desc evts:
+[   22.470627] dump_desc   ts: 301 403 503
+[   22.473599] dump_desc  ret: 0 0 0
+[   22.476017] 
+[   22.476670] dump_desc: [messey_destroy]
+[   22.478016] dump_desc evts: 22 21 23
+[   22.480056] dump_desc   ts: 301 301 604
+[   22.481896] dump_desc  ret: 0 0 0
+[   22.483227] 
+[   22.483991] dump_desc: [sum_wait]
+[   22.485639] dump_desc evts:
+[   22.486934] dump_desc   ts: 1222 1222 1222 1222 1302 1302 1302 1302 1424 1424 1424 1424
+[   22.490067] dump_desc  ret: 0 0 0 0 -22 -22 -22 -22 0 0 0 0
+[   22.491842] LIGHT_SUCCESS
+INIT: Switching to runlevel: 0

@@ -1,0 +1,123 @@
+[....] Starting OpenBSD Secure Shell server: sshd[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[    6.371957] kt: running test for light, case 7, T2547
+[    6.371957] 
+[    6.375826] kt: starting test light_test_lots_of_wait_on_one_signal_destroy
+[    6.583213] kt: end of test
+[    6.585409] 
+[    6.586841] dump_desc: [create_destroy]
+[    6.589448] dump_desc evts: 0
+[    6.591773] dump_desc   ts: 0 201 201 201
+[    6.594702] dump_desc  ret: 0 0 0
+[    6.597337] 
+[    6.598443] dump_desc: [sum_wait]
+[    6.601064] dump_desc evts: 0
+[    6.603165] dump_desc   ts: 201 201 201 201 201 201 201 201 201 201 201 201 201 201 201
+[    6.609406] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.613495] LIGHT_SUCCESS
+[    6.616154] kt: running test for light, case 7, T2565
+[    6.616154] 
+[    6.619925] kt: starting test light_test_lots_of_wait_on_one_signal_destroy
+[    6.826263] kt: end of test
+[    6.827756] 
+[    6.828877] dump_desc: [create_destroy]
+[    6.831763] dump_desc evts: 1
+[    6.833714] dump_desc   ts: 0 201 201 201
+[    6.838076] dump_desc  ret: 0 0 0
+[    6.841187] 
+[    6.842748] dump_desc: [sum_wait]
+[    6.845586] dump_desc evts: 1
+[    6.848494] dump_desc   ts: 201 201 201 201 201 201 201 201 201 201 201 201 201 201 201
+[    6.852803] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.856626] LIGHT_SUCCESS
+[    6.859538] kt: running test for light, case 7, T2582
+[    6.859538] 
+[    6.863400] kt: starting test light_test_lots_of_wait_on_one_signal_destroy
+[    7.070318] kt: end of test
+[    7.071872] 
+[    7.072804] dump_desc: [create_destroy]
+[    7.076045] dump_desc evts: 2
+[    7.078511] dump_desc   ts: 0 201 201 201
+[    7.081846] dump_desc  ret: 0 0 0
+[    7.084743] 
+[    7.085728] dump_desc: [sum_wait]
+[    7.088226] dump_desc evts: 2
+[    7.090366] dump_desc   ts: 201 201 200 200 200 200 200 200 200 200 200 200 200 200 200
+[    7.095352] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.099233] LIGHT_SUCCESS
+[    7.102268] kt: running test for light, case 7, T2599
+[    7.102268] 
+[    7.106336] kt: starting test light_test_lots_of_wait_on_one_signal_destroy
+[    7.313245] kt: end of test
+[    7.314777] 
+[    7.315793] dump_desc: [create_destroy]
+[    7.318746] dump_desc evts: 3
+[    7.321343] dump_desc   ts: 0 201 201 201
+[    7.324702] dump_desc  ret: 0 0 0
+[    7.327715] 
+[    7.329145] dump_desc: [sum_wait]
+[    7.331385] dump_desc evts: 3
+[    7.335082] dump_desc   ts: 201 201 201 201 201 201 201 201 201 201 201 201 201 201 201
+[    7.339604] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.343588] LIGHT_SUCCESS
+[    7.346406] kt: running test for light, case 7, T2616
+[    7.346406] 
+[    7.351051] kt: starting test light_test_lots_of_wait_on_one_signal_destroy
+[    7.558306] kt: end of test
+[    7.560169] 
+[    7.560896] dump_desc: [create_destroy]
+[    7.563357] dump_desc evts: 4
+[    7.565789] dump_desc   ts: 0 201 201 201
+[    7.569773] dump_desc  ret: 0 0 0
+[    7.572830] 
+[    7.573749] dump_desc: [sum_wait]
+[    7.575967] dump_desc evts: 4
+[    7.579423] dump_desc   ts: 201 201 201 201 201 201 201 201 201 201 201 201 201 201 201
+[    7.585460] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.590299] LIGHT_SUCCESS
+[    7.593623] kt: running test for light, case 7, T2633
+[    7.593623] 
+[    7.597463] kt: starting test light_test_lots_of_wait_on_one_signal_destroy
+[    7.806215] kt: end of test
+[    7.807434] 
+[    7.808386] dump_desc: [create_destroy]
+[    7.810978] dump_desc evts: 5
+[    7.813104] dump_desc   ts: 0 201 201 201
+[    7.816368] dump_desc  ret: 0 0 0
+[    7.819088] 
+[    7.820618] dump_desc: [sum_wait]
+[    7.823702] dump_desc evts: 5
+[    7.826065] dump_desc   ts: 201 201 201 201 201 201 201 201 201 201 201 201 201 201 201
+[    7.831875] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.835868] LIGHT_SUCCESS
+[    7.838760] kt: running test for light, case 7, T2650
+[    7.838760] 
+[    7.842925] kt: starting test light_test_lots_of_wait_on_one_signal_destroy
+[    8.050293] kt: end of test
+[    8.052620] 
+[    8.053317] dump_desc: [create_destroy]
+[    8.055927] dump_desc evts: 6
+[    8.058247] dump_desc   ts: 0 201 201 201
+[    8.061471] dump_desc  ret: 0 0 0
+[    8.063849] 
+[    8.065328] dump_desc: [sum_wait]
+[    8.068418] dump_desc evts: 6
+[    8.071140] dump_desc   ts: 201 201 201 201 201 201 201 201 201 201 201 201 201 201 201
+[    8.077221] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    8.079972] LIGHT_SUCCESS
+[    8.084298] kt: running test for light, case 7, T2667
+[    8.084298] 
+[    8.088156] kt: starting test light_test_lots_of_wait_on_one_signal_destroy
+[    8.295308] kt: end of test
+[    8.296374] 
+[    8.297259] dump_desc: [create_destroy]
+[    8.299167] dump_desc evts: 7
+[    8.300733] dump_desc   ts: 0 201 201 201
+[    8.304007] dump_desc  ret: 0 0 0
+[    8.306443] 
+[    8.307633] dump_desc: [sum_wait]
+[    8.309968] dump_desc evts: 7
+[    8.312022] dump_desc   ts: 201 201 201 201 201 201 201 201 201 201 201 201 201 201 201
+[    8.317040] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    8.320533] LIGHT_SUCCESS
+[   10.668831] kmemleak: 1 new suspected memory leaks (see /sys/kernel/debug/kmemleak)
+INIT: Switching to runlevel: 0

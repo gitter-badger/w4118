@@ -1,0 +1,30 @@
+4.8
+The threads of a multi-threaded process share heap memory and global variables. Each thread has its separate set of register values and a separate stack.
+
+4.16
+Pros: In systems where processes and threads are considered as similar entities, some of the operating system code could be simplified. A scheduler, for instance, can consider the different processes and threads on an equal footing without requiring special code to examine the threads associated with a process during every scheduling step.
+
+Cons: This uniformity could make it harder to impose process-wide resource constraints in a direct manner. Instead, some extra complexity is required to identify which threads correspond to which process and perform the relevant accounting tasks.
+
+5.10.
+This algorithm satisfies the three conditions of mutual exclusion.
+
+(1) Mutual exclusion. If both threads were inside the CS, thread i must have observed flag[j] == 0 and thread j must have observed flag[i] == 0 as tested in the outer while loop condition. However thread i sets flag[i] = 1 and thread j sets flag[j] = 1 before the outer while loop. Thus, such case is self-contradictory and mutual exclusion is guaranteed.
+
+(2) Progress. Progress is achieved by checking the "turn" variable in the while loop. If there had been no such "turn" variable and both threads set their flag to true at the same time, they would have been deadlocked and spinning in the outer while loop forever. "turn" variable solves such problem. If both of them are spinning in the outer while loop, they can not both be waiting for each other. The thread which has tid != "turn" will set flag[tid] = 0, allowing the other thread to proceed.
+
+(3) Bounded waiting. Bounded waiting is accomplished by setting the "turn" variable to the id of the other thread after CS. If thread i is in CS and thread j is waiting for CS, thread i can not re-enter CS before j enters CS. The reason is that thread i will set turn = j once thread i has left CS and thread j will observe turn == j, break out of the inner while loop and set flag[j] = true. Thread i will then have to wait for flag[j] == false the next round, essentially thread i has to wait for j to leave CS first.
+
+5.13
+Interrupts are not sufficient in multiprocessor systems since disabling interrupts only prevents other processes from executing on the processor in which interrupts were disabled; there are no limitations on what processes could be executing on other processors and therefore the process disabling interrupts cannot guarantee mutually exclusive access to program state.
+
+5.14
+Because acquiring a semaphore may put the process to sleep while it is waiting for the semaphore to become available. Spinlocks are to only be held for short durations and a process that is sleeping may hold the spinlock for too long a period.
+
+5.22
+a. There is a race condition on the variable number_of_processes.
+b. A call to acquire() must be placed upon entering each function and a call to release() immediately before exiting each function.
+c. No, it would not help. The reason is because the race occurs in the allocate process() function where number_of_processes is first tested in the if statement, yet is updated afterwards, based upon the value of the test. it is possible that number_of_processes = 254 at the time of the test, yet because of the race condition, is set to 255 by another thread before it is incremented yet again.
+
+5.23
+A semaphore is initialized to the number of allowable open socket connections. When a connection is accepted, the acquire() method is called; when a connection is released, the release() method is called. If the system reaches the number of allowable socket connections, subsequent calls to acquire() will block until an existing connection is terminated and the release method is invoked.

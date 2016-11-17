@@ -1,0 +1,985 @@
+early console in setup code
+early console in decompress_kernel
+
+Decompressing Linux... Parsing ELF... done.
+Booting the kernel.
+[    0.000000] Initializing cgroup subsys cpuset
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 4.2.0-team50-kt (progman@m91p) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.2) ) #113 SMP Tue Nov 1 01:38:20 EDT 2016
+[    0.000000] Command line: console=ttyS0 root=/dev/sda debug earlyprintk=serial
+[    0.000000] x86/fpu: Legacy x87 FPU detected.
+[    0.000000] x86/fpu: Using 'lazy' FPU context switches.
+[    0.000000] e820: BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x00000000bffdefff] usable
+[    0.000000] BIOS-e820: [mem 0x00000000bffdf000-0x00000000bfffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000feffc000-0x00000000feffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000100000000-0x000000013fffffff] usable
+[    0.000000] bootconsole [earlyser0] enabled
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] SMBIOS 2.8 present.
+[    0.000000] DMI: QEMU Standard PC (i440FX + PIIX, 1996), BIOS Ubuntu-1.8.2-1ubuntu1 04/01/2014
+[    0.000000] Hypervisor detected: KVM
+[    0.000000] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+[    0.000000] e820: remove [mem 0x000a0000-0x000fffff] usable
+[    0.000000] e820: last_pfn = 0x140000 max_arch_pfn = 0x400000000
+[    0.000000] MTRR default type: write-back
+[    0.000000] MTRR fixed ranges enabled:
+[    0.000000]   00000-9FFFF write-back
+[    0.000000]   A0000-BFFFF uncachable
+[    0.000000]   C0000-FFFFF write-protect
+[    0.000000] MTRR variable ranges enabled:
+[    0.000000]   0 base 00C0000000 mask FFC0000000 uncachable
+[    0.000000]   1 disabled
+[    0.000000]   2 disabled
+[    0.000000]   3 disabled
+[    0.000000]   4 disabled
+[    0.000000]   5 disabled
+[    0.000000]   6 disabled
+[    0.000000]   7 disabled
+[    0.000000] x86/PAT: PAT not supported by CPU.
+[    0.000000] e820: last_pfn = 0xbffdf max_arch_pfn = 0x400000000
+[    0.000000] found SMP MP-table at [mem 0x000f6600-0x000f660f] mapped at [ffff8800000f6600]
+[    0.000000] Scanning 1 areas for low memory corruption
+[    0.000000] Base memory trampoline at [ffff880000099000] 99000 size 24576
+[    0.000000] init_memory_mapping: [mem 0x00000000-0x000fffff]
+[    0.000000]  [mem 0x00000000-0x000fffff] page 4k
+[    0.000000] BRK [0x022bd000, 0x022bdfff] PGTABLE
+[    0.000000] BRK [0x022be000, 0x022befff] PGTABLE
+[    0.000000] BRK [0x022bf000, 0x022bffff] PGTABLE
+[    0.000000] init_memory_mapping: [mem 0x13fe00000-0x13fffffff]
+[    0.000000]  [mem 0x13fe00000-0x13fffffff] page 2M
+[    0.000000] BRK [0x022c0000, 0x022c0fff] PGTABLE
+[    0.000000] init_memory_mapping: [mem 0x120000000-0x13fdfffff]
+[    0.000000]  [mem 0x120000000-0x13fdfffff] page 2M
+[    0.000000] init_memory_mapping: [mem 0x00100000-0xbffdefff]
+[    0.000000]  [mem 0x00100000-0x001fffff] page 4k
+[    0.000000]  [mem 0x00200000-0xbfdfffff] page 2M
+[    0.000000]  [mem 0xbfe00000-0xbffdefff] page 4k
+[    0.000000] init_memory_mapping: [mem 0x100000000-0x11fffffff]
+[    0.000000]  [mem 0x100000000-0x11fffffff] page 2M
+[    0.000000] ACPI: Early table checksum verification disabled
+[    0.000000] ACPI: RSDP 0x00000000000F65B0 000014 (v00 BOCHS )
+[    0.000000] ACPI: RSDT 0x00000000BFFE1511 000034 (v01 BOCHS  BXPCRSDT 00000001 BXPC 00000001)
+[    0.000000] ACPI: FACP 0x00000000BFFE0954 000074 (v01 BOCHS  BXPCFACP 00000001 BXPC 00000001)
+[    0.000000] ACPI: DSDT 0x00000000BFFDFD80 000BD4 (v01 BOCHS  BXPCDSDT 00000001 BXPC 00000001)
+[    0.000000] ACPI: FACS 0x00000000BFFDFD40 000040
+[    0.000000] ACPI: SSDT 0x00000000BFFE09C8 000A81 (v01 BOCHS  BXPCSSDT 00000001 BXPC 00000001)
+[    0.000000] ACPI: APIC 0x00000000BFFE1449 000090 (v01 BOCHS  BXPCAPIC 00000001 BXPC 00000001)
+[    0.000000] ACPI: HPET 0x00000000BFFE14D9 000038 (v01 BOCHS  BXPCHPET 00000001 BXPC 00000001)
+[    0.000000] ACPI: Local APIC address 0xfee00000
+[    0.000000] No NUMA configuration found
+[    0.000000] Faking a node at [mem 0x0000000000000000-0x000000013fffffff]
+[    0.000000] NODE_DATA(0) allocated [mem 0x13fff9000-0x13fffcfff]
+[    0.000000] kvm-clock: Using msrs 4b564d01 and 4b564d00
+[    0.000000] kvm-clock: cpu 0, msr 1:3fff8001, primary cpu clock
+[    0.000000] clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.000000]  [ffffea0000000000-ffffea0004ffffff] PMD -> [ffff88013b600000-ffff88013f5fffff] on node 0
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.000000]   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[    0.000000]   Normal   [mem 0x0000000100000000-0x000000013fffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+[    0.000000]   node   0: [mem 0x0000000000100000-0x00000000bffdefff]
+[    0.000000]   node   0: [mem 0x0000000100000000-0x000000013fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000001000-0x000000013fffffff]
+[    0.000000] On node 0 totalpages: 1048445
+[    0.000000]   DMA zone: 64 pages used for memmap
+[    0.000000]   DMA zone: 21 pages reserved
+[    0.000000]   DMA zone: 3998 pages, LIFO batch:0
+[    0.000000]   DMA32 zone: 12224 pages used for memmap
+[    0.000000]   DMA32 zone: 782303 pages, LIFO batch:31
+[    0.000000]   Normal zone: 4096 pages used for memmap
+[    0.000000]   Normal zone: 262144 pages, LIFO batch:31
+[    0.000000] ACPI: PM-Timer IO Port: 0x608
+[    0.000000] ACPI: Local APIC address 0xfee00000
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+[    0.000000] IOAPIC[0]: apic_id 0, version 17, address 0xfec00000, GSI 0-23
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+[    0.000000] ACPI: IRQ0 used by override.
+[    0.000000] ACPI: IRQ5 used by override.
+[    0.000000] ACPI: IRQ9 used by override.
+[    0.000000] ACPI: IRQ10 used by override.
+[    0.000000] ACPI: IRQ11 used by override.
+[    0.000000] Using ACPI (MADT) for SMP configuration information
+[    0.000000] ACPI: HPET id: 0x8086a201 base: 0xfed00000
+[    0.000000] smpboot: Allowing 4 CPUs, 0 hotplug CPUs
+[    0.000000] PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.000000] PM: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
+[    0.000000] PM: Registered nosave memory: [mem 0x000a0000-0x000effff]
+[    0.000000] PM: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+[    0.000000] PM: Registered nosave memory: [mem 0xbffdf000-0xbfffffff]
+[    0.000000] PM: Registered nosave memory: [mem 0xc0000000-0xfeffbfff]
+[    0.000000] PM: Registered nosave memory: [mem 0xfeffc000-0xfeffffff]
+[    0.000000] PM: Registered nosave memory: [mem 0xff000000-0xfffbffff]
+[    0.000000] PM: Registered nosave memory: [mem 0xfffc0000-0xffffffff]
+[    0.000000] e820: [mem 0xc0000000-0xfeffbfff] available for PCI devices
+[    0.000000] Booting paravirtualized kernel on KVM
+[    0.000000] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+[    0.000000] setup_percpu: NR_CPUS:64 nr_cpumask_bits:64 nr_cpu_ids:4 nr_node_ids:1
+[    0.000000] PERCPU: Embedded 31 pages/cpu @ffff88013fc00000 s89624 r8192 d29160 u524288
+[    0.000000] pcpu-alloc: s89624 r8192 d29160 u524288 alloc=1*2097152
+[    0.000000] pcpu-alloc: [0] 0 1 2 3 
+[    0.000000] KVM setup async PF for cpu 0
+[    0.000000] kvm-stealtime: cpu 0, msr 13fc0d440
+[    0.000000] Built 1 zonelists in Node order, mobility grouping on.  Total pages: 1032040
+[    0.000000] Policy zone: Normal
+[    0.000000] Kernel command line: console=ttyS0 root=/dev/sda debug earlyprintk=serial
+[    0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.000000] Calgary: detecting Calgary via BIOS EBDA area
+[    0.000000] Calgary: Unable to locate Rio Grande table in EBDA - bailing!
+[    0.000000] Memory: 4042292K/4193780K available (8706K kernel code, 1107K rwdata, 2792K rodata, 2776K init, 924K bss, 151488K reserved, 0K cma-reserved)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000] 	Additional per-CPU info printed with stalls.
+[    0.000000] 	Build-time adjustment of leaf fanout to 64.
+[    0.000000] 	RCU restricting CPUs from NR_CPUS=64 to nr_cpu_ids=4.
+[    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=64, nr_cpu_ids=4
+[    0.000000] NR_IRQS:4352 nr_irqs:456 16
+[    0.000000] Console: colour VGA+ 80x25
+[    0.000000] console [ttyS0] enabled
+[    0.000000] console [ttyS0] enabled
+[    0.000000] bootconsole [earlyser0] disabled
+[    0.000000] bootconsole [earlyser0] disabled
+[    0.000000] clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+[    0.000000] hpet clockevent registered
+[    0.000000] tsc: Detected 3392.294 MHz processor
+[    0.002000] Calibrating delay loop (skipped) preset value.. 6784.58 BogoMIPS (lpj=3392294)
+[    0.002311] pid_max: default: 32768 minimum: 301
+[    0.003022] ACPI: Core revision 20150619
+[    0.018245] ACPI: All ACPI Tables successfully acquired
+[    0.018933] Security Framework initialized
+[    0.019003] SELinux:  Initializing.
+[    0.019407] SELinux:  Starting in permissive mode
+[    0.020452] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes)
+[    0.022636] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes)
+[    0.023282] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.024018] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.025590] Initializing cgroup subsys freezer
+[    0.026094] mce: CPU supports 10 MCE banks
+[    0.026546] Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0
+[    0.027003] Last level dTLB entries: 4KB 0, 2MB 0, 4MB 0, 1GB 0
+[    0.028138] Freeing SMP alternatives memory: 32K (ffffffff821cc000 - ffffffff821d4000)
+[    0.032270] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    0.033000] smpboot: CPU0: Intel QEMU Virtual CPU version 2.5+ (fam: 06, model: 06, stepping: 03)
+[    0.033034] Performance Events: Broken PMU hardware detected, using software events only.
+[    0.034003] Failed to access perfctr msr (MSR c2 is 0)
+[    0.035442] x86: Booting SMP configuration:
+[    0.035919] .... node  #0, CPUs:      #1
+[    0.002000] kvm-clock: cpu 1, msr 1:3fff8041, secondary cpu clock
+[    0.039016] KVM setup async PF for cpu 1
+[    0.039838]  #2
+[    0.039838] kvm-stealtime: cpu 1, msr 13fc8d440
+[    0.002000] kvm-clock: cpu 2, msr 1:3fff8081, secondary cpu clock
+[    0.042018] KVM setup async PF for cpu 2
+[    0.042583]  #3
+[    0.042584] kvm-stealtime: cpu 2, msr 13fd0d440
+[    0.002000] kvm-clock: cpu 3, msr 1:3fff80c1, secondary cpu clock
+[    0.045030] x86: Booted up 1 node, 4 CPUs
+[    0.045019] KVM setup async PF for cpu 3
+[    0.045019] kvm-stealtime: cpu 3, msr 13fd8d440
+[    0.047003] smpboot: Total of 4 processors activated (27138.35 BogoMIPS)
+[    0.048236] devtmpfs: initialized
+[    0.050164] kworker/u8:0 (26) used greatest stack depth: 14272 bytes left
+[    0.050405] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+[    0.050498] RTC time: 17:59:43, date: 11/01/16
+[    0.051103] NET: Registered protocol family 16
+[    0.054318] kworker/u8:0 (28) used greatest stack depth: 13904 bytes left
+[    0.059022] cpuidle: using governor ladder
+[    0.064021] cpuidle: using governor menu
+[    0.064653] ACPI: bus type PCI registered
+[    0.065350] PCI: Using configuration type 1 for base access
+[    0.097118] ACPI: Added _OSI(Module Device)
+[    0.097608] ACPI: Added _OSI(Processor Device)
+[    0.098002] ACPI: Added _OSI(3.0 _SCP Extensions)
+[    0.098487] ACPI: Added _OSI(Processor Aggregator Device)
+[    0.105072] ACPI: Interpreter enabled
+[    0.105486] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S1_] (20150619/hwxface-580)
+[    0.106229] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S2_] (20150619/hwxface-580)
+[    0.107249] ACPI: (supports S0 S3 S4 S5)
+[    0.107660] ACPI: Using IOAPIC for interrupt routing
+[    0.108172] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    0.139815] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    0.140026] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI]
+[    0.141037] acpi PNP0A03:00: _OSC failed (AE_NOT_FOUND); disabling ASPM
+[    0.142102] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration space under this bridge.
+[    0.143369] PCI host bridge to bus 0000:00
+[    0.144021] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.144623] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    0.145005] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    0.146007] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[    0.147005] pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]
+[    0.147813] pci 0000:00:00.0: [8086:1237] type 00 class 0x060000
+[    0.149756] pci 0000:00:01.0: [8086:7000] type 00 class 0x060100
+[    0.151596] pci 0000:00:01.1: [8086:7010] type 00 class 0x010180
+[    0.153850] pci 0000:00:01.1: reg 0x20: [io  0xc040-0xc04f]
+[    0.155216] pci 0000:00:01.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+[    0.156003] pci 0000:00:01.1: legacy IDE quirk: reg 0x14: [io  0x03f6]
+[    0.156695] pci 0000:00:01.1: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
+[    0.157003] pci 0000:00:01.1: legacy IDE quirk: reg 0x1c: [io  0x0376]
+[    0.159273] pci 0000:00:01.3: [8086:7113] type 00 class 0x068000
+[    0.160167] pci 0000:00:01.3: quirk: [io  0x0600-0x063f] claimed by PIIX4 ACPI
+[    0.160907] pci 0000:00:01.3: quirk: [io  0x0700-0x070f] claimed by PIIX4 SMB
+[    0.162760] pci 0000:00:02.0: [1234:1111] type 00 class 0x030000
+[    0.164022] pci 0000:00:02.0: reg 0x10: [mem 0xfd000000-0xfdffffff pref]
+[    0.166352] pci 0000:00:02.0: reg 0x18: [mem 0xfebf0000-0xfebf0fff]
+[    0.170461] pci 0000:00:02.0: reg 0x30: [mem 0xfebe0000-0xfebeffff pref]
+[    0.172007] pci 0000:00:03.0: [8086:100e] type 00 class 0x020000
+[    0.174005] pci 0000:00:03.0: reg 0x10: [mem 0xfebc0000-0xfebdffff]
+[    0.175872] pci 0000:00:03.0: reg 0x14: [io  0xc000-0xc03f]
+[    0.180371] pci 0000:00:03.0: reg 0x30: [mem 0xfeb80000-0xfebbffff pref]
+[    0.185360] ACPI: PCI Interrupt Link [LNKA] (IRQs 5 *10 11)
+[    0.186563] ACPI: PCI Interrupt Link [LNKB] (IRQs 5 *10 11)
+[    0.187690] ACPI: PCI Interrupt Link [LNKC] (IRQs 5 10 *11)
+[    0.188669] ACPI: PCI Interrupt Link [LNKD] (IRQs 5 10 *11)
+[    0.189349] ACPI: PCI Interrupt Link [LNKS] (IRQs *9)
+[    0.193195] ACPI: Enabled 16 GPEs in block 00 to 0F
+[    0.194094] vgaarb: setting as boot device: PCI:0000:00:02.0
+[    0.194698] vgaarb: device added: PCI:0000:00:02.0,decodes=io+mem,owns=io+mem,locks=none
+[    0.196003] vgaarb: loaded
+[    0.196289] vgaarb: bridge control possible 0000:00:02.0
+[    0.197465] SCSI subsystem initialized
+[    0.198107] libata version 3.00 loaded.
+[    0.199013] ACPI: bus type USB registered
+[    0.199182] usbcore: registered new interface driver usbfs
+[    0.200228] usbcore: registered new interface driver hub
+[    0.201088] usbcore: registered new device driver usb
+[    0.202040] pps_core: LinuxPPS API ver. 1 registered
+[    0.203005] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.204038] PTP clock support registered
+[    0.205027] Advanced Linux Sound Architecture Driver Initialized.
+[    0.205147] PCI: Using ACPI for IRQ routing
+[    0.206005] PCI: pci_cache_line_size set to 64 bytes
+[    0.206801] e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
+[    0.208005] e820: reserve RAM buffer [mem 0xbffdf000-0xbfffffff]
+[    0.210090] NetLabel: Initializing
+[    0.210140] NetLabel:  domain hash size = 128
+[    0.211017] NetLabel:  protocols = UNLABELED CIPSOv4
+[    0.211813] NetLabel:  unlabeled traffic allowed by default
+[    0.213129] HPET: 3 timers in total, 0 timers will be used for per-cpu timer
+[    0.214022] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+[    0.214804] hpet0: 3 comparators, 64-bit 100.000000 MHz counter
+[    0.219061] clocksource: Switched to clocksource kvm-clock
+[    0.264660] pnp: PnP ACPI init
+[    0.264720] kworker/u8:0 (512) used greatest stack depth: 13680 bytes left
+[    0.266653] pnp 00:00: Plug and Play ACPI device, IDs PNP0b00 (active)
+[    0.267923] pnp 00:01: Plug and Play ACPI device, IDs PNP0303 (active)
+[    0.269223] pnp 00:02: Plug and Play ACPI device, IDs PNP0f13 (active)
+[    0.270451] pnp 00:03: [dma 2]
+[    0.271131] pnp 00:03: Plug and Play ACPI device, IDs PNP0700 (active)
+[    0.272524] pnp 00:04: Plug and Play ACPI device, IDs PNP0400 (active)
+[    0.273891] pnp 00:05: Plug and Play ACPI device, IDs PNP0501 (active)
+[    0.276271] pnp: PnP ACPI: found 6 devices
+[    0.292736] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    0.294196] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[    0.295217] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[    0.296196] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[    0.297308] pci_bus 0000:00: resource 7 [mem 0xc0000000-0xfebfffff window]
+[    0.298578] NET: Registered protocol family 2
+[    0.299749] TCP established hash table entries: 32768 (order: 6, 262144 bytes)
+[    0.300986] TCP bind hash table entries: 32768 (order: 7, 524288 bytes)
+[    0.302101] TCP: Hash tables configured (established 32768 bind 32768)
+[    0.303234] UDP hash table entries: 2048 (order: 4, 65536 bytes)
+[    0.304203] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes)
+[    0.305496] NET: Registered protocol family 1
+[    0.306502] RPC: Registered named UNIX socket transport module.
+[    0.307455] RPC: Registered udp transport module.
+[    0.308220] RPC: Registered tcp transport module.
+[    0.308977] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.310050] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[    0.311023] pci 0000:00:01.0: PIIX3: Enabling Passive Release
+[    0.311933] pci 0000:00:01.0: Activating ISA DMA hang workarounds
+[    0.312924] pci 0000:00:02.0: Video device with shadowed ROM
+[    0.313845] PCI: CLS 0 bytes, default 64
+[    0.314672] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[    0.315705] software IO TLB [mem 0xbbfdf000-0xbffdf000] (64MB) mapped at [ffff8800bbfdf000-ffff8800bffdefff]
+[    0.317485] microcode: CPU0 sig=0x663, pf=0x1, revision=0x1
+[    0.318128] microcode: CPU1 sig=0x663, pf=0x1, revision=0x1
+[    0.318737] microcode: CPU2 sig=0x663, pf=0x1, revision=0x1
+[    0.319677] microcode: CPU3 sig=0x663, pf=0x1, revision=0x1
+[    0.320506] microcode: Microcode Update Driver: v2.00 <tigran@aivazian.fsnet.co.uk>, Peter Oruba
+[    0.323378] Scanning for low memory corruption every 60 seconds
+[    0.325635] futex hash table entries: 1024 (order: 4, 65536 bytes)
+[    0.326720] audit: initializing netlink subsys (disabled)
+[    0.327617] audit: type=2000 audit(1478023183.767:1): initialized
+[    0.329330] HugeTLB registered 2 MB page size, pre-allocated 0 pages
+[    0.344088] VFS: Disk quotas dquot_6.6.0
+[    0.345115] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.350011] NFS: Registering the id_resolver key type
+[    0.350931] Key type id_resolver registered
+[    0.351597] Key type id_legacy registered
+[    0.352458] 9p: Installing v9fs 9p2000 file system support
+[    0.354323] SELinux:  Registering netfilter hooks
+[    0.357607] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 251)
+[    0.358846] io scheduler noop registered
+[    0.359511] io scheduler deadline registered
+[    0.360697] io scheduler cfq registered (default)
+[    0.361782] pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+[    0.363134] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    0.364312] ACPI: Power Button [PWRF]
+[    0.366119] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    0.389815] 00:05: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[    0.393968] Non-volatile memory driver v1.3
+[    0.394862] Linux agpgart interface v0.103
+[    0.395818] [drm] Initialized drm 1.1.0 20060810
+[    0.408739] loop: module loaded
+[    0.409916] ata_piix 0000:00:01.1: version 2.13
+[    0.414142] scsi host0: ata_piix
+[    0.415376] scsi host1: ata_piix
+[    0.416257] ata1: PATA max MWDMA2 cmd 0x1f0 ctl 0x3f6 bmdma 0xc040 irq 14
+[    0.417069] ata2: PATA max MWDMA2 cmd 0x170 ctl 0x376 bmdma 0xc048 irq 15
+[    0.418513] e100: Intel(R) PRO/100 Network Driver, 3.5.24-k2-NAPI
+[    0.419233] e100: Copyright(c) 1999-2006 Intel Corporation
+[    0.419974] e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+[    0.421017] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[    0.569550] ata2.01: NODEV after polling detection
+[    0.570537] ata1.01: NODEV after polling detection
+[    0.571194] ata2.00: ATAPI: QEMU DVD-ROM, 2.5+, max UDMA/100
+[    0.572026] ata1.00: ATA-7: QEMU HARDDISK, 2.5+, max UDMA/100
+[    0.572644] ata1.00: 2099200 sectors, multi 16: LBA48 
+[    0.573591] ata2.00: configured for MWDMA2
+[    0.574355] ata1.00: configured for MWDMA2
+[    0.575107] scsi 0:0:0:0: Direct-Access     ATA      QEMU HARDDISK    2.5+ PQ: 0 ANSI: 5
+[    0.576895] sd 0:0:0:0: [sda] 2099200 512-byte logical blocks: (1.07 GB/1.00 GiB)
+[    0.577767] sd 0:0:0:0: Attached scsi generic sg0 type 0
+[    0.577879] sd 0:0:0:0: [sda] Write Protect is off
+[    0.577881] sd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00
+[    0.577930] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    0.580149] sd 0:0:0:0: [sda] Attached SCSI disk
+[    0.582130] scsi 1:0:0:0: CD-ROM            QEMU     QEMU DVD-ROM     2.5+ PQ: 0 ANSI: 5
+[    0.595572] sr 1:0:0:0: [sr0] scsi3-mmc drive: 4x/4x cd/rw xa/form2 tray
+[    0.596286] cdrom: Uniform CD-ROM driver Revision: 3.20
+[    0.598087] sr 1:0:0:0: Attached scsi CD-ROM sr0
+[    0.599155] sr 1:0:0:0: Attached scsi generic sg1 type 5
+[    1.018901] ACPI: PCI Interrupt Link [LNKC] enabled at IRQ 11
+[    1.316825] e1000 0000:00:03.0 eth0: (PCI:33MHz:32-bit) 52:54:00:12:34:56
+[    1.317869] e1000 0000:00:03.0 eth0: Intel(R) PRO/1000 Network Connection
+[    1.318807] sky2: driver version 1.30
+[    1.319834] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    1.320177] tsc: Refined TSC clocksource calibration: 3392.386 MHz
+[    1.320180] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x30e63650027, max_idle_ns: 440795292347 ns
+[    1.323014] ehci-pci: EHCI PCI platform driver
+[    1.323689] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    1.324503] ohci-pci: OHCI PCI platform driver
+[    1.325229] uhci_hcd: USB Universal Host Controller Interface driver
+[    1.326394] usbcore: registered new interface driver usblp
+[    1.327538] usbcore: registered new interface driver usb-storage
+[    1.328486] i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+[    1.330782] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    1.331314] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    1.332566] mousedev: PS/2 mouse device common for all mice
+[    1.333834] rtc_cmos 00:00: RTC can wake from S4
+[    1.335034] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input1
+[    1.336733] rtc_cmos 00:00: rtc core: registered rtc_cmos as rtc0
+[    1.337815] rtc_cmos 00:00: alarms up to one day, 114 bytes nvram, hpet irqs
+[    1.339443] device-mapper: ioctl: 4.32.0-ioctl (2015-6-26) initialised: dm-devel@redhat.com
+[    1.340608] hidraw: raw HID events driver (C) Jiri Kosina
+[    1.342901] usbcore: registered new interface driver usbhid
+[    1.343495] usbhid: USB HID core driver
+[    1.345738] Netfilter messages via NETLINK v0.30.
+[    1.346471] nf_conntrack version 0.5.0 (16384 buckets, 65536 max)
+[    1.347583] ctnetlink v0.93: registering with nfnetlink.
+[    1.348497] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    1.349346] Initializing XFRM netlink socket
+[    1.350937] NET: Registered protocol family 10
+[    1.352166] ip6_tables: (C) 2000-2006 Netfilter Core Team
+[    1.352985] sit: IPv6 over IPv4 tunneling driver
+[    1.354562] NET: Registered protocol family 17
+[    1.355126] 9pnet: Installing 9P2000 support
+[    1.355675] Key type dns_resolver registered
+[    1.358833] registered taskstats version 1
+[    1.359541] kmemleak: Kernel memory leak detector initialized
+[    1.359548] kmemleak: Automatic memory scanning thread started
+[    1.361248]   Magic number: 8:351:996
+[    1.361657] console [netcon0] enabled
+[    1.362075] netconsole: network logging started
+[    1.363179] PM: Hibernation image not present or could not be loaded.
+[    1.363850] ALSA device list:
+[    1.364191]   No soundcards found.
+[    1.947697] input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input3
+[    1.952851] md: Waiting for all devices to be available before autodetect
+[    1.954344] md: If you don't use raid, use raid=noautodetect
+[    1.958199] md: Autodetecting RAID arrays.
+[    1.959068] md: Scanned 0 and added 0 devices.
+[    1.959959] md: autorun ...
+[    1.960558] md: ... autorun DONE.
+[    1.962284] EXT4-fs (sda): couldn't mount as ext3 due to feature incompatibilities
+[    1.964570] EXT4-fs (sda): couldn't mount as ext2 due to feature incompatibilities
+[    1.973071] EXT4-fs (sda): mounted filesystem with ordered data mode. Opts: (null)
+[    1.974585] VFS: Mounted root (ext4 filesystem) readonly on device 8:0.
+[    1.976948] devtmpfs: mounted
+[    1.978177] Freeing unused kernel memory: 2776K (ffffffff81f16000 - ffffffff821cc000)
+[    1.979652] Write protecting the kernel read-only data: 14336k
+[    1.981324] Freeing unused kernel memory: 1520K (ffff880001884000 - ffff880001a00000)
+[    1.983118] Freeing unused kernel memory: 1304K (ffff880001cba000 - ffff880001e00000)
+SELinux:  Could not open policy file <= /etc/selinux/targeted/policy/policy.29:  No such file or directory
+INIT: version 2.88 booting
+[    2.032332] stty (975) used greatest stack depth: 13128 bytes left
+[[36minfo[39;49m] [    2.079255] echo (983) used greatest stack depth: 12640 bytes left
+Using makefile-style concurrent boot in runlevel S.
+[....] Starting the hotplug events dispatcher: udevd[    2.203711] udevd[1084]: starting version 175
+[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[....] Synthesizing the initial hotplug events...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Waiting for /dev to be fully populated...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[    2.409807] random: nonblocking pool is initialized
+[....] Activating swap...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[    2.449153] EXT4-fs (sda): re-mounted. Opts: (null)
+[....] Creating compatibility symlink from /etc/mtab to /proc/mounts. ...[?25l[?1c7[1G[[33mwarn[39;49m8[?25h[?0c [33m(warning).[39;49m
+[....] Cleaning up temporary files... /tmp[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[....] Activating lvm and md swap...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Checking file systems...fsck from util-linux 2.20.1
+[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Mounting local filesystems...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Activating swapfile swap...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Cleaning up temporary files...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[....] Setting kernel variables ...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Configuring network interfaces...[    3.018470] ip (2281) used greatest stack depth: 12232 bytes left
+Internet Systems Consortium DHCP Client 4.2.2
+Copyright 2004-2011 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+
+[    3.063617] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[    3.065004] e1000: eth0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[    3.066518] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+Listening on LPF/eth0/52:54:00:12:34:56
+Sending on   LPF/eth0/52:54:00:12:34:56
+Sending on   Socket/fallback
+DHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 4
+DHCPREQUEST on eth0 to 255.255.255.255 port 67
+DHCPOFFER from 10.0.2.2
+DHCPACK from 10.0.2.2
+bound to 10.0.2.15 -- renewal in 39120 seconds.
+[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Cleaning up temporary files...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+INIT: Entering runlevel: 2
+[[36minfo[39;49m] Using makefile-style concurrent boot in runlevel 2.
+[....] Starting enhanced syslogd: rsyslogd[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[....] Starting periodic command scheduler: cron[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[....] Starting OpenBSD Secure Shell server: sshd[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[    6.347581] kt: running test for light, case 5, T2548
+[    6.347581] 
+[    6.351436] kt: starting light_test_lots_of_create_destroy test
+[    6.356445] kt: end of test.
+[    6.358234] kt: starting light_test_lots_of_create_destroy test
+[    6.362725] kt: end of test.
+[    6.364756] kt: starting light_test_lots_of_create_destroy test
+[    6.369397] kt: end of test.
+[    6.371568] kt: starting test light_test_lots_of_create_destroy
+[    6.376466] kt: end of test
+[    6.378848] 
+[    6.380299] dump_desc: [create1]
+[    6.383081] dump_desc evts: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+[    6.386747] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.390045] dump_desc  ret:
+[    6.391866] 
+[    6.392741] dump_desc: [create2]
+[    6.394655] dump_desc evts: 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31
+[    6.398790] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.401822] dump_desc  ret:
+[    6.403676] 
+[    6.404676] dump_desc: [create3]
+[    6.406739] dump_desc evts: 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+[    6.410768] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.413959] dump_desc  ret:
+[    6.415717] 
+[    6.416684] dump_desc: [create4]
+[    6.418522] dump_desc evts: 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63
+[    6.422581] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.424297] dump_desc  ret:
+[    6.426027] 
+[    6.426858] dump_desc: [destroy1]
+[    6.428398] dump_desc evts: 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31
+[    6.432762] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.436108] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.439045] 
+[    6.439589] dump_desc: [destroy2]
+[    6.442248] dump_desc evts: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+[    6.445664] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.448759] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.451772] 
+[    6.452875] dump_desc: [destroy3]
+[    6.454346] dump_desc evts: 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63
+[    6.457607] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.460694] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    6.464287] 
+[    6.464787] dump_desc: [destroy4]
+[    6.466958] dump_desc evts: 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63
+[    6.470279] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.473241] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.475999] 
+[    6.476715] dump_desc: [destroy5]
+[    6.478050] dump_desc evts: 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+[    6.480380] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.482704] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.485247] 
+[    6.485662] dump_desc: [destroy6]
+[    6.487157] dump_desc evts: 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+[    6.490059] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.492920] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    6.496645] LIGHT_SUCCESS
+[    6.499434] kt: running test for light, case 5, T2559
+[    6.499434] 
+[    6.502515] kt: starting light_test_lots_of_create_destroy test
+[    6.505453] kt: end of test.
+[    6.507031] kt: starting light_test_lots_of_create_destroy test
+[    6.510477] kt: end of test.
+[    6.511992] kt: starting light_test_lots_of_create_destroy test
+[    6.515185] kt: end of test.
+[    6.516595] kt: starting test light_test_lots_of_create_destroy
+[    6.519951] kt: end of test
+[    6.521439] 
+[    6.522342] dump_desc: [create1]
+[    6.523941] dump_desc evts: 69 72 74 76 78 80 82 84 86 89 90 91 92 93 94 95
+[    6.527401] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.529976] dump_desc  ret:
+[    6.531418] 
+[    6.532296] dump_desc: [create2]
+[    6.533966] dump_desc evts: 64 65 66 67 68 70 71 73 75 77 79 81 83 85 87 88
+[    6.537436] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.540224] dump_desc  ret:
+[    6.541648] 
+[    6.542355] dump_desc: [create3]
+[    6.543941] dump_desc evts: 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111
+[    6.547908] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.549991] dump_desc  ret:
+[    6.550935] 
+[    6.551322] dump_desc: [create4]
+[    6.552637] dump_desc evts: 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127
+[    6.555788] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.557811] dump_desc  ret:
+[    6.558823] 
+[    6.559296] dump_desc: [destroy1]
+[    6.560650] dump_desc evts: 64 65 66 67 68 70 71 73 75 77 79 81 83 85 87 88
+[    6.563213] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.565166] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.567240] 
+[    6.567862] dump_desc: [destroy2]
+[    6.569077] dump_desc evts: 69 72 74 76 78 80 82 84 86 89 90 91 92 93 94 95
+[    6.571491] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.572987] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.574712] 
+[    6.575678] dump_desc: [destroy3]
+[    6.576803] dump_desc evts: 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127
+[    6.579254] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.581113] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.582954] 
+[    6.583728] dump_desc: [destroy4]
+[    6.584749] dump_desc evts: 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127
+[    6.587186] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.589033] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    6.591665] 
+[    6.592652] dump_desc: [destroy5]
+[    6.593567] dump_desc evts: 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111
+[    6.596131] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.598044] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.599817] 
+[    6.600288] dump_desc: [destroy6]
+[    6.601450] dump_desc evts: 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111
+[    6.604803] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.607097] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    6.609998] LIGHT_SUCCESS
+[    6.612296] kt: running test for light, case 5, T2571
+[    6.612296] 
+[    6.614150] kt: starting light_test_lots_of_create_destroy test
+[    6.616798] kt: end of test.
+[    6.617737] kt: starting light_test_lots_of_create_destroy test
+[    6.619820] kt: end of test.
+[    6.620796] kt: starting light_test_lots_of_create_destroy test
+[    6.622824] kt: end of test.
+[    6.623874] kt: starting test light_test_lots_of_create_destroy
+[    6.626108] kt: end of test
+[    6.627214] 
+[    6.627608] dump_desc: [create1]
+[    6.628678] dump_desc evts: 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+[    6.631241] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.633046] dump_desc  ret:
+[    6.634023] 
+[    6.634444] dump_desc: [create2]
+[    6.635440] dump_desc evts: 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159
+[    6.637984] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.639704] dump_desc  ret:
+[    6.640662] 
+[    6.641087] dump_desc: [create3]
+[    6.642117] dump_desc evts: 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175
+[    6.644707] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.646344] dump_desc  ret:
+[    6.647163] 
+[    6.647662] dump_desc: [create4]
+[    6.648660] dump_desc evts: 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191
+[    6.651298] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.653066] dump_desc  ret:
+[    6.654081] 
+[    6.654567] dump_desc: [destroy1]
+[    6.655576] dump_desc evts: 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159
+[    6.658136] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.659952] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.661649] 
+[    6.662145] dump_desc: [destroy2]
+[    6.663102] dump_desc evts: 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+[    6.665502] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.667117] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.668845] 
+[    6.669430] dump_desc: [destroy3]
+[    6.670412] dump_desc evts: 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191
+[    6.672935] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.674747] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    6.677320] 
+[    6.677725] dump_desc: [destroy4]
+[    6.678788] dump_desc evts: 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191
+[    6.680673] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.682228] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.683834] 
+[    6.684602] dump_desc: [destroy5]
+[    6.684933] dump_desc evts: 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175
+[    6.687953] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.690103] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.692174] 
+[    6.692557] dump_desc: [destroy6]
+[    6.694076] dump_desc evts: 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175
+[    6.696840] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.698648] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    6.701233] LIGHT_SUCCESS
+[    6.702503] kt: running test for light, case 5, T2582
+[    6.702503] 
+[    6.705084] kt: starting light_test_lots_of_create_destroy test
+[    6.707727] kt: end of test.
+[    6.708932] kt: starting light_test_lots_of_create_destroy test
+[    6.711342] kt: end of test.
+[    6.712268] kt: starting light_test_lots_of_create_destroy test
+[    6.714694] kt: end of test.
+[    6.715851] kt: starting test light_test_lots_of_create_destroy
+[    6.718606] kt: end of test
+[    6.719830] 
+[    6.720523] dump_desc: [create1]
+[    6.721879] dump_desc evts: 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207
+[    6.725190] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.727429] dump_desc  ret:
+[    6.728604] 
+[    6.729198] dump_desc: [create2]
+[    6.730153] dump_desc evts: 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223
+[    6.732785] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.734486] dump_desc  ret:
+[    6.735350] 
+[    6.735864] dump_desc: [create3]
+[    6.736810] dump_desc evts: 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239
+[    6.739322] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.740967] dump_desc  ret:
+[    6.741817] 
+[    6.742329] dump_desc: [create4]
+[    6.743329] dump_desc evts: 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255
+[    6.746142] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.747977] dump_desc  ret:
+[    6.748926] 
+[    6.749492] dump_desc: [destroy1]
+[    6.750728] dump_desc evts: 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223
+[    6.753422] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.755217] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.757018] 
+[    6.757437] dump_desc: [destroy2]
+[    6.758602] dump_desc evts: 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207
+[    6.761283] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.763292] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.765344] 
+[    6.765735] dump_desc: [destroy3]
+[    6.766810] dump_desc evts: 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255
+[    6.769415] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.771262] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    6.773029] 
+[    6.773307] dump_desc: [destroy4]
+[    6.773745] dump_desc evts: 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255
+[    6.775509] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.776843] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.778154] 
+[    6.778445] dump_desc: [destroy5]
+[    6.779750] dump_desc evts: 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239
+[    6.781941] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.783642] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.785473] 
+[    6.785807] dump_desc: [destroy6]
+[    6.787171] dump_desc evts: 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239
+[    6.789524] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.791249] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    6.793507] LIGHT_SUCCESS
+[    6.795138] kt: running test for light, case 5, T2593
+[    6.795138] 
+[    6.797100] kt: starting light_test_lots_of_create_destroy test
+[    6.799347] kt: end of test.
+[    6.800298] kt: starting light_test_lots_of_create_destroy test
+[    6.802264] kt: end of test.
+[    6.803312] kt: starting light_test_lots_of_create_destroy test
+[    6.805860] kt: end of test.
+[    6.806886] kt: starting test light_test_lots_of_create_destroy
+[    6.809193] kt: end of test
+[    6.810139] 
+[    6.810535] dump_desc: [create1]
+[    6.811271] dump_desc evts: 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271
+[    6.813395] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.815070] dump_desc  ret:
+[    6.815615] 
+[    6.815905] dump_desc: [create2]
+[    6.817186] dump_desc evts: 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287
+[    6.819437] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.821258] dump_desc  ret:
+[    6.821776] 
+[    6.822635] dump_desc: [create3]
+[    6.823467] dump_desc evts: 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303
+[    6.825760] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.827749] dump_desc  ret:
+[    6.829236] 
+[    6.829590] dump_desc: [create4]
+[    6.830829] dump_desc evts: 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319
+[    6.832495] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.833963] dump_desc  ret:
+[    6.835084] 
+[    6.835393] dump_desc: [destroy1]
+[    6.836253] dump_desc evts: 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287
+[    6.838209] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.839443] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.841469] 
+[    6.841735] dump_desc: [destroy2]
+[    6.842990] dump_desc evts: 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271
+[    6.845212] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.846949] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.848701] 
+[    6.848978] dump_desc: [destroy3]
+[    6.850273] dump_desc evts: 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319
+[    6.852092] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.852858] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    6.854351] 
+[    6.854550] dump_desc: [destroy4]
+[    6.854889] dump_desc evts: 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319
+[    6.856254] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.857633] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.859381] 
+[    6.859702] dump_desc: [destroy5]
+[    6.861070] dump_desc evts: 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303
+[    6.863598] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.865406] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.866827] 
+[    6.867406] dump_desc: [destroy6]
+[    6.868818] dump_desc evts: 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303
+[    6.870814] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.872431] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    6.874424] LIGHT_SUCCESS
+[    6.875486] kt: running test for light, case 5, T2604
+[    6.875486] 
+[    6.877468] kt: starting light_test_lots_of_create_destroy test
+[    6.879619] kt: end of test.
+[    6.880633] kt: starting light_test_lots_of_create_destroy test
+[    6.882931] kt: end of test.
+[    6.883636] kt: starting light_test_lots_of_create_destroy test
+[    6.885556] kt: end of test.
+[    6.886578] kt: starting test light_test_lots_of_create_destroy
+[    6.889001] kt: end of test
+[    6.889981] 
+[    6.890374] dump_desc: [create1]
+[    6.891459] dump_desc evts: 320 321 322 323 324 325 326 327 328 329 330 331 332 333 334 335
+[    6.893800] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.895567] dump_desc  ret:
+[    6.896455] 
+[    6.896971] dump_desc: [create2]
+[    6.897963] dump_desc evts: 336 337 338 339 340 341 342 343 344 345 346 347 348 349 350 351
+[    6.900418] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.902084] dump_desc  ret:
+[    6.902957] 
+[    6.903368] dump_desc: [create3]
+[    6.904334] dump_desc evts: 352 353 354 355 356 357 358 359 360 361 362 363 364 365 366 367
+[    6.906572] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.908773] dump_desc  ret:
+[    6.909893] 
+[    6.910465] dump_desc: [create4]
+[    6.911731] dump_desc evts: 368 369 370 371 372 373 374 375 376 377 378 379 380 381 382 383
+[    6.914462] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.916290] dump_desc  ret:
+[    6.917402] 
+[    6.917836] dump_desc: [destroy1]
+[    6.918821] dump_desc evts: 336 337 338 339 340 341 342 343 344 345 346 347 348 349 350 351
+[    6.921646] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.923554] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.925527] 
+[    6.926086] dump_desc: [destroy2]
+[    6.927258] dump_desc evts: 320 321 322 323 324 325 326 327 328 329 330 331 332 333 334 335
+[    6.930126] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.931931] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.933159] 
+[    6.933394] dump_desc: [destroy3]
+[    6.934115] dump_desc evts: 368 369 370 371 372 373 374 375 376 377 378 379 380 381 382 383
+[    6.937199] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.939475] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.940934] 
+[    6.941920] dump_desc: [destroy4]
+[    6.943152] dump_desc evts: 368 369 370 371 372 373 374 375 376 377 378 379 380 381 382 383
+[    6.945252] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.946957] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    6.949025] 
+[    6.949360] dump_desc: [destroy5]
+[    6.949906] dump_desc evts: 352 353 354 355 356 357 358 359 360 361 362 363 364 365 366 367
+[    6.951557] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.952967] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.954924] 
+[    6.955707] dump_desc: [destroy6]
+[    6.956696] dump_desc evts: 352 353 354 355 356 357 358 359 360 361 362 363 364 365 366 367
+[    6.959071] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.961082] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    6.963750] LIGHT_SUCCESS
+[    6.965849] kt: running test for light, case 5, T2615
+[    6.965849] 
+[    6.967237] kt: starting light_test_lots_of_create_destroy test
+[    6.969271] kt: end of test.
+[    6.970272] kt: starting light_test_lots_of_create_destroy test
+[    6.972416] kt: end of test.
+[    6.973608] kt: starting light_test_lots_of_create_destroy test
+[    6.976915] kt: end of test.
+[    6.978145] kt: starting test light_test_lots_of_create_destroy
+[    6.980870] kt: end of test
+[    6.982035] 
+[    6.982671] dump_desc: [create1]
+[    6.983778] dump_desc evts: 384 385 386 387 388 389 390 391 392 393 394 395 396 397 398 399
+[    6.986608] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.988803] dump_desc  ret:
+[    6.990014] 
+[    6.990567] dump_desc: [create2]
+[    6.991546] dump_desc evts: 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415
+[    6.994095] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.996126] dump_desc  ret:
+[    6.996623] 
+[    6.997616] dump_desc: [create3]
+[    6.998507] dump_desc evts: 416 417 418 419 420 421 422 423 424 425 426 427 428 429 430 431
+[    7.001100] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.002804] dump_desc  ret:
+[    7.004016] 
+[    7.004462] dump_desc: [create4]
+[    7.005415] dump_desc evts: 432 433 434 435 436 437 438 439 440 441 442 443 444 445 446 447
+[    7.007857] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.009538] dump_desc  ret:
+[    7.010565] 
+[    7.011045] dump_desc: [destroy1]
+[    7.011710] dump_desc evts: 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415
+[    7.013887] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.015515] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.017272] 
+[    7.017577] dump_desc: [destroy2]
+[    7.018900] dump_desc evts: 384 385 386 387 388 389 390 391 392 393 394 395 396 397 398 399
+[    7.020886] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.022835] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.024868] 
+[    7.025773] dump_desc: [destroy3]
+[    7.026746] dump_desc evts: 432 433 434 435 436 437 438 439 440 441 442 443 444 445 446 447
+[    7.029500] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.031513] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    7.033944] 
+[    7.034891] dump_desc: [destroy4]
+[    7.035812] dump_desc evts: 432 433 434 435 436 437 438 439 440 441 442 443 444 445 446 447
+[    7.038262] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.040201] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.042290] 
+[    7.042746] dump_desc: [destroy5]
+[    7.044378] dump_desc evts: 416 417 418 419 420 421 422 423 424 425 426 427 428 429 430 431
+[    7.046955] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.048986] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.051324] 
+[    7.051665] dump_desc: [destroy6]
+[    7.053249] dump_desc evts: 416 417 418 419 420 421 422 423 424 425 426 427 428 429 430 431
+[    7.055174] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.055974] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    7.057475] LIGHT_SUCCESS
+[    7.058417] kt: running test for light, case 5, T2626
+[    7.058417] 
+[    7.060801] kt: starting light_test_lots_of_create_destroy test
+[    7.063076] kt: end of test.
+[    7.064182] kt: starting light_test_lots_of_create_destroy test
+[    7.066390] kt: end of test.
+[    7.067477] kt: starting light_test_lots_of_create_destroy test
+[    7.069611] kt: end of test.
+[    7.070668] kt: starting test light_test_lots_of_create_destroy
+[    7.073691] kt: end of test
+[    7.074636] 
+[    7.075128] dump_desc: [create1]
+[    7.075894] dump_desc evts: 448 449 450 451 452 453 454 455 456 457 458 459 460 461 462 463
+[    7.078624] dump_desc   ts: 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+[    7.080628] dump_desc  ret:
+[    7.081915] 
+[    7.082348] dump_desc: [create2]
+[    7.083662] dump_desc evts: 464 465 466 467 468 469 470 471 472 473 474 475 476 477 478 479
+[    7.085984] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.087630] dump_desc  ret:
+[    7.089126] 
+[    7.089549] dump_desc: [create3]
+[    7.091112] dump_desc evts: 480 481 482 483 484 485 486 487 488 489 490 491 492 493 494 495
+[    7.093527] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.095262] dump_desc  ret:
+[    7.096754] 
+[    7.097479] dump_desc: [create4]
+[    7.098495] dump_desc evts: 496 497 498 499 500 501 502 503 504 505 506 507 508 509 510 511
+[    7.101313] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.103427] dump_desc  ret:
+[    7.104817] 
+[    7.105396] dump_desc: [destroy1]
+[    7.106766] dump_desc evts: 464 465 466 467 468 469 470 471 472 473 474 475 476 477 478 479
+[    7.108965] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.110571] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.112471] 
+[    7.112908] dump_desc: [destroy2]
+[    7.114456] dump_desc evts: 448 449 450 451 452 453 454 455 456 457 458 459 460 461 462 463
+[    7.116657] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.118269] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.120150] 
+[    7.120445] dump_desc: [destroy3]
+[    7.121844] dump_desc evts: 496 497 498 499 500 501 502 503 504 505 506 507 508 509 510 511
+[    7.124094] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.124959] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    7.126524] 
+[    7.126702] dump_desc: [destroy4]
+[    7.127511] dump_desc evts: 496 497 498 499 500 501 502 503 504 505 506 507 508 509 510 511
+[    7.129487] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.131539] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.133749] 
+[    7.134664] dump_desc: [destroy5]
+[    7.135760] dump_desc evts: 480 481 482 483 484 485 486 487 488 489 490 491 492 493 494 495
+[    7.138608] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.140703] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.142810] 
+[    7.143559] dump_desc: [destroy6]
+[    7.144524] dump_desc evts: 480 481 482 483 484 485 486 487 488 489 490 491 492 493 494 495
+[    7.147306] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    7.149431] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[    7.152158] LIGHT_SUCCESS
+[    9.504497] kmemleak: 1 new suspected memory leaks (see /sys/kernel/debug/kmemleak)
+INIT: Switching to runlevel: 0
+INIT: Sending processes the TERM signal
+[[36minfo[39;49m] Using makefile-style concurrent boot in runlevel 0.
+[....] Asking all remaining processes to terminate...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] All processes ended within 1 seconds...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Stopping enhanced syslogd: rsyslogd[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[....] Deconfiguring network interfaces...Internet Systems Consortium DHCP Client 4.2.2
+Copyright 2004-2011 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+
+Listening on LPF/eth0/52:54:00:12:34:56
+Sending on   LPF/eth0/52:54:00:12:34:56
+Sending on   Socket/fallback
+DHCPRELEASE on eth0 to 10.0.2.2 port 67
+[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[[36minfo[39;49m] Saving the system clock.
+[[36minfo[39;49m] Hardware Clock updated to Tue Nov  1 18:00:04 UTC 2016.
+[....] Deactivating swap...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Unmounting local filesystems...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[   21.161381] EXT4-fs (sda): re-mounted. Opts: (null)
+[[36minfo[39;49m] Will now halt.
+[   24.182554] sd 0:0:0:0: [sda] Synchronizing SCSI cache
+[   24.183955] sd 0:0:0:0: [sda] Stopping disk
+[   24.655363] ACPI: Preparing to enter system sleep state S5
+[   24.655897] reboot: Power down
+[   24.656855] acpi_power_off called

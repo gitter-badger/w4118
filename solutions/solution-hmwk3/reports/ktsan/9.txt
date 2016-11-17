@@ -1,0 +1,946 @@
+[....] Starting OpenBSD Secure Shell server: sshd[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[   62.094968] kt: running test for light, case 9, T2589
+[   62.094968] 
+[   62.098926] kt: starting test light_test_3thread_on_5event_selfdestroy
+[   62.103558] ==================================================================
+[   62.104140] ThreadSanitizer: data-race in tcp_v4_rcv
+[   62.104140] 
+[   62.104140] Write at 0xffff8800ba59a8c0 of size 8 by thread -4 on CPU 3:
+			__sk_add_backlog at include/net/sock.h:806
+			 (inlined by) sk_add_backlog at include/net/sock.h:829
+			 (inlined by) tcp_v4_rcv at net/ipv4/tcp_ipv4.c:1634
+			ip_local_deliver_finish at net/ipv4/ip_input.c:216
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_local_deliver at net/ipv4/ip_input.c:256
+			dst_input at include/net/dst.h:450
+			 (inlined by) ip_rcv_finish at net/ipv4/ip_input.c:367
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_rcv at net/ipv4/ip_input.c:455
+			__netif_receive_skb_core at net/core/dev.c:3893
+			__netif_receive_skb at net/core/dev.c:3928
+			netif_receive_skb_internal at net/core/dev.c:3956
+			napi_skb_finish at net/core/dev.c:4281
+			 (inlined by) napi_gro_receive at net/core/dev.c:4310
+			e1000_receive_skb at drivers/net/ethernet/intel/e1000/e1000_main.c:4019
+			 (inlined by) e1000_clean_rx_irq at drivers/net/ethernet/intel/e1000/e1000_main.c:4471
+			e1000_clean at drivers/net/ethernet/intel/e1000/e1000_main.c:3820
+			napi_poll at net/core/dev.c:4744
+			 (inlined by) net_rx_action at net/core/dev.c:4809
+			__do_softirq at kernel/softirq.c:273
+			common_interrupt at arch/x86/entry/entry_64.S:609
+[   62.106605] 
+[   62.106605] Previous read at 0xffff8800ba59a8c0 of size 8 by thread 2587 on CPU 2:
+			tcp_recvmsg at net/ipv4/tcp.c:1664 (discriminator 1)
+			inet_recvmsg at net/ipv4/af_inet.c:764
+			sock_recvmsg_nosec at net/socket.c:712
+			 (inlined by) sock_recvmsg at net/socket.c:720
+			sock_read_iter at net/socket.c:797
+			new_sync_read at fs/read_write.c:422
+			 (inlined by) __vfs_read at fs/read_write.c:434
+			vfs_read at fs/read_write.c:454
+			SYSC_read at fs/read_write.c:569
+			 (inlined by) SyS_read at fs/read_write.c:562
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   62.106605] 
+[   62.106605] Mutexes locked by thread -4:
+[   62.106605] Mutex 412366 is locked here:
+			__raw_spin_lock at include/linux/spinlock_api_smp.h:158
+			 (inlined by) _raw_spin_lock at kernel/locking/spinlock.c:151
+			tcp_v4_rcv at net/ipv4/tcp_ipv4.c:1628
+			ip_local_deliver_finish at net/ipv4/ip_input.c:216
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_local_deliver at net/ipv4/ip_input.c:256
+			dst_input at include/net/dst.h:450
+			 (inlined by) ip_rcv_finish at net/ipv4/ip_input.c:367
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_rcv at net/ipv4/ip_input.c:455
+			__netif_receive_skb_core at net/core/dev.c:3893
+			__netif_receive_skb at net/core/dev.c:3928
+			netif_receive_skb_internal at net/core/dev.c:3956
+			napi_skb_finish at net/core/dev.c:4281
+			 (inlined by) napi_gro_receive at net/core/dev.c:4310
+			e1000_receive_skb at drivers/net/ethernet/intel/e1000/e1000_main.c:4019
+			 (inlined by) e1000_clean_rx_irq at drivers/net/ethernet/intel/e1000/e1000_main.c:4471
+			e1000_clean at drivers/net/ethernet/intel/e1000/e1000_main.c:3820
+			napi_poll at net/core/dev.c:4744
+			 (inlined by) net_rx_action at net/core/dev.c:4809
+			__do_softirq at kernel/softirq.c:273
+			common_interrupt at arch/x86/entry/entry_64.S:609
+[   62.106605] 
+[   62.106605] ==================================================================
+[   62.197489] ==================================================================
+[   62.198123] ThreadSanitizer: data-race in tcp_recvmsg
+[   62.198123] 
+[   62.198123] Read at 0xffff8800ba59a8c0 of size 8 by thread 2587 on CPU 2:
+			tcp_recvmsg at net/ipv4/tcp.c:1664 (discriminator 1)
+			inet_recvmsg at net/ipv4/af_inet.c:764
+			sock_recvmsg_nosec at net/socket.c:712
+			 (inlined by) sock_recvmsg at net/socket.c:720
+			sock_read_iter at net/socket.c:797
+			new_sync_read at fs/read_write.c:422
+			 (inlined by) __vfs_read at fs/read_write.c:434
+			vfs_read at fs/read_write.c:454
+			SYSC_read at fs/read_write.c:569
+			 (inlined by) SyS_read at fs/read_write.c:562
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   62.198123] 
+[   62.198123] Previous write at 0xffff8800ba59a8c0 of size 8 by thread -4 on CPU 3:
+			__sk_add_backlog at include/net/sock.h:806
+			 (inlined by) sk_add_backlog at include/net/sock.h:829
+			 (inlined by) tcp_v4_rcv at net/ipv4/tcp_ipv4.c:1634
+			ip_local_deliver_finish at net/ipv4/ip_input.c:216
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_local_deliver at net/ipv4/ip_input.c:256
+			dst_input at include/net/dst.h:450
+			 (inlined by) ip_rcv_finish at net/ipv4/ip_input.c:367
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_rcv at net/ipv4/ip_input.c:455
+			__netif_receive_skb_core at net/core/dev.c:3893
+			__netif_receive_skb at net/core/dev.c:3928
+			netif_receive_skb_internal at net/core/dev.c:3956
+			napi_skb_finish at net/core/dev.c:4281
+			 (inlined by) napi_gro_receive at net/core/dev.c:4310
+			e1000_receive_skb at drivers/net/ethernet/intel/e1000/e1000_main.c:4019
+			 (inlined by) e1000_clean_rx_irq at drivers/net/ethernet/intel/e1000/e1000_main.c:4471
+			e1000_clean at drivers/net/ethernet/intel/e1000/e1000_main.c:3820
+			napi_poll at net/core/dev.c:4744
+			 (inlined by) net_rx_action at net/core/dev.c:4809
+			__do_softirq at kernel/softirq.c:273
+			apic_timer_interrupt at arch/x86/entry/entry_64.S:790
+[   62.198123] 
+[   62.198123] Mutexes locked by thread -4:
+[   62.198123] Mutex 412366 is locked here:
+			__raw_spin_lock at include/linux/spinlock_api_smp.h:158
+			 (inlined by) _raw_spin_lock at kernel/locking/spinlock.c:151
+			tcp_v4_rcv at net/ipv4/tcp_ipv4.c:1628
+			ip_local_deliver_finish at net/ipv4/ip_input.c:216
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_local_deliver at net/ipv4/ip_input.c:256
+			dst_input at include/net/dst.h:450
+			 (inlined by) ip_rcv_finish at net/ipv4/ip_input.c:367
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_rcv at net/ipv4/ip_input.c:455
+			__netif_receive_skb_core at net/core/dev.c:3893
+			__netif_receive_skb at net/core/dev.c:3928
+			netif_receive_skb_internal at net/core/dev.c:3956
+			napi_skb_finish at net/core/dev.c:4281
+			 (inlined by) napi_gro_receive at net/core/dev.c:4310
+			e1000_receive_skb at drivers/net/ethernet/intel/e1000/e1000_main.c:4019
+			 (inlined by) e1000_clean_rx_irq at drivers/net/ethernet/intel/e1000/e1000_main.c:4471
+			e1000_clean at drivers/net/ethernet/intel/e1000/e1000_main.c:3820
+			napi_poll at net/core/dev.c:4744
+			 (inlined by) net_rx_action at net/core/dev.c:4809
+			__do_softirq at kernel/softirq.c:273
+			apic_timer_interrupt at arch/x86/entry/entry_64.S:790
+[   62.198123] 
+[   62.198123] ==================================================================
+[   62.723956] kt: end of test
+[   62.726001] 
+[   62.727480] dump_desc: [signal]
+[   62.729523] dump_desc evts:
+[   62.731459] dump_desc   ts: 101 101 202 202 303 303 404 404 505 505
+[   62.734461] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0
+[   62.736288] 
+[   62.736878] dump_desc: [sum_create_wait]
+[   62.738648] dump_desc evts: 2 0 3 1 4
+[   62.740399] dump_desc   ts: 101 101 102 203 202 202 303 303 303 404 405 405 504 504 506
+[   62.743449] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   62.745490] 
+[   62.746401] dump_desc: [sum_destroy]
+[   62.747822] dump_desc evts:
+[   62.749418] dump_desc   ts: 101 101 102 203 202 202 304 303 303 404 405 405 504 504 506
+[   62.752410] dump_desc  ret: -22 0 -22 -22 0 -22 -22 0 -22 0 -22 -22 0 -22 -22
+[   62.755312] LIGHT_SUCCESS
+[   62.758723] kt: running test for light, case 9, T2589
+[   62.758723] 
+[   62.762567] kt: starting test light_test_3thread_on_5event_selfdestroy
+[   63.329887] kt: end of test
+[   63.342017] 
+[   63.343846] dump_desc: [signal]
+[   63.365885] dump_desc evts:
+[   63.383794] dump_desc   ts: 101 101 202 202 303 303 404 404 505 505
+[   63.417937] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0
+[   63.439869] 
+[   63.444420] dump_desc: [sum_create_wait]
+[   63.459006] dump_desc evts: 5 7 8 9 6
+[   63.469860] dump_desc   ts: 102 101 101 203 201 203 303 303 303 404 404 404 505 506 506
+[   63.495522] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   63.524891] 
+[   63.529514] dump_desc: [sum_destroy]
+[   63.531378] dump_desc evts:
+[   63.555930] dump_desc   ts: 102 101 101 203 201 203 303 303 303 404 404 404 505 506 506
+[   63.590568] dump_desc  ret: -22 -22 0 -22 0 -22 -22 0 -22 -22 0 -22 0 -22 -22
+[   63.593489] LIGHT_SUCCESS
+[   63.625626] kt: running test for light, case 9, T2589
+[   63.625626] 
+[   63.628940] kt: starting test light_test_3thread_on_5event_selfdestroy
+[   64.164879] kt: end of test
+[   64.166536] 
+[   64.167742] dump_desc: [signal]
+[   64.169689] dump_desc evts:
+[   64.171500] dump_desc   ts: 101 101 202 202 303 303 404 404 505 505
+[   64.174459] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0
+[   64.176466] 
+[   64.177466] dump_desc: [sum_create_wait]
+[   64.179542] dump_desc evts: 10 11 13 14 12
+[   64.181732] dump_desc   ts: 102 101 100 202 201 202 303 302 303 404 403 404 504 505 505
+[   64.184855] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   64.187454] 
+[   64.188383] dump_desc: [sum_destroy]
+[   64.189942] dump_desc evts:
+[   64.191830] dump_desc   ts: 102 101 100 202 201 202 303 302 303 404 403 404 504 505 505
+[   64.194576] dump_desc  ret: -22 0 -22 -22 0 -22 -22 0 -22 -22 0 -22 0 -22 -22
+[   64.196388] LIGHT_SUCCESS
+[   64.199413] kt: running test for light, case 9, T2589
+[   64.199413] 
+[   64.201910] kt: starting test light_test_3thread_on_5event_selfdestroy
+[   64.733759] kt: end of test
+[   64.735566] 
+[   64.736603] dump_desc: [signal]
+[   64.738477] dump_desc evts:
+[   64.740351] dump_desc   ts: 101 101 202 202 303 303 404 404 505 505
+[   64.742524] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0
+[   64.744286] 
+[   64.744814] dump_desc: [sum_create_wait]
+[   64.746481] dump_desc evts: 18 19 15 16 17
+[   64.747963] dump_desc   ts: 101 100 101 201 202 203 304 303 302 404 404 404 505 505 505
+[   64.750438] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   64.752422] 
+[   64.752944] dump_desc: [sum_destroy]
+[   64.754417] dump_desc evts:
+[   64.755586] dump_desc   ts: 101 100 101 201 202 203 304 303 302 404 404 404 505 505 505
+[   64.758317] dump_desc  ret: -22 0 -22 0 -22 -22 -22 -22 0 -22 -22 0 0 -22 -22
+[   64.760486] LIGHT_SUCCESS
+[   64.764567] kt: running test for light, case 9, T2589
+[   64.764567] 
+[   64.766705] kt: starting test light_test_3thread_on_5event_selfdestroy
+[   65.297270] kt: end of test
+[   65.298846] 
+[   65.300266] dump_desc: [signal]
+[   65.301953] dump_desc evts:
+[   65.303664] dump_desc   ts: 101 101 202 202 303 303 404 404 505 505
+[   65.305832] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0
+[   65.307391] 
+[   65.307914] dump_desc: [sum_create_wait]
+[   65.309386] dump_desc evts: 20 21 23 22 24
+[   65.310882] dump_desc   ts: 101 102 102 203 201 201 302 302 302 403 403 404 505 504 505
+[   65.313526] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   65.315394] 
+[   65.315894] dump_desc: [sum_destroy]
+[   65.317380] dump_desc evts:
+[   65.318558] dump_desc   ts: 101 102 102 203 201 201 302 302 302 403 403 404 505 504 505
+[   65.321345] dump_desc  ret: 0 -22 -22 -22 0 -22 -22 0 -22 -22 0 -22 -22 0 -22
+[   65.323518] LIGHT_SUCCESS
+[   65.325906] kt: running test for light, case 9, T2589
+[   65.325906] 
+[   65.328593] kt: starting test light_test_3thread_on_5event_selfdestroy
+[   65.856547] kt: end of test
+[   65.875395] 
+[   65.880429] dump_desc: [signal]
+[   65.894991] dump_desc evts:
+[   65.906966] dump_desc   ts: 101 101 202 202 303 303 404 404 505 505
+[   65.934481] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0
+[   65.936852] 
+[   65.959370] dump_desc: [sum_create_wait]
+[   65.961615] dump_desc evts: 25 26 27 28 29
+[   65.984674] dump_desc   ts: 101 101 100 201 199 199 301 300 300 401 402 401 502 503 502
+[   66.025902] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   66.047523] 
+[   66.053959] dump_desc: [sum_destroy]
+[   66.068795] dump_desc evts:
+[   66.083968] dump_desc   ts: 101 101 100 201 199 199 301 300 300 401 402 401 502 503 502
+[   66.088759] dump_desc  ret: 0 -22 -22 -22 0 -22 -22 -22 0 -22 -22 0 0 -22 -22
+[   66.118887] LIGHT_SUCCESS
+[   66.135910] ==================================================================
+[   66.135918] ThreadSanitizer: data-race in __nf_ct_refresh_acct
+[   66.135918] 
+[   66.135946] Read at 0xffff8800b9f3ee10 of size 8 by thread 2589 on CPU 3:
+			__nf_ct_refresh_acct at net/netfilter/nf_conntrack_core.c:1248
+			nf_ct_refresh_acct at include/net/netfilter/nf_conntrack.h:208
+			 (inlined by) tcp_packet at net/netfilter/nf_conntrack_proto_tcp.c:1097
+			nf_conntrack_in at net/netfilter/nf_conntrack_core.c:1156
+			ipv4_conntrack_in at net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.c:150
+			nf_iterate at net/netfilter/core.c:169
+			nf_hook_slow at net/netfilter/core.c:201
+			nf_hook_thresh at include/linux/netfilter.h:180
+			 (inlined by) NF_HOOK_THRESH at include/linux/netfilter.h:216
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_rcv at net/ipv4/ip_input.c:455
+			__netif_receive_skb_core at net/core/dev.c:3893
+			__netif_receive_skb at net/core/dev.c:3928
+			netif_receive_skb_internal at net/core/dev.c:3956
+			napi_skb_finish at net/core/dev.c:4281
+			 (inlined by) napi_gro_receive at net/core/dev.c:4310
+			e1000_receive_skb at drivers/net/ethernet/intel/e1000/e1000_main.c:4019
+			 (inlined by) e1000_clean_rx_irq at drivers/net/ethernet/intel/e1000/e1000_main.c:4471
+			e1000_clean at drivers/net/ethernet/intel/e1000/e1000_main.c:3820
+			napi_poll at net/core/dev.c:4744
+			 (inlined by) net_rx_action at net/core/dev.c:4809
+			__do_softirq at kernel/softirq.c:273
+			apic_timer_interrupt at arch/x86/entry/entry_64.S:790
+[   66.136143] 
+[   66.136143] Previous write at 0xffff8800b9f3ee10 of size 8 by thread 2587 on CPU 2:
+			__mod_timer at kernel/time/timer.c:815
+			 (inlined by) mod_timer_pending at kernel/time/timer.c:836
+			__nf_ct_refresh_acct at net/netfilter/nf_conntrack_core.c:1249
+			nf_ct_refresh_acct at include/net/netfilter/nf_conntrack.h:208
+			 (inlined by) tcp_packet at net/netfilter/nf_conntrack_proto_tcp.c:1097
+			nf_conntrack_in at net/netfilter/nf_conntrack_core.c:1156
+			ipv4_conntrack_local at net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.c:161
+			nf_iterate at net/netfilter/core.c:169
+			nf_hook_slow at net/netfilter/core.c:201
+			nf_hook_thresh at include/linux/netfilter.h:180
+			 (inlined by) nf_hook at include/linux/netfilter.h:190
+			 (inlined by) __ip_local_out_sk at net/ipv4/ip_output.c:104
+			__ip_local_out at net/ipv4/ip_output.c:110
+			 (inlined by) ip_local_out_sk at net/ipv4/ip_output.c:117
+			ip_local_out at include/net/ip.h:119 (discriminator 4)
+			 (inlined by) ip_queue_xmit at net/ipv4/ip_output.c:454 (discriminator 4)
+			tcp_transmit_skb at net/ipv4/tcp_output.c:1039
+			tcp_send_ack at net/ipv4/tcp_output.c:3375
+			tcp_cleanup_rbuf at net/ipv4/tcp.c:1432
+			tcp_recvmsg at net/ipv4/tcp.c:1881
+			inet_recvmsg at net/ipv4/af_inet.c:764
+			sock_recvmsg_nosec at net/socket.c:712
+			 (inlined by) sock_recvmsg at net/socket.c:720
+			sock_read_iter at net/socket.c:797
+			new_sync_read at fs/read_write.c:422
+			 (inlined by) __vfs_read at fs/read_write.c:434
+			vfs_read at fs/read_write.c:454
+			SYSC_read at fs/read_write.c:569
+			 (inlined by) SyS_read at fs/read_write.c:562
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   66.136143] 
+[   66.136143] Mutexes locked by thread 2587:
+[   66.136143] Mutex 1154 is locked here:
+			__raw_spin_lock at include/linux/spinlock_api_smp.h:158
+			 (inlined by) _raw_spin_lock at kernel/locking/spinlock.c:151
+			spin_lock at include/linux/spinlock.h:312
+			 (inlined by) __mod_timer at kernel/time/timer.c:809
+			 (inlined by) mod_timer_pending at kernel/time/timer.c:836
+			__nf_ct_refresh_acct at net/netfilter/nf_conntrack_core.c:1249
+			nf_ct_refresh_acct at include/net/netfilter/nf_conntrack.h:208
+			 (inlined by) tcp_packet at net/netfilter/nf_conntrack_proto_tcp.c:1097
+			nf_conntrack_in at net/netfilter/nf_conntrack_core.c:1156
+			ipv4_conntrack_local at net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.c:161
+			nf_iterate at net/netfilter/core.c:169
+			nf_hook_slow at net/netfilter/core.c:201
+			nf_hook_thresh at include/linux/netfilter.h:180
+			 (inlined by) nf_hook at include/linux/netfilter.h:190
+			 (inlined by) __ip_local_out_sk at net/ipv4/ip_output.c:104
+			__ip_local_out at net/ipv4/ip_output.c:110
+			 (inlined by) ip_local_out_sk at net/ipv4/ip_output.c:117
+			ip_local_out at include/net/ip.h:119 (discriminator 4)
+			 (inlined by) ip_queue_xmit at net/ipv4/ip_output.c:454 (discriminator 4)
+			tcp_transmit_skb at net/ipv4/tcp_output.c:1039
+			tcp_send_ack at net/ipv4/tcp_output.c:3375
+			tcp_cleanup_rbuf at net/ipv4/tcp.c:1432
+			tcp_recvmsg at net/ipv4/tcp.c:1881
+			inet_recvmsg at net/ipv4/af_inet.c:764
+			sock_recvmsg_nosec at net/socket.c:712
+			 (inlined by) sock_recvmsg at net/socket.c:720
+			sock_read_iter at net/socket.c:797
+			new_sync_read at fs/read_write.c:422
+			 (inlined by) __vfs_read at fs/read_write.c:434
+			vfs_read at fs/read_write.c:454
+			SYSC_read at fs/read_write.c:569
+			 (inlined by) SyS_read at fs/read_write.c:562
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   66.136143] 
+[   66.136143] ==================================================================
+[   67.829911] kt: running test for light, case 9, T2589
+[   67.829911] 
+[   67.834724] kt: starting test light_test_3thread_on_5event_selfdestroy
+[   68.368619] kt: end of test
+[   68.370477] 
+[   68.371614] dump_desc: [signal]
+[   68.373468] dump_desc evts:
+[   68.375529] dump_desc   ts: 101 101 202 202 303 303 404 404 505 505
+[   68.378986] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0
+[   68.381444] 
+[   68.382482] dump_desc: [sum_create_wait]
+[   68.384522] dump_desc evts: 30 32 33 31 34
+[   68.386836] dump_desc   ts: 101 102 101 202 203 201 303 302 304 404 405 405 504 505 505
+[   68.388438] ==================================================================
+[   68.388463] ThreadSanitizer: data-race in mod_timer_pending
+[   68.388463] 
+[   68.388485] Write at 0xffff8800b9f3ee10 of size 8 by thread 2587 on CPU 2:
+			__mod_timer at kernel/time/timer.c:815
+			 (inlined by) mod_timer_pending at kernel/time/timer.c:836
+			__nf_ct_refresh_acct at net/netfilter/nf_conntrack_core.c:1249
+			nf_ct_refresh_acct at include/net/netfilter/nf_conntrack.h:208
+			 (inlined by) tcp_packet at net/netfilter/nf_conntrack_proto_tcp.c:1097
+			nf_conntrack_in at net/netfilter/nf_conntrack_core.c:1156
+			ipv4_conntrack_local at net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.c:161
+			nf_iterate at net/netfilter/core.c:169
+			nf_hook_slow at net/netfilter/core.c:201
+			nf_hook_thresh at include/linux/netfilter.h:180
+			 (inlined by) nf_hook at include/linux/netfilter.h:190
+			 (inlined by) __ip_local_out_sk at net/ipv4/ip_output.c:104
+			__ip_local_out at net/ipv4/ip_output.c:110
+			 (inlined by) ip_local_out_sk at net/ipv4/ip_output.c:117
+			ip_local_out at include/net/ip.h:119 (discriminator 4)
+			 (inlined by) ip_queue_xmit at net/ipv4/ip_output.c:454 (discriminator 4)
+			tcp_transmit_skb at net/ipv4/tcp_output.c:1039
+			tcp_send_ack at net/ipv4/tcp_output.c:3375
+			tcp_cleanup_rbuf at net/ipv4/tcp.c:1432
+			tcp_recvmsg at net/ipv4/tcp.c:1881
+			inet_recvmsg at net/ipv4/af_inet.c:764
+			sock_recvmsg_nosec at net/socket.c:712
+			 (inlined by) sock_recvmsg at net/socket.c:720
+			sock_read_iter at net/socket.c:797
+			new_sync_read at fs/read_write.c:422
+			 (inlined by) __vfs_read at fs/read_write.c:434
+			vfs_read at fs/read_write.c:454
+			SYSC_read at fs/read_write.c:569
+			 (inlined by) SyS_read at fs/read_write.c:562
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   68.389145] 
+[   68.389145] Previous read at 0xffff8800b9f3ee10 of size 8 by thread -4 on CPU 3:
+			__nf_ct_refresh_acct at net/netfilter/nf_conntrack_core.c:1248
+			nf_ct_refresh_acct at include/net/netfilter/nf_conntrack.h:208
+			 (inlined by) tcp_packet at net/netfilter/nf_conntrack_proto_tcp.c:1097
+			nf_conntrack_in at net/netfilter/nf_conntrack_core.c:1156
+			ipv4_conntrack_in at net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.c:150
+			nf_iterate at net/netfilter/core.c:169
+			nf_hook_slow at net/netfilter/core.c:201
+			nf_hook_thresh at include/linux/netfilter.h:180
+			 (inlined by) NF_HOOK_THRESH at include/linux/netfilter.h:216
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_rcv at net/ipv4/ip_input.c:455
+			__netif_receive_skb_core at net/core/dev.c:3893
+			__netif_receive_skb at net/core/dev.c:3928
+			netif_receive_skb_internal at net/core/dev.c:3956
+			napi_skb_finish at net/core/dev.c:4281
+			 (inlined by) napi_gro_receive at net/core/dev.c:4310
+			e1000_receive_skb at drivers/net/ethernet/intel/e1000/e1000_main.c:4019
+			 (inlined by) e1000_clean_rx_irq at drivers/net/ethernet/intel/e1000/e1000_main.c:4471
+			e1000_clean at drivers/net/ethernet/intel/e1000/e1000_main.c:3820
+			napi_poll at net/core/dev.c:4744
+			 (inlined by) net_rx_action at net/core/dev.c:4809
+			__do_softirq at kernel/softirq.c:273
+			common_interrupt at arch/x86/entry/entry_64.S:609
+[   68.389145] 
+[   68.389145] Mutexes locked by thread 2587:
+[   68.389145] Mutex 1154 is locked here:
+			__raw_spin_lock at include/linux/spinlock_api_smp.h:158
+			 (inlined by) _raw_spin_lock at kernel/locking/spinlock.c:151
+			spin_lock at include/linux/spinlock.h:312
+			 (inlined by) __mod_timer at kernel/time/timer.c:809
+			 (inlined by) mod_timer_pending at kernel/time/timer.c:836
+			__nf_ct_refresh_acct at net/netfilter/nf_conntrack_core.c:1249
+			nf_ct_refresh_acct at include/net/netfilter/nf_conntrack.h:208
+			 (inlined by) tcp_packet at net/netfilter/nf_conntrack_proto_tcp.c:1097
+			nf_conntrack_in at net/netfilter/nf_conntrack_core.c:1156
+			ipv4_conntrack_local at net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.c:161
+			nf_iterate at net/netfilter/core.c:169
+			nf_hook_slow at net/netfilter/core.c:201
+			nf_hook_thresh at include/linux/netfilter.h:180
+			 (inlined by) nf_hook at include/linux/netfilter.h:190
+			 (inlined by) __ip_local_out_sk at net/ipv4/ip_output.c:104
+			__ip_local_out at net/ipv4/ip_output.c:110
+			 (inlined by) ip_local_out_sk at net/ipv4/ip_output.c:117
+			ip_local_out at include/net/ip.h:119 (discriminator 4)
+			 (inlined by) ip_queue_xmit at net/ipv4/ip_output.c:454 (discriminator 4)
+			tcp_transmit_skb at net/ipv4/tcp_output.c:1039
+			tcp_send_ack at net/ipv4/tcp_output.c:3375
+			tcp_cleanup_rbuf at net/ipv4/tcp.c:1432
+			tcp_recvmsg at net/ipv4/tcp.c:1881
+			inet_recvmsg at net/ipv4/af_inet.c:764
+			sock_recvmsg_nosec at net/socket.c:712
+			 (inlined by) sock_recvmsg at net/socket.c:720
+			sock_read_iter at net/socket.c:797
+			new_sync_read at fs/read_write.c:422
+			 (inlined by) __vfs_read at fs/read_write.c:434
+			vfs_read at fs/read_write.c:454
+			SYSC_read at fs/read_write.c:569
+			 (inlined by) SyS_read at fs/read_write.c:562
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   68.389145] 
+[   68.389145] ==================================================================
+[   68.396589] ==================================================================
+[   68.396690] ThreadSanitizer: data-race in e1000_clean
+[   68.396690] 
+[   68.396820] Read at 0xffff8800bb29d0cc of size 4 by thread 19 on CPU 3:
+			e1000_clean_tx_irq at drivers/net/ethernet/intel/e1000/e1000_main.c:3857
+			 (inlined by) e1000_clean at drivers/net/ethernet/intel/e1000/e1000_main.c:3818
+			napi_poll at net/core/dev.c:4744
+			 (inlined by) net_rx_action at net/core/dev.c:4809
+			__do_softirq at kernel/softirq.c:273
+			kthread at kernel/kthread.c:209
+			ret_from_fork at arch/x86/entry/entry_64.S:529
+[   68.397119] 
+[   68.397119] Previous write at 0xffff8800bb29d0cc of size 4 by thread 2587 on CPU 2:
+			e1000_tx_queue at drivers/net/ethernet/intel/e1000/e1000_main.c:3015
+			 (inlined by) e1000_xmit_frame at drivers/net/ethernet/intel/e1000/e1000_main.c:3257
+			__netdev_start_xmit at include/linux/netdevice.h:3613
+			 (inlined by) netdev_start_xmit at include/linux/netdevice.h:3622
+			 (inlined by) xmit_one at net/core/dev.c:2684
+			 (inlined by) dev_hard_start_xmit at net/core/dev.c:2700
+			sch_direct_xmit at net/sched/sch_generic.c:165
+			__dev_xmit_skb at net/core/dev.c:2870
+			 (inlined by) __dev_queue_xmit at net/core/dev.c:3073
+			dev_queue_xmit_sk at net/core/dev.c:3139
+			dev_queue_xmit at include/linux/netdevice.h:2190
+			 (inlined by) neigh_hh_output at include/net/neighbour.h:467
+			 (inlined by) dst_neigh_output at include/net/dst.h:401
+			 (inlined by) ip_finish_output2 at net/ipv4/ip_output.c:210
+			ip_finish_output at net/ipv4/ip_output.c:284
+			NF_HOOK_COND at include/linux/netfilter.h:231
+			NF_HOOK_COND at include/linux/netfilter.h:229
+			 (inlined by) ip_output at net/ipv4/ip_output.c:356
+			dst_output_sk at include/net/dst.h:440
+			 (inlined by) ip_local_out_sk at net/ipv4/ip_output.c:119
+			ip_local_out at include/net/ip.h:119 (discriminator 4)
+			 (inlined by) ip_queue_xmit at net/ipv4/ip_output.c:454 (discriminator 4)
+			tcp_transmit_skb at net/ipv4/tcp_output.c:1039
+			tcp_send_ack at net/ipv4/tcp_output.c:3375
+			tcp_cleanup_rbuf at net/ipv4/tcp.c:1432
+			tcp_recvmsg at net/ipv4/tcp.c:1881
+			inet_recvmsg at net/ipv4/af_inet.c:764
+			sock_recvmsg_nosec at net/socket.c:712
+			 (inlined by) sock_recvmsg at net/socket.c:720
+			sock_read_iter at net/socket.c:797
+			new_sync_read at fs/read_write.c:422
+			 (inlined by) __vfs_read at fs/read_write.c:434
+			vfs_read at fs/read_write.c:454
+			SYSC_read at fs/read_write.c:569
+			 (inlined by) SyS_read at fs/read_write.c:562
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   68.397119] 
+[   68.397119] Mutexes locked by thread 2587:
+[   68.397119] Mutex 365331 is locked here:
+			__raw_spin_lock at include/linux/spinlock_api_smp.h:158
+			 (inlined by) _raw_spin_lock at kernel/locking/spinlock.c:151
+			spin_lock at include/linux/spinlock.h:312 (discriminator 1)
+			 (inlined by) __netif_tx_lock at include/linux/netdevice.h:3172 (discriminator 1)
+			 (inlined by) sch_direct_xmit at net/sched/sch_generic.c:163 (discriminator 1)
+			__dev_xmit_skb at net/core/dev.c:2870
+			 (inlined by) __dev_queue_xmit at net/core/dev.c:3073
+			dev_queue_xmit_sk at net/core/dev.c:3139
+			dev_queue_xmit at include/linux/netdevice.h:2190
+			 (inlined by) neigh_hh_output at include/net/neighbour.h:467
+			 (inlined by) dst_neigh_output at include/net/dst.h:401
+			 (inlined by) ip_finish_output2 at net/ipv4/ip_output.c:210
+			ip_finish_output at net/ipv4/ip_output.c:284
+			NF_HOOK_COND at include/linux/netfilter.h:231
+			NF_HOOK_COND at include/linux/netfilter.h:229
+			 (inlined by) ip_output at net/ipv4/ip_output.c:356
+			dst_output_sk at include/net/dst.h:440
+			 (inlined by) ip_local_out_sk at net/ipv4/ip_output.c:119
+			ip_local_out at include/net/ip.h:119 (discriminator 4)
+			 (inlined by) ip_queue_xmit at net/ipv4/ip_output.c:454 (discriminator 4)
+			tcp_transmit_skb at net/ipv4/tcp_output.c:1039
+			tcp_send_ack at net/ipv4/tcp_output.c:3375
+			tcp_cleanup_rbuf at net/ipv4/tcp.c:1432
+			tcp_recvmsg at net/ipv4/tcp.c:1881
+			inet_recvmsg at net/ipv4/af_inet.c:764
+			sock_recvmsg_nosec at net/socket.c:712
+			 (inlined by) sock_recvmsg at net/socket.c:720
+			sock_read_iter at net/socket.c:797
+			new_sync_read at fs/read_write.c:422
+			 (inlined by) __vfs_read at fs/read_write.c:434
+			vfs_read at fs/read_write.c:454
+			SYSC_read at fs/read_write.c:569
+			 (inlined by) SyS_read at fs/read_write.c:562
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   68.397119] 
+[   68.397119] ==================================================================
+[   68.626755] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   68.629500] 
+[   68.630615] dump_desc: [sum_destroy]
+[   68.632474] dump_desc evts:
+[   68.634590] dump_desc   ts: 101 102 101 202 203 201 303 302 304 404 405 405 504 505 505
+[   68.638408] dump_desc  ret: -22 -22 0 0 -22 -22 -22 0 -22 0 -22 -22 0 -22 -22
+[   68.641439] LIGHT_SUCCESS
+[   68.646485] kt: running test for light, case 9, T2589
+[   68.646485] 
+[   68.650048] kt: starting test light_test_3thread_on_5event_selfdestroy
+[   69.181843] kt: end of test
+[   69.183570] 
+[   69.184627] dump_desc: [signal]
+[   69.186423] dump_desc evts:
+[   69.187924] dump_desc   ts: 101 101 202 202 303 303 404 404 505 505
+[   69.190462] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0
+[   69.191987] 
+[   69.192800] dump_desc: [sum_create_wait]
+[   69.194407] dump_desc evts: 35 37 36 39 38
+[   69.195851] dump_desc   ts: 101 102 101 202 202 201 302 302 303 404 403 404 505 505 505
+[   69.198485] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   69.200403] 
+[   69.200902] dump_desc: [sum_destroy]
+[   69.202346] dump_desc evts:
+[   69.203552] dump_desc   ts: 101 102 101 202 202 201 302 302 303 404 403 404 505 505 505
+[   69.205979] dump_desc  ret: 0 -22 -22 -22 -22 0 0 -22 -22 -22 0 -22 0 -22 -22
+[   69.208474] LIGHT_SUCCESS
+INIT: Switching to runlevel: 0[   69.871862] ==================================================================
+[   69.872135] ThreadSanitizer: data-race in tty_port_tty_set
+[   69.872135] 
+[   69.872135] Write at 0xffff88018ebc8090 of size 8 by thread 1 on CPU 1:
+			tty_port_tty_set at drivers/tty/tty_port.c:197
+			uart_open at drivers/tty/serial/serial_core.c:1634
+			tty_open at drivers/tty/tty_io.c:2105
+			chrdev_open at fs/char_dev.c:388
+			do_dentry_open at fs/open.c:736
+			vfs_open at fs/open.c:853
+			do_last at fs/namei.c:3179
+			 (inlined by) path_openat at fs/namei.c:3311
+			do_filp_open at fs/namei.c:3346
+			do_sys_open at fs/open.c:1025
+			SYSC_open at fs/open.c:1043
+			 (inlined by) SyS_open at fs/open.c:1038
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   69.872135] 
+[   69.872135] Previous read at 0xffff88018ebc8090 of size 8 by thread 2721 on CPU 0:
+			uart_tx_stopped at include/linux/serial_core.h:399
+			 (inlined by) serial8250_tx_chars at drivers/tty/serial/8250/8250_core.c:1539
+			serial8250_handle_irq at drivers/tty/serial/8250/8250_core.c:1632
+			serial8250_handle_irq at drivers/tty/serial/8250/8250_core.c:1652
+			 (inlined by) serial8250_default_handle_irq at drivers/tty/serial/8250/8250_core.c:1648
+			serial8250_interrupt at drivers/tty/serial/8250/8250_core.c:1711
+			handle_irq_event_percpu at kernel/irq/handle.c:143
+			handle_irq_event at kernel/irq/handle.c:192
+			handle_edge_irq at kernel/irq/chip.c:608
+			generic_handle_irq_desc at include/linux/irqdesc.h:146
+			 (inlined by) handle_irq at arch/x86/kernel/irq_64.c:81
+			do_IRQ at arch/x86/kernel/irq.c:223
+			common_interrupt at arch/x86/entry/entry_64.S:609
+			apic_timer_interrupt at arch/x86/entry/entry_64.S:790
+[   69.872135] 
+[   69.872135] Mutexes locked by thread 1:
+[   69.872135] Mutex 433025 is locked here:
+			mutex_lock at kernel/locking/mutex.c:108
+			tty_lock at drivers/tty/tty_mutex.c:21
+			tty_open at drivers/tty/tty_io.c:2074
+			chrdev_open at fs/char_dev.c:388
+			do_dentry_open at fs/open.c:736
+			vfs_open at fs/open.c:853
+			do_last at fs/namei.c:3179
+			 (inlined by) path_openat at fs/namei.c:3311
+			do_filp_open at fs/namei.c:3346
+			do_sys_open at fs/open.c:1025
+			SYSC_open at fs/open.c:1043
+			 (inlined by) SyS_open at fs/open.c:1038
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   69.872135] 
+[   69.872135] Mutex 92809 is locked here:
+			mutex_lock_interruptible at kernel/locking/mutex.c:805
+			uart_open at drivers/tty/serial/serial_core.c:1620
+			tty_open at drivers/tty/tty_io.c:2105
+			chrdev_open at fs/char_dev.c:388
+			do_dentry_open at fs/open.c:736
+			vfs_open at fs/open.c:853
+			do_last at fs/namei.c:3179
+			 (inlined by) path_openat at fs/namei.c:3311
+			do_filp_open at fs/namei.c:3346
+			do_sys_open at fs/open.c:1025
+			SYSC_open at fs/open.c:1043
+			 (inlined by) SyS_open at fs/open.c:1038
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   69.872135] 
+[   69.872135] Mutex 111235 is locked here:
+			__raw_spin_lock_irqsave at include/linux/spinlock_api_smp.h:129
+			 (inlined by) _raw_spin_lock_irqsave at kernel/locking/spinlock.c:159
+			tty_port_tty_set at drivers/tty/tty_port.c:195
+			uart_open at drivers/tty/serial/serial_core.c:1634
+			tty_open at drivers/tty/tty_io.c:2105
+			chrdev_open at fs/char_dev.c:388
+			do_dentry_open at fs/open.c:736
+			vfs_open at fs/open.c:853
+			do_last at fs/namei.c:3179
+			 (inlined by) path_openat at fs/namei.c:3311
+			do_filp_open at fs/namei.c:3346
+			do_sys_open at fs/open.c:1025
+			SYSC_open at fs/open.c:1043
+			 (inlined by) SyS_open at fs/open.c:1038
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   69.872135] 
+[   69.872135] Mutexes locked by thread 2721:
+[   69.872135] Mutex 433030 is locked here:
+			__raw_spin_lock at include/linux/spinlock_api_smp.h:158
+			 (inlined by) _raw_spin_lock at kernel/locking/spinlock.c:151
+			spin_lock at include/linux/spinlock.h:312
+			 (inlined by) serial8250_interrupt at drivers/tty/serial/8250/8250_core.c:1701
+			handle_irq_event_percpu at kernel/irq/handle.c:143
+			handle_irq_event at kernel/irq/handle.c:192
+			handle_edge_irq at kernel/irq/chip.c:608
+			generic_handle_irq_desc at include/linux/irqdesc.h:146
+			 (inlined by) handle_irq at arch/x86/kernel/irq_64.c:81
+			do_IRQ at arch/x86/kernel/irq.c:223
+			common_interrupt at arch/x86/entry/entry_64.S:609
+			apic_timer_interrupt at arch/x86/entry/entry_64.S:790
+[   69.872135] 
+[   69.872135] Mutex 260 is locked here:
+			__raw_spin_lock_irqsave at include/linux/spinlock_api_smp.h:129
+			 (inlined by) _raw_spin_lock_irqsave at kernel/locking/spinlock.c:159
+			serial8250_handle_irq at drivers/tty/serial/8250/8250_core.c:1616
+			serial8250_handle_irq at drivers/tty/serial/8250/8250_core.c:1652
+			 (inlined by) serial8250_default_handle_irq at drivers/tty/serial/8250/8250_core.c:1648
+			serial8250_interrupt at drivers/tty/serial/8250/8250_core.c:1711
+			handle_irq_event_percpu at kernel/irq/handle.c:143
+			handle_irq_event at kernel/irq/handle.c:192
+			handle_edge_irq at kernel/irq/chip.c:608
+			generic_handle_irq_desc at include/linux/irqdesc.h:146
+			 (inlined by) handle_irq at arch/x86/kernel/irq_64.c:81
+			do_IRQ at arch/x86/kernel/irq.c:223
+			common_interrupt at arch/x86/entry/entry_64.S:609
+			apic_timer_interrupt at arch/x86/entry/entry_64.S:790
+[   69.872135] 
+[   69.872135] ==================================================================
+[   69.875167] ==================================================================
+[   69.875167] ThreadSanitizer: data-race in pollwake
+[   69.875167] 
+[   69.875167] Write at 0xffff88018dfbbab8 of size 4 by thread 2721 on CPU 0:
+			__pollwake at fs/select.c:195
+			 (inlined by) pollwake at fs/select.c:215
+			__wake_up_common at kernel/sched/wait.c:73
+			__fput at fs/file_table.c:208
+			____fput at fs/file_table.c:244
+			task_work_run at kernel/task_work.c:123 (discriminator 1)
+			exit_task_work at include/linux/task_work.h:21
+			 (inlined by) do_exit at kernel/exit.c:746
+			do_group_exit at kernel/exit.c:874
+			SYSC_exit_group at kernel/exit.c:885
+			 (inlined by) SyS_exit_group at kernel/exit.c:883
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   69.875167] 
+[   69.875167] Previous write at 0xffff88018dfbbab8 of size 4 by thread 2490 on CPU 3:
+			__pollwake at fs/select.c:195
+			 (inlined by) pollwake at fs/select.c:215
+			__wake_up_common at kernel/sched/wait.c:73
+			tcp_data_queue at net/ipv4/tcp_input.c:4545
+			tcp_rcv_established at net/ipv4/tcp_input.c:5342
+			tcp_v4_do_rcv at net/ipv4/tcp_ipv4.c:1399
+			tcp_v4_rcv at net/ipv4/tcp_ipv4.c:1633
+			ip_local_deliver_finish at net/ipv4/ip_input.c:216
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_local_deliver at net/ipv4/ip_input.c:256
+			dst_input at include/net/dst.h:450
+			 (inlined by) ip_rcv_finish at net/ipv4/ip_input.c:367
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_rcv at net/ipv4/ip_input.c:455
+			__netif_receive_skb_core at net/core/dev.c:3893
+			__netif_receive_skb at net/core/dev.c:3928
+			netif_receive_skb_internal at net/core/dev.c:3956
+			napi_skb_finish at net/core/dev.c:4281
+			 (inlined by) napi_gro_receive at net/core/dev.c:4310
+			e1000_receive_skb at drivers/net/ethernet/intel/e1000/e1000_main.c:4019
+			 (inlined by) e1000_clean_rx_irq at drivers/net/ethernet/intel/e1000/e1000_main.c:4471
+			e1000_clean at drivers/net/ethernet/intel/e1000/e1000_main.c:3820
+			napi_poll at net/core/dev.c:4744
+			 (inlined by) net_rx_action at net/core/dev.c:4809
+			__do_softirq at kernel/softirq.c:273
+			common_interrupt at arch/x86/entry/entry_64.S:609
+[   69.875167] 
+[   69.875167] Mutexes locked by thread 2721:
+[   69.875167] Mutex 434294 is locked here:
+			mutex_lock at kernel/locking/mutex.c:108
+			__pipe_lock at fs/pipe.c:78
+			 (inlined by) pipe_release at fs/pipe.c:550
+			__fput at fs/file_table.c:208
+			____fput at fs/file_table.c:244
+			task_work_run at kernel/task_work.c:123 (discriminator 1)
+			exit_task_work at include/linux/task_work.h:21
+			 (inlined by) do_exit at kernel/exit.c:746
+			do_group_exit at kernel/exit.c:874
+			SYSC_exit_group at kernel/exit.c:885
+			 (inlined by) SyS_exit_group at kernel/exit.c:883
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   69.875167] 
+[   69.875167] Mutex 433287 is locked here:
+			__raw_spin_lock_irqsave at include/linux/spinlock_api_smp.h:129
+			 (inlined by) _raw_spin_lock_irqsave at kernel/locking/spinlock.c:159
+			__wake_up_sync_key at kernel/sched/wait.c:144
+			__fput at fs/file_table.c:208
+			____fput at fs/file_table.c:244
+			task_work_run at kernel/task_work.c:123 (discriminator 1)
+			exit_task_work at include/linux/task_work.h:21
+			 (inlined by) do_exit at kernel/exit.c:746
+			do_group_exit at kernel/exit.c:874
+			SYSC_exit_group at kernel/exit.c:885
+			 (inlined by) SyS_exit_group at kernel/exit.c:883
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   69.875167] 
+[   69.875167] Mutexes locked by thread 2490:
+[   69.875167] Mutex 431831 is locked here:
+			__raw_spin_lock at include/linux/spinlock_api_smp.h:158
+			 (inlined by) _raw_spin_lock at kernel/locking/spinlock.c:151
+			tcp_v4_rcv at net/ipv4/tcp_ipv4.c:1628
+			ip_local_deliver_finish at net/ipv4/ip_input.c:216
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_local_deliver at net/ipv4/ip_input.c:256
+			dst_input at include/net/dst.h:450
+			 (inlined by) ip_rcv_finish at net/ipv4/ip_input.c:367
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_rcv at net/ipv4/ip_input.c:455
+			__netif_receive_skb_core at net/core/dev.c:3893
+			__netif_receive_skb at net/core/dev.c:3928
+			netif_receive_skb_internal at net/core/dev.c:3956
+			napi_skb_finish at net/core/dev.c:4281
+			 (inlined by) napi_gro_receive at net/core/dev.c:4310
+			e1000_receive_skb at drivers/net/ethernet/intel/e1000/e1000_main.c:4019
+			 (inlined by) e1000_clean_rx_irq at drivers/net/ethernet/intel/e1000/e1000_main.c:4471
+			e1000_clean at drivers/net/ethernet/intel/e1000/e1000_main.c:3820
+			napi_poll at net/core/dev.c:4744
+			 (inlined by) net_rx_action at net/core/dev.c:4809
+			__do_softirq at kernel/softirq.c:273
+			common_interrupt at arch/x86/entry/entry_64.S:609
+[   69.875167] 
+[   69.875167] Mutex 431999 is locked here:
+			__raw_spin_lock_irqsave at include/linux/spinlock_api_smp.h:129
+			 (inlined by) _raw_spin_lock_irqsave at kernel/locking/spinlock.c:159
+			__wake_up_sync_key at kernel/sched/wait.c:144
+			tcp_data_queue at net/ipv4/tcp_input.c:4545
+			tcp_rcv_established at net/ipv4/tcp_input.c:5342
+			tcp_v4_do_rcv at net/ipv4/tcp_ipv4.c:1399
+			tcp_v4_rcv at net/ipv4/tcp_ipv4.c:1633
+			ip_local_deliver_finish at net/ipv4/ip_input.c:216
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_local_deliver at net/ipv4/ip_input.c:256
+			dst_input at include/net/dst.h:450
+			 (inlined by) ip_rcv_finish at net/ipv4/ip_input.c:367
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_rcv at net/ipv4/ip_input.c:455
+			__netif_receive_skb_core at net/core/dev.c:3893
+			__netif_receive_skb at net/core/dev.c:3928
+			netif_receive_skb_internal at net/core/dev.c:3956
+			napi_skb_finish at net/core/dev.c:4281
+			 (inlined by) napi_gro_receive at net/core/dev.c:4310
+			e1000_receive_skb at drivers/net/ethernet/intel/e1000/e1000_main.c:4019
+			 (inlined by) e1000_clean_rx_irq at drivers/net/ethernet/intel/e1000/e1000_main.c:4471
+			e1000_clean at drivers/net/ethernet/intel/e1000/e1000_main.c:3820
+			napi_poll at net/core/dev.c:4744
+			 (inlined by) net_rx_action at net/core/dev.c:4809
+			__do_softirq at kernel/softirq.c:273
+			common_interrupt at arch/x86/entry/entry_64.S:609
+[   69.875167] 
+[   69.875167] ==================================================================
+[   69.872135] ==================================================================
+[   69.875167] ThreadSanitizer: data-race in tty_port_tty_set
+[   69.875167] 
+[   69.875167] Write at 0xffff88018ebc8090 of size 8 by thread 1 on CPU 1:
+			tty_port_tty_set at drivers/tty/tty_port.c:197
+			uart_open at drivers/tty/serial/serial_core.c:1634
+			tty_open at drivers/tty/tty_io.c:2105
+			chrdev_open at fs/char_dev.c:388
+			do_dentry_open at fs/open.c:736
+			vfs_open at fs/open.c:853
+			do_last at fs/namei.c:3179
+			 (inlined by) path_openat at fs/namei.c:3311
+			do_filp_open at fs/namei.c:3346
+			do_sys_open at fs/open.c:1025
+			SYSC_open at fs/open.c:1043
+			 (inlined by) SyS_open at fs/open.c:1038
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   69.875167] 
+[   69.875167] Previous read at 0xffff88018ebc8090 of size 8 by thread 2721 on CPU 0:
+			uart_write_wakeup at drivers/tty/serial/serial_core.c:79
+			serial8250_tx_chars at drivers/tty/serial/8250/8250_core.c:1563
+			serial8250_handle_irq at drivers/tty/serial/8250/8250_core.c:1632
+			serial8250_handle_irq at drivers/tty/serial/8250/8250_core.c:1652
+			 (inlined by) serial8250_default_handle_irq at drivers/tty/serial/8250/8250_core.c:1648
+			serial8250_interrupt at drivers/tty/serial/8250/8250_core.c:1711
+			handle_irq_event_percpu at kernel/irq/handle.c:143
+			handle_irq_event at kernel/irq/handle.c:192
+			handle_edge_irq at kernel/irq/chip.c:608
+			generic_handle_irq_desc at include/linux/irqdesc.h:146
+			 (inlined by) handle_irq at arch/x86/kernel/irq_64.c:81
+			do_IRQ at arch/x86/kernel/irq.c:223
+			common_interrupt at arch/x86/entry/entry_64.S:609
+			apic_timer_interrupt at arch/x86/entry/entry_64.S:790
+[   69.875167] 
+[   69.875167] Mutexes locked by thread 1:
+[   69.875167] Mutex 433025 is locked here:
+			mutex_lock at kernel/locking/mutex.c:108
+			tty_lock at drivers/tty/tty_mutex.c:21
+			tty_open at drivers/tty/tty_io.c:2074
+			chrdev_open at fs/char_dev.c:388
+			do_dentry_open at fs/open.c:736
+			vfs_open at fs/open.c:853
+			do_last at fs/namei.c:3179
+			 (inlined by) path_openat at fs/namei.c:3311
+			do_filp_open at fs/namei.c:3346
+			do_sys_open at fs/open.c:1025
+			SYSC_open at fs/open.c:1043
+			 (inlined by) SyS_open at fs/open.c:1038
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   69.875167] 
+[   69.875167] Mutex 92809 is locked here:
+			mutex_lock_interruptible at kernel/locking/mutex.c:805
+			uart_open at drivers/tty/serial/serial_core.c:1620
+			tty_open at drivers/tty/tty_io.c:2105
+			chrdev_open at fs/char_dev.c:388
+			do_dentry_open at fs/open.c:736
+			vfs_open at fs/open.c:853
+			do_last at fs/namei.c:3179
+			 (inlined by) path_openat at fs/namei.c:3311
+			do_filp_open at fs/namei.c:3346
+			do_sys_open at fs/open.c:1025
+			SYSC_open at fs/open.c:1043
+			 (inlined by) SyS_open at fs/open.c:1038
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   69.875167] 
+[   69.875167] Mutex 111235 is locked here:
+			__raw_spin_lock_irqsave at include/linux/spinlock_api_smp.h:129
+			 (inlined by) _raw_spin_lock_irqsave at kernel/locking/spinlock.c:159
+			tty_port_tty_set at drivers/tty/tty_port.c:195
+			uart_open at drivers/tty/serial/serial_core.c:1634
+			tty_open at drivers/tty/tty_io.c:2105
+			chrdev_open at fs/char_dev.c:388
+			do_dentry_open at fs/open.c:736
+			vfs_open at fs/open.c:853
+			do_last at fs/namei.c:3179
+			 (inlined by) path_openat at fs/namei.c:3311
+			do_filp_open at fs/namei.c:3346
+			do_sys_open at fs/open.c:1025
+			SYSC_open at fs/open.c:1043
+			 (inlined by) SyS_open at fs/open.c:1038
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   69.875167] 
+[   69.875167] Mutexes locked by thread 2721:
+[   69.875167] Mutex 433030 is locked here:
+			__raw_spin_lock at include/linux/spinlock_api_smp.h:158
+			 (inlined by) _raw_spin_lock at kernel/locking/spinlock.c:151
+			spin_lock at include/linux/spinlock.h:312
+			 (inlined by) serial8250_interrupt at drivers/tty/serial/8250/8250_core.c:1701
+			handle_irq_event_percpu at kernel/irq/handle.c:143
+			handle_irq_event at kernel/irq/handle.c:192
+			handle_edge_irq at kernel/irq/chip.c:608
+			generic_handle_irq_desc at include/linux/irqdesc.h:146
+			 (inlined by) handle_irq at arch/x86/kernel/irq_64.c:81
+			do_IRQ at arch/x86/kernel/irq.c:223
+			common_interrupt at arch/x86/entry/entry_64.S:609
+			apic_timer_interrupt at arch/x86/entry/entry_64.S:790
+[   69.875167] 
+[   69.875167] Mutex 260 is locked here:
+			__raw_spin_lock_irqsave at include/linux/spinlock_api_smp.h:129
+			 (inlined by) _raw_spin_lock_irqsave at kernel/locking/spinlock.c:159
+			serial8250_handle_irq at drivers/tty/serial/8250/8250_core.c:1616
+			serial8250_handle_irq at drivers/tty/serial/8250/8250_core.c:1652
+			 (inlined by) serial8250_default_handle_irq at drivers/tty/serial/8250/8250_core.c:1648
+			serial8250_interrupt at drivers/tty/serial/8250/8250_core.c:1711
+			handle_irq_event_percpu at kernel/irq/handle.c:143
+			handle_irq_event at kernel/irq/handle.c:192
+			handle_edge_irq at kernel/irq/chip.c:608
+			generic_handle_irq_desc at include/linux/irqdesc.h:146
+			 (inlined by) handle_irq at arch/x86/kernel/irq_64.c:81
+			do_IRQ at arch/x86/kernel/irq.c:223
+			common_interrupt at arch/x86/entry/entry_64.S:609
+			apic_timer_interrupt at arch/x86/entry/entry_64.S:790
+[   69.875167] 
+[   69.875167] ==================================================================
+

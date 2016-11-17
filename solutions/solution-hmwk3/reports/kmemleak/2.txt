@@ -1,0 +1,83 @@
+[....] Starting OpenBSD Secure Shell server: sshd[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[    6.509225] kt: running test for light, case 2, T2541
+[    6.509225] 
+[    6.512396] kt: starting light_test_create_destroy_simple test
+[    6.516490] kt: end of test.
+[    6.518317] 
+[    6.519231] dump_desc: [simply_create_destroy]
+[    6.523220] dump_desc evts: 0
+[    6.525551] dump_desc   ts: 0 0
+[    6.528251] dump_desc  ret: 0
+[    6.530804] LIGHT_SUCCESS
+[    6.533490] kt: running test for light, case 2, T2545
+[    6.533490] 
+[    6.537524] kt: starting light_test_create_destroy_simple test
+[    6.541161] kt: end of test.
+[    6.542935] 
+[    6.544045] dump_desc: [simply_create_destroy]
+[    6.546937] dump_desc evts: 1
+[    6.548656] dump_desc   ts: 0 0
+[    6.550623] dump_desc  ret: 0
+[    6.552429] LIGHT_SUCCESS
+[    6.555194] kt: running test for light, case 2, T2548
+[    6.555194] 
+[    6.558878] kt: starting light_test_create_destroy_simple test
+[    6.562390] kt: end of test.
+[    6.564047] 
+[    6.565253] dump_desc: [simply_create_destroy]
+[    6.567260] dump_desc evts: 2
+[    6.569784] dump_desc   ts: 0 0
+[    6.572046] dump_desc  ret: 0
+[    6.573523] LIGHT_SUCCESS
+[    6.575996] kt: running test for light, case 2, T2551
+[    6.575996] 
+[    6.579737] kt: starting light_test_create_destroy_simple test
+[    6.583710] kt: end of test.
+[    6.585369] 
+[    6.586161] dump_desc: [simply_create_destroy]
+[    6.589075] dump_desc evts: 3
+[    6.590642] dump_desc   ts: 0 0
+[    6.592816] dump_desc  ret: 0
+[    6.594145] LIGHT_SUCCESS
+[    6.595766] kt: running test for light, case 2, T2554
+[    6.595766] 
+[    6.598929] kt: starting light_test_create_destroy_simple test
+[    6.601906] kt: end of test.
+[    6.603642] 
+[    6.604474] dump_desc: [simply_create_destroy]
+[    6.606931] dump_desc evts: 4
+[    6.608648] dump_desc   ts: 0 0
+[    6.610496] dump_desc  ret: 0
+[    6.611831] LIGHT_SUCCESS
+[    6.614085] kt: running test for light, case 2, T2557
+[    6.614085] 
+[    6.617836] kt: starting light_test_create_destroy_simple test
+[    6.621163] kt: end of test.
+[    6.622886] 
+[    6.623575] dump_desc: [simply_create_destroy]
+[    6.625079] dump_desc evts: 5
+[    6.625884] dump_desc   ts: 0 0
+[    6.627610] dump_desc  ret: 0
+[    6.629103] LIGHT_SUCCESS
+[    6.630815] kt: running test for light, case 2, T2560
+[    6.630815] 
+[    6.633626] kt: starting light_test_create_destroy_simple test
+[    6.636359] kt: end of test.
+[    6.637649] 
+[    6.638239] dump_desc: [simply_create_destroy]
+[    6.639523] dump_desc evts: 6
+[    6.641166] dump_desc   ts: 0 0
+[    6.641999] dump_desc  ret: 0
+[    6.643606] LIGHT_SUCCESS
+[    6.645431] kt: running test for light, case 2, T2563
+[    6.645431] 
+[    6.648312] kt: starting light_test_create_destroy_simple test
+[    6.651092] kt: end of test.
+[    6.652405] 
+[    6.653282] dump_desc: [simply_create_destroy]
+[    6.655331] dump_desc evts: 7
+[    6.656726] dump_desc   ts: 0 0
+[    6.658101] dump_desc  ret: 0
+[    6.659396] LIGHT_SUCCESS
+[    9.053129] kmemleak: 1 new suspected memory leaks (see /sys/kernel/debug/kmemleak)
+INIT: Switching to runlevel: 0

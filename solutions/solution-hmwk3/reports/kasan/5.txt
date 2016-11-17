@@ -1,0 +1,490 @@
+[....] Starting OpenBSD Secure Shell server: sshd[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[   10.803082] kt: running test for light, case 5, T2615
+[   10.803082] 
+[   10.806625] kt: starting light_test_lots_of_create_destroy test
+[   10.811105] kt: end of test.
+[   10.814865] kt: starting light_test_lots_of_create_destroy test
+[   10.818327] kt: end of test.
+[   10.819426] kt: starting light_test_lots_of_create_destroy test
+[   10.824613] kt: end of test.
+[   10.826175] kt: starting test light_test_lots_of_create_destroy
+[   10.830455] kt: end of test
+[   10.831750] 
+[   10.832496] dump_desc: [create1]
+[   10.833998] dump_desc evts: 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31
+[   10.836606] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.838197] dump_desc  ret:
+[   10.839042] 
+[   10.839488] dump_desc: [create2]
+[   10.840410] dump_desc evts: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+[   10.842073] dump_desc   ts: 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+[   10.844571] dump_desc  ret:
+[   10.845762] 
+[   10.846438] dump_desc: [create3]
+[   10.847896] dump_desc evts: 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+[   10.849897] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.851425] dump_desc  ret:
+[   10.852082] 
+[   10.852423] dump_desc: [create4]
+[   10.853096] dump_desc evts: 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63
+[   10.854240] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.855149] dump_desc  ret:
+[   10.855814] 
+[   10.856259] dump_desc: [destroy1]
+[   10.857207] dump_desc evts: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+[   10.858833] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.859744] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.861223] 
+[   10.861644] dump_desc: [destroy2]
+[   10.862536] dump_desc evts: 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31
+[   10.864365] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.865877] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.867409] 
+[   10.867841] dump_desc: [destroy3]
+[   10.868757] dump_desc evts: 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63
+[   10.870377] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.871362] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.872206] 
+[   10.872430] dump_desc: [destroy4]
+[   10.872988] dump_desc evts: 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63
+[   10.874423] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.875839] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   10.878254] 
+[   10.878651] dump_desc: [destroy5]
+[   10.879616] dump_desc evts: 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+[   10.881506] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.882427] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.883218] 
+[   10.883432] dump_desc: [destroy6]
+[   10.883950] dump_desc evts: 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+[   10.884919] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.886362] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   10.888566] LIGHT_SUCCESS
+[   10.890715] kt: running test for light, case 5, T2626
+[   10.890715] 
+[   10.892357] kt: starting light_test_lots_of_create_destroy test
+[   10.894162] kt: end of test.
+[   10.894685] kt: starting light_test_lots_of_create_destroy test
+[   10.896231] kt: end of test.
+[   10.896896] kt: starting light_test_lots_of_create_destroy test
+[   10.901281] kt: end of test.
+[   10.902056] kt: starting test light_test_lots_of_create_destroy
+[   10.904554] kt: end of test
+[   10.905504] 
+[   10.906128] dump_desc: [create1]
+[   10.906966] dump_desc evts: 65 66 69 70 73 74 77 78 80 82 84 86 88 90 92 95
+[   10.908900] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.910772] dump_desc  ret:
+[   10.911662] 
+[   10.912139] dump_desc: [create2]
+[   10.913155] dump_desc evts: 64 67 68 71 72 75 76 79 81 83 85 87 89 91 93 94
+[   10.914541] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.915250] dump_desc  ret:
+[   10.915692] 
+[   10.915892] dump_desc: [create3]
+[   10.916303] dump_desc evts: 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111
+[   10.918139] dump_desc   ts: 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+[   10.919858] dump_desc  ret:
+[   10.920760] 
+[   10.921126] dump_desc: [create4]
+[   10.921970] dump_desc evts: 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127
+[   10.923083] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.923765] dump_desc  ret:
+[   10.924252] 
+[   10.924438] dump_desc: [destroy1]
+[   10.924931] dump_desc evts: 64 67 68 71 72 75 76 79 81 83 85 87 89 91 93 94
+[   10.926603] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.928304] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.930141] 
+[   10.930624] dump_desc: [destroy2]
+[   10.931735] dump_desc evts: 65 66 69 70 73 74 77 78 80 82 84 86 88 90 92 95
+[   10.933684] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.935124] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.936573] 
+[   10.936967] dump_desc: [destroy3]
+[   10.937853] dump_desc evts: 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127
+[   10.939083] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.939785] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   10.941438] 
+[   10.941856] dump_desc: [destroy4]
+[   10.942930] dump_desc evts: 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127
+[   10.944946] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.946201] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.947319] 
+[   10.947509] dump_desc: [destroy5]
+[   10.947931] dump_desc evts: 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111
+[   10.948888] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.949663] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.950311] 
+[   10.950546] dump_desc: [destroy6]
+[   10.950944] dump_desc evts: 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111
+[   10.952303] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.953625] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   10.955527] LIGHT_SUCCESS
+[   10.957615] kt: running test for light, case 5, T2637
+[   10.957615] 
+[   10.959787] kt: starting light_test_lots_of_create_destroy test
+[   10.962136] kt: end of test.
+[   10.963112] kt: starting light_test_lots_of_create_destroy test
+[   10.966719] kt: end of test.
+[   10.967684] kt: starting light_test_lots_of_create_destroy test
+[   10.969919] kt: end of test.
+[   10.970800] kt: starting test light_test_lots_of_create_destroy
+[   10.973141] kt: end of test
+[   10.973941] 
+[   10.974399] dump_desc: [create1]
+[   10.975349] dump_desc evts: 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+[   10.977746] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.979370] dump_desc  ret:
+[   10.980174] 
+[   10.980589] dump_desc: [create2]
+[   10.981522] dump_desc evts: 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159
+[   10.983890] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.985469] dump_desc  ret:
+[   10.986286] 
+[   10.986695] dump_desc: [create3]
+[   10.987638] dump_desc evts: 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175
+[   10.990021] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.991566] dump_desc  ret:
+[   10.992396] 
+[   10.992800] dump_desc: [create4]
+[   10.993740] dump_desc evts: 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191
+[   10.996102] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.997713] dump_desc  ret:
+[   10.998552] 
+[   10.998995] dump_desc: [destroy1]
+[   10.999929] dump_desc evts: 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159
+[   11.002200] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.003721] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.005345] 
+[   11.005680] dump_desc: [destroy2]
+[   11.006528] dump_desc evts: 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+[   11.009016] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.010760] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.012471] 
+[   11.012865] dump_desc: [destroy3]
+[   11.013804] dump_desc evts: 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191
+[   11.015523] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.016535] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   11.018763] 
+[   11.019228] dump_desc: [destroy4]
+[   11.020190] dump_desc evts: 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191
+[   11.021622] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.022288] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.022889] 
+[   11.023130] dump_desc: [destroy5]
+[   11.023495] dump_desc evts: 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175
+[   11.024609] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.026916] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.027960] 
+[   11.028280] dump_desc: [destroy6]
+[   11.028860] dump_desc evts: 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175
+[   11.030236] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.031186] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   11.032573] LIGHT_SUCCESS
+[   11.034126] kt: running test for light, case 5, T2648
+[   11.034126] 
+[   11.035528] kt: starting light_test_lots_of_create_destroy test
+[   11.037200] kt: end of test.
+[   11.037667] kt: starting light_test_lots_of_create_destroy test
+[   11.038905] kt: end of test.
+[   11.039428] kt: starting light_test_lots_of_create_destroy test
+[   11.040993] kt: end of test.
+[   11.041704] kt: starting test light_test_lots_of_create_destroy
+[   11.043691] kt: end of test
+[   11.044355] 
+[   11.044705] dump_desc: [create1]
+[   11.045522] dump_desc evts: 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207
+[   11.047251] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.048213] dump_desc  ret:
+[   11.048662] 
+[   11.048921] dump_desc: [create2]
+[   11.049482] dump_desc evts: 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223
+[   11.050980] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.052060] dump_desc  ret:
+[   11.052760] 
+[   11.053139] dump_desc: [create3]
+[   11.053928] dump_desc evts: 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239
+[   11.055675] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.056595] dump_desc  ret:
+[   11.057081] 
+[   11.057348] dump_desc: [create4]
+[   11.058159] dump_desc evts: 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255
+[   11.060130] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.061185] dump_desc  ret:
+[   11.061643] 
+[   11.061890] dump_desc: [destroy1]
+[   11.062438] dump_desc evts: 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223
+[   11.064141] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.065457] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.066662] 
+[   11.066902] dump_desc: [destroy2]
+[   11.067460] dump_desc evts: 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207
+[   11.068660] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.069325] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.070059] 
+[   11.070415] dump_desc: [destroy3]
+[   11.071154] dump_desc evts: 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255
+[   11.072972] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.074160] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.074985] 
+[   11.075172] dump_desc: [destroy4]
+[   11.075515] dump_desc evts: 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255
+[   11.076384] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.077709] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   11.079580] 
+[   11.079914] dump_desc: [destroy5]
+[   11.080299] dump_desc evts: 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239
+[   11.082044] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.083293] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.084577] 
+[   11.084949] dump_desc: [destroy6]
+[   11.085519] dump_desc evts: 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239
+[   11.086523] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.087168] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   11.088073] LIGHT_SUCCESS
+[   11.089778] kt: running test for light, case 5, T2659
+[   11.089778] 
+[   11.091088] kt: starting light_test_lots_of_create_destroy test
+[   11.092405] kt: end of test.
+[   11.092709] kt: starting light_test_lots_of_create_destroy test
+[   11.093986] kt: end of test.
+[   11.094609] kt: starting light_test_lots_of_create_destroy test
+[   11.096097] kt: end of test.
+[   11.096505] kt: starting test light_test_lots_of_create_destroy
+[   11.097913] kt: end of test
+[   11.098528] 
+[   11.098803] dump_desc: [create1]
+[   11.099461] dump_desc evts: 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271
+[   11.101093] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.102400] dump_desc  ret:
+[   11.103052] 
+[   11.103417] dump_desc: [create2]
+[   11.104195] dump_desc evts: 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287
+[   11.106201] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.107557] dump_desc  ret:
+[   11.108186] 
+[   11.108577] dump_desc: [create3]
+[   11.109370] dump_desc evts: 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303
+[   11.110617] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.111356] dump_desc  ret:
+[   11.111669] 
+[   11.111828] dump_desc: [create4]
+[   11.112206] dump_desc evts: 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319
+[   11.113995] dump_desc   ts: 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1
+[   11.115217] dump_desc  ret:
+[   11.115750] 
+[   11.116118] dump_desc: [destroy1]
+[   11.116878] dump_desc evts: 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287
+[   11.118806] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.120100] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.121399] 
+[   11.121746] dump_desc: [destroy2]
+[   11.122492] dump_desc evts: 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271
+[   11.124478] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.125893] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.126881] 
+[   11.127089] dump_desc: [destroy3]
+[   11.127515] dump_desc evts: 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319
+[   11.128469] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.129127] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   11.130212] 
+[   11.130375] dump_desc: [destroy4]
+[   11.130725] dump_desc evts: 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319
+[   11.132120] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.133340] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.134591] 
+[   11.134922] dump_desc: [destroy5]
+[   11.135614] dump_desc evts: 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303
+[   11.137745] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.138920] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.140268] 
+[   11.140606] dump_desc: [destroy6]
+[   11.141362] dump_desc evts: 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303
+[   11.142312] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.143022] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   11.144109] LIGHT_SUCCESS
+[   11.145695] kt: running test for light, case 5, T2670
+[   11.145695] 
+[   11.147013] kt: starting light_test_lots_of_create_destroy test
+[   11.148324] kt: end of test.
+[   11.148644] kt: starting light_test_lots_of_create_destroy test
+[   11.150639] kt: end of test.
+[   11.151285] kt: starting light_test_lots_of_create_destroy test
+[   11.153110] kt: end of test.
+[   11.155114] kt: starting test light_test_lots_of_create_destroy
+[   11.156833] kt: end of test
+[   11.157487] 
+[   11.157750] dump_desc: [create1]
+[   11.158115] dump_desc evts: 320 321 322 323 324 325 326 327 328 329 330 331 332 333 334 335
+[   11.158948] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.159534] dump_desc  ret:
+[   11.160036] 
+[   11.161022] dump_desc: [create2]
+[   11.161732] dump_desc evts: 336 337 338 339 340 341 342 343 344 345 346 347 348 349 350 351
+[   11.163416] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.163982] dump_desc  ret:
+[   11.164363] 
+[   11.164520] dump_desc: [create3]
+[   11.164872] dump_desc evts: 352 353 354 355 356 357 358 359 360 361 362 363 364 365 366 367
+[   11.166182] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.167429] dump_desc  ret:
+[   11.168067] 
+[   11.168225] dump_desc: [create4]
+[   11.168584] dump_desc evts: 368 369 370 371 372 373 374 375 376 377 378 379 380 381 382 383
+[   11.169516] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.170153] dump_desc  ret:
+[   11.170609] 
+[   11.171647] dump_desc: [destroy1]
+[   11.172408] dump_desc evts: 336 337 338 339 340 341 342 343 344 345 346 347 348 349 350 351
+[   11.174104] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.174669] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.175256] 
+[   11.175413] dump_desc: [destroy2]
+[   11.175956] dump_desc evts: 320 321 322 323 324 325 326 327 328 329 330 331 332 333 334 335
+[   11.177103] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.178369] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.178930] 
+[   11.179127] dump_desc: [destroy3]
+[   11.179671] dump_desc evts: 368 369 370 371 372 373 374 375 376 377 378 379 380 381 382 383
+[   11.183704] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.187835] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   11.192439] 
+[   11.192818] dump_desc: [destroy4]
+[   11.198464] dump_desc evts: 368 369 370 371 372 373 374 375 376 377 378 379 380 381 382 383
+[   11.205097] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.210795] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.216549] 
+[   11.216964] dump_desc: [destroy5]
+[   11.222374] dump_desc evts: 352 353 354 355 356 357 358 359 360 361 362 363 364 365 366 367
+[   11.228886] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.234624] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.239152] 
+[   11.239511] dump_desc: [destroy6]
+[   11.243066] dump_desc evts: 352 353 354 355 356 357 358 359 360 361 362 363 364 365 366 367
+[   11.247549] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.251586] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   11.256110] LIGHT_SUCCESS
+[   11.257638] kt: running test for light, case 5, T2681
+[   11.257638] 
+[   11.259488] kt: starting light_test_lots_of_create_destroy test
+[   11.262201] kt: end of test.
+[   11.264186] kt: starting light_test_lots_of_create_destroy test
+[   11.265787] kt: end of test.
+[   11.266405] kt: starting light_test_lots_of_create_destroy test
+[   11.267490] kt: end of test.
+[   11.268338] kt: starting test light_test_lots_of_create_destroy
+[   11.270492] kt: end of test
+[   11.272053] 
+[   11.272344] dump_desc: [create1]
+[   11.272947] dump_desc evts: 384 385 387 388 391 392 394 396 398 400 402 404 406 408 410 412
+[   11.274241] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.274821] dump_desc  ret:
+[   11.275126] 
+[   11.275301] dump_desc: [create2]
+[   11.275769] dump_desc evts: 386 389 390 393 395 397 399 401 403 405 407 409 411 413 414 415
+[   11.277474] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.278322] dump_desc  ret:
+[   11.278641] 
+[   11.278818] dump_desc: [create3]
+[   11.279461] dump_desc evts: 416 417 418 419 420 421 422 423 424 425 426 427 428 429 430 431
+[   11.281159] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.281844] dump_desc  ret:
+[   11.282149] 
+[   11.282310] dump_desc: [create4]
+[   11.283099] dump_desc evts: 432 433 434 435 436 437 438 439 440 441 442 443 444 445 446 447
+[   11.284749] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.285497] dump_desc  ret:
+[   11.285799] 
+[   11.285959] dump_desc: [destroy1]
+[   11.286379] dump_desc evts: 386 389 390 393 395 397 399 401 403 405 407 409 411 413 414 415
+[   11.287493] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.288383] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.290294] 
+[   11.290579] dump_desc: [destroy2]
+[   11.291232] dump_desc evts: 384 385 387 388 391 392 394 396 398 400 402 404 406 408 410 412
+[   11.292836] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.293779] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.295379] 
+[   11.295719] dump_desc: [destroy3]
+[   11.296325] dump_desc evts: 432 433 434 435 436 437 438 439 440 441 442 443 444 445 446 447
+[   11.297810] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.298438] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   11.299323] 
+[   11.299535] dump_desc: [destroy4]
+[   11.300167] dump_desc evts: 432 433 434 435 436 437 438 439 440 441 442 443 444 445 446 447
+[   11.302122] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.303101] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.303681] 
+[   11.303839] dump_desc: [destroy5]
+[   11.304425] dump_desc evts: 416 417 418 419 420 421 422 423 424 425 426 427 428 429 430 431
+[   11.309693] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.311013] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.312210] 
+[   11.312372] dump_desc: [destroy6]
+[   11.312730] dump_desc evts: 416 417 418 419 420 421 422 423 424 425 426 427 428 429 430 431
+[   11.313710] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.315044] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   11.320139] LIGHT_SUCCESS
+[   11.323786] kt: running test for light, case 5, T2692
+[   11.323786] 
+[   11.325502] kt: starting light_test_lots_of_create_destroy test
+[   11.327173] kt: end of test.
+[   11.327905] kt: starting light_test_lots_of_create_destroy test
+[   11.329677] kt: end of test.
+[   11.330239] kt: starting light_test_lots_of_create_destroy test
+[   11.331460] kt: end of test.
+[   11.331989] kt: starting test light_test_lots_of_create_destroy
+[   11.333600] kt: end of test
+[   11.334271] 
+[   11.334623] dump_desc: [create1]
+[   11.335685] dump_desc evts: 451 453 455 457 459 461 463 465 467 469 471 473 475 477 478 479
+[   11.338373] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.340096] dump_desc  ret:
+[   11.340954] 
+[   11.341437] dump_desc: [create2]
+[   11.342424] dump_desc evts: 448 449 450 452 454 456 458 460 462 464 466 468 470 472 474 476
+[   11.344762] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.346307] dump_desc  ret:
+[   11.346897] 
+[   11.347288] dump_desc: [create3]
+[   11.347935] dump_desc evts: 480 481 482 483 484 485 486 487 488 489 490 491 492 493 494 495
+[   11.348850] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.349544] dump_desc  ret:
+[   11.349853] 
+[   11.350031] dump_desc: [create4]
+[   11.350463] dump_desc evts: 496 497 498 499 500 501 502 503 504 505 506 507 508 509 510 511
+[   11.356280] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.361860] dump_desc  ret:
+[   11.365296] 
+[   11.365768] dump_desc: [destroy1]
+[   11.366945] dump_desc evts: 448 449 450 452 454 456 458 460 462 464 466 468 470 472 474 476
+[   11.369288] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.370254] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.371097] 
+[   11.371261] dump_desc: [destroy2]
+[   11.371598] dump_desc evts: 451 453 455 457 459 461 463 465 467 469 471 473 475 477 478 479
+[   11.372671] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.373851] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.378809] 
+[   11.382560] dump_desc: [destroy3]
+[   11.383520] dump_desc evts: 496 497 498 499 500 501 502 503 504 505 506 507 508 509 510 511
+[   11.385888] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.387217] dump_desc  ret: -22 -22 0 -22 0 -22 0 -22 0 -22 0 -22 0 -22 0 -22
+[   11.388665] 
+[   11.388829] dump_desc: [destroy4]
+[   11.389282] dump_desc evts: 496 497 498 499 500 501 502 503 504 505 506 507 508 509 510 511
+[   11.390198] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.390785] dump_desc  ret: 0 0 -22 0 -22 0 -22 0 -22 0 -22 0 -22 0 -22 0
+[   11.391504] 
+[   11.391756] dump_desc: [destroy5]
+[   11.392162] dump_desc evts: 480 481 482 483 484 485 486 487 488 489 490 491 492 493 494 495
+[   11.393122] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.394048] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.394620] 
+[   11.394781] dump_desc: [destroy6]
+[   11.395313] dump_desc evts: 480 481 482 483 484 485 486 487 488 489 490 491 492 493 494 495
+[   11.397447] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.398836] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   11.400235] LIGHT_SUCCESS
+INIT: Switching to runlevel: 0

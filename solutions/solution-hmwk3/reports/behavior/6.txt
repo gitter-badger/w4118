@@ -1,0 +1,140 @@
+[....] Starting OpenBSD Secure Shell server: sshd[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[    6.462891] kt: running test for light, case 6, T2546
+[    6.462891] 
+[    6.466834] kt: starting test light_test_create_destroy_16_parallel
+[    6.471893] kt: end of test
+[    6.473853] kt: starting test light_test_create_destroy_16_parallel
+[    6.478410] kt: end of test
+[    6.480120] 
+[    6.481130] dump_desc: [create_16_sum]
+[    6.483184] dump_desc evts: 1 0 3 2 4 11 9 7 5 13 6 8 10 12 14 15
+[    6.487305] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.490687] dump_desc  ret:
+[    6.492212] 
+[    6.492919] dump_desc: [destroy_16_sum]
+[    6.496236] dump_desc evts: 1 0 3 2 4 11 9 7 5 13 6 8 10 12 14 15
+[    6.500025] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.502751] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.506698] LIGHT_SUCCESS
+[    6.510418] kt: running test for light, case 6, T2580
+[    6.510418] 
+[    6.514550] kt: starting test light_test_create_destroy_16_parallel
+[    6.519410] kt: end of test
+[    6.521624] kt: starting test light_test_create_destroy_16_parallel
+[    6.526834] kt: end of test
+[    6.528508] 
+[    6.529623] dump_desc: [create_16_sum]
+[    6.532377] dump_desc evts: 16 22 19 20 17 25 18 21 24 27 29 28 26 23 30 31
+[    6.536698] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.540187] dump_desc  ret:
+[    6.542016] 
+[    6.542949] dump_desc: [destroy_16_sum]
+[    6.545386] dump_desc evts: 16 22 19 20 17 25 18 21 24 27 29 28 26 23 30 31
+[    6.549580] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.553110] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.556567] LIGHT_SUCCESS
+[    6.558222] bash (2580) used greatest stack depth: 12104 bytes left
+[    6.558742] kt: running test for light, case 6, T2613
+[    6.558742] 
+[    6.558744] kt: starting test light_test_create_destroy_16_parallel
+[    6.562162] kt: end of test
+[    6.562163] kt: starting test light_test_create_destroy_16_parallel
+[    6.563600] kt: end of test
+[    6.563601] 
+[    6.563602] dump_desc: [create_16_sum]
+[    6.563606] dump_desc evts: 40 38 36 44 43 42 41 39 37 35 34 33 32 45 46 47
+[    6.563609] dump_desc   ts: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0
+[    6.563609] dump_desc  ret:
+[    6.563610] 
+[    6.563610] dump_desc: [destroy_16_sum]
+[    6.563613] dump_desc evts: 40 38 36 44 43 42 41 39 37 35 34 33 32 45 46 47
+[    6.563615] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.563616] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.563617] LIGHT_SUCCESS
+[    6.564249] kt: running test for light, case 6, T2646
+[    6.564249] 
+[    6.564251] kt: starting test light_test_create_destroy_16_parallel
+[    6.582565] kt: end of test
+[    6.582567] kt: starting test light_test_create_destroy_16_parallel
+[    6.583704] kt: end of test
+[    6.583705] 
+[    6.583706] dump_desc: [create_16_sum]
+[    6.583709] dump_desc evts: 51 50 49 48 52 53 54 55 56 61 60 59 58 57 62 63
+[    6.583711] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.583712] dump_desc  ret:
+[    6.583712] 
+[    6.583713] dump_desc: [destroy_16_sum]
+[    6.583723] dump_desc evts: 51 50 49 48 52 53 54 55 56 61 60 59 58 57 62 63
+[    6.583725] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.583727] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.583727] LIGHT_SUCCESS
+[    6.584422] kt: running test for light, case 6, T2679
+[    6.584422] 
+[    6.584423] kt: starting test light_test_create_destroy_16_parallel
+[    6.609533] kt: end of test
+[    6.609535] kt: starting test light_test_create_destroy_16_parallel
+[    6.610604] kt: end of test
+[    6.610604] 
+[    6.610605] dump_desc: [create_16_sum]
+[    6.610607] dump_desc evts: 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79
+[    6.610608] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.610609] dump_desc  ret:
+[    6.610609] 
+[    6.610609] dump_desc: [destroy_16_sum]
+[    6.610611] dump_desc evts: 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79
+[    6.610612] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.610614] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.610614] LIGHT_SUCCESS
+[    6.635559] bash (2679) used greatest stack depth: 12048 bytes left
+[    6.636356] kt: running test for light, case 6, T2712
+[    6.636356] 
+[    6.638305] kt: starting test light_test_create_destroy_16_parallel
+[    6.641009] kt: end of test
+[    6.641862] kt: starting test light_test_create_destroy_16_parallel
+[    6.644724] kt: end of test
+[    6.645647] 
+[    6.646114] dump_desc: [create_16_sum]
+[    6.646764] dump_desc evts: 82 81 80 83 84 85 86 87 88 89 90 91 92 93 94 95
+[    6.648654] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.650472] dump_desc  ret:
+[    6.651192] 
+[    6.651469] dump_desc: [destroy_16_sum]
+[    6.652891] dump_desc evts: 82 81 80 83 84 85 86 87 88 89 90 91 92 93 94 95
+[    6.654473] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.656247] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.658170] LIGHT_SUCCESS
+[    6.659675] kt: running test for light, case 6, T2745
+[    6.659675] 
+[    6.662296] kt: starting test light_test_create_destroy_16_parallel
+[    6.665727] kt: end of test
+[    6.666943] kt: starting test light_test_create_destroy_16_parallel
+[    6.670260] kt: end of test
+[    6.671210] 
+[    6.671831] dump_desc: [create_16_sum]
+[    6.672993] dump_desc evts: 101 100 99 98 97 96 102 103 104 105 106 107 108 109 110 111
+[    6.675835] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.678156] dump_desc  ret:
+[    6.678933] 
+[    6.680152] dump_desc: [destroy_16_sum]
+[    6.681856] dump_desc evts: 101 100 99 98 97 96 102 103 104 105 106 107 108 109 110 111
+[    6.684243] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.686353] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.688501] LIGHT_SUCCESS
+[    6.690319] kt: running test for light, case 6, T2778
+[    6.690319] 
+[    6.692191] kt: starting test light_test_create_destroy_16_parallel
+[    6.695067] kt: end of test
+[    6.696062] kt: starting test light_test_create_destroy_16_parallel
+[    6.699125] kt: end of test
+[    6.699960] 
+[    6.700443] dump_desc: [create_16_sum]
+[    6.701362] dump_desc evts: 113 112 114 115 116 117 118 119 120 121 122 123 124 125 126 127
+[    6.703943] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.706257] dump_desc  ret:
+[    6.706864] 
+[    6.708225] dump_desc: [destroy_16_sum]
+[    6.709314] dump_desc evts: 113 112 114 115 116 117 118 119 120 121 122 123 124 125 126 127
+[    6.712061] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.714335] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[    6.716617] LIGHT_SUCCESS
+[    9.066857] kmemleak: 1 new suspected memory leaks (see /sys/kernel/debug/kmemleak)

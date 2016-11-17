@@ -1,0 +1,998 @@
+early console in setup code
+early console in decompress_kernel
+
+Decompressing Linux... Parsing ELF... done.
+Booting the kernel.
+[    0.000000] Initializing cgroup subsys cpuset
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 4.2.0-team50-kt (progman@m91p) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.2) ) #170 SMP Mon Oct 31 02:29:53 EDT 2016
+[    0.000000] Command line: console=ttyS0 root=/dev/sda debug earlyprintk=serial slub_debug=U
+[    0.000000] x86/fpu: Legacy x87 FPU detected.
+[    0.000000] x86/fpu: Using 'lazy' FPU context switches.
+[    0.000000] e820: BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x00000000bffdefff] usable
+[    0.000000] BIOS-e820: [mem 0x00000000bffdf000-0x00000000bfffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000feffc000-0x00000000feffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000100000000-0x000000013fffffff] usable
+[    0.000000] bootconsole [earlyser0] enabled
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] SMBIOS 2.8 present.
+[    0.000000] DMI: QEMU Standard PC (i440FX + PIIX, 1996), BIOS Ubuntu-1.8.2-1ubuntu1 04/01/2014
+[    0.000000] Hypervisor detected: KVM
+[    0.000000] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+[    0.000000] e820: remove [mem 0x000a0000-0x000fffff] usable
+[    0.000000] e820: last_pfn = 0x140000 max_arch_pfn = 0x400000000
+[    0.000000] MTRR default type: write-back
+[    0.000000] MTRR fixed ranges enabled:
+[    0.000000]   00000-9FFFF write-back
+[    0.000000]   A0000-BFFFF uncachable
+[    0.000000]   C0000-FFFFF write-protect
+[    0.000000] MTRR variable ranges enabled:
+[    0.000000]   0 base 00C0000000 mask FFC0000000 uncachable
+[    0.000000]   1 disabled
+[    0.000000]   2 disabled
+[    0.000000]   3 disabled
+[    0.000000]   4 disabled
+[    0.000000]   5 disabled
+[    0.000000]   6 disabled
+[    0.000000]   7 disabled
+[    0.000000] x86/PAT: PAT not supported by CPU.
+[    0.000000] e820: last_pfn = 0xbffdf max_arch_pfn = 0x400000000
+[    0.000000] found SMP MP-table at [mem 0x000f6600-0x000f660f] mapped at [ffff8800000f6600]
+[    0.000000] Scanning 1 areas for low memory corruption
+[    0.000000] Base memory trampoline at [ffff880000099000] 99000 size 24576
+[    0.000000] init_memory_mapping: [mem 0x00000000-0x000fffff]
+[    0.000000]  [mem 0x00000000-0x000fffff] page 4k
+[    0.000000] BRK [0x03aa2000, 0x03aa2fff] PGTABLE
+[    0.000000] BRK [0x03aa3000, 0x03aa3fff] PGTABLE
+[    0.000000] BRK [0x03aa4000, 0x03aa4fff] PGTABLE
+[    0.000000] init_memory_mapping: [mem 0x13fe00000-0x13fffffff]
+[    0.000000]  [mem 0x13fe00000-0x13fffffff] page 2M
+[    0.000000] BRK [0x03aa5000, 0x03aa5fff] PGTABLE
+[    0.000000] init_memory_mapping: [mem 0x120000000-0x13fdfffff]
+[    0.000000]  [mem 0x120000000-0x13fdfffff] page 2M
+[    0.000000] init_memory_mapping: [mem 0x00100000-0xbffdefff]
+[    0.000000]  [mem 0x00100000-0x001fffff] page 4k
+[    0.000000]  [mem 0x00200000-0xbfdfffff] page 2M
+[    0.000000]  [mem 0xbfe00000-0xbffdefff] page 4k
+[    0.000000] init_memory_mapping: [mem 0x100000000-0x11fffffff]
+[    0.000000]  [mem 0x100000000-0x11fffffff] page 2M
+[    0.000000] ACPI: Early table checksum verification disabled
+[    0.000000] ACPI: RSDP 0x00000000000F65B0 000014 (v00 BOCHS )
+[    0.000000] ACPI: RSDT 0x00000000BFFE1511 000034 (v01 BOCHS  BXPCRSDT 00000001 BXPC 00000001)
+[    0.000000] ACPI: FACP 0x00000000BFFE0954 000074 (v01 BOCHS  BXPCFACP 00000001 BXPC 00000001)
+[    0.000000] ACPI: DSDT 0x00000000BFFDFD80 000BD4 (v01 BOCHS  BXPCDSDT 00000001 BXPC 00000001)
+[    0.000000] ACPI: FACS 0x00000000BFFDFD40 000040
+[    0.000000] ACPI: SSDT 0x00000000BFFE09C8 000A81 (v01 BOCHS  BXPCSSDT 00000001 BXPC 00000001)
+[    0.000000] ACPI: APIC 0x00000000BFFE1449 000090 (v01 BOCHS  BXPCAPIC 00000001 BXPC 00000001)
+[    0.000000] ACPI: HPET 0x00000000BFFE14D9 000038 (v01 BOCHS  BXPCHPET 00000001 BXPC 00000001)
+[    0.000000] ACPI: Local APIC address 0xfee00000
+[    0.000000] No NUMA configuration found
+[    0.000000] Faking a node at [mem 0x0000000000000000-0x000000013fffffff]
+[    0.000000] NODE_DATA(0) allocated [mem 0x13fff9000-0x13fffcfff]
+[    0.000000] kvm-clock: Using msrs 4b564d01 and 4b564d00
+[    0.000000] kvm-clock: cpu 0, msr 1:3fff8001, primary cpu clock
+[    0.000000] clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.000000]  [ffffea0000000000-ffffea0004ffffff] PMD -> [ffff88013b600000-ffff88013f5fffff] on node 0
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.000000]   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[    0.000000]   Normal   [mem 0x0000000100000000-0x000000013fffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+[    0.000000]   node   0: [mem 0x0000000000100000-0x00000000bffdefff]
+[    0.000000]   node   0: [mem 0x0000000100000000-0x000000013fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000001000-0x000000013fffffff]
+[    0.000000] On node 0 totalpages: 1048445
+[    0.000000]   DMA zone: 64 pages used for memmap
+[    0.000000]   DMA zone: 21 pages reserved
+[    0.000000]   DMA zone: 3998 pages, LIFO batch:0
+[    0.000000]   DMA32 zone: 12224 pages used for memmap
+[    0.000000]   DMA32 zone: 782303 pages, LIFO batch:31
+[    0.000000]   Normal zone: 4096 pages used for memmap
+[    0.000000]   Normal zone: 262144 pages, LIFO batch:31
+[    0.000000]  [ffffed0000000000-ffffed00001fffff] PMD -> [ffff88013fc00000-ffff88013fdfffff] on node -1
+[    0.000000]  [ffffed0000200000-ffffed00003fffff] PMD -> [ffff88013f800000-ffff88013f9fffff] on node -1
+[    0.000000]  [ffffed0000400000-ffffed00005fffff] PMD -> [ffff88013b400000-ffff88013b5fffff] on node -1
+[    0.000000]  [ffffed0000600000-ffffed00007fffff] PMD -> [ffff88013b200000-ffff88013b3fffff] on node -1
+[    0.000000]  [ffffed0000800000-ffffed00009fffff] PMD -> [ffff88013b000000-ffff88013b1fffff] on node -1
+[    0.000000]  [ffffed0000a00000-ffffed0000bfffff] PMD -> [ffff88013ae00000-ffff88013affffff] on node -1
+[    0.000000]  [ffffed0000c00000-ffffed0000dfffff] PMD -> [ffff88013ac00000-ffff88013adfffff] on node -1
+[    0.000000]  [ffffed0000e00000-ffffed0000ffffff] PMD -> [ffff88013aa00000-ffff88013abfffff] on node -1
+[    0.000000]  [ffffed0001000000-ffffed00011fffff] PMD -> [ffff88013a800000-ffff88013a9fffff] on node -1
+[    0.000000]  [ffffed0001200000-ffffed00013fffff] PMD -> [ffff88013a600000-ffff88013a7fffff] on node -1
+[    0.000000]  [ffffed0001400000-ffffed00015fffff] PMD -> [ffff88013a400000-ffff88013a5fffff] on node -1
+[    0.000000]  [ffffed0001600000-ffffed00017fffff] PMD -> [ffff88013a200000-ffff88013a3fffff] on node -1
+[    0.000000]  [ffffed0001800000-ffffed00019fffff] PMD -> [ffff88013a000000-ffff88013a1fffff] on node -1
+[    0.000000]  [ffffed0001a00000-ffffed0001bfffff] PMD -> [ffff880139e00000-ffff880139ffffff] on node -1
+[    0.000000]  [ffffed0001c00000-ffffed0001dfffff] PMD -> [ffff880139c00000-ffff880139dfffff] on node -1
+[    0.000000]  [ffffed0001e00000-ffffed0001ffffff] PMD -> [ffff880139a00000-ffff880139bfffff] on node -1
+[    0.000000]  [ffffed0002000000-ffffed00021fffff] PMD -> [ffff880139800000-ffff8801399fffff] on node -1
+[    0.000000]  [ffffed0002200000-ffffed00023fffff] PMD -> [ffff880139600000-ffff8801397fffff] on node -1
+[    0.000000]  [ffffed0002400000-ffffed00025fffff] PMD -> [ffff880139400000-ffff8801395fffff] on node -1
+[    0.000000]  [ffffed0002600000-ffffed00027fffff] PMD -> [ffff880139200000-ffff8801393fffff] on node -1
+[    0.000000]  [ffffed0002800000-ffffed00029fffff] PMD -> [ffff880139000000-ffff8801391fffff] on node -1
+[    0.000000]  [ffffed0002a00000-ffffed0002bfffff] PMD -> [ffff880138e00000-ffff880138ffffff] on node -1
+[    0.000000]  [ffffed0002c00000-ffffed0002dfffff] PMD -> [ffff880138c00000-ffff880138dfffff] on node -1
+[    0.000000]  [ffffed0002e00000-ffffed0002ffffff] PMD -> [ffff880138a00000-ffff880138bfffff] on node -1
+[    0.000000]  [ffffed0003000000-ffffed00031fffff] PMD -> [ffff880138800000-ffff8801389fffff] on node -1
+[    0.000000]  [ffffed0003200000-ffffed00033fffff] PMD -> [ffff880138600000-ffff8801387fffff] on node -1
+[    0.000000]  [ffffed0003400000-ffffed00035fffff] PMD -> [ffff880138400000-ffff8801385fffff] on node -1
+[    0.000000]  [ffffed0003600000-ffffed00037fffff] PMD -> [ffff880138200000-ffff8801383fffff] on node -1
+[    0.000000]  [ffffed0003800000-ffffed00039fffff] PMD -> [ffff880138000000-ffff8801381fffff] on node -1
+[    0.000000]  [ffffed0003a00000-ffffed0003bfffff] PMD -> [ffff880137e00000-ffff880137ffffff] on node -1
+[    0.000000]  [ffffed0003c00000-ffffed0003dfffff] PMD -> [ffff880137c00000-ffff880137dfffff] on node -1
+[    0.000000]  [ffffed0003e00000-ffffed0003ffffff] PMD -> [ffff880137a00000-ffff880137bfffff] on node -1
+[    0.000000]  [ffffed0004000000-ffffed00041fffff] PMD -> [ffff880137800000-ffff8801379fffff] on node -1
+[    0.000000]  [ffffed0004200000-ffffed00043fffff] PMD -> [ffff880137600000-ffff8801377fffff] on node -1
+[    0.000000]  [ffffed0004400000-ffffed00045fffff] PMD -> [ffff880137400000-ffff8801375fffff] on node -1
+[    0.000000]  [ffffed0004600000-ffffed00047fffff] PMD -> [ffff880137200000-ffff8801373fffff] on node -1
+[    0.000000]  [ffffed0004800000-ffffed00049fffff] PMD -> [ffff880137000000-ffff8801371fffff] on node -1
+[    0.000000]  [ffffed0004a00000-ffffed0004bfffff] PMD -> [ffff880136e00000-ffff880136ffffff] on node -1
+[    0.000000]  [ffffed0004c00000-ffffed0004dfffff] PMD -> [ffff880136c00000-ffff880136dfffff] on node -1
+[    0.000000]  [ffffed0004e00000-ffffed0004ffffff] PMD -> [ffff880136a00000-ffff880136bfffff] on node -1
+[    0.000000]  [ffffed0005000000-ffffed00051fffff] PMD -> [ffff880136800000-ffff8801369fffff] on node -1
+[    0.000000]  [ffffed0005200000-ffffed00053fffff] PMD -> [ffff880136600000-ffff8801367fffff] on node -1
+[    0.000000]  [ffffed0005400000-ffffed00055fffff] PMD -> [ffff880136400000-ffff8801365fffff] on node -1
+[    0.000000]  [ffffed0005600000-ffffed00057fffff] PMD -> [ffff880136200000-ffff8801363fffff] on node -1
+[    0.000000]  [ffffed0005800000-ffffed00059fffff] PMD -> [ffff880136000000-ffff8801361fffff] on node -1
+[    0.000000]  [ffffed0005a00000-ffffed0005bfffff] PMD -> [ffff880135e00000-ffff880135ffffff] on node -1
+[    0.000000]  [ffffed0005c00000-ffffed0005dfffff] PMD -> [ffff880135c00000-ffff880135dfffff] on node -1
+[    0.000000]  [ffffed0005e00000-ffffed0005ffffff] PMD -> [ffff880135a00000-ffff880135bfffff] on node -1
+[    0.000000]  [ffffed0006000000-ffffed00061fffff] PMD -> [ffff880135800000-ffff8801359fffff] on node -1
+[    0.000000]  [ffffed0006200000-ffffed00063fffff] PMD -> [ffff880135600000-ffff8801357fffff] on node -1
+[    0.000000]  [ffffed0006400000-ffffed00065fffff] PMD -> [ffff880135400000-ffff8801355fffff] on node -1
+[    0.000000]  [ffffed0006600000-ffffed00067fffff] PMD -> [ffff880135200000-ffff8801353fffff] on node -1
+[    0.000000]  [ffffed0006800000-ffffed00069fffff] PMD -> [ffff880135000000-ffff8801351fffff] on node -1
+[    0.000000]  [ffffed0006a00000-ffffed0006bfffff] PMD -> [ffff880134e00000-ffff880134ffffff] on node -1
+[    0.000000]  [ffffed0006c00000-ffffed0006dfffff] PMD -> [ffff880134c00000-ffff880134dfffff] on node -1
+[    0.000000]  [ffffed0006e00000-ffffed0006ffffff] PMD -> [ffff880134a00000-ffff880134bfffff] on node -1
+[    0.000000]  [ffffed0007000000-ffffed00071fffff] PMD -> [ffff880134800000-ffff8801349fffff] on node -1
+[    0.000000]  [ffffed0007200000-ffffed00073fffff] PMD -> [ffff880134600000-ffff8801347fffff] on node -1
+[    0.000000]  [ffffed0007400000-ffffed00075fffff] PMD -> [ffff880134400000-ffff8801345fffff] on node -1
+[    0.000000]  [ffffed0007600000-ffffed00077fffff] PMD -> [ffff880134200000-ffff8801343fffff] on node -1
+[    0.000000]  [ffffed0007800000-ffffed00079fffff] PMD -> [ffff880134000000-ffff8801341fffff] on node -1
+[    0.000000]  [ffffed0007a00000-ffffed0007bfffff] PMD -> [ffff880133e00000-ffff880133ffffff] on node -1
+[    0.000000]  [ffffed0007c00000-ffffed0007dfffff] PMD -> [ffff880133c00000-ffff880133dfffff] on node -1
+[    0.000000]  [ffffed0007e00000-ffffed0007ffffff] PMD -> [ffff880133a00000-ffff880133bfffff] on node -1
+[    0.000000]  [ffffed0008000000-ffffed00081fffff] PMD -> [ffff880133800000-ffff8801339fffff] on node -1
+[    0.000000]  [ffffed0008200000-ffffed00083fffff] PMD -> [ffff880133600000-ffff8801337fffff] on node -1
+[    0.000000]  [ffffed0008400000-ffffed00085fffff] PMD -> [ffff880133400000-ffff8801335fffff] on node -1
+[    0.000000]  [ffffed0008600000-ffffed00087fffff] PMD -> [ffff880133200000-ffff8801333fffff] on node -1
+[    0.000000]  [ffffed0008800000-ffffed00089fffff] PMD -> [ffff880133000000-ffff8801331fffff] on node -1
+[    0.000000]  [ffffed0008a00000-ffffed0008bfffff] PMD -> [ffff880132e00000-ffff880132ffffff] on node -1
+[    0.000000]  [ffffed0008c00000-ffffed0008dfffff] PMD -> [ffff880132c00000-ffff880132dfffff] on node -1
+[    0.000000]  [ffffed0008e00000-ffffed0008ffffff] PMD -> [ffff880132a00000-ffff880132bfffff] on node -1
+[    0.000000]  [ffffed0009000000-ffffed00091fffff] PMD -> [ffff880132800000-ffff8801329fffff] on node -1
+[    0.000000]  [ffffed0009200000-ffffed00093fffff] PMD -> [ffff880132600000-ffff8801327fffff] on node -1
+[    0.000000]  [ffffed0009400000-ffffed00095fffff] PMD -> [ffff880132400000-ffff8801325fffff] on node -1
+[    0.000000]  [ffffed0009600000-ffffed00097fffff] PMD -> [ffff880132200000-ffff8801323fffff] on node -1
+[    0.000000]  [ffffed0009800000-ffffed00099fffff] PMD -> [ffff880132000000-ffff8801321fffff] on node -1
+[    0.000000]  [ffffed0009a00000-ffffed0009bfffff] PMD -> [ffff880131e00000-ffff880131ffffff] on node -1
+[    0.000000]  [ffffed0009c00000-ffffed0009dfffff] PMD -> [ffff880131c00000-ffff880131dfffff] on node -1
+[    0.000000]  [ffffed0009e00000-ffffed0009ffffff] PMD -> [ffff880131a00000-ffff880131bfffff] on node -1
+[    0.000000]  [ffffed000a000000-ffffed000a1fffff] PMD -> [ffff880131800000-ffff8801319fffff] on node -1
+[    0.000000]  [ffffed000a200000-ffffed000a3fffff] PMD -> [ffff880131600000-ffff8801317fffff] on node -1
+[    0.000000]  [ffffed000a400000-ffffed000a5fffff] PMD -> [ffff880131400000-ffff8801315fffff] on node -1
+[    0.000000]  [ffffed000a600000-ffffed000a7fffff] PMD -> [ffff880131200000-ffff8801313fffff] on node -1
+[    0.000000]  [ffffed000a800000-ffffed000a9fffff] PMD -> [ffff880131000000-ffff8801311fffff] on node -1
+[    0.000000]  [ffffed000aa00000-ffffed000abfffff] PMD -> [ffff880130e00000-ffff880130ffffff] on node -1
+[    0.000000]  [ffffed000ac00000-ffffed000adfffff] PMD -> [ffff880130c00000-ffff880130dfffff] on node -1
+[    0.000000]  [ffffed000ae00000-ffffed000affffff] PMD -> [ffff880130a00000-ffff880130bfffff] on node -1
+[    0.000000]  [ffffed000b000000-ffffed000b1fffff] PMD -> [ffff880130800000-ffff8801309fffff] on node -1
+[    0.000000]  [ffffed000b200000-ffffed000b3fffff] PMD -> [ffff880130600000-ffff8801307fffff] on node -1
+[    0.000000]  [ffffed000b400000-ffffed000b5fffff] PMD -> [ffff880130400000-ffff8801305fffff] on node -1
+[    0.000000]  [ffffed000b600000-ffffed000b7fffff] PMD -> [ffff880130200000-ffff8801303fffff] on node -1
+[    0.000000]  [ffffed000b800000-ffffed000b9fffff] PMD -> [ffff880130000000-ffff8801301fffff] on node -1
+[    0.000000]  [ffffed000ba00000-ffffed000bbfffff] PMD -> [ffff88012fe00000-ffff88012fffffff] on node -1
+[    0.000000]  [ffffed000bc00000-ffffed000bdfffff] PMD -> [ffff88012fc00000-ffff88012fdfffff] on node -1
+[    0.000000]  [ffffed000be00000-ffffed000bffffff] PMD -> [ffff88012fa00000-ffff88012fbfffff] on node -1
+[    0.000000]  [ffffed000c000000-ffffed000c1fffff] PMD -> [ffff88012f800000-ffff88012f9fffff] on node -1
+[    0.000000]  [ffffed000c200000-ffffed000c3fffff] PMD -> [ffff88012f600000-ffff88012f7fffff] on node -1
+[    0.000000]  [ffffed000c400000-ffffed000c5fffff] PMD -> [ffff88012f400000-ffff88012f5fffff] on node -1
+[    0.000000]  [ffffed000c600000-ffffed000c7fffff] PMD -> [ffff88012f200000-ffff88012f3fffff] on node -1
+[    0.000000]  [ffffed000c800000-ffffed000c9fffff] PMD -> [ffff88012f000000-ffff88012f1fffff] on node -1
+[    0.000000]  [ffffed000ca00000-ffffed000cbfffff] PMD -> [ffff88012ee00000-ffff88012effffff] on node -1
+[    0.000000]  [ffffed000cc00000-ffffed000cdfffff] PMD -> [ffff88012ec00000-ffff88012edfffff] on node -1
+[    0.000000]  [ffffed000ce00000-ffffed000cffffff] PMD -> [ffff88012ea00000-ffff88012ebfffff] on node -1
+[    0.000000]  [ffffed000d000000-ffffed000d1fffff] PMD -> [ffff88012e800000-ffff88012e9fffff] on node -1
+[    0.000000]  [ffffed000d200000-ffffed000d3fffff] PMD -> [ffff88012e600000-ffff88012e7fffff] on node -1
+[    0.000000]  [ffffed000d400000-ffffed000d5fffff] PMD -> [ffff88012e400000-ffff88012e5fffff] on node -1
+[    0.000000]  [ffffed000d600000-ffffed000d7fffff] PMD -> [ffff88012e200000-ffff88012e3fffff] on node -1
+[    0.000000]  [ffffed000d800000-ffffed000d9fffff] PMD -> [ffff88012e000000-ffff88012e1fffff] on node -1
+[    0.000000]  [ffffed000da00000-ffffed000dbfffff] PMD -> [ffff88012de00000-ffff88012dffffff] on node -1
+[    0.000000]  [ffffed000dc00000-ffffed000ddfffff] PMD -> [ffff88012dc00000-ffff88012ddfffff] on node -1
+[    0.000000]  [ffffed000de00000-ffffed000dffffff] PMD -> [ffff88012da00000-ffff88012dbfffff] on node -1
+[    0.000000]  [ffffed000e000000-ffffed000e1fffff] PMD -> [ffff88012d800000-ffff88012d9fffff] on node -1
+[    0.000000]  [ffffed000e200000-ffffed000e3fffff] PMD -> [ffff88012d600000-ffff88012d7fffff] on node -1
+[    0.000000]  [ffffed000e400000-ffffed000e5fffff] PMD -> [ffff88012d400000-ffff88012d5fffff] on node -1
+[    0.000000]  [ffffed000e600000-ffffed000e7fffff] PMD -> [ffff88012d200000-ffff88012d3fffff] on node -1
+[    0.000000]  [ffffed000e800000-ffffed000e9fffff] PMD -> [ffff88012d000000-ffff88012d1fffff] on node -1
+[    0.000000]  [ffffed000ea00000-ffffed000ebfffff] PMD -> [ffff88012ce00000-ffff88012cffffff] on node -1
+[    0.000000]  [ffffed000ec00000-ffffed000edfffff] PMD -> [ffff88012cc00000-ffff88012cdfffff] on node -1
+[    0.000000]  [ffffed000ee00000-ffffed000effffff] PMD -> [ffff88012ca00000-ffff88012cbfffff] on node -1
+[    0.000000]  [ffffed000f000000-ffffed000f1fffff] PMD -> [ffff88012c800000-ffff88012c9fffff] on node -1
+[    0.000000]  [ffffed000f200000-ffffed000f3fffff] PMD -> [ffff88012c600000-ffff88012c7fffff] on node -1
+[    0.000000]  [ffffed000f400000-ffffed000f5fffff] PMD -> [ffff88012c400000-ffff88012c5fffff] on node -1
+[    0.000000]  [ffffed000f600000-ffffed000f7fffff] PMD -> [ffff88012c200000-ffff88012c3fffff] on node -1
+[    0.000000]  [ffffed000f800000-ffffed000f9fffff] PMD -> [ffff88012c000000-ffff88012c1fffff] on node -1
+[    0.000000]  [ffffed000fa00000-ffffed000fbfffff] PMD -> [ffff88012be00000-ffff88012bffffff] on node -1
+[    0.000000]  [ffffed000fc00000-ffffed000fdfffff] PMD -> [ffff88012bc00000-ffff88012bdfffff] on node -1
+[    0.000000]  [ffffed000fe00000-ffffed000fffffff] PMD -> [ffff88012ba00000-ffff88012bbfffff] on node -1
+[    0.000000]  [ffffed0010000000-ffffed00101fffff] PMD -> [ffff88012b800000-ffff88012b9fffff] on node -1
+[    0.000000]  [ffffed0010200000-ffffed00103fffff] PMD -> [ffff88012b600000-ffff88012b7fffff] on node -1
+[    0.000000]  [ffffed0010400000-ffffed00105fffff] PMD -> [ffff88012b400000-ffff88012b5fffff] on node -1
+[    0.000000]  [ffffed0010600000-ffffed00107fffff] PMD -> [ffff88012b200000-ffff88012b3fffff] on node -1
+[    0.000000]  [ffffed0010800000-ffffed00109fffff] PMD -> [ffff88012b000000-ffff88012b1fffff] on node -1
+[    0.000000]  [ffffed0010a00000-ffffed0010bfffff] PMD -> [ffff88012ae00000-ffff88012affffff] on node -1
+[    0.000000]  [ffffed0010c00000-ffffed0010dfffff] PMD -> [ffff88012ac00000-ffff88012adfffff] on node -1
+[    0.000000]  [ffffed0010e00000-ffffed0010ffffff] PMD -> [ffff88012aa00000-ffff88012abfffff] on node -1
+[    0.000000]  [ffffed0011000000-ffffed00111fffff] PMD -> [ffff88012a800000-ffff88012a9fffff] on node -1
+[    0.000000]  [ffffed0011200000-ffffed00113fffff] PMD -> [ffff88012a600000-ffff88012a7fffff] on node -1
+[    0.000000]  [ffffed0011400000-ffffed00115fffff] PMD -> [ffff88012a400000-ffff88012a5fffff] on node -1
+[    0.000000]  [ffffed0011600000-ffffed00117fffff] PMD -> [ffff88012a200000-ffff88012a3fffff] on node -1
+[    0.000000]  [ffffed0011800000-ffffed00119fffff] PMD -> [ffff88012a000000-ffff88012a1fffff] on node -1
+[    0.000000]  [ffffed0011a00000-ffffed0011bfffff] PMD -> [ffff880129e00000-ffff880129ffffff] on node -1
+[    0.000000]  [ffffed0011c00000-ffffed0011dfffff] PMD -> [ffff880129c00000-ffff880129dfffff] on node -1
+[    0.000000]  [ffffed0011e00000-ffffed0011ffffff] PMD -> [ffff880129a00000-ffff880129bfffff] on node -1
+[    0.000000]  [ffffed0012000000-ffffed00121fffff] PMD -> [ffff880129800000-ffff8801299fffff] on node -1
+[    0.000000]  [ffffed0012200000-ffffed00123fffff] PMD -> [ffff880129600000-ffff8801297fffff] on node -1
+[    0.000000]  [ffffed0012400000-ffffed00125fffff] PMD -> [ffff880129400000-ffff8801295fffff] on node -1
+[    0.000000]  [ffffed0012600000-ffffed00127fffff] PMD -> [ffff880129200000-ffff8801293fffff] on node -1
+[    0.000000]  [ffffed0012800000-ffffed00129fffff] PMD -> [ffff880129000000-ffff8801291fffff] on node -1
+[    0.000000]  [ffffed0012a00000-ffffed0012bfffff] PMD -> [ffff880128e00000-ffff880128ffffff] on node -1
+[    0.000000]  [ffffed0012c00000-ffffed0012dfffff] PMD -> [ffff880128c00000-ffff880128dfffff] on node -1
+[    0.000000]  [ffffed0012e00000-ffffed0012ffffff] PMD -> [ffff880128a00000-ffff880128bfffff] on node -1
+[    0.000000]  [ffffed0013000000-ffffed00131fffff] PMD -> [ffff880128800000-ffff8801289fffff] on node -1
+[    0.000000]  [ffffed0013200000-ffffed00133fffff] PMD -> [ffff880128600000-ffff8801287fffff] on node -1
+[    0.000000]  [ffffed0013400000-ffffed00135fffff] PMD -> [ffff880128400000-ffff8801285fffff] on node -1
+[    0.000000]  [ffffed0013600000-ffffed00137fffff] PMD -> [ffff880128200000-ffff8801283fffff] on node -1
+[    0.000000]  [ffffed0013800000-ffffed00139fffff] PMD -> [ffff880128000000-ffff8801281fffff] on node -1
+[    0.000000]  [ffffed0013a00000-ffffed0013bfffff] PMD -> [ffff880127e00000-ffff880127ffffff] on node -1
+[    0.000000]  [ffffed0013c00000-ffffed0013dfffff] PMD -> [ffff880127c00000-ffff880127dfffff] on node -1
+[    0.000000]  [ffffed0013e00000-ffffed0013ffffff] PMD -> [ffff880127a00000-ffff880127bfffff] on node -1
+[    0.000000]  [ffffed0014000000-ffffed00141fffff] PMD -> [ffff880127800000-ffff8801279fffff] on node -1
+[    0.000000]  [ffffed0014200000-ffffed00143fffff] PMD -> [ffff880127600000-ffff8801277fffff] on node -1
+[    0.000000]  [ffffed0014400000-ffffed00145fffff] PMD -> [ffff880127400000-ffff8801275fffff] on node -1
+[    0.000000]  [ffffed0014600000-ffffed00147fffff] PMD -> [ffff880127200000-ffff8801273fffff] on node -1
+[    0.000000]  [ffffed0014800000-ffffed00149fffff] PMD -> [ffff880127000000-ffff8801271fffff] on node -1
+[    0.000000]  [ffffed0014a00000-ffffed0014bfffff] PMD -> [ffff880126e00000-ffff880126ffffff] on node -1
+[    0.000000]  [ffffed0014c00000-ffffed0014dfffff] PMD -> [ffff880126c00000-ffff880126dfffff] on node -1
+[    0.000000]  [ffffed0014e00000-ffffed0014ffffff] PMD -> [ffff880126a00000-ffff880126bfffff] on node -1
+[    0.000000]  [ffffed0015000000-ffffed00151fffff] PMD -> [ffff880126800000-ffff8801269fffff] on node -1
+[    0.000000]  [ffffed0015200000-ffffed00153fffff] PMD -> [ffff880126600000-ffff8801267fffff] on node -1
+[    0.000000]  [ffffed0015400000-ffffed00155fffff] PMD -> [ffff880126400000-ffff8801265fffff] on node -1
+[    0.000000]  [ffffed0015600000-ffffed00157fffff] PMD -> [ffff880126200000-ffff8801263fffff] on node -1
+[    0.000000]  [ffffed0015800000-ffffed00159fffff] PMD -> [ffff880126000000-ffff8801261fffff] on node -1
+[    0.000000]  [ffffed0015a00000-ffffed0015bfffff] PMD -> [ffff880125e00000-ffff880125ffffff] on node -1
+[    0.000000]  [ffffed0015c00000-ffffed0015dfffff] PMD -> [ffff880125c00000-ffff880125dfffff] on node -1
+[    0.000000]  [ffffed0015e00000-ffffed0015ffffff] PMD -> [ffff880125a00000-ffff880125bfffff] on node -1
+[    0.000000]  [ffffed0016000000-ffffed00161fffff] PMD -> [ffff880125800000-ffff8801259fffff] on node -1
+[    0.000000]  [ffffed0016200000-ffffed00163fffff] PMD -> [ffff880125600000-ffff8801257fffff] on node -1
+[    0.000000]  [ffffed0016400000-ffffed00165fffff] PMD -> [ffff880125400000-ffff8801255fffff] on node -1
+[    0.000000]  [ffffed0016600000-ffffed00167fffff] PMD -> [ffff880125200000-ffff8801253fffff] on node -1
+[    0.000000]  [ffffed0016800000-ffffed00169fffff] PMD -> [ffff880125000000-ffff8801251fffff] on node -1
+[    0.000000]  [ffffed0016a00000-ffffed0016bfffff] PMD -> [ffff880124e00000-ffff880124ffffff] on node -1
+[    0.000000]  [ffffed0016c00000-ffffed0016dfffff] PMD -> [ffff880124c00000-ffff880124dfffff] on node -1
+[    0.000000]  [ffffed0016e00000-ffffed0016ffffff] PMD -> [ffff880124a00000-ffff880124bfffff] on node -1
+[    0.000000]  [ffffed0017000000-ffffed00171fffff] PMD -> [ffff880124800000-ffff8801249fffff] on node -1
+[    0.000000]  [ffffed0017200000-ffffed00173fffff] PMD -> [ffff880124600000-ffff8801247fffff] on node -1
+[    0.000000]  [ffffed0017400000-ffffed00175fffff] PMD -> [ffff880124400000-ffff8801245fffff] on node -1
+[    0.000000]  [ffffed0017600000-ffffed00177fffff] PMD -> [ffff880124200000-ffff8801243fffff] on node -1
+[    0.000000]  [ffffed0017800000-ffffed00179fffff] PMD -> [ffff880124000000-ffff8801241fffff] on node -1
+[    0.000000]  [ffffed0017a00000-ffffed0017bfffff] PMD -> [ffff880123e00000-ffff880123ffffff] on node -1
+[    0.000000]  [ffffed0017c00000-ffffed0017dfffff] PMD -> [ffff880123c00000-ffff880123dfffff] on node -1
+[    0.000000]  [ffffed0017e00000-ffffed0017ffffff] PMD -> [ffff880123a00000-ffff880123bfffff] on node -1
+[    0.000000]  [ffffed0020000000-ffffed00201fffff] PMD -> [ffff880123800000-ffff8801239fffff] on node -1
+[    0.000000]  [ffffed0020200000-ffffed00203fffff] PMD -> [ffff880123600000-ffff8801237fffff] on node -1
+[    0.000000]  [ffffed0020400000-ffffed00205fffff] PMD -> [ffff880123400000-ffff8801235fffff] on node -1
+[    0.000000]  [ffffed0020600000-ffffed00207fffff] PMD -> [ffff880123200000-ffff8801233fffff] on node -1
+[    0.000000]  [ffffed0020800000-ffffed00209fffff] PMD -> [ffff880123000000-ffff8801231fffff] on node -1
+[    0.000000]  [ffffed0020a00000-ffffed0020bfffff] PMD -> [ffff880122e00000-ffff880122ffffff] on node -1
+[    0.000000]  [ffffed0020c00000-ffffed0020dfffff] PMD -> [ffff880122c00000-ffff880122dfffff] on node -1
+[    0.000000]  [ffffed0020e00000-ffffed0020ffffff] PMD -> [ffff880122a00000-ffff880122bfffff] on node -1
+[    0.000000]  [ffffed0021000000-ffffed00211fffff] PMD -> [ffff880122800000-ffff8801229fffff] on node -1
+[    0.000000]  [ffffed0021200000-ffffed00213fffff] PMD -> [ffff880122600000-ffff8801227fffff] on node -1
+[    0.000000]  [ffffed0021400000-ffffed00215fffff] PMD -> [ffff880122400000-ffff8801225fffff] on node -1
+[    0.000000]  [ffffed0021600000-ffffed00217fffff] PMD -> [ffff880122200000-ffff8801223fffff] on node -1
+[    0.000000]  [ffffed0021800000-ffffed00219fffff] PMD -> [ffff880122000000-ffff8801221fffff] on node -1
+[    0.000000]  [ffffed0021a00000-ffffed0021bfffff] PMD -> [ffff880121e00000-ffff880121ffffff] on node -1
+[    0.000000]  [ffffed0021c00000-ffffed0021dfffff] PMD -> [ffff880121c00000-ffff880121dfffff] on node -1
+[    0.000000]  [ffffed0021e00000-ffffed0021ffffff] PMD -> [ffff880121a00000-ffff880121bfffff] on node -1
+[    0.000000]  [ffffed0022000000-ffffed00221fffff] PMD -> [ffff880121800000-ffff8801219fffff] on node -1
+[    0.000000]  [ffffed0022200000-ffffed00223fffff] PMD -> [ffff880121600000-ffff8801217fffff] on node -1
+[    0.000000]  [ffffed0022400000-ffffed00225fffff] PMD -> [ffff880121400000-ffff8801215fffff] on node -1
+[    0.000000]  [ffffed0022600000-ffffed00227fffff] PMD -> [ffff880121200000-ffff8801213fffff] on node -1
+[    0.000000]  [ffffed0022800000-ffffed00229fffff] PMD -> [ffff880121000000-ffff8801211fffff] on node -1
+[    0.000000]  [ffffed0022a00000-ffffed0022bfffff] PMD -> [ffff880120e00000-ffff880120ffffff] on node -1
+[    0.000000]  [ffffed0022c00000-ffffed0022dfffff] PMD -> [ffff880120c00000-ffff880120dfffff] on node -1
+[    0.000000]  [ffffed0022e00000-ffffed0022ffffff] PMD -> [ffff880120a00000-ffff880120bfffff] on node -1
+[    0.000000]  [ffffed0023000000-ffffed00231fffff] PMD -> [ffff880120800000-ffff8801209fffff] on node -1
+[    0.000000]  [ffffed0023200000-ffffed00233fffff] PMD -> [ffff880120600000-ffff8801207fffff] on node -1
+[    0.000000]  [ffffed0023400000-ffffed00235fffff] PMD -> [ffff880120400000-ffff8801205fffff] on node -1
+[    0.000000]  [ffffed0023600000-ffffed00237fffff] PMD -> [ffff880120200000-ffff8801203fffff] on node -1
+[    0.000000]  [ffffed0023800000-ffffed00239fffff] PMD -> [ffff880120000000-ffff8801201fffff] on node -1
+[    0.000000]  [ffffed0023a00000-ffffed0023bfffff] PMD -> [ffff88011fe00000-ffff88011fffffff] on node -1
+[    0.000000]  [ffffed0023c00000-ffffed0023dfffff] PMD -> [ffff88011fc00000-ffff88011fdfffff] on node -1
+[    0.000000]  [ffffed0023e00000-ffffed0023ffffff] PMD -> [ffff88011fa00000-ffff88011fbfffff] on node -1
+[    0.000000]  [ffffed0024000000-ffffed00241fffff] PMD -> [ffff88011f800000-ffff88011f9fffff] on node -1
+[    0.000000]  [ffffed0024200000-ffffed00243fffff] PMD -> [ffff88011f600000-ffff88011f7fffff] on node -1
+[    0.000000]  [ffffed0024400000-ffffed00245fffff] PMD -> [ffff88011f400000-ffff88011f5fffff] on node -1
+[    0.000000]  [ffffed0024600000-ffffed00247fffff] PMD -> [ffff88011f200000-ffff88011f3fffff] on node -1
+[    0.000000]  [ffffed0024800000-ffffed00249fffff] PMD -> [ffff88011f000000-ffff88011f1fffff] on node -1
+[    0.000000]  [ffffed0024a00000-ffffed0024bfffff] PMD -> [ffff88011ee00000-ffff88011effffff] on node -1
+[    0.000000]  [ffffed0024c00000-ffffed0024dfffff] PMD -> [ffff88011ec00000-ffff88011edfffff] on node -1
+[    0.000000]  [ffffed0024e00000-ffffed0024ffffff] PMD -> [ffff88011ea00000-ffff88011ebfffff] on node -1
+[    0.000000]  [ffffed0025000000-ffffed00251fffff] PMD -> [ffff88011e800000-ffff88011e9fffff] on node -1
+[    0.000000]  [ffffed0025200000-ffffed00253fffff] PMD -> [ffff88011e600000-ffff88011e7fffff] on node -1
+[    0.000000]  [ffffed0025400000-ffffed00255fffff] PMD -> [ffff88011e400000-ffff88011e5fffff] on node -1
+[    0.000000]  [ffffed0025600000-ffffed00257fffff] PMD -> [ffff88011e200000-ffff88011e3fffff] on node -1
+[    0.000000]  [ffffed0025800000-ffffed00259fffff] PMD -> [ffff88011e000000-ffff88011e1fffff] on node -1
+[    0.000000]  [ffffed0025a00000-ffffed0025bfffff] PMD -> [ffff88011de00000-ffff88011dffffff] on node -1
+[    0.000000]  [ffffed0025c00000-ffffed0025dfffff] PMD -> [ffff88011dc00000-ffff88011ddfffff] on node -1
+[    0.000000]  [ffffed0025e00000-ffffed0025ffffff] PMD -> [ffff88011da00000-ffff88011dbfffff] on node -1
+[    0.000000]  [ffffed0026000000-ffffed00261fffff] PMD -> [ffff88011d800000-ffff88011d9fffff] on node -1
+[    0.000000]  [ffffed0026200000-ffffed00263fffff] PMD -> [ffff88011d600000-ffff88011d7fffff] on node -1
+[    0.000000]  [ffffed0026400000-ffffed00265fffff] PMD -> [ffff88011d400000-ffff88011d5fffff] on node -1
+[    0.000000]  [ffffed0026600000-ffffed00267fffff] PMD -> [ffff88011d200000-ffff88011d3fffff] on node -1
+[    0.000000]  [ffffed0026800000-ffffed00269fffff] PMD -> [ffff88011d000000-ffff88011d1fffff] on node -1
+[    0.000000]  [ffffed0026a00000-ffffed0026bfffff] PMD -> [ffff88011ce00000-ffff88011cffffff] on node -1
+[    0.000000]  [ffffed0026c00000-ffffed0026dfffff] PMD -> [ffff88011cc00000-ffff88011cdfffff] on node -1
+[    0.000000]  [ffffed0026e00000-ffffed0026ffffff] PMD -> [ffff88011ca00000-ffff88011cbfffff] on node -1
+[    0.000000]  [ffffed0027000000-ffffed00271fffff] PMD -> [ffff88011c800000-ffff88011c9fffff] on node -1
+[    0.000000]  [ffffed0027200000-ffffed00273fffff] PMD -> [ffff88011c600000-ffff88011c7fffff] on node -1
+[    0.000000]  [ffffed0027400000-ffffed00275fffff] PMD -> [ffff88011c400000-ffff88011c5fffff] on node -1
+[    0.000000]  [ffffed0027600000-ffffed00277fffff] PMD -> [ffff88011c200000-ffff88011c3fffff] on node -1
+[    0.000000]  [ffffed0027800000-ffffed00279fffff] PMD -> [ffff88011c000000-ffff88011c1fffff] on node -1
+[    0.000000]  [ffffed0027a00000-ffffed0027bfffff] PMD -> [ffff88011be00000-ffff88011bffffff] on node -1
+[    0.000000]  [ffffed0027c00000-ffffed0027dfffff] PMD -> [ffff88011bc00000-ffff88011bdfffff] on node -1
+[    0.000000]  [ffffed0027e00000-ffffed0027ffffff] PMD -> [ffff88011ba00000-ffff88011bbfffff] on node -1
+[    0.000000]  [ffffed0028000000-ffffed00281fffff] PMD -> [ffff88011b800000-ffff88011b9fffff] on node -1
+[    0.000000]  [fffffbfff0200039-fffffbfff0400038] PMD -> [ffff88011b600000-ffff88011b7fffff] on node -1
+[    0.000000]  [fffffbfff0400000-fffffbfff05fffff] PMD -> [ffff88011b400000-ffff88011b5fffff] on node -1
+[    0.000000] kasan: Kernel address sanitizer initialized
+[    0.000000] ACPI: PM-Timer IO Port: 0x608
+[    0.000000] ACPI: Local APIC address 0xfee00000
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+[    0.000000] IOAPIC[0]: apic_id 0, version 17, address 0xfec00000, GSI 0-23
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+[    0.000000] ACPI: IRQ0 used by override.
+[    0.000000] ACPI: IRQ5 used by override.
+[    0.000000] ACPI: IRQ9 used by override.
+[    0.000000] ACPI: IRQ10 used by override.
+[    0.000000] ACPI: IRQ11 used by override.
+[    0.000000] Using ACPI (MADT) for SMP configuration information
+[    0.000000] ACPI: HPET id: 0x8086a201 base: 0xfed00000
+[    0.000000] smpboot: Allowing 4 CPUs, 0 hotplug CPUs
+[    0.000000] PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.000000] PM: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
+[    0.000000] PM: Registered nosave memory: [mem 0x000a0000-0x000effff]
+[    0.000000] PM: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+[    0.000000] PM: Registered nosave memory: [mem 0xbffdf000-0xbfffffff]
+[    0.000000] PM: Registered nosave memory: [mem 0xc0000000-0xfeffbfff]
+[    0.000000] PM: Registered nosave memory: [mem 0xfeffc000-0xfeffffff]
+[    0.000000] PM: Registered nosave memory: [mem 0xff000000-0xfffbffff]
+[    0.000000] PM: Registered nosave memory: [mem 0xfffc0000-0xffffffff]
+[    0.000000] e820: [mem 0xc0000000-0xfeffbfff] available for PCI devices
+[    0.000000] Booting paravirtualized kernel on KVM
+[    0.000000] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+[    0.000000] setup_percpu: NR_CPUS:64 nr_cpumask_bits:64 nr_cpu_ids:4 nr_node_ids:1
+[    0.000000] PERCPU: Embedded 40 pages/cpu @ffff88011b000000 s126488 r8192 d29160 u524288
+[    0.000000] pcpu-alloc: s126488 r8192 d29160 u524288 alloc=1*2097152
+[    0.000000] pcpu-alloc: [0] 0 1 2 3 
+[    0.000000] KVM setup async PF for cpu 0
+[    0.000000] kvm-stealtime: cpu 0, msr 11b016440
+[    0.000000] Built 1 zonelists in Node order, mobility grouping on.  Total pages: 1032040
+[    0.000000] Policy zone: Normal
+[    0.000000] Kernel command line: console=ttyS0 root=/dev/sda debug earlyprintk=serial slub_debug=U
+[    0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.000000] Calgary: detecting Calgary via BIOS EBDA area
+[    0.000000] Calgary: Unable to locate Rio Grande table in EBDA - bailing!
+[    0.000000] Memory: 3485184K/4193780K available (30170K kernel code, 4162K rwdata, 5100K rodata, 1488K init, 1080K bss, 708596K reserved, 0K cma-reserved)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000] 	Additional per-CPU info printed with stalls.
+[    0.000000] 	Build-time adjustment of leaf fanout to 64.
+[    0.000000] 	RCU restricting CPUs from NR_CPUS=64 to nr_cpu_ids=4.
+[    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=64, nr_cpu_ids=4
+[    0.000000] NR_IRQS:4352 nr_irqs:456 16
+[    0.000000] Console: colour VGA+ 80x25
+[    0.000000] console [ttyS0] enabled
+[    0.000000] console [ttyS0] enabled
+[    0.000000] bootconsole [earlyser0] disabled
+[    0.000000] bootconsole [earlyser0] disabled
+[    0.000000] clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+[    0.000000] hpet clockevent registered
+[    0.000000] tsc: Detected 3392.294 MHz processor
+[    0.003000] Calibrating delay loop (skipped) preset value.. 6784.58 BogoMIPS (lpj=3392294)
+[    0.003004] pid_max: default: 32768 minimum: 301
+[    0.003557] ACPI: Core revision 20150619
+[    0.052336] ACPI: All ACPI Tables successfully acquired
+[    0.053046] Security Framework initialized
+[    0.053527] SELinux:  Initializing.
+[    0.053922] SELinux:  Starting in permissive mode
+[    0.055039] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes)
+[    0.060029] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes)
+[    0.062201] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.063020] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.065051] Initializing cgroup subsys freezer
+[    0.065675] mce: CPU supports 10 MCE banks
+[    0.066047] Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0
+[    0.066654] Last level dTLB entries: 4KB 0, 2MB 0, 4MB 0, 1GB 0
+[    0.067296] Freeing SMP alternatives memory: 32K (ffffffff8398a000 - ffffffff83992000)
+[    0.072931] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    0.073000] smpboot: CPU0: Intel QEMU Virtual CPU version 2.5+ (fam: 06, model: 06, stepping: 03)
+[    0.073246] Performance Events: Broken PMU hardware detected, using software events only.
+[    0.074003] Failed to access perfctr msr (MSR c2 is 0)
+[    0.077641] x86: Booting SMP configuration:
+[    0.078003] .... node  #0, CPUs:      #1
+[    0.003000] kvm-clock: cpu 1, msr 1:3fff8041, secondary cpu clock
+[    0.081029] KVM setup async PF for cpu 1
+[    0.081578] kvm-stealtime: cpu 1, msr 11b096440
+[    0.003000]  #2
+[    0.003000] kvm-clock: cpu 2, msr 1:3fff8081, secondary cpu clock
+[    0.086026] KVM setup async PF for cpu 2
+[    0.086943] kvm-stealtime: cpu 2, msr 11b116440
+[    0.003000]  #3
+[    0.003000] kvm-clock: cpu 3, msr 1:3fff80c1, secondary cpu clock
+[    0.090031] x86: Booted up 1 node, 4 CPUs
+[    0.090019] KVM setup async PF for cpu 3
+[    0.090019] kvm-stealtime: cpu 3, msr 11b196440
+[    0.091940] smpboot: Total of 4 processors activated (27138.35 BogoMIPS)
+[    0.093281] devtmpfs: initialized
+[    0.099456] kworker/u8:0 (26) used greatest stack depth: 29104 bytes left
+[    0.100570] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+[    0.101441] RTC time:  9:45:15, date: 11/01/16
+[    0.102331] NET: Registered protocol family 16
+[    0.103727] kworker/u8:0 (32) used greatest stack depth: 28384 bytes left
+[    0.111012] cpuidle: using governor ladder
+[    0.115026] cpuidle: using governor menu
+[    0.115888] ACPI: bus type PCI registered
+[    0.117229] PCI: Using configuration type 1 for base access
+[    0.179278] ACPI: Added _OSI(Module Device)
+[    0.180006] ACPI: Added _OSI(Processor Device)
+[    0.180484] ACPI: Added _OSI(3.0 _SCP Extensions)
+[    0.181004] ACPI: Added _OSI(Processor Aggregator Device)
+[    0.200047] ACPI: Interpreter enabled
+[    0.200464] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S1_] (20150619/hwxface-580)
+[    0.202263] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S2_] (20150619/hwxface-580)
+[    0.203344] ACPI: (supports S0 S3 S4 S5)
+[    0.203344] ACPI: Using IOAPIC for interrupt routing
+[    0.204001] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    0.305000] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    0.306038] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI]
+[    0.306148] acpi PNP0A03:00: _OSC failed (AE_NOT_FOUND); disabling ASPM
+[    0.307196] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration space under this bridge.
+[    0.310005] PCI host bridge to bus 0000:00
+[    0.310005] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.311013] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    0.312011] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    0.312011] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[    0.312804] pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]
+[    0.314050] pci 0000:00:00.0: [8086:1237] type 00 class 0x060000
+[    0.318004] pci 0000:00:01.0: [8086:7000] type 00 class 0x060100
+[    0.322004] pci 0000:00:01.1: [8086:7010] type 00 class 0x010180
+[    0.325601] pci 0000:00:01.1: reg 0x20: [io  0xc040-0xc04f]
+[    0.327022] pci 0000:00:01.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+[    0.327780] pci 0000:00:01.1: legacy IDE quirk: reg 0x14: [io  0x03f6]
+[    0.328004] pci 0000:00:01.1: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
+[    0.329004] pci 0000:00:01.1: legacy IDE quirk: reg 0x1c: [io  0x0376]
+[    0.333001] pci 0000:00:01.3: [8086:7113] type 00 class 0x068000
+[    0.334346] pci 0000:00:01.3: quirk: [io  0x0600-0x063f] claimed by PIIX4 ACPI
+[    0.335012] pci 0000:00:01.3: quirk: [io  0x0700-0x070f] claimed by PIIX4 SMB
+[    0.339000] pci 0000:00:02.0: [1234:1111] type 00 class 0x030000
+[    0.343444] pci 0000:00:02.0: reg 0x10: [mem 0xfd000000-0xfdffffff pref]
+[    0.345024] pci 0000:00:02.0: reg 0x18: [mem 0xfebf0000-0xfebf0fff]
+[    0.350477] pci 0000:00:02.0: reg 0x30: [mem 0xfebe0000-0xfebeffff pref]
+[    0.354159] pci 0000:00:03.0: [8086:100e] type 00 class 0x020000
+[    0.356319] pci 0000:00:03.0: reg 0x10: [mem 0xfebc0000-0xfebdffff]
+[    0.357536] pci 0000:00:03.0: reg 0x14: [io  0xc000-0xc03f]
+[    0.361007] pci 0000:00:03.0: reg 0x30: [mem 0xfeb80000-0xfebbffff pref]
+[    0.375472] ACPI: PCI Interrupt Link [LNKA] (IRQs 5 *10 11)
+[    0.378387] ACPI: PCI Interrupt Link [LNKB] (IRQs 5 *10 11)
+[    0.381316] ACPI: PCI Interrupt Link [LNKC] (IRQs 5 10 *11)
+[    0.384250] ACPI: PCI Interrupt Link [LNKD] (IRQs 5 10 *11)
+[    0.385744] ACPI: PCI Interrupt Link [LNKS] (IRQs *9)
+[    0.399000] ACPI: Enabled 16 GPEs in block 00 to 0F
+[    0.401113] vgaarb: setting as boot device: PCI:0000:00:02.0
+[    0.401113] vgaarb: device added: PCI:0000:00:02.0,decodes=io+mem,owns=io+mem,locks=none
+[    0.402023] vgaarb: loaded
+[    0.402309] vgaarb: bridge control possible 0000:00:02.0
+[    0.404169] SCSI subsystem initialized
+[    0.405188] libata version 3.00 loaded.
+[    0.406485] ACPI: bus type USB registered
+[    0.407358] usbcore: registered new interface driver usbfs
+[    0.408002] usbcore: registered new interface driver hub
+[    0.408106] usbcore: registered new device driver usb
+[    0.409353] pps_core: LinuxPPS API ver. 1 registered
+[    0.410003] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.411063] PTP clock support registered
+[    0.412062] Advanced Linux Sound Architecture Driver Initialized.
+[    0.413306] PCI: Using ACPI for IRQ routing
+[    0.413762] PCI: pci_cache_line_size set to 64 bytes
+[    0.414070] e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
+[    0.415010] e820: reserve RAM buffer [mem 0xbffdf000-0xbfffffff]
+[    0.418100] NetLabel: Initializing
+[    0.418100] NetLabel:  domain hash size = 128
+[    0.418473] NetLabel:  protocols = UNLABELED CIPSOv4
+[    0.419118] NetLabel:  unlabeled traffic allowed by default
+[    0.421001] HPET: 3 timers in total, 0 timers will be used for per-cpu timer
+[    0.421044] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+[    0.421620] hpet0: 3 comparators, 64-bit 100.000000 MHz counter
+[    0.426126] clocksource: Switched to clocksource kvm-clock
+[    0.600088] pnp: PnP ACPI init
+[    0.601245] pnp 00:00: Plug and Play ACPI device, IDs PNP0b00 (active)
+[    0.602650] pnp 00:01: Plug and Play ACPI device, IDs PNP0303 (active)
+[    0.603982] pnp 00:02: Plug and Play ACPI device, IDs PNP0f13 (active)
+[    0.605270] pnp 00:03: [dma 2]
+[    0.605974] pnp 00:03: Plug and Play ACPI device, IDs PNP0700 (active)
+[    0.607646] pnp 00:04: Plug and Play ACPI device, IDs PNP0400 (active)
+[    0.609303] pnp 00:05: Plug and Play ACPI device, IDs PNP0501 (active)
+[    0.614795] pnp: PnP ACPI: found 6 devices
+[    0.668718] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    0.669660] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[    0.670346] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[    0.671023] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[    0.671783] pci_bus 0000:00: resource 7 [mem 0xc0000000-0xfebfffff window]
+[    0.672713] NET: Registered protocol family 2
+[    0.674069] TCP established hash table entries: 32768 (order: 6, 262144 bytes)
+[    0.675017] TCP bind hash table entries: 32768 (order: 7, 524288 bytes)
+[    0.675802] TCP: Hash tables configured (established 32768 bind 32768)
+[    0.703311] UDP hash table entries: 2048 (order: 4, 65536 bytes)
+[    0.704150] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes)
+[    0.705286] NET: Registered protocol family 1
+[    0.706378] RPC: Registered named UNIX socket transport module.
+[    0.707089] RPC: Registered udp transport module.
+[    0.707607] RPC: Registered tcp transport module.
+[    0.708123] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.708833] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[    0.709527] pci 0000:00:01.0: PIIX3: Enabling Passive Release
+[    0.710178] pci 0000:00:01.0: Activating ISA DMA hang workarounds
+[    0.710851] pci 0000:00:02.0: Video device with shadowed ROM
+[    0.711485] PCI: CLS 0 bytes, default 64
+[    0.712338] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[    0.713027] software IO TLB [mem 0xbbfdf000-0xbffdf000] (64MB) mapped at [ffff8800bbfdf000-ffff8800bffdefff]
+[    0.714599] microcode: CPU0 sig=0x663, pf=0x1, revision=0x1
+[    0.715520] microcode: CPU1 sig=0x663, pf=0x1, revision=0x1
+[    0.716184] microcode: CPU2 sig=0x663, pf=0x1, revision=0x1
+[    0.716845] microcode: CPU3 sig=0x663, pf=0x1, revision=0x1
+[    0.717921] microcode: Microcode Update Driver: v2.00 <tigran@aivazian.fsnet.co.uk>, Peter Oruba
+[    0.721967] Scanning for low memory corruption every 60 seconds
+[    0.725715] futex hash table entries: 1024 (order: 4, 65536 bytes)
+[    0.726501] audit: initializing netlink subsys (disabled)
+[    0.727232] audit: type=2000 audit(1477993517.212:1): initialized
+[    0.729595] HugeTLB registered 2 MB page size, pre-allocated 0 pages
+[    0.794317] kworker/u8:0 (650) used greatest stack depth: 28256 bytes left
+[    0.863787] VFS: Disk quotas dquot_6.6.0
+[    0.864750] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.877143] NFS: Registering the id_resolver key type
+[    0.877699] Key type id_resolver registered
+[    0.878191] Key type id_legacy registered
+[    0.879052] 9p: Installing v9fs 9p2000 file system support
+[    0.880870] SELinux:  Registering netfilter hooks
+[    0.885738] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 251)
+[    0.886555] io scheduler noop registered
+[    0.886990] io scheduler deadline registered
+[    0.888406] io scheduler cfq registered (default)
+[    0.889540] pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+[    0.891211] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    0.892015] ACPI: Power Button [PWRF]
+[    0.895403] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    0.918730] 00:05: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[    0.924416] Non-volatile memory driver v1.3
+[    0.925226] Linux agpgart interface v0.103
+[    0.926181] [drm] Initialized drm 1.1.0 20060810
+[    0.946739] loop: module loaded
+[    0.948617] ata_piix 0000:00:01.1: version 2.13
+[    0.956201] scsi host0: ata_piix
+[    0.959886] scsi host1: ata_piix
+[    0.961370] ata1: PATA max MWDMA2 cmd 0x1f0 ctl 0x3f6 bmdma 0xc040 irq 14
+[    0.962108] ata2: PATA max MWDMA2 cmd 0x170 ctl 0x376 bmdma 0xc048 irq 15
+[    0.963846] e100: Intel(R) PRO/100 Network Driver, 3.5.24-k2-NAPI
+[    0.964488] e100: Copyright(c) 1999-2006 Intel Corporation
+[    0.965308] e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+[    0.966081] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[    1.114446] ata1.01: NODEV after polling detection
+[    1.115138] ata2.01: NODEV after polling detection
+[    1.116079] ata1.00: ATA-7: QEMU HARDDISK, 2.5+, max UDMA/100
+[    1.116997] ata1.00: 2099200 sectors, multi 16: LBA48 
+[    1.117873] ata2.00: ATAPI: QEMU DVD-ROM, 2.5+, max UDMA/100
+[    1.119268] ata1.00: configured for MWDMA2
+[    1.119777] ata2.00: configured for MWDMA2
+[    1.120904] scsi 0:0:0:0: Direct-Access     ATA      QEMU HARDDISK    2.5+ PQ: 0 ANSI: 5
+[    1.125585] sd 0:0:0:0: [sda] 2099200 512-byte logical blocks: (1.07 GB/1.00 GiB)
+[    1.127316] sd 0:0:0:0: [sda] Write Protect is off
+[    1.128125] sd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00
+[    1.129108] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    1.131430] sd 0:0:0:0: Attached scsi generic sg0 type 0
+[    1.135076] scsi 1:0:0:0: CD-ROM            QEMU     QEMU DVD-ROM     2.5+ PQ: 0 ANSI: 5
+[    1.137223] sd 0:0:0:0: [sda] Attached SCSI disk
+[    1.149663] sr 1:0:0:0: [sr0] scsi3-mmc drive: 4x/4x cd/rw xa/form2 tray
+[    1.150533] cdrom: Uniform CD-ROM driver Revision: 3.20
+[    1.154455] sr 1:0:0:0: Attached scsi CD-ROM sr0
+[    1.156515] sr 1:0:0:0: Attached scsi generic sg1 type 5
+[    1.716038] tsc: Refined TSC clocksource calibration: 3392.383 MHz
+[    1.716737] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x30e632cf557, max_idle_ns: 440795211148 ns
+[    3.416426] ACPI: PCI Interrupt Link [LNKC] enabled at IRQ 11
+[    3.712978] e1000 0000:00:03.0 eth0: (PCI:33MHz:32-bit) 52:54:00:12:34:56
+[    3.713798] e1000 0000:00:03.0 eth0: Intel(R) PRO/1000 Network Connection
+[    3.714752] sky2: driver version 1.30
+[    3.716317] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    3.717085] ehci-pci: EHCI PCI platform driver
+[    3.717717] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    3.718411] ohci-pci: OHCI PCI platform driver
+[    3.719048] uhci_hcd: USB Universal Host Controller Interface driver
+[    3.720659] usbcore: registered new interface driver usblp
+[    3.721435] usbcore: registered new interface driver usb-storage
+[    3.722385] i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+[    3.724643] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    3.725627] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    3.728685] mousedev: PS/2 mouse device common for all mice
+[    3.731171] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input1
+[    3.731557] rtc_cmos 00:00: RTC can wake from S4
+[    3.733913] rtc_cmos 00:00: rtc core: registered rtc_cmos as rtc0
+[    3.734928] rtc_cmos 00:00: alarms up to one day, 114 bytes nvram, hpet irqs
+[    3.739268] device-mapper: ioctl: 4.32.0-ioctl (2015-6-26) initialised: dm-devel@redhat.com
+[    3.740502] hidraw: raw HID events driver (C) Jiri Kosina
+[    3.771665] usbcore: registered new interface driver usbhid
+[    3.772320] usbhid: USB HID core driver
+[    3.775863] Netfilter messages via NETLINK v0.30.
+[    3.776474] nf_conntrack version 0.5.0 (16384 buckets, 65536 max)
+[    3.778627] ctnetlink v0.93: registering with nfnetlink.
+[    3.779612] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    3.780350] Initializing XFRM netlink socket
+[    3.784366] NET: Registered protocol family 10
+[    3.787631] ip6_tables: (C) 2000-2006 Netfilter Core Team
+[    3.789024] sit: IPv6 over IPv4 tunneling driver
+[    3.791273] NET: Registered protocol family 17
+[    3.791924] 9pnet: Installing 9P2000 support
+[    3.792545] Key type dns_resolver registered
+[    3.797432] registered taskstats version 1
+[    3.799040]   Magic number: 8:294:777
+[    3.799552] misc rfkill: hash matches
+[    3.799991] console [netcon0] enabled
+[    3.800422] netconsole: network logging started
+[    3.802816] PM: Hibernation image not present or could not be loaded.
+[    3.803599] ALSA device list:
+[    3.803945]   No soundcards found.
+[    4.345494] input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input3
+[    4.350216] md: Waiting for all devices to be available before autodetect
+[    4.352397] md: If you don't use raid, use raid=noautodetect
+[    4.359163] md: Autodetecting RAID arrays.
+[    4.359964] md: Scanned 0 and added 0 devices.
+[    4.360838] md: autorun ...
+[    4.361391] md: ... autorun DONE.
+[    4.363175] EXT4-fs (sda): couldn't mount as ext3 due to feature incompatibilities
+[    4.365746] EXT4-fs (sda): couldn't mount as ext2 due to feature incompatibilities
+[    4.386670] EXT4-fs (sda): mounted filesystem with ordered data mode. Opts: (null)
+[    4.388066] VFS: Mounted root (ext4 filesystem) readonly on device 8:0.
+[    4.390673] devtmpfs: mounted
+[    4.391796] Freeing unused kernel memory: 1488K (ffffffff83816000 - ffffffff8398a000)
+[    4.393088] Write protecting the kernel read-only data: 36864k
+[    4.394576] Freeing unused kernel memory: 428K (ffff880002d95000 - ffff880002e00000)
+[    4.396229] Freeing unused kernel memory: 1044K (ffff8800032fb000 - ffff880003400000)
+SELinux:  Could not open policy file <= /etc/selinux/targeted/policy/policy.29:  No such file or directory
+INIT: version 2.88 booting
+[    4.472954] stty (1051) used greatest stack depth: 27328 bytes left
+[    4.525639] tput (1055) used greatest stack depth: 27152 bytes left
+[[36minfo[39;49m] Using makefile-style concurrent boot in runlevel S.
+[    4.816996] create_static_n (1146) used greatest stack depth: 27080 bytes left
+[....] Starting the hotplug events dispatcher: udevd[    4.832251] udevd[1159]: starting version 175
+[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[....] Synthesizing the initial hotplug events...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Waiting for /dev to be fully populated...[    5.365354] random: nonblocking pool is initialized
+[    5.387896] pci-db (1289) used greatest stack depth: 26272 bytes left
+[    5.424942] cdrom_id (1301) used greatest stack depth: 25872 bytes left
+[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Activating swap...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[    5.719079] EXT4-fs (sda): re-mounted. Opts: (null)
+[....] Creating compatibility symlink from /etc/mtab to /proc/mounts. ...[?25l[?1c7[1G[[33mwarn[39;49m8[?25h[?0c [33m(warning).[39;49m
+[....] Cleaning up temporary files... /tmp[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[....] Activating lvm and md swap...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Checking file systems...fsck from util-linux 2.20.1
+[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Mounting local filesystems...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Activating swapfile swap...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Cleaning up temporary files...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[....] Setting kernel variables ...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Configuring network interfaces...[    7.020258] ip (2357) used greatest stack depth: 25456 bytes left
+Internet Systems Consortium DHCP Client 4.2.2
+Copyright 2004-2011 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+
+[    7.098051] e1000: eth0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[    7.099277] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[    7.100599] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+Listening on LPF/eth0/52:54:00:12:34:56
+Sending on   LPF/eth0/52:54:00:12:34:56
+Sending on   Socket/fallback
+DHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 3
+DHCPREQUEST on eth0 to 255.255.255.255 port 67
+DHCPOFFER from 10.0.2.2
+DHCPACK from 10.0.2.2
+bound to 10.0.2.15 -- renewal in 43070 seconds.
+[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Cleaning up temporary files...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+INIT: Entering runlevel: 2
+[[36minfo[39;49m] Using makefile-style concurrent boot in runlevel 2.
+[....] Starting enhanced syslogd: rsyslogd[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[....] Starting periodic command scheduler: cron[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[....] Starting OpenBSD Secure Shell server: sshd[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[   10.588175] kt: running test for light, case 8, T2620
+[   10.588175] 
+[   10.591202] kt: starting test light_test_lots_of_wait_on_many_signal_selfdestroy
+[   10.699429] kt: end of test
+[   10.701077] 
+[   10.701826] dump_desc: [signal]
+[   10.703478] dump_desc evts:
+[   10.705242] dump_desc   ts: 101 101
+[   10.707412] dump_desc  ret: 0 0
+[   10.709408] 
+[   10.710292] dump_desc: [sum_create]
+[   10.712360] dump_desc evts: 1 3 0 5 7 8 6 4 2 13 12 11 10 9 14
+[   10.715628] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.718635] dump_desc  ret:
+[   10.720272] 
+[   10.721238] dump_desc: [sum_wait]
+[   10.723430] dump_desc evts:
+[   10.724942] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[   10.726994] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.728672] 
+[   10.731899] dump_desc: [sum_destroy]
+[   10.733662] dump_desc evts:
+[   10.734976] dump_desc   ts:
+[   10.736279] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.738142] 
+[   10.738965] dump_desc: [sum_wait2]
+[   10.740589] dump_desc evts:
+[   10.741891] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[   10.745733] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   10.749345] LIGHT_SUCCESS
+[   10.752501] kt: running test for light, case 8, T2637
+[   10.752501] 
+[   10.754876] kt: starting test light_test_lots_of_wait_on_many_signal_selfdestroy
+[   10.863405] kt: end of test
+[   10.864985] 
+[   10.865992] dump_desc: [signal]
+[   10.868037] dump_desc evts:
+[   10.869953] dump_desc   ts: 101 101
+[   10.872207] dump_desc  ret: 0 0
+[   10.874461] 
+[   10.875406] dump_desc: [sum_create]
+[   10.877532] dump_desc evts: 15 16 17 19 22 20 18 28 21 23 26 24 29 25 27
+[   10.881174] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.882811] dump_desc  ret:
+[   10.883732] 
+[   10.884312] dump_desc: [sum_wait]
+[   10.885329] dump_desc evts:
+[   10.886213] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[   10.888635] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.890454] 
+[   10.890722] dump_desc: [sum_destroy]
+[   10.893432] dump_desc evts:
+[   10.894480] dump_desc   ts:
+[   10.895474] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.898280] 
+[   10.898869] dump_desc: [sum_wait2]
+[   10.900595] dump_desc evts:
+[   10.901831] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[   10.905253] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   10.907730] LIGHT_SUCCESS
+[   10.909596] kt: running test for light, case 8, T2654
+[   10.909596] 
+[   10.911042] kt: starting test light_test_lots_of_wait_on_many_signal_selfdestroy
+[   11.016421] kt: end of test
+[   11.017980] 
+[   11.018698] dump_desc: [signal]
+[   11.020269] dump_desc evts:
+[   11.022010] dump_desc   ts: 101 101
+[   11.024213] dump_desc  ret: 0 0
+[   11.025829] 
+[   11.026802] dump_desc: [sum_create]
+[   11.029210] dump_desc evts: 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44
+[   11.032149] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.034189] dump_desc  ret:
+[   11.035044] 
+[   11.035652] dump_desc: [sum_wait]
+[   11.036796] dump_desc evts:
+[   11.037652] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[   11.040509] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.042692] 
+[   11.043322] dump_desc: [sum_destroy]
+[   11.044816] dump_desc evts:
+[   11.045969] dump_desc   ts:
+[   11.047152] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.049571] 
+[   11.050267] dump_desc: [sum_wait2]
+[   11.051834] dump_desc evts:
+[   11.053184] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[   11.056525] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   11.060180] LIGHT_SUCCESS
+[   11.062668] kt: running test for light, case 8, T2671
+[   11.062668] 
+[   11.065087] kt: starting test light_test_lots_of_wait_on_many_signal_selfdestroy
+[   11.171387] kt: end of test
+[   11.175141] 
+[   11.175797] dump_desc: [signal]
+[   11.177588] dump_desc evts:
+[   11.182150] dump_desc   ts: 101 101
+[   11.183995] dump_desc  ret: 0 0
+[   11.185209] 
+[   11.185779] dump_desc: [sum_create]
+[   11.187117] dump_desc evts: 48 51 53 58 55 50 46 59 47 45 49 52 54 56 57
+[   11.189928] dump_desc   ts: 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0
+[   11.192035] dump_desc  ret:
+[   11.192674] 
+[   11.193059] dump_desc: [sum_wait]
+[   11.193590] dump_desc evts:
+[   11.194084] dump_desc   ts: 101 101 101 101 101 101 101 100 101 101 101 101 101 101 101
+[   11.195533] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.196447] 
+[   11.196715] dump_desc: [sum_destroy]
+[   11.197624] dump_desc evts:
+[   11.198593] dump_desc   ts:
+[   11.202636] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.204637] 
+[   11.205120] dump_desc: [sum_wait2]
+[   11.206071] dump_desc evts:
+[   11.206512] dump_desc   ts: 101 101 101 101 101 101 101 100 101 101 101 101 101 101 101
+[   11.207791] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   11.209322] LIGHT_SUCCESS
+[   11.211784] kt: running test for light, case 8, T2688
+[   11.211784] 
+[   11.214025] kt: starting test light_test_lots_of_wait_on_many_signal_selfdestroy
+[   11.321470] kt: end of test
+[   11.323749] 
+[   11.324522] dump_desc: [signal]
+[   11.325849] dump_desc evts:
+[   11.327287] dump_desc   ts: 101 101
+[   11.329029] dump_desc  ret: 0 0
+[   11.330528] 
+[   11.331302] dump_desc: [sum_create]
+[   11.333324] dump_desc evts: 60 61 63 62 65 72 71 70 69 68 66 64 73 67 74
+[   11.335306] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.336374] dump_desc  ret:
+[   11.337256] 
+[   11.337771] dump_desc: [sum_wait]
+[   11.338899] dump_desc evts:
+[   11.340457] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[   11.344481] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.347763] 
+[   11.348453] dump_desc: [sum_destroy]
+[   11.350536] dump_desc evts:
+[   11.352088] dump_desc   ts:
+[   11.353396] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.355302] 
+[   11.355838] dump_desc: [sum_wait2]
+[   11.356970] dump_desc evts:
+[   11.357944] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[   11.360673] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   11.364353] LIGHT_SUCCESS
+[   11.367056] kt: running test for light, case 8, T2705
+[   11.367056] 
+[   11.369841] kt: starting test light_test_lots_of_wait_on_many_signal_selfdestroy
+[   11.476338] kt: end of test
+[   11.477147] 
+[   11.477543] dump_desc: [signal]
+[   11.478517] dump_desc evts:
+[   11.479539] dump_desc   ts: 101 101
+[   11.481627] dump_desc  ret: 0 0
+[   11.483253] 
+[   11.483993] dump_desc: [sum_create]
+[   11.486440] dump_desc evts: 86 76 75 85 84 79 78 77 81 80 82 83 87 88 89
+[   11.491525] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.494837] dump_desc  ret:
+[   11.496963] 
+[   11.498072] dump_desc: [sum_wait]
+[   11.500374] dump_desc evts:
+[   11.501880] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[   11.506706] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.509592] 
+[   11.510423] dump_desc: [sum_destroy]
+[   11.512437] dump_desc evts:
+[   11.513919] dump_desc   ts:
+[   11.515394] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.517652] 
+[   11.518492] dump_desc: [sum_wait2]
+[   11.520371] dump_desc evts:
+[   11.521869] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[   11.525884] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   11.528488] LIGHT_SUCCESS
+[   11.531470] kt: running test for light, case 8, T2722
+[   11.531470] 
+[   11.533792] kt: starting test light_test_lots_of_wait_on_many_signal_selfdestroy
+[   11.639402] kt: end of test
+[   11.640651] 
+[   11.641565] dump_desc: [signal]
+[   11.643208] dump_desc evts:
+[   11.645190] dump_desc   ts: 101 101
+[   11.650685] dump_desc  ret: 0 0
+[   11.652458] 
+[   11.653469] dump_desc: [sum_create]
+[   11.655631] dump_desc evts: 90 91 92 93 95 97 99 100 94 96 98 101 102 103 104
+[   11.658016] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.659211] dump_desc  ret:
+[   11.659840] 
+[   11.660207] dump_desc: [sum_wait]
+[   11.661091] dump_desc evts:
+[   11.661836] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[   11.665966] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.672098] 
+[   11.672797] dump_desc: [sum_destroy]
+[   11.678727] dump_desc evts:
+[   11.679972] dump_desc   ts:
+[   11.681074] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.683233] 
+[   11.683626] dump_desc: [sum_wait2]
+[   11.684359] dump_desc evts:
+[   11.684975] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[   11.686653] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   11.688329] LIGHT_SUCCESS
+[   11.691267] kt: running test for light, case 8, T2739
+[   11.691267] 
+[   11.694481] kt: starting test light_test_lots_of_wait_on_many_signal_selfdestroy
+[   11.801490] kt: end of test
+[   11.802854] 
+[   11.803916] dump_desc: [signal]
+[   11.805901] dump_desc evts:
+[   11.807565] dump_desc   ts: 101 101
+[   11.810044] dump_desc  ret: 0 0
+[   11.812200] 
+[   11.813195] dump_desc: [sum_create]
+[   11.815795] dump_desc evts: 106 105 116 115 114 113 112 111 110 109 108 107 117 118 119
+[   11.820106] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.823976] dump_desc  ret:
+[   11.830375] 
+[   11.831204] dump_desc: [sum_wait]
+[   11.832959] dump_desc evts:
+[   11.834403] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[   11.837211] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.838794] 
+[   11.839641] dump_desc: [sum_destroy]
+[   11.841337] dump_desc evts:
+[   11.842370] dump_desc   ts:
+[   11.845819] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   11.848703] 
+[   11.849591] dump_desc: [sum_wait2]
+[   11.851295] dump_desc evts:
+[   11.852811] dump_desc   ts: 101 101 101 101 101 101 101 101 101 101 101 101 101 101 101
+[   11.856219] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   11.863523] LIGHT_SUCCESS
+INIT: Switching to runlevel: 0
+INIT: Sending processes the TERM signal
+[[36minfo[39;49m] Using makefile-style concurrent boot in runlevel 0.
+[....] Asking all remaining processes to terminate...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] All processes ended within 1 seconds...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Stopping enhanced syslogd: rsyslogd[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[....] Deconfiguring network interfaces...Internet Systems Consortium DHCP Client 4.2.2
+Copyright 2004-2011 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+
+Listening on LPF/eth0/52:54:00:12:34:56
+Sending on   LPF/eth0/52:54:00:12:34:56
+Sending on   Socket/fallback
+DHCPRELEASE on eth0 to 10.0.2.2 port 67
+[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[[36minfo[39;49m] Saving the system clock.
+[[36minfo[39;49m] Hardware Clock updated to Tue Nov  1 09:45:31 UTC 2016.
+[....] Deactivating swap...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[....] Unmounting local filesystems...[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0cdone.
+[   15.180094] EXT4-fs (sda): re-mounted. Opts: (null)
+[[36minfo[39;49m] Will now halt.
+[   18.227244] sd 0:0:0:0: [sda] Synchronizing SCSI cache
+[   18.228760] sd 0:0:0:0: [sda] Stopping disk
+[   19.833840] ACPI: Preparing to enter system sleep state S5
+[   19.834560] reboot: Power down
+[   19.836747] acpi_power_off called

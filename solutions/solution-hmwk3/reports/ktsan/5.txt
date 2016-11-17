@@ -1,0 +1,1154 @@
+[....] Starting OpenBSD Secure Shell server: sshd[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[   62.069599] kt: running test for light, case 5, T2586
+[   62.069599] 
+[   62.075697] ==================================================================
+[   62.075706] ThreadSanitizer: data-race in tcp_v4_rcv
+[   62.075706] 
+[   62.075721] Write at 0xffff8800b989b8c0 of size 8 by thread 2586 on CPU 3:
+			__sk_add_backlog at include/net/sock.h:806
+			 (inlined by) sk_add_backlog at include/net/sock.h:829
+			 (inlined by) tcp_v4_rcv at net/ipv4/tcp_ipv4.c:1634
+			ip_local_deliver_finish at net/ipv4/ip_input.c:216
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_local_deliver at net/ipv4/ip_input.c:256
+			dst_input at include/net/dst.h:450
+			 (inlined by) ip_rcv_finish at net/ipv4/ip_input.c:367
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_rcv at net/ipv4/ip_input.c:455
+			__netif_receive_skb_core at net/core/dev.c:3893
+			__netif_receive_skb at net/core/dev.c:3928
+			netif_receive_skb_internal at net/core/dev.c:3956
+			napi_skb_finish at net/core/dev.c:4281
+			 (inlined by) napi_gro_receive at net/core/dev.c:4310
+			e1000_receive_skb at drivers/net/ethernet/intel/e1000/e1000_main.c:4019
+			 (inlined by) e1000_clean_rx_irq at drivers/net/ethernet/intel/e1000/e1000_main.c:4471
+			e1000_clean at drivers/net/ethernet/intel/e1000/e1000_main.c:3820
+			napi_poll at net/core/dev.c:4744
+			 (inlined by) net_rx_action at net/core/dev.c:4809
+			__do_softirq at kernel/softirq.c:273
+			apic_timer_interrupt at arch/x86/entry/entry_64.S:790
+[   62.076005] 
+[   62.076016] Previous read at 0xffff8800b989b8c0 of size 8 by thread 2584 on CPU 1:
+			tcp_recvmsg at net/ipv4/tcp.c:1664 (discriminator 1)
+			inet_recvmsg at net/ipv4/af_inet.c:764
+			sock_recvmsg_nosec at net/socket.c:712
+			 (inlined by) sock_recvmsg at net/socket.c:720
+			sock_read_iter at net/socket.c:797
+			new_sync_read at fs/read_write.c:422
+			 (inlined by) __vfs_read at fs/read_write.c:434
+			vfs_read at fs/read_write.c:454
+			SYSC_read at fs/read_write.c:569
+			 (inlined by) SyS_read at fs/read_write.c:562
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   62.076127] 
+[   62.076127] Mutexes locked by thread 2586:
+[   62.076127] Mutex 411867 is locked here:
+			__raw_spin_lock at include/linux/spinlock_api_smp.h:158
+			 (inlined by) _raw_spin_lock at kernel/locking/spinlock.c:151
+			tcp_v4_rcv at net/ipv4/tcp_ipv4.c:1628
+			ip_local_deliver_finish at net/ipv4/ip_input.c:216
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_local_deliver at net/ipv4/ip_input.c:256
+			dst_input at include/net/dst.h:450
+			 (inlined by) ip_rcv_finish at net/ipv4/ip_input.c:367
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_rcv at net/ipv4/ip_input.c:455
+			__netif_receive_skb_core at net/core/dev.c:3893
+			__netif_receive_skb at net/core/dev.c:3928
+			netif_receive_skb_internal at net/core/dev.c:3956
+			napi_skb_finish at net/core/dev.c:4281
+			 (inlined by) napi_gro_receive at net/core/dev.c:4310
+			e1000_receive_skb at drivers/net/ethernet/intel/e1000/e1000_main.c:4019
+			 (inlined by) e1000_clean_rx_irq at drivers/net/ethernet/intel/e1000/e1000_main.c:4471
+			e1000_clean at drivers/net/ethernet/intel/e1000/e1000_main.c:3820
+			napi_poll at net/core/dev.c:4744
+			 (inlined by) net_rx_action at net/core/dev.c:4809
+			__do_softirq at kernel/softirq.c:273
+			apic_timer_interrupt at arch/x86/entry/entry_64.S:790
+[   62.076127] 
+[   62.076127] ==================================================================
+[   62.080589] ==================================================================
+[   62.080604] ThreadSanitizer: data-race in tcp_recvmsg
+[   62.080604] 
+[   62.080636] Read at 0xffff8800b989b8c0 of size 8 by thread 2584 on CPU 1:
+			tcp_recvmsg at net/ipv4/tcp.c:1664 (discriminator 1)
+			inet_recvmsg at net/ipv4/af_inet.c:764
+			sock_recvmsg_nosec at net/socket.c:712
+			 (inlined by) sock_recvmsg at net/socket.c:720
+			sock_read_iter at net/socket.c:797
+			new_sync_read at fs/read_write.c:422
+			 (inlined by) __vfs_read at fs/read_write.c:434
+			vfs_read at fs/read_write.c:454
+			SYSC_read at fs/read_write.c:569
+			 (inlined by) SyS_read at fs/read_write.c:562
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   62.080862] 
+[   62.080887] Previous write at 0xffff8800b989b8c0 of size 8 by thread 2586 on CPU 3:
+			__sk_add_backlog at include/net/sock.h:806
+			 (inlined by) sk_add_backlog at include/net/sock.h:829
+			 (inlined by) tcp_v4_rcv at net/ipv4/tcp_ipv4.c:1634
+			ip_local_deliver_finish at net/ipv4/ip_input.c:216
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_local_deliver at net/ipv4/ip_input.c:256
+			dst_input at include/net/dst.h:450
+			 (inlined by) ip_rcv_finish at net/ipv4/ip_input.c:367
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_rcv at net/ipv4/ip_input.c:455
+			__netif_receive_skb_core at net/core/dev.c:3893
+			__netif_receive_skb at net/core/dev.c:3928
+			netif_receive_skb_internal at net/core/dev.c:3956
+			napi_skb_finish at net/core/dev.c:4281
+			 (inlined by) napi_gro_receive at net/core/dev.c:4310
+			e1000_receive_skb at drivers/net/ethernet/intel/e1000/e1000_main.c:4019
+			 (inlined by) e1000_clean_rx_irq at drivers/net/ethernet/intel/e1000/e1000_main.c:4471
+			e1000_clean at drivers/net/ethernet/intel/e1000/e1000_main.c:3820
+			napi_poll at net/core/dev.c:4744
+			 (inlined by) net_rx_action at net/core/dev.c:4809
+			__do_softirq at kernel/softirq.c:273
+			apic_timer_interrupt at arch/x86/entry/entry_64.S:790
+[   62.081103] 
+[   62.081103] Mutexes locked by thread 2586:
+[   62.081103] Mutex 411867 is locked here:
+			__raw_spin_lock at include/linux/spinlock_api_smp.h:158
+			 (inlined by) _raw_spin_lock at kernel/locking/spinlock.c:151
+			tcp_v4_rcv at net/ipv4/tcp_ipv4.c:1628
+			ip_local_deliver_finish at net/ipv4/ip_input.c:216
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_local_deliver at net/ipv4/ip_input.c:256
+			dst_input at include/net/dst.h:450
+			 (inlined by) ip_rcv_finish at net/ipv4/ip_input.c:367
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_rcv at net/ipv4/ip_input.c:455
+			__netif_receive_skb_core at net/core/dev.c:3893
+			__netif_receive_skb at net/core/dev.c:3928
+			netif_receive_skb_internal at net/core/dev.c:3956
+			napi_skb_finish at net/core/dev.c:4281
+			 (inlined by) napi_gro_receive at net/core/dev.c:4310
+			e1000_receive_skb at drivers/net/ethernet/intel/e1000/e1000_main.c:4019
+			 (inlined by) e1000_clean_rx_irq at drivers/net/ethernet/intel/e1000/e1000_main.c:4471
+			e1000_clean at drivers/net/ethernet/intel/e1000/e1000_main.c:3820
+			napi_poll at net/core/dev.c:4744
+			 (inlined by) net_rx_action at net/core/dev.c:4809
+			__do_softirq at kernel/softirq.c:273
+			apic_timer_interrupt at arch/x86/entry/entry_64.S:790
+[   62.081103] 
+[   62.081103] ==================================================================
+[   62.773460] ==================================================================
+[   62.773473] ThreadSanitizer: data-race in __nf_ct_refresh_acct
+[   62.773473] 
+[   62.773497] Read at 0xffff8800ba566e10 of size 8 by thread 2586 on CPU 3:
+			__nf_ct_refresh_acct at net/netfilter/nf_conntrack_core.c:1248
+			nf_ct_refresh_acct at include/net/netfilter/nf_conntrack.h:208
+			 (inlined by) tcp_packet at net/netfilter/nf_conntrack_proto_tcp.c:1097
+			nf_conntrack_in at net/netfilter/nf_conntrack_core.c:1156
+			ipv4_conntrack_in at net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.c:150
+			nf_iterate at net/netfilter/core.c:169
+			nf_hook_slow at net/netfilter/core.c:201
+			nf_hook_thresh at include/linux/netfilter.h:180
+			 (inlined by) NF_HOOK_THRESH at include/linux/netfilter.h:216
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_rcv at net/ipv4/ip_input.c:455
+			__netif_receive_skb_core at net/core/dev.c:3893
+			__netif_receive_skb at net/core/dev.c:3928
+			netif_receive_skb_internal at net/core/dev.c:3956
+			napi_skb_finish at net/core/dev.c:4281
+			 (inlined by) napi_gro_receive at net/core/dev.c:4310
+			e1000_receive_skb at drivers/net/ethernet/intel/e1000/e1000_main.c:4019
+			 (inlined by) e1000_clean_rx_irq at drivers/net/ethernet/intel/e1000/e1000_main.c:4471
+			e1000_clean at drivers/net/ethernet/intel/e1000/e1000_main.c:3820
+			napi_poll at net/core/dev.c:4744
+			 (inlined by) net_rx_action at net/core/dev.c:4809
+			__do_softirq at kernel/softirq.c:273
+			apic_timer_interrupt at arch/x86/entry/entry_64.S:790
+[   62.773960] 
+[   62.773987] Previous write at 0xffff8800ba566e10 of size 8 by thread 2584 on CPU 2:
+			__mod_timer at kernel/time/timer.c:815
+			 (inlined by) mod_timer_pending at kernel/time/timer.c:836
+			__nf_ct_refresh_acct at net/netfilter/nf_conntrack_core.c:1249
+			nf_ct_refresh_acct at include/net/netfilter/nf_conntrack.h:208
+			 (inlined by) tcp_packet at net/netfilter/nf_conntrack_proto_tcp.c:1097
+			nf_conntrack_in at net/netfilter/nf_conntrack_core.c:1156
+			ipv4_conntrack_local at net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.c:161
+			nf_iterate at net/netfilter/core.c:169
+			nf_hook_slow at net/netfilter/core.c:201
+			nf_hook_thresh at include/linux/netfilter.h:180
+			 (inlined by) nf_hook at include/linux/netfilter.h:190
+			 (inlined by) __ip_local_out_sk at net/ipv4/ip_output.c:104
+			__ip_local_out at net/ipv4/ip_output.c:110
+			 (inlined by) ip_local_out_sk at net/ipv4/ip_output.c:117
+			ip_local_out at include/net/ip.h:119 (discriminator 4)
+			 (inlined by) ip_queue_xmit at net/ipv4/ip_output.c:454 (discriminator 4)
+			tcp_transmit_skb at net/ipv4/tcp_output.c:1039
+			tcp_send_ack at net/ipv4/tcp_output.c:3375
+			__tcp_ack_snd_check at net/ipv4/tcp_input.c:4901
+			tcp_rcv_established at net/ipv4/tcp_input.c:5309
+			tcp_v4_do_rcv at net/ipv4/tcp_ipv4.c:1399
+			sk_backlog_rcv at include/net/sock.h:841
+			 (inlined by) __release_sock at net/core/sock.c:1944
+			 (inlined by) release_sock at net/core/sock.c:2391
+			tcp_recvmsg at net/ipv4/tcp.c:1883
+			inet_recvmsg at net/ipv4/af_inet.c:764
+			sock_recvmsg_nosec at net/socket.c:712
+			 (inlined by) sock_recvmsg at net/socket.c:720
+			sock_read_iter at net/socket.c:797
+			new_sync_read at fs/read_write.c:422
+			 (inlined by) __vfs_read at fs/read_write.c:434
+			vfs_read at fs/read_write.c:454
+			SYSC_read at fs/read_write.c:569
+			 (inlined by) SyS_read at fs/read_write.c:562
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   62.774191] 
+[   62.774191] Mutexes locked by thread 2584:
+[   62.774191] Mutex 1154 is locked here:
+			__raw_spin_lock at include/linux/spinlock_api_smp.h:158
+			 (inlined by) _raw_spin_lock at kernel/locking/spinlock.c:151
+			spin_lock at include/linux/spinlock.h:312
+			 (inlined by) __mod_timer at kernel/time/timer.c:809
+			 (inlined by) mod_timer_pending at kernel/time/timer.c:836
+			__nf_ct_refresh_acct at net/netfilter/nf_conntrack_core.c:1249
+			nf_ct_refresh_acct at include/net/netfilter/nf_conntrack.h:208
+			 (inlined by) tcp_packet at net/netfilter/nf_conntrack_proto_tcp.c:1097
+			nf_conntrack_in at net/netfilter/nf_conntrack_core.c:1156
+			ipv4_conntrack_local at net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.c:161
+			nf_iterate at net/netfilter/core.c:169
+			nf_hook_slow at net/netfilter/core.c:201
+			nf_hook_thresh at include/linux/netfilter.h:180
+			 (inlined by) nf_hook at include/linux/netfilter.h:190
+			 (inlined by) __ip_local_out_sk at net/ipv4/ip_output.c:104
+			__ip_local_out at net/ipv4/ip_output.c:110
+			 (inlined by) ip_local_out_sk at net/ipv4/ip_output.c:117
+			ip_local_out at include/net/ip.h:119 (discriminator 4)
+			 (inlined by) ip_queue_xmit at net/ipv4/ip_output.c:454 (discriminator 4)
+			tcp_transmit_skb at net/ipv4/tcp_output.c:1039
+			tcp_send_ack at net/ipv4/tcp_output.c:3375
+			__tcp_ack_snd_check at net/ipv4/tcp_input.c:4901
+			tcp_rcv_established at net/ipv4/tcp_input.c:5309
+			tcp_v4_do_rcv at net/ipv4/tcp_ipv4.c:1399
+			sk_backlog_rcv at include/net/sock.h:841
+			 (inlined by) __release_sock at net/core/sock.c:1944
+			 (inlined by) release_sock at net/core/sock.c:2391
+			tcp_recvmsg at net/ipv4/tcp.c:1883
+			inet_recvmsg at net/ipv4/af_inet.c:764
+			sock_recvmsg_nosec at net/socket.c:712
+			 (inlined by) sock_recvmsg at net/socket.c:720
+			sock_read_iter at net/socket.c:797
+			new_sync_read at fs/read_write.c:422
+			 (inlined by) __vfs_read at fs/read_write.c:434
+			vfs_read at fs/read_write.c:454
+			SYSC_read at fs/read_write.c:569
+			 (inlined by) SyS_read at fs/read_write.c:562
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   62.774191] 
+[   62.774191] ==================================================================
+[   62.811498] ==================================================================
+[   62.811510] ThreadSanitizer: data-race in mod_timer_pending
+[   62.811510] 
+[   62.811530] Write at 0xffff8800ba566e10 of size 8 by thread 2584 on CPU 2:
+			__mod_timer at kernel/time/timer.c:815
+			 (inlined by) mod_timer_pending at kernel/time/timer.c:836
+			__nf_ct_refresh_acct at net/netfilter/nf_conntrack_core.c:1249
+			nf_ct_refresh_acct at include/net/netfilter/nf_conntrack.h:208
+			 (inlined by) tcp_packet at net/netfilter/nf_conntrack_proto_tcp.c:1097
+			nf_conntrack_in at net/netfilter/nf_conntrack_core.c:1156
+			ipv4_conntrack_local at net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.c:161
+			nf_iterate at net/netfilter/core.c:169
+			nf_hook_slow at net/netfilter/core.c:201
+			nf_hook_thresh at include/linux/netfilter.h:180
+			 (inlined by) nf_hook at include/linux/netfilter.h:190
+			 (inlined by) __ip_local_out_sk at net/ipv4/ip_output.c:104
+			__ip_local_out at net/ipv4/ip_output.c:110
+			 (inlined by) ip_local_out_sk at net/ipv4/ip_output.c:117
+			ip_local_out at include/net/ip.h:119 (discriminator 4)
+			 (inlined by) ip_queue_xmit at net/ipv4/ip_output.c:454 (discriminator 4)
+			tcp_transmit_skb at net/ipv4/tcp_output.c:1039
+			tcp_send_ack at net/ipv4/tcp_output.c:3375
+			tcp_cleanup_rbuf at net/ipv4/tcp.c:1432
+			tcp_recvmsg at net/ipv4/tcp.c:1881
+			inet_recvmsg at net/ipv4/af_inet.c:764
+			sock_recvmsg_nosec at net/socket.c:712
+			 (inlined by) sock_recvmsg at net/socket.c:720
+			sock_read_iter at net/socket.c:797
+			new_sync_read at fs/read_write.c:422
+			 (inlined by) __vfs_read at fs/read_write.c:434
+			vfs_read at fs/read_write.c:454
+			SYSC_read at fs/read_write.c:569
+			 (inlined by) SyS_read at fs/read_write.c:562
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   62.812115] 
+[   62.812115] Previous read at 0xffff8800ba566e10 of size 8 by thread 2586 on CPU 3:
+			__nf_ct_refresh_acct at net/netfilter/nf_conntrack_core.c:1248
+			nf_ct_refresh_acct at include/net/netfilter/nf_conntrack.h:208
+			 (inlined by) tcp_packet at net/netfilter/nf_conntrack_proto_tcp.c:1097
+			nf_conntrack_in at net/netfilter/nf_conntrack_core.c:1156
+			ipv4_conntrack_in at net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.c:150
+			nf_iterate at net/netfilter/core.c:169
+			nf_hook_slow at net/netfilter/core.c:201
+			nf_hook_thresh at include/linux/netfilter.h:180
+			 (inlined by) NF_HOOK_THRESH at include/linux/netfilter.h:216
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_rcv at net/ipv4/ip_input.c:455
+			__netif_receive_skb_core at net/core/dev.c:3893
+			__netif_receive_skb at net/core/dev.c:3928
+			netif_receive_skb_internal at net/core/dev.c:3956
+			napi_skb_finish at net/core/dev.c:4281
+			 (inlined by) napi_gro_receive at net/core/dev.c:4310
+			e1000_receive_skb at drivers/net/ethernet/intel/e1000/e1000_main.c:4019
+			 (inlined by) e1000_clean_rx_irq at drivers/net/ethernet/intel/e1000/e1000_main.c:4471
+			e1000_clean at drivers/net/ethernet/intel/e1000/e1000_main.c:3820
+			napi_poll at net/core/dev.c:4744
+			 (inlined by) net_rx_action at net/core/dev.c:4809
+			__do_softirq at kernel/softirq.c:273
+			apic_timer_interrupt at arch/x86/entry/entry_64.S:790
+[   62.812115] 
+[   62.812115] Mutexes locked by thread 2584:
+[   62.812115] Mutex 1154 is locked here:
+			__raw_spin_lock at include/linux/spinlock_api_smp.h:158
+			 (inlined by) _raw_spin_lock at kernel/locking/spinlock.c:151
+			spin_lock at include/linux/spinlock.h:312
+			 (inlined by) __mod_timer at kernel/time/timer.c:809
+			 (inlined by) mod_timer_pending at kernel/time/timer.c:836
+			__nf_ct_refresh_acct at net/netfilter/nf_conntrack_core.c:1249
+			nf_ct_refresh_acct at include/net/netfilter/nf_conntrack.h:208
+			 (inlined by) tcp_packet at net/netfilter/nf_conntrack_proto_tcp.c:1097
+			nf_conntrack_in at net/netfilter/nf_conntrack_core.c:1156
+			ipv4_conntrack_local at net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.c:161
+			nf_iterate at net/netfilter/core.c:169
+			nf_hook_slow at net/netfilter/core.c:201
+			nf_hook_thresh at include/linux/netfilter.h:180
+			 (inlined by) nf_hook at include/linux/netfilter.h:190
+			 (inlined by) __ip_local_out_sk at net/ipv4/ip_output.c:104
+			__ip_local_out at net/ipv4/ip_output.c:110
+			 (inlined by) ip_local_out_sk at net/ipv4/ip_output.c:117
+			ip_local_out at include/net/ip.h:119 (discriminator 4)
+			 (inlined by) ip_queue_xmit at net/ipv4/ip_output.c:454 (discriminator 4)
+			tcp_transmit_skb at net/ipv4/tcp_output.c:1039
+			tcp_send_ack at net/ipv4/tcp_output.c:3375
+			tcp_cleanup_rbuf at net/ipv4/tcp.c:1432
+			tcp_recvmsg at net/ipv4/tcp.c:1881
+			inet_recvmsg at net/ipv4/af_inet.c:764
+			sock_recvmsg_nosec at net/socket.c:712
+			 (inlined by) sock_recvmsg at net/socket.c:720
+			sock_read_iter at net/socket.c:797
+			new_sync_read at fs/read_write.c:422
+			 (inlined by) __vfs_read at fs/read_write.c:434
+			vfs_read at fs/read_write.c:454
+			SYSC_read at fs/read_write.c:569
+			 (inlined by) SyS_read at fs/read_write.c:562
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   62.812115] 
+[   62.812115] ==================================================================
+[   67.771413] ==================================================================
+[   67.771424] ThreadSanitizer: data-race in e1000_clean
+[   67.771424] 
+[   67.771455] Read at 0xffff8800b9f98b0c of size 4 by thread 2586 on CPU 3:
+			e1000_clean_tx_irq at drivers/net/ethernet/intel/e1000/e1000_main.c:3857
+			 (inlined by) e1000_clean at drivers/net/ethernet/intel/e1000/e1000_main.c:3818
+			napi_poll at net/core/dev.c:4744
+			 (inlined by) net_rx_action at net/core/dev.c:4809
+			__do_softirq at kernel/softirq.c:273
+			apic_timer_interrupt at arch/x86/entry/entry_64.S:790
+[   67.771573] 
+[   67.771595] Previous write at 0xffff8800b9f98b0c of size 4 by thread 2584 on CPU 1:
+			e1000_tx_queue at drivers/net/ethernet/intel/e1000/e1000_main.c:3015
+			 (inlined by) e1000_xmit_frame at drivers/net/ethernet/intel/e1000/e1000_main.c:3257
+			__netdev_start_xmit at include/linux/netdevice.h:3613
+			 (inlined by) netdev_start_xmit at include/linux/netdevice.h:3622
+			 (inlined by) xmit_one at net/core/dev.c:2684
+			 (inlined by) dev_hard_start_xmit at net/core/dev.c:2700
+			sch_direct_xmit at net/sched/sch_generic.c:165
+			__dev_xmit_skb at net/core/dev.c:2870
+			 (inlined by) __dev_queue_xmit at net/core/dev.c:3073
+			dev_queue_xmit_sk at net/core/dev.c:3139
+			dev_queue_xmit at include/linux/netdevice.h:2190
+			 (inlined by) neigh_hh_output at include/net/neighbour.h:467
+			 (inlined by) dst_neigh_output at include/net/dst.h:401
+			 (inlined by) ip_finish_output2 at net/ipv4/ip_output.c:210
+			ip_finish_output at net/ipv4/ip_output.c:284
+			NF_HOOK_COND at include/linux/netfilter.h:231
+			NF_HOOK_COND at include/linux/netfilter.h:229
+			 (inlined by) ip_output at net/ipv4/ip_output.c:356
+			dst_output_sk at include/net/dst.h:440
+			 (inlined by) ip_local_out_sk at net/ipv4/ip_output.c:119
+			ip_local_out at include/net/ip.h:119 (discriminator 4)
+			 (inlined by) ip_queue_xmit at net/ipv4/ip_output.c:454 (discriminator 4)
+			tcp_transmit_skb at net/ipv4/tcp_output.c:1039
+			tcp_send_ack at net/ipv4/tcp_output.c:3375
+			tcp_cleanup_rbuf at net/ipv4/tcp.c:1432
+			tcp_recvmsg at net/ipv4/tcp.c:1881
+			inet_recvmsg at net/ipv4/af_inet.c:764
+			sock_recvmsg_nosec at net/socket.c:712
+			 (inlined by) sock_recvmsg at net/socket.c:720
+			sock_read_iter at net/socket.c:797
+			new_sync_read at fs/read_write.c:422
+			 (inlined by) __vfs_read at fs/read_write.c:434
+			vfs_read at fs/read_write.c:454
+			SYSC_read at fs/read_write.c:569
+			 (inlined by) SyS_read at fs/read_write.c:562
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   67.772134] 
+[   67.772134] Mutexes locked by thread 2584:
+[   67.772134] Mutex 364881 is locked here:
+			__raw_spin_lock at include/linux/spinlock_api_smp.h:158
+			 (inlined by) _raw_spin_lock at kernel/locking/spinlock.c:151
+			spin_lock at include/linux/spinlock.h:312 (discriminator 1)
+			 (inlined by) __netif_tx_lock at include/linux/netdevice.h:3172 (discriminator 1)
+			 (inlined by) sch_direct_xmit at net/sched/sch_generic.c:163 (discriminator 1)
+			__dev_xmit_skb at net/core/dev.c:2870
+			 (inlined by) __dev_queue_xmit at net/core/dev.c:3073
+			dev_queue_xmit_sk at net/core/dev.c:3139
+			dev_queue_xmit at include/linux/netdevice.h:2190
+			 (inlined by) neigh_hh_output at include/net/neighbour.h:467
+			 (inlined by) dst_neigh_output at include/net/dst.h:401
+			 (inlined by) ip_finish_output2 at net/ipv4/ip_output.c:210
+			ip_finish_output at net/ipv4/ip_output.c:284
+			NF_HOOK_COND at include/linux/netfilter.h:231
+			NF_HOOK_COND at include/linux/netfilter.h:229
+			 (inlined by) ip_output at net/ipv4/ip_output.c:356
+			dst_output_sk at include/net/dst.h:440
+			 (inlined by) ip_local_out_sk at net/ipv4/ip_output.c:119
+			ip_local_out at include/net/ip.h:119 (discriminator 4)
+			 (inlined by) ip_queue_xmit at net/ipv4/ip_output.c:454 (discriminator 4)
+			tcp_transmit_skb at net/ipv4/tcp_output.c:1039
+			tcp_send_ack at net/ipv4/tcp_output.c:3375
+			tcp_cleanup_rbuf at net/ipv4/tcp.c:1432
+			tcp_recvmsg at net/ipv4/tcp.c:1881
+			inet_recvmsg at net/ipv4/af_inet.c:764
+			sock_recvmsg_nosec at net/socket.c:712
+			 (inlined by) sock_recvmsg at net/socket.c:720
+			sock_read_iter at net/socket.c:797
+			new_sync_read at fs/read_write.c:422
+			 (inlined by) __vfs_read at fs/read_write.c:434
+			vfs_read at fs/read_write.c:454
+			SYSC_read at fs/read_write.c:569
+			 (inlined by) SyS_read at fs/read_write.c:562
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   67.772134] 
+[   67.772134] ==================================================================
+[   67.986427] ==================================================================
+[   67.986435] ThreadSanitizer: data-race in e1000_clean
+[   67.986435] 
+[   67.986445] Read at 0xffff8800b9f98b3c of size 4 by thread 2586 on CPU 3:
+			e1000_clean_tx_irq at drivers/net/ethernet/intel/e1000/e1000_main.c:3857
+			 (inlined by) e1000_clean at drivers/net/ethernet/intel/e1000/e1000_main.c:3818
+			napi_poll at net/core/dev.c:4744
+			 (inlined by) net_rx_action at net/core/dev.c:4809
+			__do_softirq at kernel/softirq.c:273
+			apic_timer_interrupt at arch/x86/entry/entry_64.S:790
+[   67.986574] 
+[   67.986593] Previous write at 0xffff8800b9f98b3c of size 4 by thread 2584 on CPU 0:
+			e1000_tx_csum at drivers/net/ethernet/intel/e1000/e1000_main.c:2813
+			 (inlined by) e1000_xmit_frame at drivers/net/ethernet/intel/e1000/e1000_main.c:3241
+			__netdev_start_xmit at include/linux/netdevice.h:3613
+			 (inlined by) netdev_start_xmit at include/linux/netdevice.h:3622
+			 (inlined by) xmit_one at net/core/dev.c:2684
+			 (inlined by) dev_hard_start_xmit at net/core/dev.c:2700
+			sch_direct_xmit at net/sched/sch_generic.c:165
+			__dev_xmit_skb at net/core/dev.c:2870
+			 (inlined by) __dev_queue_xmit at net/core/dev.c:3073
+			dev_queue_xmit_sk at net/core/dev.c:3139
+			dev_queue_xmit at include/linux/netdevice.h:2190
+			 (inlined by) neigh_hh_output at include/net/neighbour.h:467
+			 (inlined by) dst_neigh_output at include/net/dst.h:401
+			 (inlined by) ip_finish_output2 at net/ipv4/ip_output.c:210
+			ip_finish_output at net/ipv4/ip_output.c:284
+			NF_HOOK_COND at include/linux/netfilter.h:231
+			NF_HOOK_COND at include/linux/netfilter.h:229
+			 (inlined by) ip_output at net/ipv4/ip_output.c:356
+			dst_output_sk at include/net/dst.h:440
+			 (inlined by) ip_local_out_sk at net/ipv4/ip_output.c:119
+			ip_local_out at include/net/ip.h:119 (discriminator 4)
+			 (inlined by) ip_queue_xmit at net/ipv4/ip_output.c:454 (discriminator 4)
+			tcp_transmit_skb at net/ipv4/tcp_output.c:1039
+			tcp_send_ack at net/ipv4/tcp_output.c:3375
+			tcp_cleanup_rbuf at net/ipv4/tcp.c:1432
+			tcp_recvmsg at net/ipv4/tcp.c:1881
+			inet_recvmsg at net/ipv4/af_inet.c:764
+			sock_recvmsg_nosec at net/socket.c:712
+			 (inlined by) sock_recvmsg at net/socket.c:720
+			sock_read_iter at net/socket.c:797
+			new_sync_read at fs/read_write.c:422
+			 (inlined by) __vfs_read at fs/read_write.c:434
+			vfs_read at fs/read_write.c:454
+			SYSC_read at fs/read_write.c:569
+			 (inlined by) SyS_read at fs/read_write.c:562
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   67.987186] 
+[   67.987186] Mutexes locked by thread 2584:
+[   67.987186] Mutex 364881 is locked here:
+			__raw_spin_lock at include/linux/spinlock_api_smp.h:158
+			 (inlined by) _raw_spin_lock at kernel/locking/spinlock.c:151
+			spin_lock at include/linux/spinlock.h:312 (discriminator 1)
+			 (inlined by) __netif_tx_lock at include/linux/netdevice.h:3172 (discriminator 1)
+			 (inlined by) sch_direct_xmit at net/sched/sch_generic.c:163 (discriminator 1)
+			__dev_xmit_skb at net/core/dev.c:2870
+			 (inlined by) __dev_queue_xmit at net/core/dev.c:3073
+			dev_queue_xmit_sk at net/core/dev.c:3139
+			dev_queue_xmit at include/linux/netdevice.h:2190
+			 (inlined by) neigh_hh_output at include/net/neighbour.h:467
+			 (inlined by) dst_neigh_output at include/net/dst.h:401
+			 (inlined by) ip_finish_output2 at net/ipv4/ip_output.c:210
+			ip_finish_output at net/ipv4/ip_output.c:284
+			NF_HOOK_COND at include/linux/netfilter.h:231
+			NF_HOOK_COND at include/linux/netfilter.h:229
+			 (inlined by) ip_output at net/ipv4/ip_output.c:356
+			dst_output_sk at include/net/dst.h:440
+			 (inlined by) ip_local_out_sk at net/ipv4/ip_output.c:119
+			ip_local_out at include/net/ip.h:119 (discriminator 4)
+			 (inlined by) ip_queue_xmit at net/ipv4/ip_output.c:454 (discriminator 4)
+			tcp_transmit_skb at net/ipv4/tcp_output.c:1039
+			tcp_send_ack at net/ipv4/tcp_output.c:3375
+			tcp_cleanup_rbuf at net/ipv4/tcp.c:1432
+			tcp_recvmsg at net/ipv4/tcp.c:1881
+			inet_recvmsg at net/ipv4/af_inet.c:764
+			sock_recvmsg_nosec at net/socket.c:712
+			 (inlined by) sock_recvmsg at net/socket.c:720
+			sock_read_iter at net/socket.c:797
+			new_sync_read at fs/read_write.c:422
+			 (inlined by) __vfs_read at fs/read_write.c:434
+			vfs_read at fs/read_write.c:454
+			SYSC_read at fs/read_write.c:569
+			 (inlined by) SyS_read at fs/read_write.c:562
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   67.987186] 
+[   67.987186] ==================================================================
+[   71.863843] kt: starting light_test_lots_of_create_destroy test
+[   71.889029] kt: end of test.
+[   71.891402] kt: starting light_test_lots_of_create_destroy test
+[   71.913920] kt: end of test.
+[   71.915958] kt: starting light_test_lots_of_create_destroy test
+[   71.924661] kt: end of test.
+[   71.925693] kt: starting test light_test_lots_of_create_destroy
+[   71.943395] kt: end of test
+[   71.944351] 
+[   71.944777] dump_desc: [create1]
+[   71.945994] dump_desc evts: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+[   71.947980] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   71.949775] dump_desc  ret:
+[   71.950770] 
+[   71.951497] dump_desc: [create2]
+[   71.952832] dump_desc evts: 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31
+[   71.954669] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   71.956356] dump_desc  ret:
+[   71.956993] 
+[   71.957782] dump_desc: [create3]
+[   71.958942] dump_desc evts: 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+[   71.960804] dump_desc   ts: 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1
+[   71.962433] dump_desc  ret:
+[   71.963501] 
+[   71.963967] dump_desc: [create4]
+[   71.965943] dump_desc evts: 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63
+[   71.968526] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   71.970360] dump_desc  ret:
+[   71.971365] 
+[   71.971829] dump_desc: [destroy1]
+[   71.973595] dump_desc evts: 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31
+[   71.975579] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+[   71.977583] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   71.979369] 
+[   71.979935] dump_desc: [destroy2]
+[   71.981718] dump_desc evts: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+[   71.983647] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1
+[   71.985559] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   71.987370] 
+[   71.987800] dump_desc: [destroy3]
+[   71.989575] dump_desc evts: 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63
+[   71.991634] dump_desc   ts: 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+[   71.993477] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 -22 0 -22 0
+[   71.995405] 
+[   71.995863] dump_desc: [destroy4]
+[   71.997502] dump_desc evts: 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63
+[   71.999561] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.001577] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 0 -22 0 -22
+[   72.003512] 
+[   72.003979] dump_desc: [destroy5]
+[   72.005684] dump_desc evts: 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+[   72.007547] dump_desc   ts: 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1
+[   72.009608] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.011461] 
+[   72.012051] dump_desc: [destroy6]
+[   72.013739] dump_desc evts: 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+[   72.015977] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.019508] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   72.022332] LIGHT_SUCCESS
+[   72.025885] kt: running test for light, case 5, T2586
+[   72.025885] 
+[   72.027649] kt: starting light_test_lots_of_create_destroy test
+[   72.034008] kt: end of test.
+[   72.035436] kt: starting light_test_lots_of_create_destroy test
+[   72.042880] kt: end of test.
+[   72.044031] kt: starting light_test_lots_of_create_destroy test
+[   72.051817] kt: end of test.
+[   72.052937] kt: starting test light_test_lots_of_create_destroy
+[   72.064681] kt: end of test
+[   72.065772] 
+[   72.066648] dump_desc: [create1]
+[   72.068591] dump_desc evts: 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 86
+[   72.070567] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1
+[   72.073773] dump_desc  ret:
+[   72.075479] 
+[   72.075987] dump_desc: [create2]
+[   72.077697] dump_desc evts: 79 80 81 82 83 84 85 87 88 89 90 91 92 93 94 95
+[   72.079745] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.081450] dump_desc  ret:
+[   72.082479] 
+[   72.083396] dump_desc: [create3]
+[   72.084775] dump_desc evts: 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111
+[   72.088520] dump_desc   ts: 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1
+[   72.090441] dump_desc  ret:
+[   72.091482] 
+[   72.092014] dump_desc: [create4]
+[   72.093689] dump_desc evts: 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127
+[   72.095967] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.097812] dump_desc  ret:
+[   72.098929] 
+[   72.099742] dump_desc: [destroy1]
+[   72.101556] dump_desc evts: 79 80 81 82 83 84 85 87 88 89 90 91 92 93 94 95
+[   72.103678] dump_desc   ts: 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1
+[   72.105785] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.107366] 
+[   72.107885] dump_desc: [destroy2]
+[   72.109601] dump_desc evts: 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 86
+[   72.111746] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1
+[   72.113724] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.115511] 
+[   72.116016] dump_desc: [destroy3]
+[   72.117753] dump_desc evts: 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127
+[   72.119966] dump_desc   ts: 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1
+[   72.121981] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.123893] 
+[   72.124820] dump_desc: [destroy4]
+[   72.126588] dump_desc evts: 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127
+[   72.128836] dump_desc   ts: 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1
+[   72.130509] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   72.132552] 
+[   72.133600] dump_desc: [destroy5]
+[   72.135027] dump_desc evts: 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111
+[   72.137621] dump_desc   ts: 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1
+[   72.139725] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.141510] 
+[   72.142021] dump_desc: [destroy6]
+[   72.143840] dump_desc evts: 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111
+[   72.146419] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.148435] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   72.150393] LIGHT_SUCCESS
+[   72.153872] kt: running test for light, case 5, T2586
+[   72.153872] 
+[   72.156699] kt: starting light_test_lots_of_create_destroy test
+[   72.164891] kt: end of test.
+[   72.167545] kt: starting light_test_lots_of_create_destroy test
+[   72.177093] kt: end of test.
+[   72.178742] kt: starting light_test_lots_of_create_destroy test
+[   72.186708] kt: end of test.
+[   72.188614] kt: starting test light_test_lots_of_create_destroy
+[   72.199437] kt: end of test
+[   72.200695] 
+[   72.201806] dump_desc: [create1]
+[   72.203545] dump_desc evts: 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+[   72.206577] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.208777] dump_desc  ret:
+[   72.210390] 
+[   72.211021] dump_desc: [create2]
+[   72.212989] dump_desc evts: 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159
+[   72.216469] dump_desc   ts: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+[   72.218428] dump_desc  ret:
+[   72.219869] 
+[   72.220731] dump_desc: [create3]
+[   72.222538] dump_desc evts: 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175
+[   72.225577] dump_desc   ts: 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1
+[   72.227624] dump_desc  ret:
+[   72.228841] 
+[   72.229813] dump_desc: [create4]
+[   72.231551] dump_desc evts: 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191
+[   72.234522] dump_desc   ts: 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1
+[   72.236509] dump_desc  ret:
+[   72.237792] 
+[   72.238665] dump_desc: [destroy1]
+[   72.240517] dump_desc evts: 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159
+[   72.243636] dump_desc   ts: 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1
+[   72.245687] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.247730] 
+[   72.248589] dump_desc: [destroy2]
+[   72.250339] dump_desc evts: 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+[   72.253499] dump_desc   ts: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+[   72.255593] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.257430] 
+[   72.258001] dump_desc: [destroy3]
+[   72.259744] dump_desc evts: 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191
+[   72.262429] dump_desc   ts: 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1
+[   72.264614] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.266673] 
+[   72.267552] dump_desc: [destroy4]
+[   72.269419] dump_desc evts: 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191
+[   72.272417] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.274622] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   72.277922] 
+[   72.279397] dump_desc: [destroy5]
+[   72.281578] dump_desc evts: 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175
+[   72.284627] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.286706] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   72.289427] 
+[   72.290392] dump_desc: [destroy6]
+[   72.292006] dump_desc evts: 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175
+[   72.295457] dump_desc   ts: 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1
+[   72.297542] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.299538] LIGHT_SUCCESS
+[   72.302816] kt: running test for light, case 5, T2586
+[   72.302816] 
+[   72.305341] kt: starting light_test_lots_of_create_destroy test
+[   72.312512] kt: end of test.
+[   72.313576] kt: starting light_test_lots_of_create_destroy test
+[   72.319995] kt: end of test.
+[   72.321414] kt: starting light_test_lots_of_create_destroy test
+[   72.326942] kt: end of test.
+[   72.327937] kt: starting test light_test_lots_of_create_destroy
+[   72.337838] kt: end of test
+[   72.338749] 
+[   72.339535] dump_desc: [create1]
+[   72.340693] dump_desc evts: 200 202 204 206 208 210 212 214 216 217 218 219 220 221 222 223
+[   72.342826] dump_desc   ts: 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1
+[   72.344351] dump_desc  ret:
+[   72.345484] 
+[   72.346334] dump_desc: [create2]
+[   72.347565] dump_desc evts: 192 193 194 195 196 197 198 199 201 203 205 207 209 211 213 215
+[   72.349653] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1
+[   72.351386] dump_desc  ret:
+[   72.352328] 
+[   72.352791] dump_desc: [create3]
+[   72.353971] dump_desc evts: 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239
+[   72.355881] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.357561] dump_desc  ret:
+[   72.358481] 
+[   72.358994] dump_desc: [create4]
+[   72.360606] dump_desc evts: 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255
+[   72.362651] dump_desc   ts: 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1
+[   72.364370] dump_desc  ret:
+[   72.365402] 
+[   72.366474] dump_desc: [destroy1]
+[   72.368347] dump_desc evts: 192 193 194 195 196 197 198 199 201 203 205 207 209 211 213 215
+[   72.371588] dump_desc   ts: 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1
+[   72.373556] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.374986] 
+[   72.375870] dump_desc: [destroy2]
+[   72.377450] dump_desc evts: 200 202 204 206 208 210 212 214 216 217 218 219 220 221 222 223
+[   72.379512] dump_desc   ts: 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1
+[   72.381432] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.382939] 
+[   72.383756] dump_desc: [destroy3]
+[   72.385028] dump_desc evts: 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255
+[   72.387632] dump_desc   ts: 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1
+[   72.389562] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.391350] 
+[   72.391845] dump_desc: [destroy4]
+[   72.393564] dump_desc evts: 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255
+[   72.395657] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.397676] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   72.399564] 
+[   72.400017] dump_desc: [destroy5]
+[   72.401663] dump_desc evts: 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239
+[   72.403931] dump_desc   ts: 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+[   72.405647] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.407335] 
+[   72.407848] dump_desc: [destroy6]
+[   72.409630] dump_desc evts: 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239
+[   72.411823] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.413981] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   72.416341] LIGHT_SUCCESS
+[   72.419690] kt: running test for light, case 5, T2586
+[   72.419690] 
+[   72.421540] kt: starting light_test_lots_of_create_destroy test
+[   72.427962] kt: end of test.
+[   72.429389] kt: starting light_test_lots_of_create_destroy test
+[   72.435638] kt: end of test.
+[   72.438358] kt: starting light_test_lots_of_create_destroy test
+[   72.464099] kt: end of test.
+[   72.465608] kt: starting test light_test_lots_of_create_destroy
+[   72.477860] kt: end of test
+[   72.479460] 
+[   72.479939] dump_desc: [create1]
+[   72.481616] dump_desc evts: 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271
+[   72.483786] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.485500] dump_desc  ret:
+[   72.486467] 
+[   72.486961] dump_desc: [create2]
+[   72.488624] dump_desc evts: 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287
+[   72.490690] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1
+[   72.492401] dump_desc  ret:
+[   72.493370] 
+[   72.493873] dump_desc: [create3]
+[   72.495606] dump_desc evts: 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303
+[   72.497633] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.499389] dump_desc  ret:
+[   72.500337] 
+[   72.500874] dump_desc: [create4]
+[   72.502587] dump_desc evts: 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319
+[   72.504805] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1
+[   72.506505] dump_desc  ret:
+[   72.507711] 
+[   72.508551] dump_desc: [destroy1]
+[   72.509865] dump_desc evts: 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287
+[   72.512375] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1
+[   72.513947] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.515437] 
+[   72.515940] dump_desc: [destroy2]
+[   72.517514] dump_desc evts: 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271
+[   72.519653] dump_desc   ts: 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+[   72.521446] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.523354] 
+[   72.523873] dump_desc: [destroy3]
+[   72.525529] dump_desc evts: 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319
+[   72.527646] dump_desc   ts: 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+[   72.529433] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.530887] 
+[   72.531759] dump_desc: [destroy4]
+[   72.533017] dump_desc evts: 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319
+[   72.535511] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.537977] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   72.540365] 
+[   72.540923] dump_desc: [destroy5]
+[   72.542673] dump_desc evts: 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303
+[   72.545520] dump_desc   ts: 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1
+[   72.547495] dump_desc  ret: 0 0 0 0 0 0 0 0 0 -22 0 0 0 -22 0 -22
+[   72.549360] 
+[   72.549855] dump_desc: [destroy6]
+[   72.551506] dump_desc evts: 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303
+[   72.553681] dump_desc   ts: 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1
+[   72.555719] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 0 -22 -22 -22 0 -22 0
+[   72.558781] LIGHT_SUCCESS
+[   72.562824] kt: running test for light, case 5, T2586
+[   72.562824] 
+[   72.565518] kt: starting light_test_lots_of_create_destroy test
+[   72.571764] kt: end of test.
+[   72.572788] kt: starting light_test_lots_of_create_destroy test
+[   72.580797] kt: end of test.
+[   72.581872] kt: starting light_test_lots_of_create_destroy test
+[   72.588573] kt: end of test.
+[   72.589515] kt: starting test light_test_lots_of_create_destroy
+[   72.601785] kt: end of test
+[   72.602806] 
+[   72.603724] dump_desc: [create1]
+[   72.605561] dump_desc evts: 320 321 323 325 327 329 331 333 335 337 339 341 342 343 344 345
+[   72.607845] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1
+[   72.609517] dump_desc  ret:
+[   72.610577] 
+[   72.611564] dump_desc: [create2]
+[   72.612973] dump_desc evts: 322 324 326 328 330 332 334 336 338 340 346 347 348 349 350 351
+[   72.615663] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1
+[   72.617408] dump_desc  ret:
+[   72.618475] 
+[   72.619026] dump_desc: [create3]
+[   72.621014] dump_desc evts: 352 353 354 355 356 357 358 359 360 361 362 363 364 365 366 367
+[   72.623706] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.625570] dump_desc  ret:
+[   72.626819] 
+[   72.627745] dump_desc: [create4]
+[   72.630507] dump_desc evts: 368 369 370 371 372 373 374 375 376 377 378 379 380 381 382 383
+[   72.633015] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.635019] dump_desc  ret:
+[   72.636463] 
+[   72.636921] dump_desc: [destroy1]
+[   72.638620] dump_desc evts: 322 324 326 328 330 332 334 336 338 340 346 347 348 349 350 351
+[   72.641561] dump_desc   ts: 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1
+[   72.644729] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.646917] 
+[   72.647874] dump_desc: [destroy2]
+[   72.649676] dump_desc evts: 320 321 323 325 327 329 331 333 335 337 339 341 342 343 344 345
+[   72.652029] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1
+[   72.654634] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.656422] 
+[   72.656931] dump_desc: [destroy3]
+[   72.658676] dump_desc evts: 368 369 370 371 372 373 374 375 376 377 378 379 380 381 382 383
+[   72.661421] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1
+[   72.663641] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 -22 0 0 -22
+[   72.665490] 
+[   72.666371] dump_desc: [destroy4]
+[   72.667906] dump_desc evts: 368 369 370 371 372 373 374 375 376 377 378 379 380 381 382 383
+[   72.670662] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1
+[   72.672789] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 0 -22 -22 0
+[   72.675013] 
+[   72.675862] dump_desc: [destroy5]
+[   72.677596] dump_desc evts: 352 353 354 355 356 357 358 359 360 361 362 363 364 365 366 367
+[   72.679847] dump_desc   ts: 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1
+[   72.681820] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.683516] 
+[   72.684438] dump_desc: [destroy6]
+[   72.685765] dump_desc evts: 352 353 354 355 356 357 358 359 360 361 362 363 364 365 366 367
+[   72.688352] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.690506] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   72.692511] LIGHT_SUCCESS
+[   72.696369] kt: running test for light, case 5, T2586
+[   72.696369] 
+[   72.698492] kt: starting light_test_lots_of_create_destroy test
+[   72.708772] kt: end of test.
+[   72.709875] kt: starting light_test_lots_of_create_destroy test
+[   72.717015] kt: end of test.
+[   72.718641] kt: starting light_test_lots_of_create_destroy test
+[   72.727599] kt: end of test.
+[   72.729576] kt: starting test light_test_lots_of_create_destroy
+[   72.762686] kt: end of test
+[   72.764427] 
+[   72.765596] dump_desc: [create1]
+[   72.767760] dump_desc evts: 384 385 386 387 388 389 390 391 392 393 394 395 396 397 398 399
+[   72.770654] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.772406] dump_desc  ret:
+[   72.773617] 
+[   72.774440] dump_desc: [create2]
+[   72.775892] dump_desc evts: 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415
+[   72.778481] dump_desc   ts: 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1
+[   72.779994] dump_desc  ret:
+[   72.781458] 
+[   72.781982] dump_desc: [create3]
+[   72.783687] dump_desc evts: 416 417 418 419 420 421 422 423 424 425 426 427 428 429 430 431
+[   72.785965] dump_desc   ts: 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1
+[   72.787816] dump_desc  ret:
+[   72.788968] 
+[   72.789758] dump_desc: [create4]
+[   72.791376] dump_desc evts: 432 433 434 435 436 437 438 439 440 441 442 443 444 445 446 447
+[   72.793584] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.795361] dump_desc  ret:
+[   72.796379] 
+[   72.796894] dump_desc: [destroy1]
+[   72.798563] dump_desc evts: 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415
+[   72.800828] dump_desc   ts: 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1
+[   72.802785] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.804518] 
+[   72.805419] dump_desc: [destroy2]
+[   72.806813] dump_desc evts: 384 385 386 387 388 389 390 391 392 393 394 395 396 397 398 399
+[   72.809035] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1
+[   72.811540] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.813013] 
+[   72.813899] dump_desc: [destroy3]
+[   72.815713] dump_desc evts: 432 433 434 435 436 437 438 439 440 441 442 443 444 445 446 447
+[   72.817979] dump_desc   ts: 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1
+[   72.820453] dump_desc  ret: 0 0 0 0 0 0 0 -22 0 0 -22 -22 -22 0 0 -22
+[   72.822354] 
+[   72.822837] dump_desc: [destroy4]
+[   72.824650] dump_desc evts: 432 433 434 435 436 437 438 439 440 441 442 443 444 445 446 447
+[   72.826910] dump_desc   ts: 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1
+[   72.828594] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 0 -22 -22 0 0 0 -22 -22 0
+[   72.830831] 
+[   72.831804] dump_desc: [destroy5]
+[   72.833620] dump_desc evts: 416 417 418 419 420 421 422 423 424 425 426 427 428 429 430 431
+[   72.835994] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1
+[   72.838022] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -22 0
+[   72.839970] 
+[   72.840925] dump_desc: [destroy6]
+[   72.842882] dump_desc evts: 416 417 418 419 420 421 422 423 424 425 426 427 428 429 430 431
+[   72.845011] dump_desc   ts: 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1
+[   72.847554] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 0 -22
+[   72.849662] LIGHT_SUCCESS
+[   72.852848] kt: running test for light, case 5, T2586
+[   72.852848] 
+[   72.854516] kt: starting light_test_lots_of_create_destroy test
+[   72.860681] kt: end of test.
+[   72.861810] kt: starting light_test_lots_of_create_destroy test
+[   72.869946] kt: end of test.
+[   72.871677] kt: starting light_test_lots_of_create_destroy test
+[   72.879465] kt: end of test.
+[   72.880523] kt: starting test light_test_lots_of_create_destroy
+[   72.892102] kt: end of test
+[   72.892796] 
+[   72.893696] dump_desc: [create1]
+[   72.894939] dump_desc evts: 448 450 452 454 456 458 460 462 464 466 468 470 472 474 476 478
+[   72.896949] dump_desc   ts: 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1
+[   72.898519] dump_desc  ret:
+[   72.900822] 
+[   72.901697] dump_desc: [create2]
+[   72.903622] dump_desc evts: 449 451 453 455 457 459 461 463 465 467 469 471 473 475 477 479
+[   72.905853] dump_desc   ts: 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1
+[   72.907753] dump_desc  ret:
+[   72.908865] 
+[   72.909833] dump_desc: [create3]
+[   72.911676] dump_desc evts: 480 481 482 483 484 485 486 487 488 489 490 491 492 493 494 495
+[   72.913919] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.915493] dump_desc  ret:
+[   72.916634] 
+[   72.917523] dump_desc: [create4]
+[   72.919025] dump_desc evts: 496 497 498 499 500 501 502 503 504 505 506 507 508 509 510 511
+[   72.921691] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1
+[   72.923510] dump_desc  ret:
+[   72.924576] 
+[   72.925600] dump_desc: [destroy1]
+[   72.927609] dump_desc evts: 449 451 453 455 457 459 461 463 465 467 469 471 473 475 477 479
+[   72.929841] dump_desc   ts: 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1
+[   72.931813] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   72.933639] 
+[   72.934853] dump_desc: [destroy2]
+[   72.936787] dump_desc evts: 448 450 452 454 456 458 460 462 464 466 468 470 472 474 476 478
+[   72.937484] ==================================================================
+[   72.937505] ThreadSanitizer: data-race in poll_schedule_timeout
+[   72.937505] 
+[   72.937561] Read at 0xffff8800baf47ab8 of size 4 by thread 2584 on CPU 1:
+			poll_schedule_timeout at fs/select.c:240
+			do_select at fs/select.c:529
+			core_sys_select at fs/select.c:599
+			SYSC_select at fs/select.c:640
+			 (inlined by) SyS_select at fs/select.c:622
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   72.937907] 
+[   72.937946] Previous write at 0xffff8800baf47ab8 of size 4 by thread -4 on CPU 3:
+			__pollwake at fs/select.c:195
+			 (inlined by) pollwake at fs/select.c:215
+			__wake_up_common at kernel/sched/wait.c:73
+			tcp_rcv_established at net/ipv4/tcp_input.c:5313
+			tcp_v4_do_rcv at net/ipv4/tcp_ipv4.c:1399
+			tcp_v4_rcv at net/ipv4/tcp_ipv4.c:1633
+			ip_local_deliver_finish at net/ipv4/ip_input.c:216
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_local_deliver at net/ipv4/ip_input.c:256
+			dst_input at include/net/dst.h:450
+			 (inlined by) ip_rcv_finish at net/ipv4/ip_input.c:367
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_rcv at net/ipv4/ip_input.c:455
+			__netif_receive_skb_core at net/core/dev.c:3893
+			__netif_receive_skb at net/core/dev.c:3928
+			netif_receive_skb_internal at net/core/dev.c:3956
+			napi_gro_complete at net/core/dev.c:4043
+			dev_gro_receive at net/core/dev.c:4205
+			napi_gro_receive at net/core/dev.c:4310
+			e1000_receive_skb at drivers/net/ethernet/intel/e1000/e1000_main.c:4019
+			 (inlined by) e1000_clean_rx_irq at drivers/net/ethernet/intel/e1000/e1000_main.c:4471
+			e1000_clean at drivers/net/ethernet/intel/e1000/e1000_main.c:3820
+			napi_poll at net/core/dev.c:4744
+			 (inlined by) net_rx_action at net/core/dev.c:4809
+			__do_softirq at kernel/softirq.c:273
+			common_interrupt at arch/x86/entry/entry_64.S:609
+[   72.938165] 
+[   72.938165] Mutexes locked by thread -4:
+[   72.938165] Mutex 411867 is locked here:
+			__raw_spin_lock at include/linux/spinlock_api_smp.h:158
+			 (inlined by) _raw_spin_lock at kernel/locking/spinlock.c:151
+			tcp_v4_rcv at net/ipv4/tcp_ipv4.c:1628
+			ip_local_deliver_finish at net/ipv4/ip_input.c:216
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_local_deliver at net/ipv4/ip_input.c:256
+			dst_input at include/net/dst.h:450
+			 (inlined by) ip_rcv_finish at net/ipv4/ip_input.c:367
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_rcv at net/ipv4/ip_input.c:455
+			__netif_receive_skb_core at net/core/dev.c:3893
+			__netif_receive_skb at net/core/dev.c:3928
+			netif_receive_skb_internal at net/core/dev.c:3956
+			napi_gro_complete at net/core/dev.c:4043
+			dev_gro_receive at net/core/dev.c:4205
+			napi_gro_receive at net/core/dev.c:4310
+			e1000_receive_skb at drivers/net/ethernet/intel/e1000/e1000_main.c:4019
+			 (inlined by) e1000_clean_rx_irq at drivers/net/ethernet/intel/e1000/e1000_main.c:4471
+			e1000_clean at drivers/net/ethernet/intel/e1000/e1000_main.c:3820
+			napi_poll at net/core/dev.c:4744
+			 (inlined by) net_rx_action at net/core/dev.c:4809
+			__do_softirq at kernel/softirq.c:273
+			common_interrupt at arch/x86/entry/entry_64.S:609
+[   72.938165] 
+[   72.938165] Mutex 412637 is locked here:
+			__raw_spin_lock_irqsave at include/linux/spinlock_api_smp.h:129
+			 (inlined by) _raw_spin_lock_irqsave at kernel/locking/spinlock.c:159
+			__wake_up_sync_key at kernel/sched/wait.c:144
+			tcp_rcv_established at net/ipv4/tcp_input.c:5313
+			tcp_v4_do_rcv at net/ipv4/tcp_ipv4.c:1399
+			tcp_v4_rcv at net/ipv4/tcp_ipv4.c:1633
+			ip_local_deliver_finish at net/ipv4/ip_input.c:216
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_local_deliver at net/ipv4/ip_input.c:256
+			dst_input at include/net/dst.h:450
+			 (inlined by) ip_rcv_finish at net/ipv4/ip_input.c:367
+			NF_HOOK_THRESH at include/linux/netfilter.h:218
+			 (inlined by) NF_HOOK at include/linux/netfilter.h:240
+			 (inlined by) ip_rcv at net/ipv4/ip_input.c:455
+			__netif_receive_skb_core at net/core/dev.c:3893
+			__netif_receive_skb at net/core/dev.c:3928
+			netif_receive_skb_internal at net/core/dev.c:3956
+			napi_gro_complete at net/core/dev.c:4043
+			dev_gro_receive at net/core/dev.c:4205
+			napi_gro_receive at net/core/dev.c:4310
+			e1000_receive_skb at drivers/net/ethernet/intel/e1000/e1000_main.c:4019
+			 (inlined by) e1000_clean_rx_irq at drivers/net/ethernet/intel/e1000/e1000_main.c:4471
+			e1000_clean at drivers/net/ethernet/intel/e1000/e1000_main.c:3820
+			napi_poll at net/core/dev.c:4744
+			 (inlined by) net_rx_action at net/core/dev.c:4809
+			__do_softirq at kernel/softirq.c:273
+			common_interrupt at arch/x86/entry/entry_64.S:609
+[   72.938165] 
+[   72.938165] ==================================================================
+[   73.053592] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1
+[   73.055669] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   73.057506] 
+[   73.057997] dump_desc: [destroy3]
+[   73.059931] dump_desc evts: 496 497 498 499 500 501 502 503 504 505 506 507 508 509 510 511
+[   73.062513] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   73.064543] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   73.066567] 
+[   73.067528] dump_desc: [destroy4]
+[   73.068957] dump_desc evts: 496 497 498 499 500 501 502 503 504 505 506 507 508 509 510 511
+[   73.071715] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1
+[   73.073776] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   73.075872] 
+[   73.076763] dump_desc: [destroy5]
+[   73.078608] dump_desc evts: 480 481 482 483 484 485 486 487 488 489 490 491 492 493 494 495
+[   73.080738] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1
+[   73.082859] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   73.084863] 
+[   73.085905] dump_desc: [destroy6]
+[   73.087719] dump_desc evts: 480 481 482 483 484 485 486 487 488 489 490 491 492 493 494 495
+[   73.089981] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   73.092549] dump_desc  ret: -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22 -22
+[   73.094554] LIGHT_SUCCESS
+[   73.687483] ==================================================================
+[   73.688128] ThreadSanitizer: data-race in pollwake
+[   73.688128] 
+[   73.688128] Write at 0xffff8801925dbab8 of size 4 by thread 2670 on CPU 3:
+			__pollwake at fs/select.c:195
+			 (inlined by) pollwake at fs/select.c:215
+			__wake_up_common at kernel/sched/wait.c:73
+			__fput at fs/file_table.c:208
+			____fput at fs/file_table.c:244
+			task_work_run at kernel/task_work.c:123 (discriminator 1)
+			tracehook_notify_resume at include/linux/tracehook.h:190
+			 (inlined by) do_notify_resume at arch/x86/kernel/signal.c:753
+			int_signal at arch/x86/entry/entry_64.S:329
+[   73.688128] 
+[   73.688128] Previous atomic read at 0xffff8801925dbab8 of size 4 by thread 1 on CPU 0:
+			poll_schedule_timeout at fs/select.c:255
+			do_select at fs/select.c:529
+			core_sys_select at fs/select.c:599
+			SYSC_select at fs/select.c:640
+			 (inlined by) SyS_select at fs/select.c:622
+			entry_SYSCALL_64_fastpath at arch/x86/entry/entry_64.S:188
+[   73.688128] 
+[   73.688128] Mutexes locked by thread 2670:
+[   73.688128] Mutex 178786 is locked here:
+			mutex_lock at kernel/locking/mutex.c:108
+			__pipe_lock at fs/pipe.c:78
+			 (inlined by) pipe_release at fs/pipe.c:550
+			__fput at fs/file_table.c:208
+			____fput at fs/file_table.c:244
+			task_work_run at kernel/task_work.c:123 (discriminator 1)
+			tracehook_notify_resume at include/linux/tracehook.h:190
+			 (inlined by) do_notify_resume at arch/x86/kernel/signal.c:753
+			int_signal at arch/x86/entry/entry_64.S:329
+[   73.688128] 
+[   73.688128] Mutex 178787 is locked here:
+			__raw_spin_lock_irqsave at include/linux/spinlock_api_smp.h:129
+			 (inlined by) _raw_spin_lock_irqsave at kernel/locking/spinlock.c:159
+			__wake_up_sync_key at kernel/sched/wait.c:144
+			__fput at fs/file_table.c:208
+			____fput at fs/file_table.c:244
+			task_work_run at kernel/task_work.c:123 (discriminator 1)
+			tracehook_notify_resume at include/linux/tracehook.h:190
+			 (inlined by) do_notify_resume at arch/x86/kernel/signal.c:753
+			int_signal at arch/x86/entry/entry_64.S:329
+[   73.688128] 
+[   73.688128] ==================================================================
+INIT: Switching to runlevel: 0

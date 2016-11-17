@@ -1,0 +1,82 @@
+[....] Starting OpenBSD Secure Shell server: sshd[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[   10.818213] kt: running test for light, case 0, T2613
+[   10.818213] 
+[   10.821590] kt: starting light_test_wait_nonexist test
+[   10.825043] kt: end of test.
+[   10.826631] 
+[   10.827497] dump_desc: [wait_nonexist]
+[   10.829379] dump_desc evts:
+[   10.830611] dump_desc   ts: 0
+[   10.831760] dump_desc  ret: -22
+[   10.832857] LIGHT_SUCCESS
+[   10.835201] kt: running test for light, case 0, T2616
+[   10.835201] 
+[   10.840798] kt: starting light_test_wait_nonexist test
+[   10.844879] kt: end of test.
+[   10.847923] 
+[   10.848697] dump_desc: [wait_nonexist]
+[   10.850605] dump_desc evts:
+[   10.852056] dump_desc   ts: 0
+[   10.853531] dump_desc  ret: -22
+[   10.855020] LIGHT_SUCCESS
+[   10.857696] kt: running test for light, case 0, T2619
+[   10.857696] 
+[   10.860445] kt: starting light_test_wait_nonexist test
+[   10.863225] kt: end of test.
+[   10.864240] 
+[   10.864711] dump_desc: [wait_nonexist]
+[   10.865900] dump_desc evts:
+[   10.866823] dump_desc   ts: 0
+[   10.867782] dump_desc  ret: -22
+[   10.868551] LIGHT_SUCCESS
+[   10.870455] kt: running test for light, case 0, T2622
+[   10.870455] 
+[   10.871669] kt: starting light_test_wait_nonexist test
+[   10.872928] kt: end of test.
+[   10.873463] 
+[   10.873735] dump_desc: [wait_nonexist]
+[   10.874418] dump_desc evts:
+[   10.875226] dump_desc   ts: 0
+[   10.876121] dump_desc  ret: -22
+[   10.877178] LIGHT_SUCCESS
+[   10.879513] kt: running test for light, case 0, T2625
+[   10.879513] 
+[   10.882646] kt: starting light_test_wait_nonexist test
+[   10.885970] kt: end of test.
+[   10.887477] 
+[   10.888055] dump_desc: [wait_nonexist]
+[   10.889521] dump_desc evts:
+[   10.890564] dump_desc   ts: 0
+[   10.891507] dump_desc  ret: -22
+[   10.892261] LIGHT_SUCCESS
+[   10.894605] kt: running test for light, case 0, T2628
+[   10.894605] 
+[   10.895743] kt: starting light_test_wait_nonexist test
+[   10.897039] kt: end of test.
+[   10.899892] 
+[   10.900439] dump_desc: [wait_nonexist]
+[   10.901703] dump_desc evts:
+[   10.902665] dump_desc   ts: 0
+[   10.903424] dump_desc  ret: -22
+[   10.903864] LIGHT_SUCCESS
+[   10.905581] kt: running test for light, case 0, T2631
+[   10.905581] 
+[   10.911182] kt: starting light_test_wait_nonexist test
+[   10.916397] kt: end of test.
+[   10.917052] 
+[   10.917446] dump_desc: [wait_nonexist]
+[   10.918357] dump_desc evts:
+[   10.919081] dump_desc   ts: 0
+[   10.919568] dump_desc  ret: -22
+[   10.920031] LIGHT_SUCCESS
+[   10.921512] kt: running test for light, case 0, T2634
+[   10.921512] 
+[   10.922453] kt: starting light_test_wait_nonexist test
+[   10.923519] kt: end of test.
+[   10.924026] 
+[   10.924415] dump_desc: [wait_nonexist]
+[   10.925457] dump_desc evts:
+[   10.926252] dump_desc   ts: 0
+[   10.927116] dump_desc  ret: -22
+[   10.927883] LIGHT_SUCCESS
+INIT: Switching to runlevel: 0

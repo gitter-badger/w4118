@@ -1,0 +1,82 @@
+[....] Starting OpenBSD Secure Shell server: sshd[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[   10.346962] kt: running test for light, case 2, T2608
+[   10.346962] 
+[   10.351330] kt: starting light_test_create_destroy_simple test
+[   10.354576] kt: end of test.
+[   10.356079] 
+[   10.356786] dump_desc: [simply_create_destroy]
+[   10.358858] dump_desc evts: 0
+[   10.360059] dump_desc   ts: 0 0
+[   10.360802] dump_desc  ret: 0
+[   10.361604] LIGHT_SUCCESS
+[   10.363687] kt: running test for light, case 2, T2611
+[   10.363687] 
+[   10.366015] kt: starting light_test_create_destroy_simple test
+[   10.370108] kt: end of test.
+[   10.371851] 
+[   10.372646] dump_desc: [simply_create_destroy]
+[   10.375201] dump_desc evts: 1
+[   10.376523] dump_desc   ts: 0 0
+[   10.377950] dump_desc  ret: 0
+[   10.379323] LIGHT_SUCCESS
+[   10.382113] kt: running test for light, case 2, T2614
+[   10.382113] 
+[   10.385155] kt: starting light_test_create_destroy_simple test
+[   10.390547] kt: end of test.
+[   10.391608] 
+[   10.392170] dump_desc: [simply_create_destroy]
+[   10.393720] dump_desc evts: 2
+[   10.394735] dump_desc   ts: 0 0
+[   10.395765] dump_desc  ret: 0
+[   10.396727] LIGHT_SUCCESS
+[   10.398801] kt: running test for light, case 2, T2617
+[   10.398801] 
+[   10.401212] kt: starting light_test_create_destroy_simple test
+[   10.404808] kt: end of test.
+[   10.405812] 
+[   10.406254] dump_desc: [simply_create_destroy]
+[   10.407925] dump_desc evts: 3
+[   10.409007] dump_desc   ts: 0 0
+[   10.410233] dump_desc  ret: 0
+[   10.411373] LIGHT_SUCCESS
+[   10.413978] kt: running test for light, case 2, T2620
+[   10.413978] 
+[   10.416172] kt: starting light_test_create_destroy_simple test
+[   10.418087] kt: end of test.
+[   10.418770] 
+[   10.419169] dump_desc: [simply_create_destroy]
+[   10.420276] dump_desc evts: 4
+[   10.421044] dump_desc   ts: 0 0
+[   10.421878] dump_desc  ret: 0
+[   10.423076] LIGHT_SUCCESS
+[   10.425146] kt: running test for light, case 2, T2623
+[   10.425146] 
+[   10.427707] kt: starting light_test_create_destroy_simple test
+[   10.431317] kt: end of test.
+[   10.432224] 
+[   10.432690] dump_desc: [simply_create_destroy]
+[   10.434139] dump_desc evts: 5
+[   10.435075] dump_desc   ts: 0 0
+[   10.435794] dump_desc  ret: 0
+[   10.436250] LIGHT_SUCCESS
+[   10.438195] kt: running test for light, case 2, T2626
+[   10.438195] 
+[   10.440701] kt: starting light_test_create_destroy_simple test
+[   10.443408] kt: end of test.
+[   10.444168] 
+[   10.444483] dump_desc: [simply_create_destroy]
+[   10.445750] dump_desc evts: 6
+[   10.448845] dump_desc   ts: 0 0
+[   10.449853] dump_desc  ret: 0
+[   10.450810] LIGHT_SUCCESS
+[   10.453240] kt: running test for light, case 2, T2629
+[   10.453240] 
+[   10.455061] kt: starting light_test_create_destroy_simple test
+[   10.457140] kt: end of test.
+[   10.457999] 
+[   10.458503] dump_desc: [simply_create_destroy]
+[   10.459919] dump_desc evts: 7
+[   10.460963] dump_desc   ts: 0 0
+[   10.461996] dump_desc  ret: 0
+[   10.462759] LIGHT_SUCCESS
+INIT: Switching to runlevel: 0

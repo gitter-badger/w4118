@@ -1,0 +1,83 @@
+[....] Starting OpenBSD Secure Shell server: sshd[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[    6.681393] kt: running test for light, case 0, T2540
+[    6.681393] 
+[    6.685053] kt: starting light_test_wait_nonexist test
+[    6.687931] kt: end of test.
+[    6.689657] 
+[    6.690785] dump_desc: [wait_nonexist]
+[    6.693249] dump_desc evts:
+[    6.694972] dump_desc   ts: 0
+[    6.696918] dump_desc  ret: -22
+[    6.699041] LIGHT_SUCCESS
+[    6.701314] kt: running test for light, case 0, T2543
+[    6.701314] 
+[    6.704594] kt: starting light_test_wait_nonexist test
+[    6.707445] kt: end of test.
+[    6.709052] 
+[    6.709655] dump_desc: [wait_nonexist]
+[    6.710950] dump_desc evts:
+[    6.712825] dump_desc   ts: 0
+[    6.714383] dump_desc  ret: -22
+[    6.715852] LIGHT_SUCCESS
+[    6.718350] kt: running test for light, case 0, T2546
+[    6.718350] 
+[    6.721563] kt: starting light_test_wait_nonexist test
+[    6.724506] kt: end of test.
+[    6.726171] 
+[    6.727183] dump_desc: [wait_nonexist]
+[    6.729177] dump_desc evts:
+[    6.730678] dump_desc   ts: 0
+[    6.732411] dump_desc  ret: -22
+[    6.734066] LIGHT_SUCCESS
+[    6.736166] kt: running test for light, case 0, T2549
+[    6.736166] 
+[    6.739157] kt: starting light_test_wait_nonexist test
+[    6.741980] kt: end of test.
+[    6.743728] 
+[    6.744618] dump_desc: [wait_nonexist]
+[    6.746116] dump_desc evts:
+[    6.746999] dump_desc   ts: 0
+[    6.748875] dump_desc  ret: -22
+[    6.750400] LIGHT_SUCCESS
+[    6.752541] kt: running test for light, case 0, T2552
+[    6.752541] 
+[    6.755773] kt: starting light_test_wait_nonexist test
+[    6.758552] kt: end of test.
+[    6.760181] 
+[    6.761079] dump_desc: [wait_nonexist]
+[    6.762680] dump_desc evts:
+[    6.763944] dump_desc   ts: 0
+[    6.765200] dump_desc  ret: -22
+[    6.766402] LIGHT_SUCCESS
+[    6.767988] kt: running test for light, case 0, T2555
+[    6.767988] 
+[    6.770437] kt: starting light_test_wait_nonexist test
+[    6.772510] kt: end of test.
+[    6.773744] 
+[    6.774353] dump_desc: [wait_nonexist]
+[    6.775475] dump_desc evts:
+[    6.777271] dump_desc   ts: 0
+[    6.778316] dump_desc  ret: -22
+[    6.779660] LIGHT_SUCCESS
+[    6.781408] kt: running test for light, case 0, T2558
+[    6.781408] 
+[    6.784276] kt: starting light_test_wait_nonexist test
+[    6.786436] kt: end of test.
+[    6.787690] 
+[    6.788254] dump_desc: [wait_nonexist]
+[    6.789848] dump_desc evts:
+[    6.791091] dump_desc   ts: 0
+[    6.792385] dump_desc  ret: -22
+[    6.794089] LIGHT_SUCCESS
+[    6.795901] kt: running test for light, case 0, T2561
+[    6.795901] 
+[    6.798994] kt: starting light_test_wait_nonexist test
+[    6.801305] kt: end of test.
+[    6.802732] 
+[    6.803686] dump_desc: [wait_nonexist]
+[    6.805497] dump_desc evts:
+[    6.806981] dump_desc   ts: 0
+[    6.808515] dump_desc  ret: -22
+[    6.810067] LIGHT_SUCCESS
+[    9.197902] kmemleak: 1 new suspected memory leaks (see /sys/kernel/debug/kmemleak)
+INIT: Switching to runlevel: 0

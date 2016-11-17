@@ -1,0 +1,221 @@
+1. (Exercise 6.13) In Chapter 5, we discussed possible race conditions on
+various kernel data structures. Most scheduling algorithms maintain a run
+queue, which lists processes eligible to run on a processor. On multicore
+systems, there are two general options: (1) each processing core has its own
+run queue, or (2) a single run queue is shared by all processing cores. What
+are the advantages and disadvantages of each of these approaches?
+
+ANSWER:
+
+The primary advantage of each processing core having its own run queue is that
+there is no contention over a single run queue when the scheduler is running
+concurrently on 2 or more processors. When a scheduling decision must be made
+for a processing core, the scheduler only need to look no further than its
+private run queue. A disadvantage of a single run queue is that it must be
+protected with locks to prevent a race condition and a processing core may be
+available to run a thread, yet it must first acquire the lock to retrieve the
+thread from the single queue. However, load balancing would likely not be an
+issue with a single run queue, whereas when each processing core has its own
+run queue, there must be some sort of load balancing between the different run
+queues.
+
+===============================================================================
+
+2. (Exercise 6.16) Consider the following set of processes, with the length of
+the CPU burst given in milliseconds:
+
+Process  Burst Time  Priority
+-------  ----------  --------
+  P1         2          2
+  P2         1          1
+  P3         8          4
+  P4         4          2
+  P5         5          3
+
+The processes are assumed to have arrived in the order P1, P2, P3, P4, P5, all
+at time 0.
+
+a. Draw four Gantt charts that illustrate the execution of these processes
+using the following scheduling algorithms: FCFS, SJF, nonpreemptive priority (a
+larger priority number implies a higher priority), and RR (quantum = 2).
+
+b. What is the turnaround time of each process for each of the scheduling
+algorithms in part a?
+
+c. What is the waiting time of each process for each of these scheduling
+algorithms?
+
+d. Which of the algorithms results in the minimum average waiting time (over
+all processes)?
+
+ANSWER:
+
+a. The four Gantt charts are
+
+FCFS
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+|   1   | 2 |               3               |       4       |         5         |
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+
+SJF
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+| 2 |   1   |       4       |         5         |               3               |
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+
+Priority
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+|               3               |         5         |   1   |       4       | 2 |
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+
+RR
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+|   1   | 2 |   3   |   4   |   5   |   3   |   4   |   5   |   3   | 5 |   3   |
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+
+b. Turnaround time
+
+    FCFS  SJF  Priority  RR
+    ----  ---  --------  --
+P1    2    3      15      2
+P2    3    1      20      3
+P3   11   20       8     20
+P4   15    7      19     13
+P5   20   12      13     18
+
+c. Waiting time (turnaround time minus burst time)
+
+    FCFS  SJF  Priority  RR
+    ----  ---  --------  --
+P1    0    1      13      0
+P2    2    0      19      2
+P3    3   12       0     12
+P4   11    3      15      9
+P5   15    7       8     13
+
+d. Shortest Job First
+
+===============================================================================
+
+3. (Exercise 6.27) Consider the scheduling algorithm in the Solaris operating
+system for time-sharing threads.
+
+a. What is the time quantum (in milliseconds) for a thread with priority 15?
+With priority 40?
+
+b. Assume that a thread with priority 50 has used its entire time quantum
+without blocking. What new priority will the scheduler assign this thread?
+
+c. Assume that a thread with priority 20 blocks for I/O before its time quantum
+has expired. What new priority will the scheduler assign this thread?
+
+ANSWER:
+
+a. 160 and 40
+
+b. 40
+
+c. 52
+
+===============================================================================
+
+4. (Exercise 6.28) Assume that two tasks A and B are running on a Linux system.
+The nice values of A and B are −5 and +5, respectively. Using the CFS scheduler
+as a guide, describe how the respective values of vruntime vary between the two
+processes given each of the following scenarios:
+
+a. Both A and B are CPU-bound.
+
+b. A is I/O-bound, and B is CPU-bound.
+
+c. A is CPU-bound, and B is I/O-bound.
+
+ANSWER:
+
+a. Since A has a higher priority than B, vruntime will move more slowly for A
+than B. If both A and B are CPU-bound (that is they both use the CPU for as
+long as it is allocated to them), vruntime will generally be smaller for A than
+B, and hence A will have a greater priority to run over B.
+
+b. In this situation, vruntime will be much smaller for A than B as (1)
+vruntime will move more slowly for A than B due to priority differences, and
+(2) A will require less CPU-time as it is I/O-bound.
+
+c. This situation is not as clear, and it is possible that B may end up running
+in favor of A as it will be using the processor less than A and in fact its
+value of vruntime may in fact be less than the value of vruntime for B.
+
+===============================================================================
+
+5. When a process forks a child, both parent and child processes are runnable.
+Assuming there are no other processes in the system and a single CPU system,
+explain how the Linux 3.10 default scheduler will schedule the parent and child
+processes, including which process will run after the execution of fork.
+
+ANSWER:
+
+We can not make sure which one will run first. Simply, when returning from the
+fork() system call, if TIF_NEED_RESCHED is set, then a fair scheduler will do
+context switch and a child will run. Whether or not this flag is set depends on
+parent's and child's virtual runtime basically. However, there is a way to
+force a child to run first.
+
+Here's the whole process of creating child. do_fork() calls two functions:
+
+a. copy_process()
+
+   copy_process() -> sched_fork() -> task_fork() -> task_fork_fair()
+
+   In the task_fork_fair() function, child's vruntime is set to parent's
+   vruntime.
+
+b. wake_up_new_task()
+
+   wake_up_new_task() -> check_preempt_curr() -> check_preempt_wakeup() ->
+   wakeup_preempt_entity()
+
+   In this and subsequent functions, it'll update parent's vruntime, and it
+   checks whether the difference between parent's and child's vruntime is
+   greater than "sysctl_sched_wakeup_granularity". If so, it'll set
+   TIF_NEED_RESCHED flag. That means, if a parent task already ran enough based
+   on a parent’s and child’s priority, it'll set the flag, and after the fork()
+   system call, a child will run.
+
+As mentioned in the first paragraph, there is a way to force a child to run
+first. If the variable "sysctl_sched_child_runs_first" is set to 1, it'll set
+the TIF_NEED_RESCHED flag in task_fork_fair() function, then a child will run
+first. By default, sysctl_sched_child_runs_first is 0, so parent and child will
+compete to run.
+
+===============================================================================
+
+6. Explain how load balancing is done in the realtime scheduler in Linux 3.10.
+
+ANSWER:
+
+RT scheduler is a very aggressive scheduler to run high priority tasks as soon
+as possible on any cpus. To do that, RT scheduler pushes its task to the other
+cpus if tasks running on those cpus have lower priority, and pulls a higher
+priority task than a current task from other cpus.
+
+More specifically, these are the functions to move tasks:
+
+a. push_rt_task()
+
+   If the current CPU has more than one RT task, see if the non running task
+   can migrate over to a CPU that is running a task of lower priority. This
+   function is called when (1) a task is switched to rt class, (2) a task is
+   woken up, and (3) context switch is over and still there are rt tasks in the
+   queue.
+
+b. pull_rt_task()
+
+   If other CPUs have higher priority tasks than current task on this cpu, see
+   if we can pull higher priority task to this cpu. RT scheduler wants to avoid
+   the situation that the priority of rq (highest priority among tasks) is
+   lowered. This function is called when (1) a task is switched to other sched
+   class, (2) a task's priority is changed to a lower priority, and (3) the
+   priority of rq possibly becomes lower after the context switch.
+
+In addition, as other schedulers, RT has a select_task_rq function. RT's
+select_task_rq_rt() function will select the run queue on which the task may
+run immediately.

@@ -1,0 +1,2 @@
+UNI,normal (max 46.0 pts),fork_preload (max 3.0 pts),pipe_preload (max 3.0 pts),exec_preload (max 3.0 pts),dup2_preload (max 3.0 pts),checkpatch (max 5.0 pts),valgrind (max 5.0 pts),Total (Max 68.0 pts)
+mag2272,46.0,3.0,3.0,3.0,3.0,5.0,5.0,68.0

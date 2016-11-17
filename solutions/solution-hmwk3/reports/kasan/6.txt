@@ -1,0 +1,138 @@
+[....] Starting OpenBSD Secure Shell server: sshd[?25l[?1c7[1G[[32m ok [39;49m8[?25h[?0c.
+[   10.495886] kt: running test for light, case 6, T2619
+[   10.495886] 
+[   10.498717] kt: starting test light_test_create_destroy_16_parallel
+[   10.506665] kt: end of test
+[   10.508296] kt: starting test light_test_create_destroy_16_parallel
+[   10.514744] kt: end of test
+[   10.516684] 
+[   10.517441] dump_desc: [create_16_sum]
+[   10.519276] dump_desc evts: 0 2 4 1 8 6 10 3 5 7 9 14 13 12 11 15
+[   10.522124] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.524321] dump_desc  ret:
+[   10.525103] 
+[   10.525538] dump_desc: [destroy_16_sum]
+[   10.526675] dump_desc evts: 0 2 4 1 8 6 10 3 5 7 9 14 13 12 11 15
+[   10.528362] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.529897] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.531501] LIGHT_SUCCESS
+[   10.534808] kt: running test for light, case 6, T2652
+[   10.534808] 
+[   10.538318] kt: starting test light_test_create_destroy_16_parallel
+[   10.546600] kt: end of test
+[   10.547664] kt: starting test light_test_create_destroy_16_parallel
+[   10.553490] kt: end of test
+[   10.554590] 
+[   10.555199] dump_desc: [create_16_sum]
+[   10.556603] dump_desc evts: 16 18 17 19 20 22 24 25 21 27 23 28 26 29 30 31
+[   10.559248] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.560896] dump_desc  ret:
+[   10.561604] 
+[   10.562111] dump_desc: [destroy_16_sum]
+[   10.563182] dump_desc evts: 16 18 17 19 20 22 24 25 21 27 23 28 26 29 30 31
+[   10.564870] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.566529] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.568777] LIGHT_SUCCESS
+[   10.575457] kt: running test for light, case 6, T2685
+[   10.575457] 
+[   10.577943] kt: starting test light_test_create_destroy_16_parallel
+[   10.590794] kt: end of test
+[   10.592254] kt: starting test light_test_create_destroy_16_parallel
+[   10.598207] kt: end of test
+[   10.599060] 
+[   10.599579] dump_desc: [create_16_sum]
+[   10.600883] dump_desc evts: 46 45 44 43 42 41 40 39 38 37 36 35 34 33 32 47
+[   10.603741] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.605938] dump_desc  ret:
+[   10.606955] 
+[   10.607490] dump_desc: [destroy_16_sum]
+[   10.608873] dump_desc evts: 46 45 44 43 42 41 40 39 38 37 36 35 34 33 32 47
+[   10.611405] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.613356] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.615031] LIGHT_SUCCESS
+[   10.616912] kt: running test for light, case 6, T2718
+[   10.616912] 
+[   10.618665] kt: starting test light_test_create_destroy_16_parallel
+[   10.623550] kt: end of test
+[   10.624962] kt: starting test light_test_create_destroy_16_parallel
+[   10.629245] kt: end of test
+[   10.631958] 
+[   10.633238] dump_desc: [create_16_sum]
+[   10.634534] dump_desc evts: 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63
+[   10.636309] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.637851] dump_desc  ret:
+[   10.638729] 
+[   10.639278] dump_desc: [destroy_16_sum]
+[   10.640728] dump_desc evts: 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63
+[   10.643099] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.644995] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.646732] LIGHT_SUCCESS
+[   10.648333] kt: running test for light, case 6, T2751
+[   10.648333] 
+[   10.651209] kt: starting test light_test_create_destroy_16_parallel
+[   10.659045] kt: end of test
+[   10.661928] kt: starting test light_test_create_destroy_16_parallel
+[   10.668128] kt: end of test
+[   10.670815] 
+[   10.671306] dump_desc: [create_16_sum]
+[   10.672620] dump_desc evts: 64 66 75 73 71 78 77 76 74 72 70 69 68 67 65 79
+[   10.675314] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.677083] dump_desc  ret:
+[   10.677921] 
+[   10.678396] dump_desc: [destroy_16_sum]
+[   10.679348] dump_desc evts: 64 66 75 73 71 78 77 76 74 72 70 69 68 67 65 79
+[   10.680772] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.681707] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.682746] LIGHT_SUCCESS
+[   10.684681] kt: running test for light, case 6, T2784
+[   10.684681] 
+[   10.688951] kt: starting test light_test_create_destroy_16_parallel
+[   10.695285] kt: end of test
+[   10.697375] kt: starting test light_test_create_destroy_16_parallel
+[   10.702145] kt: end of test
+[   10.703025] 
+[   10.703441] dump_desc: [create_16_sum]
+[   10.704493] dump_desc evts: 81 80 82 83 84 85 86 88 90 87 89 92 91 94 93 95
+[   10.706339] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.707866] dump_desc  ret:
+[   10.708465] 
+[   10.708624] dump_desc: [destroy_16_sum]
+[   10.709032] dump_desc evts: 81 80 82 83 84 85 86 88 90 87 89 92 91 94 93 95
+[   10.709790] dump_desc   ts: 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0
+[   10.710379] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.710973] LIGHT_SUCCESS
+[   10.712165] kt: running test for light, case 6, T2817
+[   10.712165] 
+[   10.713239] kt: starting test light_test_create_destroy_16_parallel
+[   10.716972] kt: end of test
+[   10.718062] kt: starting test light_test_create_destroy_16_parallel
+[   10.722605] kt: end of test
+[   10.723376] 
+[   10.723717] dump_desc: [create_16_sum]
+[   10.724664] dump_desc evts: 97 99 98 96 100 105 104 103 102 101 109 108 107 106 110 111
+[   10.726572] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.727955] dump_desc  ret:
+[   10.728670] 
+[   10.729034] dump_desc: [destroy_16_sum]
+[   10.729652] dump_desc evts: 97 99 98 96 100 105 104 103 102 101 109 108 107 106 110 111
+[   10.730558] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.731625] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.732677] LIGHT_SUCCESS
+[   10.734731] kt: running test for light, case 6, T2850
+[   10.734731] 
+[   10.739331] kt: starting test light_test_create_destroy_16_parallel
+[   10.748894] kt: end of test
+[   10.749673] kt: starting test light_test_create_destroy_16_parallel
+[   10.753833] kt: end of test
+[   10.754588] 
+[   10.754931] dump_desc: [create_16_sum]
+[   10.755839] dump_desc evts: 113 112 114 115 116 117 118 119 126 125 124 123 122 121 120 127
+[   10.757877] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.759265] dump_desc  ret:
+[   10.759920] 
+[   10.760424] dump_desc: [destroy_16_sum]
+[   10.761714] dump_desc evts: 113 112 114 115 116 117 118 119 126 125 124 123 122 121 120 127
+[   10.764116] dump_desc   ts: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.765101] dump_desc  ret: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[   10.765742] LIGHT_SUCCESS
+INIT: Switching to runlevel: 0

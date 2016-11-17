@@ -1,0 +1,18 @@
+LIGHT_DONE
+unreferenced object 0xffff88013a4e8d80 (size 96):
+  comm "swapper/0", pid 1, jiffies 4294667356 (age 20.263s)
+  hex dump (first 32 bytes):
+    a0 b5 2b 82 ff ff ff ff 00 00 00 00 01 00 00 00  ..+.............
+    01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+  backtrace:
+    [<ffffffff81871583>] kmemleak_alloc+0x23/0x40
+    [<ffffffff81166dca>] __kmalloc+0xfa/0x1c0
+    [<ffffffff811db71f>] __register_sysctl_table+0x4f/0x580
+    [<ffffffff811dbc66>] register_sysctl+0x16/0x20
+    [<ffffffff81f8f8a0>] net_sysctl_init+0x1e/0x47
+    [<ffffffff81f7b064>] sock_init+0xb/0x91
+    [<ffffffff810002c1>] do_one_initcall+0x81/0x1b0
+    [<ffffffff81f2d0a8>] kernel_init_freeable+0x15e/0x1e9
+    [<ffffffff8186fd19>] kernel_init+0x9/0xe0
+    [<ffffffff8187c09f>] ret_from_fork+0x3f/0x70
+    [<ffffffffffffffff>] 0xffffffffffffffff
